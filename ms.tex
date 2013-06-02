@@ -1,0 +1,223 @@
+%% --------------------------------------------------------
+%\documentclass[preprint2]{aastex}
+\documentclass[12pt,preprint]{aastex} 
+
+%\documentclass{emulateapj}
+\usepackage{lineno} 
+\usepackage{natbib}
+\usepackage{epsf}
+\usepackage{url}
+\usepackage{color}
+\citestyle{aa}
+%% --------------------------------------------------------
+\newcommand{\tc}[2]{\textcolor{#1}{#2}}
+\newcommand{\Msun}{\ifmmode\mbox{M}_{\odot}\else$\mbox{M}_{\odot}$\fi}
+\newcommand{\Rsun}{\ifmmode\mbox{R}_{\odot}\else$\mbox{R}_{\odot}$\fi}
+\newcommand{\Mearth}{\ifmmode\mbox{M}_{\oplus}\else$\mbox{M}_{\oplus}$\fi}
+\newcommand{\Rearth}{\ifmmode\mbox{R}_{\oplus}\else$\mbox{R}_{\oplus}$\fi}
+%\newcommand{\chandra}{\textit{Chandra}\,}
+%\newcommand{\spitzer}{\textit{Spitzer}\,}
+%%\newcommand{\xmm}{\textit{XMM-Newton}\,}
+%\newcommand{\xmm}{\textit{XMM}\,}
+%\newcommand{\xte}{\textit{RXTE}\,}
+%\newcommand{\rosat}{\textit{ROSAT}\,}
+%\newcommand{\ooft}{4U~0142$+$61\,}
+%\newcommand{\seven}{RXS~J170849.0$-$400910\,}
+%\newcommand{\eight}{1E~1841$-$045\,}
+%\newcommand{\etff}{AX~1845$-$0258}
+%\newcommand{\etfs}{PSR~J1846$-$0258}
+%\newcommand{\ttfn}{1E~2259$+$586}
+%\newcommand{\tfe}{1E~1048.1$-$5937\,}
+%\newcommand{\etten}{XTE~J1810$-$197\,}
+%\newcommand{\ninet}{SGR~1900$+$14}
+%\newcommand{\etos}{SGR~1806$-$20\,}
+%\newcommand{\ntst}{PSR~B1916$+$14\,}
+%\newcommand{\stet}{PSR~J1718$-$3718\,}
+
+\shorttitle{UBC AI}
+\shortauthors{Zhu et al.}
+
+%% --------------------------------------------------------
+%% \slugcomment{Submitted to ApJ}
+%% --------------------------------------------------------
+\begin{document}
+%% --------------------------------------------------------
+\title{Searching for pulsars using image pattern recognition}
+
+%% --------------------------------------------------------
+\author{W. W. Zhu\altaffilmark{1},
+A. Berndsen\altaffilmark{1},
+E. C. Madsen\altaffilmark{1},
+M. Tan\altaffilmark{1},
+I. H. Stairs\altaffilmark{1},
+A. Brazier,
+P. Lazarus,
+R. Lynch,
+P. Scholz,
+K. Stovall,
+S. M. Ransom,
+B. Allen,
+N. D. R. Bhat,
+S. Bogdanov,
+F. Camilo,
+S. Chatterjee,
+J. M. Cordes,
+F. Crawford,
+J. Deneva,
+G. Desvignes,
+R. D. Ferdman,
+J. W. T. Hessels,
+F. A. Jenet,
+V. M. Kaspi,
+B. Knispel,
+K. J. Lee,
+J. van Leeuwen,
+A. G. Lyne,
+M. A. McLaughlin,
+L. Spitler,
+B. W. Stappers,
+GBNCC authors,
+others?
+}
+%% --------------------------------------------------------
+%% \email{}
+%% --------------------------------------------------------
+\altaffiltext{1}{\footnotesize Department of Physics and Astronomy,
+6224 Agricultural Road, University of British Columbia, Vancouver, BC, V6T 1Z1, Canada;
+zhuww@phas.ubc.ca, berndsen@phas.ubc.ca}
+
+%% --------------------------------------------------------
+%\begin{abstract}
+%\end{abstract}
+
+%% --------------------------------------------------------
+\keywords{pulsars --- stars: neutron --- methods: data
+analysis, machine learning --- techniques: image processing}
+%% --------------------------------------------------------
+%% A small citation guide:
+%% \citep{jon90} (Jones et al. 1990) [no comma] 
+%% \cite(t){jon90} Jones et al. (1990) [no comma]
+%%
+%% \citep*{jon90} (Jones, Baker, and Williams 1990) [one arg, no comma]
+%% \citet*{jon90} Jones, Baker, and Williams (1990) [one arg]
+%%
+%% \citealp(jon90) Jones et al. 1990  [no comma]
+%% \citealt{jon90} Jones et al. 1990  [no comma, been using this]
+%%
+%% \citealp*{jon90} Jones, Baker, and Williams 1990 [all and no comma,this]
+%% \citealt*{jon90} Jones, Baker, and Williams 1990 [all and no comma]
+%% --------------------------------------------------------
+
+
+\input{content.tex}
+
+\acknowledgements
+
+%{\it Facilities:}
+%\facility{Arecibo},  
+
+%\bibliographystyle{astroads}
+\bibliographystyle{apj}
+\bibliography{myrefs,journals1,modrefs,psrrefs,crossrefs}
+
+%\input{ObsTable.tex}
+\input{table1.tex}
+
+\input{table2.tex}
+
+\begin{figure}
+%\center
+\includegraphics[scale=0.4]{f1.eps} \\ 
+\caption {\label{fig:presto} 
+{\it prepfold} diagnostic plot for PICS-discovered pulsar PSR
+J1914+08. The four key subplots of the PICS AI system are highlighted: 1. summed pulse profile 2. time-versus-phase plot 3. frequency-versus-phase plot 4. DM curve. For subplot 1, 2 and 3
+the pulse phase are wrapped around twice to show two duplicated pulses.
+}
+\end{figure} 
+
+\begin{figure}
+%\center
+\includegraphics[scale=0.6]{f2.eps} \\ 
+\caption {\label{fig:pca} 
+Top: The original time-versus-phase and frequency-versus-phase plots from a pulsar
+candidate.
+Bottom: The PCA-reconstructed plots from the top 24 PCA components.
+%:time versus phase (left) frequency versus phase (right).
+}
+\end{figure} 
+
+
+\begin{figure}
+%\center
+\includegraphics[scale=0.8]{f3.eps} \\ 
+\caption {\label{fig:layers} 
+The first layer of classifiers learn how to rate each
+feature to ~90\%F1, and the second layer learn how to classify candidates based on the
+output of the first layer.
+(SVM: support vector machine, NN: Neural Network, LR: logistic regression and
+adaboost are machine learning algorithms.
+See session \ref{sec:layers} for the definition of F1.
+)
+}
+\end{figure} 
+
+\begin{figure}
+%\center
+\includegraphics[scale=0.6]{CNN.eps} \\ 
+\caption {\label{fig:cnn} 
+A schematic of the first two layers in the convolutional neural
+network. Left: convolution layer; right: max-pooling layer.
+The PICS CNN consists of two sets of alternating convolution and max-pooling
+layer, and a final artificial neural network layer.
+}
+\end{figure} 
+
+
+%\begin{figure}
+%%\center
+%\includegraphics[scale=0.6]{f4.eps} \\ 
+%\caption {\label{fig:test} 
+%Histogram of the AI scores on the test data.
+%}
+%\end{figure} 
+
+\begin{figure}
+%\center
+\includegraphics[scale=0.6]{f5.eps} \\ 
+\caption {\label{fig:GBNCC} 
+The blank histogram is the distribution of AI scores of 90008 GBNCC
+candidates. The filled histogram is the AI score distribution of known pulsars. 
+The hatched histogram is that of the harmonics of known pulsars.
+}
+\end{figure} 
+
+\begin{figure}
+%\center
+\includegraphics[scale=0.4, angle=270]{rfi.ps} \\ 
+\caption {\label{fig:rfi} 
+An example of a $\sim$60~Hz RFI that was ranked higher than the weakest four  
+pulsars in the GBNCC test data.
+}
+\end{figure} 
+
+
+\begin{figure}
+%\center
+\includegraphics[scale=0.4, angle=270]{f6.ps} \\ 
+\caption {\label{fig:1938} 
+The {\it PRESTO} plot of PSR J1938+20.
+}
+\end{figure} 
+
+\begin{figure}
+%\center
+\includegraphics[scale=0.4, angle=270]{f7.ps} \\ 
+\caption {\label{fig:1901} 
+The {\it PRESTO} plot of PSR J1901+02.
+}
+\end{figure} 
+
+
+\end{document}
+
+
