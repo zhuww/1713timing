@@ -154,24 +154,76 @@ Einstein's theory of gravitational wave radiation pass this particular test.
 
 
 \section{Constraint on $\dot{G}$}
-Measurements of intrinsic orbital decays of pulsar binaries have been used to
-constrain alternative theories of gravitation such as the scalar-tensor gravity \citep{lwj+09, fwe+12}. 
-These alternative theories predicts extra orbital decay than Einstein's
-theory. Therefore, one can measures the upper-limit of this `excess' orbital decay
+\label{sec:Gdot}
+Some alternative theories of gravity, such as the scalar-tensor gravity, predict extra orbital decay than Einstein's theory. 
+Consequently, measurements of pulsar binaries' `excess' orbital decay
 $\dot{P}_{\rm b}^{\rm exc}=\dot{P}_{\rm b}^{\rm Int} - \dot{P}_{\rm
-b}^{\dot{M}}  - \dot{P}_{\rm b}^{\rm T} - \dot{P}_{\rm b}^{\rm GR}$ and use it to constrain the Gravitation theories.
-The measured values of $\dot{P}_{\rm b}^{\rm exc}$ from previous work were all
-consistent with being zero. Their upper limits were largely determined by the
-uncertainties of $\dot{P}_{\rm b}^{\rm Int}$.
+b}^{\dot{M}}  - \dot{P}_{\rm b}^{\rm T} - \dot{P}_{\rm b}^{\rm GR}$ have been
+used to constrain them \citep{lwj+09, fwe+12}. 
+The measured values of $\dot{P}_{\rm b}^{\rm exc}$ from the pulsars of
+previous work were all consistent with being zero. Their upper limits were largely determined by the uncertainties of $\dot{P}_{\rm b}^{\rm Int}$.
 Thanks to the high time precision of NANOGrav observations, we measure the
-orbital period of J1713+0747 to high precision, which enable us to 
-constrain $\dot{P}_{\rm b}^{\rm exc}=(0.7\pm2)\times10^-13$s~s$^{-1}$. 
-This is the smallest fractional orbital decay rate observed in pulsar binaries due to J1713+0747's long orbit period.
-Therefore, the $\dot{P}_{\rm b}^{\rm exc}$ of J1713+0747 could be
-combined with that of the other pulsar binaries to form the most stringent constraint on alternative theories of gravitation. 
+orbital period of J1713+0747 to extreme high precision, which enable us to 
+get $\dot{P}_{\rm b}^{\rm exc}=(0.7\pm2)\times10^-13$s~s$^{-1}$ (see Section
+\ref{sec:obdecay} for detail). 
+This is the smallest fractional orbital decay rate observed in pulsar binaries
+due to J1713+0747's long orbit period, and can be used to put new limit on
+the alternative theories of Gravity.
 
+Extra orbital decay can be caused by the dipole gravitational radiation effect
+introduced by some alternative gravity theories (\citealt{Will93, Will01, lwj+09, fwe+12} and reference therein). Such effect arise when the two bodies of binary are very different in terms of their self gravity, or in another word, their compactness.
+This extra orbital decay is given by 
+\begin{equation}
+\dot{P}_{\rm b}^{\rm D} \simeq -4\pi\frac{T_{\odot}\nu}{P_{\rm b}}\kappa_D S^2,
+\end{equation}
+\citep{lwj+09}, where $T_{\odot}=G{\rm M_{\odot}}/c^3=4.9255$~${\rm \nu}$s, $\nu$ is the reduced mass $m_pm_c/M$ of the system , $\kappa_D $ is dipole
+gravitational radiation "coupling constant", and $S$ is the difference
+between the self-gravity "sensitivity" of the two bodies ($S = s_p - s_c$;
+$s_p\sim0.1m_p/M_{\odot}$ according to \citealt{de92} ; and $s_c\ll s_p$).
+In Einstein's GR $\kappa_D=0$ --- there is no self-gravity induced
+dipole gravitational radiation, but it is often not the case in alternative
+theories.
 
+Another orbital decal term $\dot{P}_{\rm b}^{\dot{G}}$ is caused by a varying
+local gravitational constant. In the framework of the scalar-tensor theories,
+the scalar field that interacts with the mass has to change over time as the
+Universe expands. This change will cause the locally measured gravitational
+constant to vary. 
+\begin{equation}
+\dot{P}_{\rm b}^{\dot{G}} = -2 \frac{\dot{G}}{G}
+\left[1-\left(1+\frac{m_c}{2M}\right)s_p\right]P_{\rm b}
+\end{equation}
+\citep{dgt88,nor90}.
 
+The orbital period of J1713+0747 is relatively long among the
+high-time-precision pulsar binaries, this make its $\dot{P}_{\rm b}^{\rm D}$
+very small. Conversely, $\dot{P}_{\rm b}^{\dot{G}}$ is larger when $P_{\rm b}$
+is large. This makes J1713+0747 the best pulsar binary system for constraining
+the change rate of gravitational constant $\dot{G}$. A combined limit on both
+$\dot{G}$ and the dipole gravitational radiation constant $\kappa_D$ can be
+done in the same fashion as in \citet{lwj+09}: solving $\dot{G}$ and $\kappa_D$
+from this equation $\dot{P}_{\rm b}^{\rm exc} = \dot{P}_{\rm b}^{\rm D} +
+\dot{P}_{\rm b}^{\dot{G}}$ (Equation 29 of \citealt{lwj+09}) of different
+pulsars using Monte Carlo Markov Chain (MCMC) simulation. We applied this method to three pulsars: PSR J1012+5307, PSR
+J1738+0333, and PSR J1713+0747 using timing parameter reported in
+\citet{lwj+09}, \citet{fwe+12}, and this work.
+The resulting confidence region of $\dot{G}$ and $\kappa_D$ is shown in Figure
+\ref{fig:Gdot}.
+We got, at 95\% confidence limit, $\dot{G} = -2\pm8\times10^{-13}$~yr$^{-1}$;
+$\kappa_D=-0.3\pm2\time10^{-4}$. 
+This constrain on $\dot{G}$ is more than a fact of two tighter than that of
+previous pulsar-binary \citep{fwe+12}. 
+Although slightly worse than
+the best constrain of this type ($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the solar system Luna Laser Ranging (LLR)
+experiment \citep{hmb10}, the $\dot{G}$ limit from pulsar timing is still an valuable independent test.  
+
+\begin{figure}
+\includegraphics[width=8cm]{GdotContour.ps} \\ 
+\caption {\label{fig:Gdot} Confidence contour of $\dot{G}$ and $\kappa_D$
+calculated from J1012+5307, J1738+0333, and J1713+0747 using MCMC simulation.
+The shaded area marks the 2$\sigma$ $\dot{G}$ limit from LLR. 
+} 
+\end{figure} 
 
 
 %\section{Testing fundamental physics principles}
