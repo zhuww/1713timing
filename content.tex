@@ -33,7 +33,10 @@ strength of the scalar field based on observations of binary systems
 
 
 \section{Observations}
-Timing observation of PSR J1713+0747 started from 1993 at the Arecibo Observatory. \citet{sns+05} reported the first 12 years timing result. After that, J1713+0747 was monitored regularly by NANOGrav as part of its pulsar timing array project. In this project, J1713+0747 is observed monthly in L band and S band by the Arecibo Observatory and in 800MHz and L band by the Green Bank Observatory.
+Timing observation of PSR J1713+0747 started from 1993 at the Arecibo
+Observatory. \citet{sns+05} reported the first 12 years timing result. After
+that, J1713+0747 was monitored regularly as part of  NANOGrav's pulsar timing
+array project. It is observed monthly in L band and S band by the Arecibo Observatory and in 800MHz and L band by the Green Bank Observatory.
 
 \section{Timing model}
 \label{timing_model}
@@ -42,12 +45,13 @@ We employed the same \citet{dd86} model they used to fit for the pulsar and its 
 In the pulsar model, we added an extra fitting parameter, the change rate of binary period $\dot{P}_{\rm b}$ to model a previously undetectable change in $P_{\rm b}$.This is described in Section \ref{sec:obdecay}.    
 We can confirm that most of the pulsar-binary parameters that \citet{sns+05} got still works for the 20 years data. The new timing model parameters (Table \ref{tab:par}) differs from the \citet{sns+05} slightly but consistent with their reported uncertainties.
 
+
 \subsection{DM variation}
 \label{sec:dmx}
 The DM of a pulsar characterizes how much interstellar median (ISM) lies
 between the pulsar and us, and it changes as the ISM varies. For most pulsar
-this change is too small to be detectable. However, for pulsar with residual
-$<\sim1\mu$s, the contribution from varying ISM start to contribute
+this change is too small to be detectable. However, for pulsars with residual
+$\lesssim1\mu$s, the contribution from varying ISM start to contribute
 significantly to the timing noise. 
 
 Using the {\it DMX} model in {\it tempo}, we were able to fit for DM
@@ -55,12 +59,12 @@ variation.
 The model groups TOA from observations taken within ten days and fit for the
 best DM for each group.   
 It was applied to TOA from Mark4, ABPP, ASP, GAPS, GUPPI, and PUPPI data, but
-not for Mark3, since only there were only one observable band (L-band) for
-Mark3, so a precise DM fitting was not possible.
+not for Mark3. Since Mark3 had only one frequency band (L-band), a precise DM
+fitting was not possible from its data.
 J1713+0747 was observed in L- and S-band by the Arecibo Observatory. The
 two bands observations almost always happen one after another on the same day.
-While GBT observe J1713+0747 in 800~MHz and L band but the two band
-observations often are separated by only a few days.
+While GBT observes J1713+0747 in 800~MHz and L band but the two band
+observations often are separated by less than ten days.
 Therefore, most DM values in the {\it DMX} model was determined by TOA from at
 least two bands. Figure \ref{fig:dmx} shows the DM variation of J1713+0747 
 measured using the {\it DMX} model.
