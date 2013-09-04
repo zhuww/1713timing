@@ -9,6 +9,8 @@ gravitational theories and test the constancy of the gravitational constant.
 
 
 \section{Introduction}
+\label{sec:intro}
+\linenumbers
 We present 20-year timing of the millisecond  PSR J1713+0747. Discovered in
 1993 \citep{fwc93}, PSR J1713+0747 is one of the brightest pulsars timed by the
 North American nano-Hertz Observatory for Gravitation Waves (NANOGrav;
@@ -51,7 +53,7 @@ We can confirm that most of the pulsar-binary parameters that \citet{sns+05} got
 The DM of a pulsar characterizes how much interstellar median (ISM) lies
 between the pulsar and us, and it changes as the ISM varies. For most pulsar
 this change is too small to be detectable. However, for pulsars with residual
-$\lesssim1\mu$s, the contribution from varying ISM start to contribute
+$\lesssim2\mu$s, the contribution from varying ISM start to contribute
 significantly to the timing noise. 
 
 Using the {\it DMX} model in {\it tempo}, we were able to fit for DM
@@ -68,6 +70,11 @@ observations often are separated by less than ten days.
 Therefore, most DM values in the {\it DMX} model was determined by TOA from at
 least two bands. Figure \ref{fig:dmx} shows the DM variation of J1713+0747 
 measured using the {\it DMX} model.
+Note that the sudden drop of DM around MJD-53000 was not real, it was caused
+by measuring the earlier-year Mark3/Mark4/ABPP TOA using a
+different pulse profile template from the one used for the later
+ASP/GASP/GUPPI/PUPPI TOA. The DM values inferred from these two different profile
+templates are expected to be offset by a constant.
 The pulsar shows a fractional DM changes of $\sim10^{-4}$.
 
 
@@ -88,10 +95,28 @@ model by P. Demorest et~al in prep.;see Figure \ref{fig:FD}).
 
 
 \subsection{Timing Noise and DM variation}
+After remove the effect from changing interstellar median and a
+frequency-dependent pulse profile, and fit for pulsar spin down and binary
+effects, we got timing residuals $\lesssim 2\mu$s from J1713+0747 (Figure
+\ref{fig:res}, top panel).
+The residual looked smooth and flat, there were no obvious trend in time,
+frequency, or orbital phase.
+However, there seems to be still some timing noise (residual variance in time)
+left in the upper band of the TOA (Figure \ref{fig:res}, bottom panel).
 
-\subsubsection{Covariance with DM changes}
-The lower band residuals are covariant with the DM changes.
-
+The absence of such timing noise in the frequency-crunched residual is probably due to
+our fitting of DM variation. 
+This fitting process have a tendency to `absorb' part of the red noises.
+Therefore, we also expect that the weighted RMS we measure from the
+frequency-crunched residuals will be under-estimated. We can quantitatively
+estimate this effect by injecting random Gaussian signal into the TOA and
+measure the increase in post-fit weighted-RMS. Based on this experiment, we
+can estimate the fraction of timing noise absorbed by DMX fitting, and use
+this fraction to infer the `amplitude' of the original timing noises. 
+Table \ref{tab:wrms} reports the weighted RMS measured directly from the residual and 
+the inferred RMS based on simulated noise experiment. One caveat of this
+approach is that the simulated noise are white, while the actually timing
+noise are likely red noises. 
 
 \begin{itemize}
 \item T2 model versus DD? confirms that both model gives pretty much consistent results?
@@ -119,7 +144,7 @@ b} = 6.8\pm0.3\times10^{-13}~{\rm s~s^{-1}}
 \end{equation}
 Therefore, the pulsar's intrinsic orbital decay is $\dot{P}_{\rm b}^{\rm Int}
 = \dot{P}_{\rm b}^{\rm Obs} - \dot{P}_{\rm b}^{\rm Shk} - \dot{P}_{\rm b}^{\rm
-Gal} = (0.7\pm2)\times10^-13$s~s$^{-1}$, and is consistent with being smaller than measurable.
+Gal} = (0.7\pm2)\times10^{-13}$s~s$^{-1}$, and is consistent with being smaller than measurable.
 
 There are two extra classical terms that could have played a role in
 $\dot{P}_{\rm b}^{\rm Int}$, one $\dot{P}_{\rm b}^{\dot{M}}$ is caused by mass loss in the
@@ -220,14 +245,6 @@ previous pulsar-binary \citep{fwe+12}.
 Although slightly worse than
 the best constrain of this type ($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the solar system Luna Laser Ranging (LLR)
 experiment \citep{hmb10}, the $\dot{G}$ limit from pulsar timing is still an valuable independent test.  
-
-\begin{figure}
-\includegraphics[width=8cm]{GdotContour.ps} \\ 
-\caption {\label{fig:Gdot} Confidence contour of $\dot{G}$ and $\kappa_D$
-calculated from J1012+5307, J1738+0333, and J1713+0747 using MCMC simulation.
-The shaded area marks the 2$\sigma$ $\dot{G}$ limit from LLR. 
-} 
-\end{figure} 
 
 
 %\section{Testing fundamental physics principles}
