@@ -67,7 +67,10 @@ array project. It is observed monthly in L band and S band by the Arecibo Observ
 \section{Timing model}
 \label{sec:model}
 A comprehensive timing model was described by \citet{sns+05}, this model includes the effect of pulsar rotation, astrometry, orbital motion, Shapiro delay and dispersion effect due to interstellar median.
-We employed the same \citet{dd86} model they used to fit for the pulsar and its orbital motions, we also used the DMX model to fit DM changes (see Section \ref{sec:dmx} for detail), and we used an improved model to deal with profile evolution in frequency (see Section \ref{sec:pfev} for detail). 
+We employed the same \citet{dd86} model they used to fit for the pulsar and
+its orbital motions, we also used the DMX model to fit DM changes (see Section
+\ref{sec:dmx} for detail), and we used an improved model to deal with profile
+evolution in frequency (see Section \ref{sec:FD} for detail). 
 In the pulsar model, we added an extra fitting parameter, the change rate of binary period $\dot{P}_{\rm b}$ to model a previously undetectable change in $P_{\rm b}$.This is described in Section \ref{sec:obdecay}.    
 We can confirm that most of the pulsar-binary parameters that \citet{sns+05} got still works for the 20 years data. The new timing model parameters (Table \ref{tab:par}) differs from the \citet{sns+05} slightly but consistent with their reported uncertainties.
 
@@ -131,16 +134,16 @@ left in the upper band of the TOA (Figure \ref{fig:res}, bottom panel).
 The absence of such timing noise in the frequency-crunched residual is probably due to
 our fitting of DM variation. 
 This fitting process have a tendency to `absorb' part of the red noises.
-Therefore, we also expect that the weighted RMS we measure from the
+Therefore, we also expect that the weighted Root Mean Squares (WRMS) we measure from the
 frequency-crunched residuals will be under-estimated. We can quantitatively
 estimate this effect by injecting random Gaussian signal into the TOA and
-measure the increase in post-fit weighted-RMS. Figure \ref{fig:overit} show
+measure the increase in post-fit WRMS. Figure \ref{fig:overfit} show
 the post-fit residual as a function of injected noise for PUPPI L-band TOA. 
 One can see that the increase is well fit by a linear function. 
 Based on this experiment, we
 can estimate the fraction of timing noise absorbed by DMX fitting, and use
 this fraction to infer the original `amplitude' of the timing noises. 
-Table \ref{tab:wrms} shows the weighted RMS measured directly from the
+Table \ref{tab:wrms} shows the WRMS measured directly from the
 residuals and 
 the inferred/recovered RMS based on noise injection simulations. One caveat of this
 approach is that the simulated noise are white, while the actually timing
