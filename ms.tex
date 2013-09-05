@@ -34,7 +34,7 @@
 %\newcommand{\ntst}{PSR~B1916$+$14\,}
 %\newcommand{\stet}{PSR~J1718$-$3718\,}
 
-\shorttitle{UBC AI}
+\shorttitle{20 years timing of PSR J1713+0747.}
 \shortauthors{Zhu et al.}
 
 %% --------------------------------------------------------
@@ -86,109 +86,13 @@ zhuww@phas.ubc.ca, istairs@phas.ubc.ca}
 
 \acknowledgements
 
-%{\it Facilities:}
-%\facility{Arecibo},  
+{\it Facilities:}
+\facility{Arecibo Telescope}, \facility{Green Bank Telescope}
 
 %\bibliographystyle{astroads}
 \bibliographystyle{apj}
 \bibliography{myrefs,journals1,modrefs,psrrefs,crossrefs}
 
-%\input{ObsTable.tex}
-%\input{table1.tex}
-
-%\input{table2.tex}
-
-%\begin{figure}
-%%\center
-%\includegraphics[scale=0.4]{f1.eps} \\ 
-%\caption {\label{fig:presto} 
-%{\it prepfold} diagnostic plot for PICS-discovered pulsar PSR
-%J1914+08. The four key subplots of the PICS AI system are highlighted: 1. summed pulse profile 2. time-versus-phase plot 3. frequency-versus-phase plot 4. DM curve. For subplot 1, 2 and 3
-%the pulse phase are wrapped around twice to show two duplicated pulses.
-%}
-%\end{figure} 
-
-%\begin{figure}
-%%\center
-%\includegraphics[scale=0.6]{f2.eps} \\ 
-%\caption {\label{fig:pca} 
-%Top: The original time-versus-phase and frequency-versus-phase plots from a pulsar
-%candidate.
-%Bottom: The PCA-reconstructed plots from the top 24 PCA components.
-%%:time versus phase (left) frequency versus phase (right).
-%}
-%\end{figure} 
-
-
-%\begin{figure}
-%%\center
-%\includegraphics[scale=0.8]{f3.eps} \\ 
-%\caption {\label{fig:layers} 
-%The first layer of classifiers learn how to rate each
-%feature to ~90\%F1, and the second layer learn how to classify candidates based on the
-%output of the first layer.
-%(SVM: support vector machine, NN: Neural Network, LR: logistic regression and
-%adaboost are machine learning algorithms.
-%See session \ref{sec:layers} for the definition of F1.
-%)
-%}
-%\end{figure} 
-
-%\begin{figure}
-%%\center
-%\includegraphics[scale=0.6]{CNN.eps} \\ 
-%\caption {\label{fig:cnn} 
-%A schematic of the first two layers in the convolutional neural
-%network. Left: convolution layer; right: max-pooling layer.
-%The PICS CNN consists of two sets of alternating convolution and max-pooling
-%layer, and a final artificial neural network layer.
-%}
-%\end{figure} 
-
-
-%%\begin{figure}
-%%%\center
-%%\includegraphics[scale=0.6]{f4.eps} \\ 
-%%\caption {\label{fig:test} 
-%%Histogram of the AI scores on the test data.
-%%}
-%%\end{figure} 
-
-%\begin{figure}
-%%\center
-%\includegraphics[scale=0.6]{f5.eps} \\ 
-%\caption {\label{fig:GBNCC} 
-%The blank histogram is the distribution of AI scores of 90008 GBNCC
-%candidates. The filled histogram is the AI score distribution of known pulsars. 
-%The hatched histogram is that of the harmonics of known pulsars.
-%}
-%\end{figure} 
-
-%\begin{figure}
-%%\center
-%\includegraphics[scale=0.4, angle=270]{rfi.ps} \\ 
-%\caption {\label{fig:rfi} 
-%An example of a $\sim$60~Hz RFI that was ranked higher than the weakest four  
-%pulsars in the GBNCC test data.
-%}
-%\end{figure} 
-
-
-%\begin{figure}
-%%\center
-%\includegraphics[scale=0.4, angle=270]{f6.ps} \\ 
-%\caption {\label{fig:1938} 
-%The {\it PRESTO} plot of PSR J1938+20.
-%}
-%\end{figure} 
-
-%\begin{figure}
-%%\center
-%\includegraphics[scale=0.4, angle=270]{f7.ps} \\ 
-%\caption {\label{fig:1901} 
-%The {\it PRESTO} plot of PSR J1901+02.
-%}
-%\end{figure} 
 
 \begin{figure}
 \includegraphics[width=4in]{DMX.ps} \\ 
@@ -209,6 +113,20 @@ L-band for GASP/GUPPI) residual, showing the presence of red timing noises.}
 \end{figure} 
 
 \begin{figure}
+\includegraphics[width=4in]{overfit.eps} \\ 
+\caption {\label{fig:overfit} Red points: post-fit residual WRMS as a function of the Gaussian
+$\sigma$ of the  injected error; Blue points --- a control experiment:
+post-fit residual as a function of injected error when freezing all fit
+parameters. The dashed lines are the best linear fit to the points. Legends
+show the best-fit slop and cutoff. 
+The blue points show a slop $\sim 1$,
+indicating that almost 100\% of the injected error were measured from the
+residuals, while only a fraction of that went into the red residuals. 
+This means that fitting the parameters absorbed part of the white noise.
+} 
+\end{figure} 
+
+\begin{figure}
 \includegraphics[width=8cm]{GdotContour.ps} \\ 
 \caption {\label{fig:Gdot} Confidence contour of $\dot{G}$ and $\kappa_D$
 calculated from J1012+5307, J1738+0333, and J1713+0747 using MCMC simulation.
@@ -218,6 +136,8 @@ The shaded area marks the 2$\sigma$ $\dot{G}$ limit from LLR.
 
 
 \input{model.tex}
+
+\input{WRMS.tex}
 
 \end{document}
 
