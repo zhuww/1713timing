@@ -1,0 +1,84 @@
+\begin{thebibliography}{21}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Brans \& Dicke(1961)}]{bd61}
+Brans, C., \& Dicke, R.~H. 1961, Phys. Rev., 124, 925
+
+\bibitem[{Damour \& Deruelle(1986)}]{dd86}
+Damour, T., \& Deruelle, N. 1986, Ann. Inst. H. Poincar\'e (Physique
+  Th\'eorique), 44, 263
+
+\bibitem[{Damour \& Esposito-Far\`ese(1992)}]{de92}
+Damour, T., \& Esposito-Far\`ese, G. 1992, Class. Quant Grav., 9, 2093
+
+\bibitem[{Damour {et~al.}(1988)Damour, Gibbons, \& Taylor}]{dgt88}
+Damour, T., Gibbons, G.~W., \& Taylor, J.~H. 1988, Phys. Rev. Lett., 61, 1151
+
+\bibitem[{Damour \& Taylor(1991)}]{dt91}
+Damour, T., \& Taylor, J.~H. 1991, ApJ, 366, 501
+
+\bibitem[{{Demorest} {et~al.}(2013){Demorest}, {Ferdman}, {Gonzalez}, {Nice},
+  {Ransom}, {Stairs}, {Arzoumanian}, {Brazier}, {Burke-Spolaor}, {Chamberlin},
+  {Cordes}, {Ellis}, {Finn}, {Freire}, {Giampanis}, {Jenet}, {Kaspi}, {Lazio},
+  {Lommen}, {McLaughlin}, {Palliyaguru}, {Perrodin}, {Shannon}, {Siemens},
+  {Stinebring}, {Swiggum}, \& {Zhu}}]{dfg+13}
+{Demorest}, P.~B., {et~al.} 2013, \apj, 762, 94
+
+\bibitem[{Fierz(1956)}]{fie56}
+Fierz, M. 1956, Helv. Phys. Acta, 29, 128
+
+\bibitem[{Foster {et~al.}(1993)Foster, Wolszczan, \& Camilo}]{fwc93}
+Foster, R.~S., Wolszczan, A., \& Camilo, F. 1993, ApJ, 410, L91
+
+\bibitem[{{Freire} {et~al.}(2012){Freire}, {Wex}, {Esposito-Far{\`e}se},
+  {Verbiest}, {Bailes}, {Jacoby}, {Kramer}, {Stairs}, {Antoniadis}, \&
+  {Janssen}}]{fwe+12}
+{Freire}, P.~C.~C., {et~al.} 2012, \mnras, 423, 3328
+
+\bibitem[{{Hofmann} {et~al.}(2010){Hofmann}, {M{\"u}ller}, \&
+  {Biskupek}}]{hmb10}
+{Hofmann}, F., {M{\"u}ller}, J., \& {Biskupek}, L. 2010, \aap, 522, L5
+
+\bibitem[{Jordan(1959)}]{jor59}
+Jordan, P. 1959, Z. Phys., 157, 112
+
+\bibitem[{{Lazaridis} {et~al.}(2009){Lazaridis}, {Wex}, {Jessner}, {Kramer},
+  {Stappers}, {Janssen}, {Desvignes}, {Purver}, {Cognard}, {Theureau}, {Lyne},
+  {Jordan}, \& {Zensus}}]{lwj+09}
+{Lazaridis}, K., {et~al.} 2009, \mnras, 400, 805
+
+\bibitem[{Lorimer \& Kramer(2005)}]{lk05}
+Lorimer, D.~R., \& Kramer, M. 2005, Handbook of Pulsar Astronomy (Cambridge
+  University Press)
+
+\bibitem[{{Nice} {et~al.}(2012){Nice}, {Demorest}, {Ferdman}, {Gonzalez},
+  {Ransom}, {Stairs}, \& {NANOGrav}}]{ndf+12}
+{Nice}, D.~J., {Demorest}, P.~B., {Ferdman}, R.~D., {Gonzalez}, M.~E.,
+  {Ransom}, S.~M., {Stairs}, I.~H., \& {NANOGrav}. 2012, in American
+  Astronomical Society Meeting Abstracts, Vol. 219, American Astronomical
+  Society Meeting Abstracts \#219, 146.16
+
+\bibitem[{Nice \& Taylor(1995)}]{nt95}
+Nice, D.~J., \& Taylor, J.~H. 1995, ApJ, 441, 429
+
+\bibitem[{Nordtvedt(1990)}]{nor90}
+Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
+
+\bibitem[{{Shannon} \& {Cordes}(2012)}]{sc12}
+{Shannon}, R.~M., \& {Cordes}, J.~M. 2012, \apj, 761, 64
+
+\bibitem[{Shklovskii(1970)}]{shk70}
+Shklovskii, I.~S. 1970, Sov. Astron., 13, 562
+
+\bibitem[{Splaver {et~al.}(2005)Splaver, Nice, Stairs, Lommen, \&
+  Backer}]{sns+05}
+Splaver, E.~M., Nice, D.~J., Stairs, I.~H., Lommen, A.~N., \& Backer, D.~C.
+  2005, ApJ, 620, 405
+
+\bibitem[{{Will}(2001)}]{Will01}
+{Will}, C. 2001, Living Reviews in Relativity, 4, 4
+
+\bibitem[{{Will}(1993)}]{Will93}
+{Will}, C.~M. 1993, {Theory and Experiment in Gravitational Physics}
+
+\end{thebibliography}
