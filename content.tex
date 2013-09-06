@@ -19,19 +19,19 @@ limit has important implications to alternative theories of gravity.
 We present 20-year timing of the millisecond  PSR J1713+0747. Discovered in
 1993 \citep{fwc93}, PSR J1713+0747 is one of the brightest pulsars timed by the
 North American nano-Hertz Observatory for Gravitation Waves (NANOGrav;
-\citealt{ndf+12, dfg+13}). It also has the smallest timing residual of all NANOGrav pulsars \citep{dfg+13}. Observed with the largest telescope in the world, the Arecibo Observatory, it is probably one of the most well-timed pulsar in the world.
+\citealt{ndf+12, dfg+13}). It also has the smallest timing residual of all NANOGrav pulsars \citep{dfg+13}. Observed with the largest telescope in the world, the Arecibo Observatory, it is one of the most well-timed pulsar in the world.
 
 The high timing precision and the long base line allowed us to measure 
 precisely 
-the pulsar's distance, proper motion, its binary system's masses, orbit, 
+the pulsar binary system's orbit, masses, distance, proper motion, 
 and orientation on the sky (see Section \ref{sec:model} for
 details). We also modeled the variation in the interstellar median
 (Section \ref{sec:dmx}) and possibly small distortion in of its magnetosphere (Section
 \ref{sec:FD}). 
 
 MSP are very stable rotators thanks to their enormous angular momentum.
-Therefore, they can be regarded as very precise cosmic clocks. J1713+0747 is one of
-the most precise among them, and it resides in a very wide binary orbit
+J1713+0747 is one of
+the most stable among them, and it resides in a very wide binary orbit
 with a $\sim0.3~M_{\odot}$ white dwarf (Table \ref{tab:par}). This make it the
 perfect laboratory for observing the smallest cosmic variance, one such as the
 change of gravitational constant as predicted in the Jordan-Fierz-Brans-Dicke
@@ -43,7 +43,7 @@ This theory predicts, as the universe expands, the scalar field will
 also change over time, thus lead to a changing gravitational constant. Despite
 being cosmological time-scale phenomenon, it could still lead to observable 
 changes in the orbits of binary systems like Luna Earth binary or pulsar
-binaries. The Luna Laser Ranging (LLR) experiment measured the
+binaries in the matter of decades. The Luna Laser Ranging (LLR) experiment measured the
 Luna-Earth distance to $10^{-11}$ precision for a 40 years time span, and thus put a
 very good upper limit on the change rate of gravitational constant
 \citep{hmb10}. Recently, thanks to the high-precision pulsar time array
@@ -64,17 +64,21 @@ on $\dot{G}/G$ compare with previous timing-based limits (see Section
 \section{Observations}
 Timing observation of PSR J1713+0747 started from 1993 at the Arecibo
 Observatory. \citet{sns+05} reported the first 12 years timing result. After
-that, J1713+0747 was monitored regularly as part of  NANOGrav's pulsar timing
-array project. It is observed monthly in L band and S band by the Arecibo
-Observatory and in 800MHz and L band by the Green Bank Telescope (GBT).
+that, there were about 5 years of gap time during which it was not observed by
+Arecibo.  In 2005, NANOGrav started monitoring  J1713+0747 regularly as part
+of  its pulsar timing array project. Since then the pulsar is observed monthly
+in L band and S band by the Arecibo
+observatory and in 800MHz and L band by the Green Bank Telescope (GBT).
 
 We combine the pulse time of arrivals (TOA) used in \citealt{sns+05} and that
-of the later NANOGrav observations. The timing observations were performed
-using multiple generations of pulsar instruments. \citet{sns+05} observed
-J1713+0747 using the Princeton Mark III \citep{skn+92}, Mark IV
-\citep{sst+00}, and the Arecibo Berkeley Pulsar Processor (ABPP) system. 
-In the early years of NANOGrav observations, pulsar data are collected with the Astronomical Signal
-Processor (ASP) and its Green Bank counterpart GASP \citep{dem07}. We started using
+of the later NANOGrav observations. These timing observations were conducted 
+using multiple generations of pulsar data acquiring systems. The early year
+observations in \citet{sns+05} used
+ the Princeton Mark III \citep{skn+92}, Mark IV
+\citep{sst+00}, and the Arecibo Berkeley Pulsar Processor (ABPP) systems. 
+In the beginning of NANOGrav observations, pulsar data are collected with the Astronomical Signal
+Processor (ASP) and its Green Bank counterpart GASP \citep{dem07}. We
+started using 
 the Green Bank Ultimate Pulsar Processing Instrument (GUPPI; reference?) for GBT 
 observations in 2010 and the Puertorican Ultimate Pulsar Processing Instrument
 (PUPPI) for Arecibo observations in 2012. 
@@ -84,12 +88,12 @@ system are listed in Table \ref{tab:obs}.
 The latest system GUPPI and PUPPI have a much wider bandwidth (800~MHz), more than
 a factor of 10 wider than their predecessor GASP and ASP (64~MHz). According to Radiometer 
 equation, this bandwidth increase should lead to a factor of $\sim3$
-smaller radio meter noise. Indeed some improvement in timing residual was
+smaller radiometer noise. Indeed some improvement in timing residual was
 observed when upgrading from ASP to PUPPI, but less than predicted by the
-radiometer equation (see Section \ref{sec:nosie} for details). Perhaps a
+radiometer equation. Perhaps a
 significant part of the observed residuals are
 not from pure radiometer noise, but from timing noise, jitter noise, or
-gravitational wave signals.
+gravitational wave signals (see Section \ref{sec:noise} for details).
 
 \section{Timing model}
 \label{sec:model}
@@ -128,8 +132,8 @@ Therefore, most DM values in the {\it DMX} model was determined by TOA from at
 least two bands. Figure \ref{fig:dmx} shows the DM variation of J1713+0747 
 measured using the {\it DMX} model.
 Note that the sudden drop of DM around MJD-53000 was not real, it was caused
-by measuring the earlier-year Mark3/Mark4/ABPP TOA using a
-different pulse profile template from the one used for the later
+artificially by using a different pulse profile template for earlier-year Mark3/Mark4/ABPP TOA 
+from the one used for the later
 ASP/GASP/GUPPI/PUPPI TOA. The DM values inferred from these two different profile
 templates are expected to be offset by a constant.
 The pulsar shows a fractional DM changes of $\sim10^{-4}$ with variation of
@@ -170,12 +174,12 @@ frequency, or orbital phase.
 However, there seems to be still some timing noise (residual variance in time)
 left in the upper band of the TOA (Figure \ref{fig:res}, bottom panel).
 
-The absence of such timing noise in the frequency-crunched residual is probably due to
+The absence of such timing noise in the average residual of high and low band is probably due to
 our fitting of DM variation. 
-This fitting process have a tendency to `absorb' part of the red noises.
+This fitting process have a tendency to `absorb' part of the noises.
 Therefore, we also expect that the weighted Root Mean Squares (WRMS) we measure from the
-frequency-crunched residuals will be under-estimated. We can quantitatively
-estimate this effect by injecting random Gaussian signal into the TOA and
+averaged residuals will be under-estimated. We can quantitatively
+estimate this effect by injecting random Gaussian noise into the TOA and
 measure the increase in post-fit WRMS. Figure \ref{fig:overfit} show
 the post-fit residual as a function of injected noise for PUPPI L-band TOA. 
 One can see that the increase is well fit by a linear function. 
@@ -194,7 +198,7 @@ indeed, the best residual ($\sim100$~ns) come from PUPPI L-band observations.
 \citet{sc12} studied the pulse arrival times from a long observation of
 J1713+0747, and found that this pulsar's single pulse showed random jitter of
 $\simeq40~\mu$s. Therefore, by averaging many pulses collected in the
-$\sim30$~min NANOGrav observation, one expect $\sim 40$~ns of jitter noise. 
+$\sim20$~min NANOGrav observation, one expect $\sim 40$~ns of jitter noise. 
 This could account for part of the observed PUPPI residuals.
 Some of the extra residual could come from other source of timing noise or gravitational wave signals.
 Ultimately, the timing solution and residuals presented in this paper could be used to put a stringent single-source upper limit on the stochastic gravitational wave background in the nano-Hertz region.
@@ -207,7 +211,8 @@ Ultimately, the timing solution and residuals presented in this paper could be u
 
 \subsection{Intrinsic orbital decay}
 \label{sec:obdecay}
-Through timing modeling, we measured a significant orbital decay from J1713+0747, $\dot{P}_{\rm b} = ?$. 
+Through timing modeling, we measured a significant orbital decay from
+J1713+0747, $\dot{P}_{\rm b} = 0.77(18)\times10^{-15}$s~s$^{-1}$. 
 %Such a precise measurement can be used to test Gravitational wave radiation theories of Einstein's and beyond.
 It is expected that the motion of the binary relate to the observer will introduce extra orbital decay due to kinetic effects, i.e. radial acceleration effect \citep{dt91} and centrifugal acceleration effect (`Shklovskii' effect; \citealt{shk70}). Luckily, we have good measurement on the distance and proper motion of the binary system, which allow us to remove these effects 
 and study the system's intrinsic orbital decay.
@@ -274,10 +279,10 @@ The measured values of $\dot{P}_{\rm b}^{\rm exc}$ from the pulsars of
 previous work were all consistent with being zero. Their upper limits were largely determined by the uncertainties of $\dot{P}_{\rm b}^{\rm Int}$.
 Thanks to the high time precision of NANOGrav observations, we measure the
 orbital period of J1713+0747 to extreme high precision, which enable us to 
-get $\dot{P}_{\rm b}^{\rm exc}=(0.7\pm2)\times10^-13$s~s$^{-1}$ (see Section
-\ref{sec:obdecay} for detail). 
+get $\dot{P}_{\rm b}^{\rm exc}=(0.7\pm2)\times10^-13$s~s$^{-1}$ (Section
+\ref{sec:obdecay}). 
 This is the smallest fractional orbital decay rate observed in pulsar binaries
-due to J1713+0747's long orbit period, and can be used to put new limit on
+thanks to J1713+0747's exceptionally large $P_{\rm b}$, and can be used to put new limit on
 the alternative theories of Gravity.
 
 Extra orbital decay can be caused by the dipole gravitational radiation effect
@@ -298,7 +303,8 @@ Another orbital decal term $\dot{P}_{\rm b}^{\dot{G}}$ is caused by a varying
 local gravitational constant. In the framework of the scalar-tensor theories,
 the scalar field that interacts with the mass has to change over time as the
 Universe expands. This change will cause the locally measured gravitational
-constant to vary. 
+constant to vary. The changing gravitational constant will inevitably change
+the orbit of a binary system:
 \begin{equation}
 \dot{P}_{\rm b}^{\dot{G}} = -2 \frac{\dot{G}}{G}
 \left[1-\left(1+\frac{m_c}{2M}\right)s_p\right]P_{\rm b}
@@ -321,10 +327,12 @@ The resulting confidence region of $\dot{G}$ and $\kappa_D$ is shown in Figure
 \ref{fig:Gdot}.
 We got, at 95\% confidence limit, $\dot{G}/G = -2\pm8\times10^{-13}$~yr$^{-1}$;
 $\kappa_D=-0.3\pm2\time10^{-4}$. 
-This constrain on $\dot{G}$ is more than a fact of two tighter than that of
-previous pulsar-binary \citep{fwe+12}. 
+This constrain on $\dot{G}$ is more than a fact of two tighter than that from
+previous pulsar-based constrain \citep{fwe+12}. 
 Although slightly worse than
-the best constrain of this type ($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the solar system LLR experiment \citep{hmb10}, the $\dot{G}$ limit from pulsar timing is still an valuable independent test.  
+the best constrain of this type
+($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the solar system LLR
+experiment \citep{hmb10}, this new pulsar-timing  $\dot{G}$ limit is still an valuable independent test.  
 
 
 %\section{Testing fundamental physics principles}
@@ -335,19 +343,14 @@ the best constrain of this type ($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) 
 %over all result, most precise pulsar timing
 In this paper, we present a comprehensive modeling of high precision timing observations of
 PSR J1713+0747 that span 20 years. 
-Using the largest telescopes in the world --- the Arecibo observatory and
-Green bank observatory, our observations have very good sensitivities.  
-Furthermore, PSR J1713+0747 is a very bight, fast, and stable  pulsar with a
-small duty cycle.
 The pulse arrival times of this pulsar was well fit by our timing model with a
 residual well below 2$\mu$s.
-This makes J1713+0747 one of the most well timed pulsars.
-
-%Noise budget and gravitational wave limit
-The `rescaled' WRMS of the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
+After correcting the effect of fitting, the `rescaled' WRMS in the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
 the amount of noise still presence in the timing residual. The 20 years
 overall residual is $\sim 250$~ns. The smallest WRMS $\sim100$~ns, as expected,
 comes from PUPPI L-band observations.
+This measurement has significant implications to estimating a single-source
+upper limit of the stochastic gravitational wave background.
 
 
 %Change rate of gravitational constant and limit on the dipole gravitational wave radiation.
@@ -363,8 +366,8 @@ The new best constrain based on pulsar timing is $\dot{G}/G
 In another word, the change rate of gravitational constant has to be a factor of $>50$
 slower than the Universe's average expansion rate.
 
-Due to the fact orbital period is a second order term in the timing 
-model. The measurement precision on $P_{\rm b}$ improves very fast $\delta
+Because $P_{\rm b}$ is a second order term in the timing 
+model, its measured precision improves very fast $\delta
 P_{\rm b} \propto T^{5/2}$, where $T$ is the total observational time span.
 We can expect the precision of the above gravitation experiment from pulsar
 timing improve very quickly and hopefully will surpass the precision of LLR
