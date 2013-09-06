@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{24}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Brans \& Dicke(1961)}]{bd61}
@@ -16,6 +16,9 @@ Damour, T., Gibbons, G.~W., \& Taylor, J.~H. 1988, Phys. Rev. Lett., 61, 1151
 
 \bibitem[{Damour \& Taylor(1991)}]{dt91}
 Damour, T., \& Taylor, J.~H. 1991, ApJ, 366, 501
+
+\bibitem[{Demorest(2007)}]{dem07}
+Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
 
 \bibitem[{{Demorest} {et~al.}(2013){Demorest}, {Ferdman}, {Gonzalez}, {Nice},
   {Ransom}, {Stairs}, {Arzoumanian}, {Brazier}, {Burke-Spolaor}, {Chamberlin},
@@ -74,6 +77,16 @@ Shklovskii, I.~S. 1970, Sov. Astron., 13, 562
   Backer}]{sns+05}
 Splaver, E.~M., Nice, D.~J., Stairs, I.~H., Lommen, A.~N., \& Backer, D.~C.
   2005, ApJ, 620, 405
+
+\bibitem[{Stairs {et~al.}(2000)Stairs, Splaver, Thorsett, Nice, \&
+  Taylor}]{sst+00}
+Stairs, I.~H., Splaver, E.~M., Thorsett, S.~E., Nice, D.~J., \& Taylor, J.~H.
+  2000, MNRAS, 314, 459, (astro-ph/9912272)
+
+\bibitem[{Stinebring {et~al.}(1992)Stinebring, Kaspi, Nice, Ryba, Taylor,
+  Thorsett, \& Hankins}]{skn+92}
+Stinebring, D.~R., Kaspi, V.~M., Nice, D.~J., Ryba, M.~F., Taylor, J.~H.,
+  Thorsett, S.~E., \& Hankins, T.~H. 1992, Rev. Sci. Instrum., 63, 3551
 
 \bibitem[{{Will}(2001)}]{Will01}
 {Will}, C. 2001, Living Reviews in Relativity, 4, 4
