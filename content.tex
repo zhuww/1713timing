@@ -3,13 +3,13 @@
 Pulsars are excellent testing grounds for fundamental physics. As precise
 cosmic clocks, they have been used in many experiments, especially in testing
 gravitational theories. We report 20-year timing of one of the most precise
-pulsar---J1713+0747. We improve the measurements on the pulsar's parameters.
-Most interestingly, we detected its orbital decay due to Galactic
-differential acceleration, and use this measurement to greatly improve the generic
-upper limit on the change rate of gravitational constant from pulsars. The new
-limit shows that the change of gravitational constant has to be at least a
-factor of 50 slower than the average expansion rate of the Universe. Such a
-limit has important implications to alternative theories of gravity.
+pulsar---J1713+0747. The timing of this pulsar is well modeled by a binary
+model, the spacial orientation of which is completely solved. We found
+variance in the timing residuals is $\sim 250$~ns, which is consistent with
+being white noise. No evidence of significant red noise was found in the
+timing residuals. We also measured its orbital decay due to Galactic
+differential acceleration, and used this result to test Einstein's theory of
+gravitation and constrain the scalar-tensor theory. 
 \end{abstract}
 
 
@@ -44,8 +44,7 @@ also change over time, thus lead to a changing gravitational constant. Despite
 being cosmological time-scale phenomenon, it could still lead to observable 
 changes in the orbits of binary systems like Luna Earth binary or pulsar
 binaries in the matter of decades. The Luna Laser Ranging (LLR) experiment measured the
-Luna-Earth distance to $10^{-11}$ precision for a 40 years time span, and thus put a
-very good upper limit on the change rate of gravitational constant
+Luna-Earth distance to $10^{-11}$ precision for a 40 years time span, and thus put a very good upper limit on the change rate of gravitational constant
 \citep{hmb10}. Recently, thanks to the high-precision pulsar time array
 projects, measurements of pulsar binary orbits have also been improved
 greatly, reaching similar precision as the LLR experiment and start to provide
@@ -184,9 +183,9 @@ observation time span.
 \citet{mtem97} adopted and generalized the Allen Variance (traditionally used in measuring clock stability) to measure the timing instability of pulsars:
 \begin{equation}
 \label{eq:sigmaz}
-\sigma_z(\tau) = \frac{\tau^2}{2\sqrt{5}}<c^2>^{1/2},
+\sigma_z(\tau) = \frac{\tau^2}{2\sqrt{5}}\langle c^2 \rangle^{1/2},
 \end{equation}
-where $<c^2>$ denote the sum of squares of the cubic terms fitted segments of
+where $\langle c^2\rangle$ denote the sum of squares of the cubic terms fitted segments of
 the data span (of length $\tau$).
 This is a more general characterization of timing noise since $\Delta_8$ is
 basically the logarithm of another dimensionless form of $\sigma_z$ for
@@ -454,10 +453,11 @@ c})(2\pi/P_{\rm b})^2},
 \end{equation}
 where $g_{\bot}$ is the projection of Galactic acceleration on the orbital plane 
 and $\Delta$ is the dimensionless factor that characterizes the significance 
-of SEP violation.
+of SEP violation. An recent model of the Galactic acceleration can be found in
+\citealt{hf04a}.
 
 The Lorentz invariance is another principle that is satisfied in Einstein's
-theory of gravitation and maybe violated in other theories. This principle
+general relativity and maybe violated in other theories. This principle
 states that there is no preferred inertial reference frame. The violation of
 Lorentz invariance would lead to polarization of binary orbits along the
 direction of the preferred frame.
@@ -468,19 +468,24 @@ One can estimate such effect in the Post-Newtonian Parameterization
 |\textbf{\textit{e}}_F| = \hat{\alpha}_3 \frac{c_p|\textbf{\textit{w}}|P_{\rm b}^3}{24\pi P}
 \frac{c^2}{G (M_{PSR}+M_{\rm c})}\sin \beta,
 \end{equation}
-where $\textbf{\textit{w}}$ is the absolute velocity of the binary system relate to
-micro-wave background, $P$ is the pulsar's spin period, $\beta$ is the
+where $\textbf{\textit{w}}$ is the absolute velocity of the binary system
+relate to the cosmic micro-wave background (CMB), $P$ is the pulsar's spin period, $\beta$ is the
 angle between $\textbf{\textit{w}}$ and the spin axis of the pulsar, and
 $\hat{\alpha}_3$ is one of the Post-Newtonian parameter that characterize the
 violation of Lorentz invariance. 
+Here $\textbf{\textit{w}} = \textbf{\textit{w}}_{\odot} + \textbf{\textit{v}}_{\rm PSR}$, where
+$\textbf{\textit{w}}_{\odot}=384\pm139$km~s$^{-1}$ is the velocity of solar system relate to the CMB (\citealt{aaa+13}),
+and $\textbf{\textit{v}}_{\rm PSR}$ is the relative speed of the pulsar to our solar system. $\textbf{\textit{v}}_{\rm PSR}$ is only partially known because we can measure the pulsar's
+proper motion on the sky but we cannot measure its radial velocity.
 
-Fortunately, most variables in these equations are measurable in the
+Fortunately, many other variables in these equations are measurable in the
 case of the J1713+0747 binary. This makes it possible to constrain $\Delta$
 and $\hat{\alpha}_3$ using Bayesian techniques assuming certain fiducial
-priors for the unmeasurable variables as previously done in \citealt{sns+05,
-sfl+05, gsf+11}. Using better constraint parameters from our 20 year data, we found new
+priors for the unmeasurable variables like the radial component of
+$v_{\rm PSR}$ \citep{sns+05, sfl+05, gsf+11}. Based on the 20 year 
+data, we found new
 limits on the violations of SEP and Lorentz invariance $\Delta < 0.03$ and
-$\hat{\alpha}_3<3\times10^{19}$ based on this pulsar binary.
+$\hat{\alpha}_3<2.6\times10^{20}$ based on this pulsar binary.
 
 %\section{Testing fundamental physics principles}
 %\subsection{Conservation of momentum}

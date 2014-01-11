@@ -1,5 +1,37 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{47}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
+  {Ashdown}, {Atrio-Barandela}, {Aumont}, {Banday}, {Barreiro}, {Bartlett},
+  {Benabed}, {Benoit-L{\'e}vy}, {Bernard}, {Bersanelli}, {Bielewicz}, {Bobin},
+  {Bock}, {Bond}, {Borrill}, {Bouchet}, {Bridges}, {Burigana}, {Butler},
+  {Cardoso}, {Catalano}, {Challinor}, {Chamballu}, {Chiang}, {Chiang},
+  {Christensen}, {Clements}, {Colombo}, {Couchot}, {Crill}, {Cuttaia},
+  {Danese}, {Davies}, {Davis}, {de Bernardis}, {de Rosa}, {de Zotti},
+  {Delabrouille}, {Diego}, {Donzelli}, {Dor{\'e}}, {Dupac}, {Efstathiou},
+  {En{\ss}lin}, {Eriksen}, {Finelli}, {Forni}, {Frailis}, {Franceschi},
+  {Galeotta}, {Ganga}, {Giard}, {Giardino}, {Gonz{\'a}lez-Nuevo}, {G{\'o}rski},
+  {Gratton}, {Gregorio}, {Gruppuso}, {Hansen}, {Hanson}, {Harrison}, {Helou},
+  {Hildebrandt}, {Hivon}, {Hobson}, {Holmes}, {Hovest}, {Huffenberger},
+  {Jones}, {Juvela}, {Keih{\"a}nen}, {Keskitalo}, {Kisner}, {Knoche}, {Knox},
+  {Kunz}, {Kurki-Suonio}, {L{\"a}hteenm{\"a}ki}, {Lamarre}, {Lasenby},
+  {Lawrence}, {Leonardi}, {Lewis}, {Liguori}, {Lilje}, {Linden-V{\o}rnle},
+  {L{\'o}pez-Caniego}, {Lubin}, {Mac{\'{\i}}as-P{\'e}rez}, {Maris}, {Marshall},
+  {Martin}, {Mart{\'{\i}}nez-Gonz{\'a}lez}, {Masi}, {Matarrese}, {Mazzotta},
+  {Meinhold}, {Melchiorri}, {Mendes}, {Migliaccio}, {Mitra}, {Moneti},
+  {Montier}, {Morgante}, {Mortlock}, {Moss}, {Munshi}, {Naselsky}, {Nati},
+  {Natoli}, {N{\o}rgaard-Nielsen}, {Noviello}, {Novikov}, {Novikov}, {Osborne},
+  {Oxborrow}, {Pagano}, {Pajot}, {Paoletti}, {Pasian}, {Patanchon},
+  {Perdereau}, {Perrotta}, {Piacentini}, {Pierpaoli}, {Pietrobon},
+  {Plaszczynski}, {Pointecouteau}, {Polenta}, {Ponthieu}, {Popa}, {Pratt},
+  {Pr{\'e}zeau}, {Puget}, {Rachen}, {Reach}, {Reinecke}, {Ricciardi}, {Riller},
+  {Ristorcelli}, {Rocha}, {Rosset}, {Rubi{\~n}o-Mart{\'{\i}}n}, {Rusholme},
+  {Santos}, {Savini}, {Scott}, {Seiffert}, {Shellard}, {Spencer}, {Sunyaev},
+  {Sureau}, {Suur-Uski}, {Sygnet}, {Tauber}, {Tavagnacco}, {Terenzi},
+  {Toffolatti}, {Tomasi}, {Tristram}, {Tucci}, {T{\"u}rler}, {Valenziano},
+  {Valiviita}, {Van Tent}, {Vielva}, {Villa}, {Vittorio}, {Wade}, {Wandelt},
+  {White}, {Yvon}, {Zacchei}, {Zibin}, \& {Zonca}}]{aaa+13}
+{Aghanim}, N., {et~al.} 2013, ArXiv:1303.5087
 
 \bibitem[{{Antoniadis} {et~al.}(2013){Antoniadis}, {Freire}, {Wex}, {Tauris},
   {Lynch}, {van Kerkwijk}, {Kramer}, {Bassa}, {Dhillon}, {Driebe}, {Hessels},
