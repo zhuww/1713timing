@@ -39,7 +39,15 @@ details). We also modeled the variation in the interstellar medium (ISM)
 
 Millisecond pulsars (MSPs) are very stable rotators thanks to their enormous angular momentum. J1713+0747 is one of
 the most stable MSPs, and it resides in a wide binary orbit
-with a $\sim0.3~M_{\odot}$ white dwarf companion (Table \ref{tab:par}). This make it the
+with a $\sim0.3~M_{\odot}$ white dwarf companion (Table \ref{tab:par}). 
+The orbit of the binary is almost edge on and therefore the masses of the system can be inferred through the measurement of Shapiro delay. 
+Also this system is close enough that we could clearly detect its distance and proper motion through parallax measurement.
+Furthermore, the timing of this pulsar is precise enough to detect the change in the length of the projected orbital semi-major axis, through which we can infer the orientation of the orbit in the sky.
+This is one of the few systems, in which the 3D-orientation of the binary orbit can be completely solved. Using the 20 years data, we were able to refine and improve the measurements on these orbital parameters.
+These measurements also enable better tests for the theories of gravitations (see Section \ref{sec:res} for details).
+
+
+The stability and long-orbit of the PSR J1713+0747 binary makes it a
 perfect laboratory for observing the smallest cosmic variance, one such as the
 change of gravitational constant as predicted in the Jordan-Fierz-Brans-Dicke
 theory of gravity, ie.e the scalar tensor theory \citep{jor59,fie56,bd61}. 
@@ -72,14 +80,19 @@ Because small violation of these principles will polarize the orbit of such syst
 
 \section{Observations}
 Timing observation of PSR J1713+0747 started from 1993 at the Arecibo
-Observatory. Long-term timing programs started observing the pulsar in late 1998, with the direct detection of GW as a partial motivation. \citet{sns+05} reported the first 12 years timing result. In 2007, NANOGrav started monitoring  J1713+0747 regularly as part
-of  its pulsar timing array project. Since then the pulsar is observed monthly
+Observatory. Long-term timing programs started observing the pulsar in late 1998, with the direct detection of GW as a partial motivation. \citet{sns+05} reported the first 12 years timing result. Since 2005 the pulsar is observed monthly
 in L band and S band by the Arecibo
 observatory and in 800MHz and L band by the Robert C. Byrd Green Bank
 Telescope (GBT; proposal code:GBT12B-320).
 
-We combine the pulse time of arrivals (TOA) used in \citealt{sns+05} and that
-of the later NANOGrav observations. These timing observations were conducted 
+We combine the pulse time of arrivals (TOAs) used in \citealt{sns+05} and that
+of the later NANOGrav observations. 
+The TOAs are measured through a series of steps from the observational data. First the data are folded, as they were being taken, into pulse profiles using an ephemeris known to be good enough for predicting the pulse periodicity for the duration of the observation. The folded profiles from different frequency channels and sub-integrations are often summed together to improve the S/N of the profiles.
+The summed profiles were then compared with a well-measured standard pulse profile using the cross-correlation techniques to determine the phase difference between the pulse peak and the mid point of the observation time. The final TOA of a summed profile is then calculated by adding the mid observation time and the product of pulse period and the measured phase difference.
+The flux of the pulsar in these observations can also be measured by comparing the signal strength in the data with that of a calibration observation taken right before or after the pulsar observation in which a signal with known strength was injected. The flux of the calibration signal is calibrated every month by comparing it with a source of known and constant flux.
+
+
+The timing observations were conducted 
 using multiple generations of pulsar data acquiring systems. The early year
 observations in \citet{sns+05} used
  the Princeton Mark III \citep{skn+92}, Mark IV
@@ -93,16 +106,17 @@ observations in 2010 and the Puertorican Ultimate Pulsar Processing Instrument
 The date range, number of observation epochs and TOA, specification of the
 system are listed in Table \ref{tab:obs}.
 Our observations span a total of 20 years with a noticeable gap between 1994
-and 1998 in which no GBT or Arecibo observation of this pulsar were taken. 
+and 1998 in which no Arecibo observation of this pulsar were taken. 
 
 
 \section{Timing model}
 \label{sec:model}
 A comprehensive timing model was described by \citet{sns+05}, this model includes the effect of pulsar rotation, astrometry, orbital motion, Shapiro delay and dispersion effect due to ISM.
 We employed the same \citet{dd86} (DD) model they used to fit for the pulsar and
-its orbital motions, we also used the DMX model to fit DM changes (see Section
-\ref{sec:dmx} for detail), and we used an improved model to deal with profile
+its orbital motions. We used the DMX model to fit DM changes (see Section
+\ref{sec:dmx} for detail), and the FD model to deal with profile
 evolution in frequency (see Section \ref{sec:FD} for detail). 
+The fitting of the timing model are conducted using the \textit{TEMPO} tool\footnote{\url{http://tempo.sourceforge.net}}, and the uncertainties of the parameters are evaluated using a Markov Chain Monte Carlo (MCMC) simulation.
 We used the DE421(reference?) solar ephemeris instead of the DE405 used by
 \citet{sns+05} for its improved precision on the masses of the Solar system planets. The T2 model \citep{??} in \textit{TEMPO2} \citep{hem06} also can be used for this pulsar. We also tested with this binary model and found that the best-fit binary parameters from T2 model is physically consistent with those we found using DD model.
 In the pulsar model, we added an extra fitting parameter, the change rate of binary period $\dot{P}_{\rm b}$ to model a previously undetectable change in $P_{\rm b}$. This is described in Section \ref{sec:obdecay}.    
@@ -134,10 +148,10 @@ binary systems \citep{vbb+01, ktr94}.
 J1713+0747's orbital period and companion mass also fits this theoretical
 prediction very well, therefore, it is likely recycled by its current
 companion and went through an extended period of mass transfer.
-Notably, not all MSP companions follow the same orbital period -- companion
-mass relation, for instance, J1903+0327 has an orbit of 95~days but a
-companion of $\sim 1M_{\odot}$ \citep{fbw+11}. Such peculiar systems requires
-more than the simple scenario considered above to explain.
+%Notably, not all MSP companions follow the same orbital period -- companion
+%mass relation, for instance, J1903+0327 has an orbit of 95~days but a
+%companion of $\sim 1M_{\odot}$ \citep{fbw+11}. Such peculiar systems requires
+%more than the simple scenario considered above to explain.
 
 Some early statistical analysis shows that pulsars 
 might have a very narrow mass distribution 1.35$\pm0.04M_{\odot}$ \citep{tc99}. 
@@ -147,6 +161,39 @@ years (J1614$-$2230 1.97$\pm0.04M_{\odot}$\citealt{dpr+10}; J1913+0327
 \citealt{afw+13}) that clearly out-lie this distribution.
 J1713+0747 appears to be nominal when compared with the early year samples
 despite of its recycling history.
+
+
+\subsection{DM variation}
+\label{sec:dmx}
+The DM of a pulsar characterizes how much ISM lies
+between the pulsar and us, and it changes as the ISM varies. For most pulsar
+this change is too small to be detectable. However, for pulsars with residual
+$\lesssim2\mu$s, the contribution from varying ISM start to contribute
+significantly to the timing residuals. 
+
+We fit DM variation in time using the {\it DMX} model in {\it tempo}.
+The model groups observations taken within ten days and fit for one
+best DM for each group.   
+It was applied to TOA from Mark4, ABPP, ASP, GASP, GUPPI, and PUPPI data, but
+not for Mark3. Since Mark3 had only one frequency band (L-band), a precise DM
+fitting was not possible from its data.
+J1713+0747 was observed in L- and S-band by the Arecibo Observatory. The
+two bands observations almost always happen one after another on the same day.
+While GBT observes J1713+0747 in 800~MHz and L band but the two band
+observations often are separated by less than ten days.
+Therefore, most DM values in the {\it DMX} model was determined by TOA from at
+least two bands. Figure \ref{fig:dmx} shows the DM variation of J1713+0747 
+measured using the {\it DMX} model.
+Note that the sudden drop of DM around MJD-53000 was not real, it was caused
+artificially by using a different pulse profile template for earlier-year Mark3/Mark4/ABPP TOA 
+from the one used for the later
+ASP/GASP/GUPPI/PUPPI TOA. The DM values inferred from these two different profile
+templates are expected to be offset by a constant.
+The pulsar shows a fractional DM changes of $\sim10^{-4}$ with variation of
+long and short timescales and a significant dip around 2009 (as also seen from
+\citealt{dfg+13}).
+
+
 
 \subsection{Timing noise}
 \label{sec:noise}
@@ -211,36 +258,6 @@ based on 5 year NANOGrav data.
 
 The lack of short- and long-timescale red noise in the data suggests the deviation from simple spin down is very small in this pulsar and its timing residual are dominated by white noises such as the radiometer noise.
 
-
-\subsection{DM variation}
-\label{sec:dmx}
-The DM of a pulsar characterizes how much ISM lies
-between the pulsar and us, and it changes as the ISM varies. For most pulsar
-this change is too small to be detectable. However, for pulsars with residual
-$\lesssim2\mu$s, the contribution from varying ISM start to contribute
-significantly to the timing residuals. 
-
-We fit DM variation in time using the {\it DMX} model in {\it tempo}.
-The model groups observations taken within ten days and fit for one
-best DM for each group.   
-It was applied to TOA from Mark4, ABPP, ASP, GAPS, GUPPI, and PUPPI data, but
-not for Mark3. Since Mark3 had only one frequency band (L-band), a precise DM
-fitting was not possible from its data.
-J1713+0747 was observed in L- and S-band by the Arecibo Observatory. The
-two bands observations almost always happen one after another on the same day.
-While GBT observes J1713+0747 in 800~MHz and L band but the two band
-observations often are separated by less than ten days.
-Therefore, most DM values in the {\it DMX} model was determined by TOA from at
-least two bands. Figure \ref{fig:dmx} shows the DM variation of J1713+0747 
-measured using the {\it DMX} model.
-Note that the sudden drop of DM around MJD-53000 was not real, it was caused
-artificially by using a different pulse profile template for earlier-year Mark3/Mark4/ABPP TOA 
-from the one used for the later
-ASP/GASP/GUPPI/PUPPI TOA. The DM values inferred from these two different profile
-templates are expected to be offset by a constant.
-The pulsar shows a fractional DM changes of $\sim10^{-4}$ with variation of
-long and short timescales and a significant dip around 2009 (as also seen from
-\citealt{dfg+13}).
 
 
 
@@ -309,6 +326,7 @@ Ultimately, the timing solution and residuals presented in this paper could be u
 
 
 \section{Results}
+\label{sec:res}
 
 \subsection{Intrinsic orbital decay}
 \label{sec:obdecay}
@@ -424,7 +442,7 @@ $\dot{G}$ and the dipole gravitational radiation constant $\kappa_D$ can be
 done in the same fashion as in \citet{lwj+09}: solving $\dot{G}$ and $\kappa_D$
 from this equation $\dot{P}_{\rm b}^{\rm exc} = \dot{P}_{\rm b}^{\rm D} +
 \dot{P}_{\rm b}^{\dot{G}}$ (Equation 29 of \citealt{lwj+09}) of different
-pulsars using Monte Carlo Markov Chain (MCMC) simulation. We applied this method to three pulsars: PSR J1012+5307, PSR
+pulsars using MCMC simulation. We applied this method to three pulsars: PSR J1012+5307, PSR
 J1738+0333, and PSR J1713+0747 using timing parameter reported in
 \citet{lwj+09}, \citet{fwe+12}, and this work.
 The resulting confidence region of $\dot{G}$ and $\kappa_D$ is shown in Figure
