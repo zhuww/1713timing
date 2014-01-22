@@ -9,12 +9,12 @@ constrained. We found that the residuals of the timing modeling show variance
 of $\sim 250$~ns, which is consistent with
 being white noise. No evidence of significant red noise was found in the
 these residuals. We also measured the binary orbit's apparent decay due to 
-Galactic differential acceleration, and used this result to test Einstein's 
-theory of gravitation. This result
-greatly improve the generic upper limit on the change rate of gravitational
+Galactic differential acceleration, and used this result to test 
+theories of gravitation. 
+We present a new generic limit on the change rate of gravitational
 constant as predicted in some alternative theories. We found that the
-change rate of gravitational constant is consistent with being zero and at 
-least a factor of $\ll50$ smaller the expansion rate of the Universe. Such a
+changes of gravitational constant is consistent with being zero and is at 
+least a factor of $\ll50$ slower than the expansion rate of the Universe. Such a
 limit has important implications for the alternative theories of gravitation.
 \end{abstract}
 
@@ -161,42 +161,54 @@ The observed  orbital period and companion mass of J1713+0747 also fits this the
 
 \subsection{DM variation}
 \label{sec:dmx}
-The DM of a pulsar characterizes how much ISM lies
-between the pulsar and us, and it changes as the ISM varies. For most pulsar
-this change is too small to be detectable. However, for pulsars with residual
-$\lesssim2\mu$s, the contribution from varying ISM start to contribute
-significantly to the timing residuals. 
+The DM of a pulsar reflect the amount of ISM between
+between the pulsar and earth, and it changes as the ISM varies. For most pulsar
+this change is too small to be detectable. However, for the
+high-time-precision pulsars monitored by NANOGrav, this contribution cannot be 
+neglected.
 
 We fit DM variation in time using the {\it DMX} model in {\it tempo}.
 The model groups observations taken within ten days and fit for one
-best DM for each group.   
-It was applied to TOA from Mark4, ABPP, ASP, GASP, GUPPI, and PUPPI data, but
-not for Mark3. Since Mark3 had only one frequency band (L-band), a precise DM
-fitting was not possible from its data.
-J1713+0747 was observed in L- and S-band by the Arecibo Observatory. The
-two bands observations almost always happen one after another on the same day.
-While GBT observes J1713+0747 in 800~MHz and L band but the two band
-observations often are separated by less than ten days.
-Therefore, most DM values in the {\it DMX} model was determined by TOA from at
-least two bands. Figure \ref{fig:dmx} shows the DM variation of J1713+0747 
-measured using the {\it DMX} model.
+best DM value for each group.   
+This DM fitting was conducted with TOA from all instruments except MarkIII,
+because MarkIII had only one frequency band (L-band) and no frequency
+resolution. It is not possible to precisely measure DM from MarkII TOAs.
+
+The ten days grouping is justified based on the cadence of our multi-band
+observations.
+The Arecibo L- and S-band observations of J1713+0747 almost always happen on
+the same day consecutively.
+While the GBT 800~MHz and L band observations often take place on different
+days spaced by only few days.
+Therefore, most DM values in the {\it DMX} model were determined by TOAs from
+similar epochs and from at
+least two frequency bands. 
+
+Figure \ref{fig:dmx} shows the DM variation of
+J1713+0747 as measured by {\it DMX} model.
 Note that the sudden drop of DM around MJD-53000 was not real, it was due to
-the fact different standard pulse profile templates were used in calculating the MarkIII, MarkIV, and ABPP TOAs and in calculating the later 
-ASP, GASP, GUPPI, and PUPPI TOAs. The DM values inferred from these two different profile templates are expected to be offset by a constant.
-Conversely, the sudden drop of DM around MJD 54800 was real as it is also seen from other observations \citep{kcs+13}.
+the use of different standard pulse profile templates in the calculation of
+TOAs from the early instruments (MarkIV, ABPP) and the later instruments
+(ASP, GASP, GUPPI, and PUPPI). The DM values inferred from these two different
+profile templates are expected to have a constant offset.
+Conversely, the sudden drop of DM around MJD 54800 was real and was probably
+due to changes in the ISM. This DM drop is also seen from observations of
+J1713+0747 using the Parkes observatory \citep{kcs+13}.
 There are clear red-noise like variance in the pulsar's DM with a RMS of
-$\sim10^{-4}$. This DM variation may lead to red-noise timing residuals as discussed in \citealt{kcs+13}.
+$\sim10^{-4}$. 
+This DM variation may lead to red-noise timing residuals as discussed in \citealt{kcs+13}.
 
 It is worth noting that the first part of this DM curve (MJD$<53000$in
 Figure \ref{fig:dmx}) have much larger error bars than the second half.
-This is because they are obtained from the 
-MarkIV and ABPP. MarkIV data have smaller frequency bandwidth 
-compared to the later ASP, GASP, GUPPI, and PUPPI data (Table \ref{tab:obs}).
+This is because they are obtained using TOAs extracted from
+MarkIV and ABPP data. MarkIV data have smaller frequency bandwidth 
+compared to the later data (Table \ref{tab:obs}).
 Both MarkIV and ABPP data were frequency crunched to form one TOA per band per
 observation epoch, thus losing all frequency resolution. This makes it hard to
 resolve the profile-frequency evolution that we see from the later data. We
-also assumed the mid-frequency of the frequency band was the frequency of the
-TOA, which does not properly account for pulse profile evolution in frequency, and therefore, are likely to be slightly offset. We think this may be why the FD and
+also assumed the mid-frequency of the frequency band being the center frequency 
+of the TOAs, which does not properly account for pulse profile evolution in
+frequency, and therefore, are likely to produce TOAs that are slightly offset. We think this may be why the FD and
 DMX model cannot completely model the red-noise signal in these TOAs, leaving
 an apparent hump in the first part of the DM curve (Figure \ref{fig:dmx}) and 
 a similar shape in the S-band timing residuals from MarkIV and ABPP (Figure
@@ -205,18 +217,24 @@ a similar shape in the S-band timing residuals from MarkIV and ABPP (Figure
 
 \subsection{Timing noise}
 \label{sec:noise}
-The residuals of pulsar timing fit could contain useful information,
-such as the signal of gravitational waves (GW). However, the current residuals of PSR J1713+0747 is likely dominated by radiometer noises, DM variations and other
-sources of noises. This section discuss J1713+0747's timing noise, i.e. pulse arrival time variations due to spin irregularities.
+The pulsar timing residuals (Figure \ref{fig:res}) could contain important
+information, like the signal of gravitational waves (GW). However, the current
+residuals of PSR J1713+0747 is likely dominated by radiometer noises, DM
+variations and other sources of noises. This section discuss J1713+0747's
+timing noises, i.e. pulse arrival time variations due to spin irregularities.
 
 
-The term ``timing noise'' in pulsar timing generally refers to pulsar's spin irregularity.
-The pulsar's spin could occasionally deviate from a simple linear monotonic slow down, possibly due to unresolved
+The term ``timing noises'' in pulsar timing generally refers to pulsar's spin
+irregularity, i.e. its occasional deviation from a simple linear slow down. 
+Potential causes of irregular spin behavior include unresolved
 micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar
 \citep{hlk10, ymh+13, ml14}.
-Unlike the Gaussian-like noises arise in the TOA measurements, the timing noise
-is accumulative over time. Therefore, it often manifests as ``red'' 
-noise. Timing noise is often significant in younger pulsars, and often give rise to significant high-order frequency polynomials such as $\ddot{\nu}$, where $\nu$ is the spin frequency in the timing model.
+Unlike the Gaussian-like noises arise in the measurements of the TOAs, the
+timing noises
+are accumulative over time. Therefore, they often manifests show a ``red'' 
+spectrum. Timing noises are often significant in younger pulsars, and often
+give rise to significant high-order frequency polynomials such as
+$\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency.
 
 The timing noise of radio pulsars has been studied by \citet{antt94},
 \citet{dmhd95}, \citet{mtem97} and later by \citet{hlk10} with large sample. 
@@ -224,14 +242,15 @@ Because every pulsar has its own unique timing behavior, it is
 hard to quantify the level of their timing noises.
 \citet{antt94} characterized the significance of timing noise using the second
 spin derivative $\ddot{\nu}$, because in the scale of a few years many
-pulsars show cubical shaped timing residuals. They define the noise factor 
+pulsars show cubical shaped residuals. They define the noise factor 
 \begin{equation}
 \label{eq:delta8}
 \Delta_8 = \log_{10}\left(\frac{1}{5\nu}|\ddot{\nu}|t^3\right).
 \end{equation}
-Here $t=10^8$~s$\sim 3$~yr is a typical time scale close to their
-observation time span.
-\citet{mtem97} adopted and generalized the Allen Variance (traditionally used in measuring clock stability) to measure the timing instability of pulsars:
+Here $t=10^8$~s$\sim 3$~yr is a fiducial time scale close to the average observation time span in \citet{ant94}.
+
+\citet{mtem97} adopted a generalized Allen Variance (traditionally used in
+measuring clock stability) to characterize the timing instability of pulsars:
 \begin{equation}
 \label{eq:sigmaz}
 \sigma_z(\tau) = \frac{\tau^2}{2\sqrt{5}}\langle c^2 \rangle^{1/2},
@@ -243,75 +262,73 @@ basically the logarithm of another dimensionless form of $\sigma_z$ for
 $10^8$~s time scale.
 
 In the case of J1713+0747, the
-best-fit $\ddot{\nu}$ (table \ref{tab:par}) is not statistically significant when we
-fit for it. Therefore, there is no evidence of significant timing noise in the
-timescale of the 20 years.observation time span. The only red-noise like
+best-fit $\ddot{\nu}$ (table \ref{tab:par}) is not statistically significant. 
+Therefore, there is no evidence of significant timing noise in the
+timescale of the 20 years. The only red-noise like
 signal is the small hump in the early-year S-band MarkIV and ABPP timing residuals (Figure
 \ref{fig:res}), and we think it is likely caused by DM variations not resolved in
-these data.  Despite of these, figure \ref{fig:TN} 
-shows PSR J1713+0747's $\sigma_z$ values of various timescales, and compares them
-with the values from simulated residuals containing white noises or
+these data. Figure \ref{fig:TN} 
+shows PSR J1713+0747's $\sigma_z$ values for various timescales, and compares them
+with the values from simulated residuals of white noises and
 red noises. The $\sigma_z$ values of the real residuals seem to be consistent 
-with the white noises simulations, not the red noise of timescale 
-$\lesssim$1 year. This
-conclusion is also consistent with the conclusion from \citet{pjl+13}, which 
-studied the timing noises in this pulsar using auto-correlation techniques 
-based on 5 year NANOGrav data.
+with the white noises simulations, not with the specific simulated red noise,
+suggesting a lack of red noises with smaller than 1 year of typical timescale. 
+This result is consistent with that of \citet{pjl+13}. They
+studied the timing noises in this pulsar using an auto-correlation technique
+based on 5 year NANOGrav data, and conclude that the timing residual is
+consistent with mostly white noise.
 
-The lack of short- and long-timescale red noise in the data suggests the deviation from simple spin down is very small in this pulsar and its timing residual are dominated by white noises such as the radiometer noise.
-
-
+The lack of short- and long-timescale red noise in the data suggests the
+deviation from simple spin down is very small in this pulsar and its timing
+residual are dominated by Gaussian-like noises such as the radiometer noise.
 
 
 \subsection{Pulse profile evolution in frequency}
 \label{sec:FD}
-After removing the dispersion effect which corrects delays $\propto \nu^{-2}$
-in the TOAs, small remaining frequency-dependent residuals were observed from
-different instruments and telescopes (Figure \ref{fig:FD}).  
-This phenomenon seems to be caused by the change of pulsar's pulse profile in
-frequency, although the cause of such profile evolution is still unknown.
-We speculate that different frequency pulsar radiation may be originated from
-different parts of the star's magnetosphere, and that may have led to a
-changing pulse profile over frequency.
-In \citet{sns+05}, a jump was fitted between every two frequency channels in
-order to remove such effect, however, with the a factor of $\sim$10 increase
-of frequency channels from GUPPI, it would require many more jump parameters
-to be added to the timing model.
-In light by the observation that the frequency-dependent-residual seems to
-trace a smooth function, we used a rank-4 polynomial of the logarithm of
-frequency to fit and removed this effect from the final residual ({\it FD}
-model by P. Demorest et~al in prep.; see Figure \ref{fig:FD}). 
+After removing the dispersion effect that causes TOA delays of $\propto \nu^{-2}$,
+ we still see small remaining frequency-dependent residuals from wide-band
+observations using
+different instruments and different telescopes (Figure \ref{fig:FD}).  
+The cause of such profile evolution is still unknown.
+We speculate that it is caused by the change of the pulsar's radiation pattern in frequency. As pulsar radiation of different frequencies may originate from
+different parts of the star's magnetosphere. 
+The radiation region or the pulsars's magnetosphere may be slightly distorted,
+lead to a radiation pattern changing with frequency. This phenomenon is extensively discussed in Pennucci et al. 2014 in prep.
+
+To account for this profile evolution, \citet{sns+05} fitted jumps between every two frequency channels. However, the number of frequency channels has increased by a factor of ten, making it a lot harder to mitigate profile-frequency evolution using jumps. 
+Instead, we used a polynomial of the logarithm of
+frequency ({\it FD} model by P. Demorest et~al in prep.; see Figure \ref{fig:FD}) to fit for and removed the profile-frequency evolution. This model can successfully remove the extra frequency-dependent residuals and it only uses four parameters.
 
 
 
 \subsection{Timing residuals}
 \label{sec:res}
 
-After removing aforementioned effects, we got an overall timing residuals of RMS $\lesssim 2\mu$s from J1713+0747 (Figure \ref{fig:res}).
-These residuals appear to be smooth and flat, except a small red-noise like
-peak in the residuals of the upper band (Figure \ref{fig:res}, bottom panel) around 2002. 
+The final timing residuals of PSR J1713+0747 has a weighted RMS of $\sim 0.3\mu$s. The daily-averaged residuals has a weighted RMS of $\sim 0.06\mu$s (Figure \ref{fig:res}).
+%These residuals appear to be smooth and flat, except a small red-noise like
+%peak in the residuals of the upper band (Figure \ref{fig:res}, bottom panel) around 2002. 
 %This is likely caused by timing noise left not fitted by the cubic and quadruple polynomial fit.
-
-The DM fitting process have a tendency to
-`absorb' part of the noises, especially in the lower band TOA. This is because
-that the DM values affects the lower frequency TOA significantly more than the
-higher frequency TOA. 
-As a result we expect the weighted Root Mean Squares (WRMS) measured from the
+However, the DM fitting process have a tendency to ``overfit'' or 
+``absorb'' part of the signals or noises in the residual, making the residuals look more flat than they actually are. 
+This is especially significant for the lower band residuals, because
+the DM values affects the lower frequency TOAs significantly more than the
+higher frequency TOAs. 
+As a result we expect the weighted WRMS measured from the
 averaged residuals be under-estimated. We can crudely quantify
-this effect by injecting random Gaussian noise into the TOA and
-measure the increase in post-fit WRMS. Figure \ref{fig:overfit} show
-the post-fit residual as a function of injected noise for PUPPI L-band TOA. 
+this effect by injecting random Gaussian noise into the timing TOAs and
+measure the responds of the post-fit residuals. Figure \ref{fig:overfit} show
+the weighted RMS of the post-fit residuals as a function of injected noise level for the PUPPI L-band TOAs. 
 One can see that the increase is well fit by a linear function. 
 Based on this experiment, we
-can estimate the fraction of timing noise absorbed by DMX fitting, and use
-this fraction to infer the original `amplitude' of the timing noises. 
-Table \ref{tab:wrms} shows the WRMS measured directly from the residuals and 
-the inferred/recovered RMS based on noise injection simulations. One caveat 
-of this approach is that the simulated noise are white, while the actually timing
-noise are likely red noises. 
+can estimate the fraction of actual residuals absorbed by the timing models, and use this fraction to infer the ``corrected amplitude'' of the timing residuals. 
+Table \ref{tab:wrms} shows the weighted RMS measured directly from the residuals 
+and the inferred/corrected RMS based on noise injection simulations. One caveat 
+of this approach is that the injected noise are white, while the actual timing
+residuals may compose of red noises. 
 
 
-The great advance in instrumentation should bring down the level timing residuals,
+The great advances in instrumentation has significantly brought down the 
+level timing residuals, making our timing model more and more accurate.
 The latest system GUPPI and PUPPI have a much wider bandwidth (800~MHz), more than
 a factor of 10 wider than their predecessor GASP and ASP (64~MHz). According to Radiometer 
 equation, this bandwidth increase should lead to a factor of $\sim3$
@@ -321,10 +338,9 @@ Indeed, the best residual ($\sim100$~ns) come from PUPPI L-band observations and
 J1713+0747, and found that this pulsar's single pulse showed random jitter of
 $\simeq40~\mu$s. Therefore, by averaging many pulses collected in the
 $\sim20$~min NANOGrav observation, one expect $\sim 40$~ns of jitter noise. 
-This could account for part of the observed PUPPI residuals.
-Some of the extra residual could come from other unknown source or gravitational wave signals.
-Ultimately, the timing solution and residuals presented in this paper could be used to put a stringent single-source upper limit on the stochastic gravitational wave background in the nano-Hertz region.
-
+This jitter noise could be a significant part of the observed residuals.
+A small fraction of the observed residuals could be from other unknown sources like gravitational wave signals.
+Ultimately, the timing solution and residuals presented in this paper would be very useful for future PTA projects.
 
 
 \section{Results}
@@ -335,8 +351,7 @@ Ultimately, the timing solution and residuals presented in this paper could be u
 Through timing modeling, we measured a significant orbital decay from
 J1713+0747, $\dot{P}_{\rm b} = 0.77(18)\times10^{-15}$s~s$^{-1}$. 
 %Such a precise measurement can be used to test Gravitational wave radiation theories of Einstein's and beyond.
-It is expected that the motion of the binary relate to the observer will introduce extra orbital decay due to kinetic effects, i.e. radial acceleration effect \citep{dt91} and centrifugal acceleration effect (`Shklovskii' effect; \citealt{shk70}). Luckily, we have good measurement on the distance and proper motion of the binary system, which allow us to remove these effects 
-and study the system's intrinsic orbital decay.
+It is expected that the motion of the binary relate to the observer will introduce extra orbital decay due to kinetic effects, i.e. radial acceleration effect \citep{dt91} and centrifugal acceleration effect (`Shklovskii' effect; \citealt{shk70}). Luckily, we have good measurement on the distance and proper motion of the binary system, which allow us to remove these effects and study the system's intrinsic orbital decay.
 \begin{equation}
 \dot{P}_{\rm b}^{\rm Acc} = \frac{A_{\rm G}}{c} P_{\rm b} =
 -1.2\pm0.1\times10^{-13}~{\rm s~s^{-1}}
