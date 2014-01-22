@@ -410,10 +410,10 @@ on $\dot{P}_{\rm b}^{Int}$.
 
 
 Finally, due to the $\sim$68 day orbit, the binary's gravitational 
-radiation is expected to be very small: 
+radiation is expected to be undetectable: 
 $\dot{P}_{\rm b}^{\rm GR} = -7\times10^{-18}$s~s$^{-1}$ \citep{lk05}.
 This is consistent with the observed intrinsic orbital decay. Therefore,
-the observed intrinsic orbital decay rate is well consistent with
+the observed zero intrinsic orbital decay rate is well consistent with
 Einstein's theory of gravitational radiation.
 
 
@@ -436,10 +436,11 @@ all three parameters of PSR J1713+0747 to very high precision, which enable us t
 get $\dot{P}_{\rm b}^{\rm exc}=(0.7\pm2)\times10^-13$s~s$^{-1}$ (Section
 \ref{sec:obdecay}). 
 This is the smallest fractional orbital decay rate observed in pulsar binaries
-thanks to PSR J1713+0747's exceptionally large $P_{\rm b}$, and can be used to put new limit on the alternative theories of Gravity.
+thanks to PSR J1713+0747's exceptionally large $P_{\rm b}$, and can be used to
+set new limit on the alternative theories of Gravity.
 
 Some alternative theories of gravitation predict a dipole gravitational
-radiation from compact binaries (\citealt{Will93, Will01, lwj+09, fwe+12} and reference therein). Such effect arise when the two bodies of binary are very different in terms of their self gravity, or in another word, their compactness.
+radiation from compact binaries (\citealt{Will93, Will01, lwj+09, fwe+12} and reference therein). Such effect arise when the two bodies are very different in terms of their self gravity, or in another word, their compactness.
 This extra dipole radiation could lead to an extra orbital decay term:
 \begin{equation}
 \dot{P}_{\rm b}^{\rm D} \simeq -4\pi\frac{T_{\odot}\mu}{P_{\rm b}}\kappa_D S^2,
@@ -449,9 +450,9 @@ This extra dipole radiation could lead to an extra orbital decay term:
 gravitational radiation "coupling constant", and $S$ is the difference
 between the self-gravity "sensitivity" of the two bodies ($S = s_p - s_c$;
 $s_p\sim0.1m_p/M_{\odot}$ according to \citealt{de92} ; and $s_c\ll s_p$).
-In Einstein's GR $\kappa_D=0$ --- there is no self-gravity induced
+In Einstein's general relativity $\kappa_D=0$ --- there is no self-gravity induced
 dipole gravitational radiation, but it is often not the case in alternative
-theories that violates the SEP.
+theories that violate the SEP.
 
 One particular class of alternative theories --- the Scalar-Tensor theory,
 predicts another form of excess orbital decal $\dot{P}_{\rm b}^{\dot{G}}$,
@@ -459,7 +460,7 @@ orbital decay due to a varying
 local gravitational constant. In the framework of the scalar-tensor theories,
 the scalar field that interacts with the mass has to change over time as the
 Universe expands. This change will cause the locally measured gravitational
-constant to vary. The changing gravitational constant will inevitably change
+constant to vary. The changing gravitational constant will also change
 the orbit of a binary system:
 \begin{equation}
 \dot{P}_{\rm b}^{\dot{G}} = -2 \frac{\dot{G}}{G}
@@ -481,26 +482,25 @@ J1738+0333, and PSR J1713+0747 using timing parameter reported in
 The resulting confidence region of $\dot{G}$ and $\kappa_D$ is shown in Figure
 \ref{fig:Gdot}.
 We got, at 95\% confidence limit, $\dot{G}/G = -2\pm8\times10^{-13}$~yr$^{-1}$;
-$\kappa_D=-0.3\pm2\time10^{-4}$. 
-This constrain on $\dot{G}$ is more than a fact of two more strident than previous pulsar-based constrain \citep{fwe+12}. 
-Although slightly worse than
+$\kappa_D=-0.3\pm2\times10^{-4}$. 
+This constrain on $\dot{G}$ is more than a fact of two more strident than
+previous pulsar-based constrain \citep{fwe+12}, although slightly worse than
 the best constrain of this type
 ($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the Luna Laser Ranging
 (LLR)
 experiment \citep{hmb10}, which measured Luna-Earth distance to $10^{-11}$
-precision using 40 years of observations,
-this new pulsar-timing  $\dot{G}$ limit is a strident and independent test.  
+precision using 40 years of observations.
+Our new pulsar-timing  $\dot{G}$ limit is a strident independent test.  
 
 \subsection{Strong equivalence principle and Lorentz invariance}
 \label{sec:sep}
 Einstein's general relativity is the only gravitation theory that satisfies
-the Strong equivalence principle, which states that the gravitational
+the SEP, which states that the gravitational
 effect on a small test body is independent of its constitution, specifically,
 this principle bodies of different self-gravitation should behave the same in
 the same gravitational experiments. This principle is violated in alternative
 theories of gravitations like the aforementioned Jordan-Brans-Dicke
-scalar-tensor theory. Composited of a neutron star and a
-white dwarf, the J1713+0747 pulsar binary is an excellent laboratory for testing 
+scalar-tensor theory. The PSR J1713+0747 binary is an excellent laboratory for testing 
 effects of SEP violation. If SEP is violated, the neutron star and the white
 dwarf will be accelerated differently by the Galactic gravity field, causing
 the binary orbit to be polarized toward the center of the Galaxy. The excess 
@@ -518,7 +518,7 @@ The Lorentz invariance is another principle that satisfied by Einstein's
 general relativity and maybe violated by alternative theories. This principle
 states that there is no preferred inertial reference frame. The violation of
 Lorentz invariance would lead to polarization of binary orbits along the
-direction of the preferred frame.
+direction of a preferred frame.
 One can estimate such effect in the Post-Newtonian Parameterization
 (PPN) framework, the excess eccentricity is expected to be (\citealt{bd97}):
 \begin{equation}
@@ -554,10 +554,16 @@ In this paper, we present a comprehensive modeling of high precision timing obse
 PSR J1713+0747 that span 20 years. 
 The pulse arrival times of this pulsar was well fit by our timing model with a
 residual consistent with Gaussian white noises.
-The lack of evidence of red noise in short- and long-timescale suggest that
+The lack of evidence of red noise in short- and long-timescale suggests that
 the pulsar is spinning down regularly with little deviation, supporting the
 idea that pulsars can be very stable clocks in long timescales.
-After correcting for ``over-fitting'', the ``rescaled'' weighted RMS of the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
+A caveat to this analysis is that the timing model, especially the
+\textit{DMX} model we used to model ISM variations, could ``absorb'' a fraction
+of the noises in the residuals. To what extend does this prevent us from
+seeing the red noises remains to a subject of more stringently studies in the
+future.
+
+After correcting for ``over-fitting'', the ``corrected'' weighted RMS of the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
 the amount of signal or noise remain in the timing residuals. The estimated
 weighted RMS of the 20 years timing residuals is $\sim 250$~ns. The weighted
 RMS of L-band residuals from our best instrument, the PUPPI system, is
@@ -592,10 +598,11 @@ Lorentz invariance principle. We set new upper limit on the SEP violation
 factor $\Delta <$ and $\hat{\alpha}_3< $, these results are better/comparable
 to the previous constrains from \citealt{wex00, sns+05, sfl+05, gsf+11}.
 Ultimately, the best test on SEP violation should come from the newly
-discovered pulsar triple system PSR J0337+1715 \citep{rsa+14}. In this case, the
+discovered pulsar triple system PSR J0337+1715 \citep{rsa+14}. In the case of
+PSR J0337+1715, the
 inner pulsar-white dwarf orbit is free falling in the gravity field of the
 white dwarf in the outer orbit, making them the best laboratory for testing
-the free fall of objects of different self-gravity.
+the free fall of compact objects.
 
 
 
