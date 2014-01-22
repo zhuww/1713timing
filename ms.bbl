@@ -1,4 +1,4 @@
-\begin{thebibliography}{48}
+\begin{thebibliography}{52}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -33,12 +33,6 @@
   {White}, {Yvon}, {Zacchei}, {Zibin}, \& {Zonca}}]{aaa+13}
 {Aghanim}, N., {et~al.} 2013, ArXiv:1303.5087
 
-\bibitem[{{Antoniadis} {et~al.}(2013){Antoniadis}, {Freire}, {Wex}, {Tauris},
-  {Lynch}, {van Kerkwijk}, {Kramer}, {Bassa}, {Dhillon}, {Driebe}, {Hessels},
-  {Kaspi}, {Kondratiev}, {Langer}, {Marsh}, {McLaughlin}, {Pennucci}, {Ransom},
-  {Stairs}, {van Leeuwen}, {Verbiest}, \& {Whelan}}]{afw+13}
-{Antoniadis}, J., {et~al.} 2013, Science, 340, 448
-
 \bibitem[{Arzoumanian {et~al.}(1994)Arzoumanian, Nice, Taylor, \&
   Thorsett}]{antt94}
 Arzoumanian, Z., Nice, D.~J., Taylor, J.~H., \& Thorsett, S.~E. 1994, ApJ, 422,
@@ -46,6 +40,9 @@ Arzoumanian, Z., Nice, D.~J., Taylor, J.~H., \& Thorsett, S.~E. 1994, ApJ, 422,
 
 \bibitem[{Brans \& Dicke(1961)}]{bd61}
 Brans, C., \& Dicke, R.~H. 1961, Phys. Rev., 124, 925
+
+\bibitem[{Burderi \& D'Amico(1997)}]{bd97}
+Burderi, L., \& D'Amico, N. 1997, ApJ, 490, 343
 
 \bibitem[{Camilo {et~al.}(1994)Camilo, Foster, \& Wolszczan}]{cfw94}
 Camilo, F., Foster, R.~S., \& Wolszczan, A. 1994, ApJ, 437, L39
@@ -65,16 +62,14 @@ Damour, T., \& Esposito-Far\`ese, G. 1992, Class. Quant Grav., 9, 2093
 \bibitem[{Damour {et~al.}(1988)Damour, Gibbons, \& Taylor}]{dgt88}
 Damour, T., Gibbons, G.~W., \& Taylor, J.~H. 1988, Phys. Rev. Lett., 61, 1151
 
+\bibitem[{Damour \& Sch\"afer(1991)}]{ds91}
+Damour, T., \& Sch\"afer, G. 1991, Phys. Rev. Lett., 66, 2549
+
 \bibitem[{Damour \& Taylor(1991)}]{dt91}
 Damour, T., \& Taylor, J.~H. 1991, ApJ, 366, 501
 
 \bibitem[{Demorest(2007)}]{dem07}
 Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
-
-\bibitem[{{Demorest} {et~al.}(2010){Demorest}, {Pennucci}, {Ransom}, {Roberts},
-  \& {Hessels}}]{dpr+10}
-{Demorest}, P.~B., {Pennucci}, T., {Ransom}, S.~M., {Roberts}, M.~S.~E., \&
-  {Hessels}, J.~W.~T. 2010, \nat, 467, 1081
 
 \bibitem[{{Demorest} {et~al.}(2013){Demorest}, {Ferdman}, {Gonzalez}, {Nice},
   {Ransom}, {Stairs}, {Arzoumanian}, {Brazier}, {Burke-Spolaor}, {Chamberlin},
@@ -89,16 +84,10 @@ Fierz, M. 1956, Helv. Phys. Acta, 29, 128
 \bibitem[{Foster {et~al.}(1993)Foster, Wolszczan, \& Camilo}]{fwc93}
 Foster, R.~S., Wolszczan, A., \& Camilo, F. 1993, ApJ, 410, L91
 
-\bibitem[{{Freire} {et~al.}(2011){Freire}, {Bassa}, {Wex}, {Stairs},
-  {Champion}, {Ransom}, {Lazarus}, {Kaspi}, {Hessels}, {Kramer}, {Cordes},
-  {Verbiest}, {Podsiadlowski}, {Nice}, {Deneva}, {Lorimer}, {Stappers},
-  {McLaughlin}, \& {Camilo}}]{fbw+11}
-{Freire}, P.~C.~C., {et~al.} 2011, \mnras, 412, 2763
-
 \bibitem[{{Freire} {et~al.}(2012){Freire}, {Wex}, {Esposito-Far{\`e}se},
   {Verbiest}, {Bailes}, {Jacoby}, {Kramer}, {Stairs}, {Antoniadis}, \&
   {Janssen}}]{fwe+12}
----. 2012, \mnras, 423, 3328
+{Freire}, P.~C.~C., {et~al.} 2012, \mnras, 423, 3328
 
 \bibitem[{{Gonzalez} {et~al.}(2011){Gonzalez}, {Stairs}, {Ferdman}, {Freire},
   {Nice}, {Demorest}, {Ransom}, {Kramer}, {Camilo}, {Hobbs}, {Manchester}, \&
@@ -127,6 +116,17 @@ Jordan, P. 1959, Z. Phys., 157, 112
 \bibitem[{Kaspi {et~al.}(1994)Kaspi, Taylor, \& Ryba}]{ktr94}
 Kaspi, V.~M., Taylor, J.~H., \& Ryba, M. 1994, ApJ, 428, 713
 
+\bibitem[{{Keith} {et~al.}(2013){Keith}, {Coles}, {Shannon}, {Hobbs},
+  {Manchester}, {Bailes}, {Bhat}, {Burke-Spolaor}, {Champion}, {Chaudhary},
+  {Hotan}, {Khoo}, {Kocz}, {Os{\l}owski}, {Ravi}, {Reynolds}, {Sarkissian},
+  {van Straten}, \& {Yardley}}]{kcs+13}
+{Keith}, M.~J., {et~al.} 2013, \mnras, 429, 2161
+
+\bibitem[{{Kiziltan} {et~al.}(2013){Kiziltan}, {Kottas}, {De Yoreo}, \&
+  {Thorsett}}]{kkdt13}
+{Kiziltan}, B., {Kottas}, A., {De Yoreo}, M., \& {Thorsett}, S.~E. 2013, \apj,
+  778, 66
+
 \bibitem[{{Lazaridis} {et~al.}(2009){Lazaridis}, {Wex}, {Jessner}, {Kramer},
   {Stappers}, {Janssen}, {Desvignes}, {Purver}, {Cognard}, {Theureau}, {Lyne},
   {Jordan}, \& {Zensus}}]{lwj+09}
@@ -145,6 +145,9 @@ Matsakis, D.~N., Taylor, J.~H., \& Eubanks, T.~M. 1997{\natexlab{a}}, A\&A,
   Marshall}]{mtem97}
 Matsakis, D.~N., Taylor, J.~H., Eubanks, T.~M., \& Marshall, T.
   1997{\natexlab{b}}, A\&A, 326, 924
+
+\bibitem[{{Melatos} \& {Link}(2014)}]{ml14}
+{Melatos}, A., \& {Link}, B. 2014, \mnras, 437, 21
 
 \bibitem[{{Nice} {et~al.}(2012){Nice}, {Demorest}, {Ferdman}, {Gonzalez},
   {Ransom}, {Stairs}, \& {NANOGrav}}]{ndf+12}
@@ -201,6 +204,9 @@ Stinebring, D.~R., Kaspi, V.~M., Nice, D.~J., Ryba, M.~F., Taylor, J.~H.,
 \bibitem[{Tauris \& Savonije(1999)}]{ts99a}
 Tauris, T.~M., \& Savonije, G.~J. 1999, A\&A, 350, 928
 
+\bibitem[{{Tauris} \& {van den Heuvel}(2014)}]{th14}
+{Tauris}, T.~M., \& {van den Heuvel}, E.~P.~J. 2014, \apjl, 781, L13
+
 \bibitem[{Thorsett \& Chakrabarty(1999)}]{tc99}
 Thorsett, S.~E., \& Chakrabarty, D. 1999, ApJ, 512, 288
 
@@ -222,5 +228,9 @@ van Straten, W., Bailes, M., Britton, M., Kulkarni, S.~R., Anderson, S.~B.,
 
 \bibitem[{{Will}(1993)}]{Will93}
 {Will}, C.~M. 1993, {Theory and Experiment in Gravitational Physics}
+
+\bibitem[{{Yu} {et~al.}(2013){Yu}, {Manchester}, {Hobbs}, {Johnston}, {Kaspi},
+  {Keith}, {Lyne}, {Qiao}, {Ravi}, {Sarkissian}, {Shannon}, \& {Xu}}]{ymh+13}
+{Yu}, M., {et~al.} 2013, \mnras, 429, 688
 
 \end{thebibliography}
