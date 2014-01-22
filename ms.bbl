@@ -1,4 +1,4 @@
-\begin{thebibliography}{52}
+\begin{thebibliography}{54}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -170,6 +170,13 @@ Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
   Pfahl}]{prp02b}
 Podsiadlowski, P., Rappaport, S., \& Pfahl, E.~D. 2002, ApJ, 565, 1107
 
+\bibitem[{{Ransom} {et~al.}(2014){Ransom}, {Stairs}, {Archibald}, {Hessels},
+  {Kaplan}, {van Kerkwijk}, {Boyles}, {Deller}, {Chatterjee},
+  {Schechtman-Rook}, {Berndsen}, {Lynch}, {Lorimer}, {Karako-Argaman}, {Kaspi},
+  {Kondratiev}, {McLaughlin}, {van Leeuwen}, {Rosen}, {Roberts}, \&
+  {Stovall}}]{rsa+14}
+{Ransom}, S.~M., {et~al.} 2014, ArXiv e-prints
+
 \bibitem[{Rappaport {et~al.}(1995)Rappaport, Podsiadlowski, Joss, DiStefano, \&
   Han}]{rpj+95}
 Rappaport, S., Podsiadlowski, P., Joss, P.~C., DiStefano, R., \& Han, Z. 1995,
@@ -222,6 +229,11 @@ van Straten, W., Bailes, M., Britton, M., Kulkarni, S.~R., Anderson, S.~B.,
 
 \bibitem[{{Verbiest}(2009)}]{ver09}
 {Verbiest}, J.~P.~W. 2009, ArXiv e-prints
+
+\bibitem[{Wex(2000)}]{wex00}
+Wex, N. 2000, in Pulsar Astronomy - 2000 and Beyond, {IAU} Colloquium 177, ed.
+  M.~Kramer, N.~Wex, \& R.~Wielebinski (San Francisco: Astronomical Society of
+  the Pacific), 113--116
 
 \bibitem[{{Will}(2001)}]{Will01}
 {Will}, C. 2001, Living Reviews in Relativity, 4, 4

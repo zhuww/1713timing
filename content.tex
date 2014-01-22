@@ -87,7 +87,7 @@ Telescope (GBT; proposal code:GBT12B-320).
 The timing observations were conducted 
 using multiple generations of pulsar data systems. The early year
 observations in \citet{sns+05} used
- the Princeton Mark III \citep{skn+92}, Mark IV
+ the Princeton MarkIII \citep{skn+92}, MarkIV
 \citep{sst+00}, and the Arecibo Berkeley Pulsar Processor (ABPP) systems. 
 In the beginning of NANOGrav observations, pulsar data are collected with the Astronomical Signal
 Processor (ASP) and its Green Bank counterpart GASP \citep{dem07}. We
@@ -140,7 +140,7 @@ companion's progenitor has to be big enough to fill the Roche lobe. A wider
 orbit means a larger Roche radius, thus require a more massive white dwarf 
 progenitor.
 Consequently, a correlation between the orbital period
-of the MSP binary and the mass of the WD companion is expected \citep{rpj+95, ts99a, prp02b, th14}. 
+of the MSP binary and the mass of the white dwarf companion is expected \citep{rpj+95, ts99a, prp02b, th14}. 
 Indeed, evidences supporting this picture has been found from few other pulsar
 binary systems \citep{vbb+01, ktr94}.  
 The observed  orbital period and companion mass of J1713+0747 also fits this theoretical correlation very well, supporting the standard MSP evolution theory. %Notably, not all MSP companions follow the same orbital period -- companion
@@ -172,7 +172,7 @@ The model groups observations taken within ten days and fit for one
 best DM value for each group.   
 This DM fitting was conducted with TOA from all instruments except MarkIII,
 because MarkIII had only one frequency band (L-band) and no frequency
-resolution. It is not possible to precisely measure DM from MarkII TOAs.
+resolution. It is not possible to precisely measure DM from MarkIII TOAs.
 
 The ten days grouping is justified based on the cadence of our multi-band
 observations.
@@ -196,19 +196,19 @@ due to changes in the ISM. This DM drop is also seen from observations of
 J1713+0747 using the Parkes observatory \citep{kcs+13}.
 There are clear red-noise like variance in the pulsar's DM with a RMS of
 $\sim10^{-4}$. 
-This DM variation may lead to red-noise timing residuals as discussed in \citealt{kcs+13}.
+This DM variation may lead to ``red'' timing residuals as discussed in \citealt{kcs+13}.
 
 It is worth noting that the first part of this DM curve (MJD$<53000$in
-Figure \ref{fig:dmx}) have much larger error bars than the second half.
+Figure \ref{fig:dmx}) have much larger errors than the second half.
 This is because they are obtained using TOAs extracted from
 MarkIV and ABPP data. MarkIV data have smaller frequency bandwidth 
 compared to the later data (Table \ref{tab:obs}).
 Both MarkIV and ABPP data were frequency crunched to form one TOA per band per
 observation epoch, thus losing all frequency resolution. This makes it hard to
 resolve the profile-frequency evolution that we see from the later data. We
-also assumed the mid-frequency of the frequency band being the center frequency 
-of the TOAs, which does not properly account for pulse profile evolution in
-frequency, and therefore, are likely to produce TOAs that are slightly offset. We think this may be why the FD and
+also assumed the mid-frequency of the band being the center frequency 
+of the TOAs, while the actual center frequency may be different due to pulse
+profile evolution. This procedure is likely to produce TOAs that are slightly offset. We think this may be why the FD and
 DMX model cannot completely model the red-noise signal in these TOAs, leaving
 an apparent hump in the first part of the DM curve (Figure \ref{fig:dmx}) and 
 a similar shape in the S-band timing residuals from MarkIV and ABPP (Figure
@@ -217,12 +217,11 @@ a similar shape in the S-band timing residuals from MarkIV and ABPP (Figure
 
 \subsection{Timing noise}
 \label{sec:noise}
-The pulsar timing residuals (Figure \ref{fig:res}) could contain important
-information, like the signal of gravitational waves (GW). However, the current
-residuals of PSR J1713+0747 is likely dominated by radiometer noises, DM
-variations and other sources of noises. This section discuss J1713+0747's
-timing noises, i.e. pulse arrival time variations due to spin irregularities.
-
+The pulsar timing residuals (Figure \ref{fig:res}) are the residuals left
+after we fit the TOAs with our timing model. 
+This residuals is likely dominated by timing noise, DM variations, radiometer 
+noises, and other sources of noises. This section discuss J1713+0747's
+timing noises, i.e. TOA variations due to spin irregularities.
 
 The term ``timing noises'' in pulsar timing generally refers to pulsar's spin
 irregularity, i.e. its occasional deviation from a simple linear slow down. 
@@ -247,7 +246,7 @@ pulsars show cubical shaped residuals. They define the noise factor
 \label{eq:delta8}
 \Delta_8 = \log_{10}\left(\frac{1}{5\nu}|\ddot{\nu}|t^3\right).
 \end{equation}
-Here $t=10^8$~s$\sim 3$~yr is a fiducial time scale close to the average observation time span in \citet{ant94}.
+Here $t=10^8$~s$\sim 3$~yr is a fiducial time scale close to the average observation time span in \citet{antt94}.
 
 \citet{mtem97} adopted a generalized Allen Variance (traditionally used in
 measuring clock stability) to characterize the timing instability of pulsars:
@@ -296,8 +295,8 @@ The radiation region or the pulsars's magnetosphere may be slightly distorted,
 lead to a radiation pattern changing with frequency. This phenomenon is extensively discussed in Pennucci et al. 2014 in prep.
 
 To account for this profile evolution, \citet{sns+05} fitted jumps between every two frequency channels. However, the number of frequency channels has increased by a factor of ten, making it a lot harder to mitigate profile-frequency evolution using jumps. 
-Instead, we used a polynomial of the logarithm of
-frequency ({\it FD} model by P. Demorest et~al in prep.; see Figure \ref{fig:FD}) to fit for and removed the profile-frequency evolution. This model can successfully remove the extra frequency-dependent residuals and it only uses four parameters.
+Instead, we used the {\it FD} model, a polynomial of the logarithm of
+frequency (P. Demorest et~al in prep.; solid line in Figure \ref{fig:FD}) to fit for and removed the profile-frequency evolution. This model can successfully remove the extra frequency-dependent residuals and it only uses four parameters.
 
 
 
@@ -308,23 +307,25 @@ The final timing residuals of PSR J1713+0747 has a weighted RMS of $\sim 0.3\mu$
 %These residuals appear to be smooth and flat, except a small red-noise like
 %peak in the residuals of the upper band (Figure \ref{fig:res}, bottom panel) around 2002. 
 %This is likely caused by timing noise left not fitted by the cubic and quadruple polynomial fit.
-However, the DM fitting process have a tendency to ``overfit'' or 
-``absorb'' part of the signals or noises in the residual, making the residuals look more flat than they actually are. 
+However, the DM fitting process, which minimize the residuals, have a tendency to ``overfit'' or 
+``absorb'' part of the signals or noises in the residual, making the residuals
+look flatter than they actually are. 
 This is especially significant for the lower band residuals, because
-the DM values affects the lower frequency TOAs significantly more than the
-higher frequency TOAs. 
-As a result we expect the weighted WRMS measured from the
-averaged residuals be under-estimated. We can crudely quantify
-this effect by injecting random Gaussian noise into the timing TOAs and
-measure the responds of the post-fit residuals. Figure \ref{fig:overfit} show
+the DM fitting affects the lower frequency TOAs significantly more than the
+higher frequency TOAs, and is more likely to flatten their timing residuals. 
+As a result we expect the residual weighted RMS to be slightly under-estimated. We can crudely quantify
+this under-estimation by adding random Gaussian noise to the TOAs and
+measure the responds in the post-fit residuals. Figure \ref{fig:overfit} show
 the weighted RMS of the post-fit residuals as a function of injected noise level for the PUPPI L-band TOAs. 
-One can see that the increase is well fit by a linear function. 
-Based on this experiment, we
+One can see that the residual increases almost linearly as a function of the
+injected noises, except that only a fraction of the injected noises are
+recovered in the timing residual.
+Based on such simulations, we
 can estimate the fraction of actual residuals absorbed by the timing models, and use this fraction to infer the ``corrected amplitude'' of the timing residuals. 
 Table \ref{tab:wrms} shows the weighted RMS measured directly from the residuals 
-and the inferred/corrected RMS based on noise injection simulations. One caveat 
+and the corrected RMS based on noise injection simulations. One caveat 
 of this approach is that the injected noise are white, while the actual timing
-residuals may compose of red noises. 
+residuals may compose of both white and red noises. 
 
 
 The great advances in instrumentation has significantly brought down the 
@@ -333,14 +334,19 @@ The latest system GUPPI and PUPPI have a much wider bandwidth (800~MHz), more th
 a factor of 10 wider than their predecessor GASP and ASP (64~MHz). According to Radiometer 
 equation, this bandwidth increase should lead to a factor of $\sim3$
 smaller radiometer noise. 
-Indeed, the best residual ($\sim100$~ns) come from PUPPI L-band observations and it is clearly better than that of ASP. However, the decrease in residual RMS is not as large as predicted by Radiometer equation.
-\citet{sc12} studied the pulse arrival times from a long observation of
+Indeed, the best residual ($\sim100$~ns) come from PUPPI L-band observations
+and it is clearly better than that of ASP, but not better by a factor of three
+as predicted by the Radiometer equation.
+\citet{sc12} studied the pulse arrival times from a single long exposure of
 J1713+0747, and found that this pulsar's single pulse showed random jitter of
 $\simeq40~\mu$s. Therefore, by averaging many pulses collected in the
 $\sim20$~min NANOGrav observation, one expect $\sim 40$~ns of jitter noise. 
-This jitter noise could be a significant part of the observed residuals.
-A small fraction of the observed residuals could be from other unknown sources like gravitational wave signals.
-Ultimately, the timing solution and residuals presented in this paper would be very useful for future PTA projects.
+This jitter noise is not affected by the Radiometer equation and will not
+decrease as bandwidth of the observations in creases.
+If jitter noise is a significant fraction of the observed residuals, it might
+help explain why we are not seeing the expected drop in residual levels.
+%A small fraction of the observed residuals could be from other unknown sources like gravitational wave signals.
+%Ultimately, the timing solution and residuals presented in this paper would be very useful for future PTA projects.
 
 
 \section{Results}
@@ -349,9 +355,13 @@ Ultimately, the timing solution and residuals presented in this paper would be v
 \subsection{Intrinsic orbital decay}
 \label{sec:obdecay}
 Through timing modeling, we measured a significant orbital decay from
-J1713+0747, $\dot{P}_{\rm b} = 0.77(18)\times10^{-15}$s~s$^{-1}$. 
+J1713+0747, $\dot{P}_{\rm b} = 0.40(15)\times10^{-15}$s~s$^{-1}$. 
 %Such a precise measurement can be used to test Gravitational wave radiation theories of Einstein's and beyond.
-It is expected that the motion of the binary relate to the observer will introduce extra orbital decay due to kinetic effects, i.e. radial acceleration effect \citep{dt91} and centrifugal acceleration effect (`Shklovskii' effect; \citealt{shk70}). Luckily, we have good measurement on the distance and proper motion of the binary system, which allow us to remove these effects and study the system's intrinsic orbital decay.
+It is expected that the motion of the binary relate to the observer will
+cause the orbital period to decay due to kinetic effects, i.e. radial acceleration
+effect \citep{dt91} and centrifugal acceleration effect (`Shklovskii' effect;
+\citealt{shk70}). Luckily, we have good measurement on the distance and proper
+motion of the binary system, which allows us to remove these effects and study the system's intrinsic orbital decay.
 \begin{equation}
 \dot{P}_{\rm b}^{\rm Acc} = \frac{A_{\rm G}}{c} P_{\rm b} =
 -1.2\pm0.1\times10^{-13}~{\rm s~s^{-1}}
@@ -374,23 +384,23 @@ Gal} = (0.7\pm2)\times10^{-13}$s~s$^{-1}$, and is consistent with being smaller 
 There are two extra classical terms that could have played a role in
 $\dot{P}_{\rm b}^{\rm Int}$, one $\dot{P}_{\rm b}^{\dot{M}}$ is caused by mass loss in the
 binary system, the other $ \dot{P}_{\rm b}^{\rm T}$ is the contribution of tidal effect.
-The pulsar could loss mass due to its radiation, the maximum mass loss rate
-due to this effect orbit can be estimated from its rotational energy loss rate
-$\dot{M_{\rm PSR}}<\dot{E}/c^2$, and similar idea may apply to the white
-dwarf. 
+The pulsar could loss mass due to its magnetic dipole radiation, the maximum
+mass loss rate due to this effect can be estimated from loss rate of the
+pulsar's rotational energy $\dot{M_{\rm PSR}}<\dot{E}/c^2$, which is
+measurable through the spin down rate of the pulsar.
+The white dwarf may loss mass in similar fashion but in much less quantity.
 %\begin{equation}
 %\dot{P}_{\rm b}^{\dot{m}} = 8\pi^2\frac{I_{\rm
 %PSR}}{Mc^2}\frac{\dot{P}}{P^3}P_{\rm b} \sim 10^{-16},
 %\end{equation}
 %where $M=M_{\rm PSR} +M_{\rm WD}$ is the total mass of the system and
 %$I\sim10^{45}$g~cm$^2$ is the angular momentum of inertia.
-Consequently, the orbital change due to mass loss is $\dot{P}_{\rm
+Orbital change due to mass loss can be estimated as $\dot{P}_{\rm
 b}^{\dot{M}}\lesssim 1\times10^{-14}$s~s$^{-1}$ (\citealt{dt91}; Equation 9 and 10
 of \citealt{fwe+12}), an order of magnitude smaller than the measured
 uncertainties on $\dot{P}_{\rm b}^{\rm Int}$.
 The tidal effect of this binary system is expected to be $\dot{P}_{\rm b}^{\rm
-T}\ll1\times10^{-14}$s~s$^{-1}$ basing on the most extreme scenarios (the WD spins at
-its break-up velocity and the tidal synchronizing time scale equals the
+T}\ll1\times10^{-14}$s~s$^{-1}$ basing on the most extreme scenarios (the WD spins at its break-up velocity and the tidal synchronizing time scale equals the
 characteristic age of the pulsar; see Equation 11 in \citealt{fwe+12} and
 references therein in).
 Both of these classical terms are much smaller than the observed uncertainties
@@ -399,34 +409,38 @@ on $\dot{P}_{\rm b}^{Int}$.
 %\citealt{fwe+12} and references therein. 
 
 
-Finally, due to the 68 day orbit, the binary's  gravitational wave
-radiation is so weak that its orbital decay according to Einstein's
-theory is expected to be 
+Finally, due to the $\sim$68 day orbit, the binary's gravitational 
+radiation is expected to be very small: 
 $\dot{P}_{\rm b}^{\rm GR} = -7\times10^{-18}$s~s$^{-1}$ \citep{lk05}.
-This is consistent with the observed intrinsic orbital decay, therefore,
-Einstein's theory of gravitational wave radiation pass this particular test.
+This is consistent with the observed intrinsic orbital decay. Therefore,
+the observed intrinsic orbital decay rate is well consistent with
+Einstein's theory of gravitational radiation.
 
 
 \subsection{Constraint on $\dot{G}$}
 \label{sec:Gdot}
-Some alternative theories of gravity, such as the scalar-tensor gravity, predict extra orbital decay than Einstein's theory. 
+Although Einstein's theory predicts almost zero intrinsic orbital decay for
+this system.
+Some alternative theories of gravity, such as the scalar-tensor gravity,
+predict extra orbital decays.
 Consequently, measurements of pulsar binaries' `excess' orbital decay
 $\dot{P}_{\rm b}^{\rm exc}=\dot{P}_{\rm b}^{\rm Int} - \dot{P}_{\rm
 b}^{\dot{M}}  - \dot{P}_{\rm b}^{\rm T} - \dot{P}_{\rm b}^{\rm GR}$ have been
-used to constrain them \citep{lwj+09, fwe+12}. 
-The measured values of $\dot{P}_{\rm b}^{\rm exc}$ from the pulsars of
-previous work were all consistent with being zero. Their upper limits were largely determined by the uncertainties of $\dot{P}_{\rm b}^{\rm Int}$.
-Thanks to the high time precision of NANOGrav observations, we measure the
-orbital period of J1713+0747 to extreme high precision, which enable us to 
+used to constrain the alternative theories\citep{lwj+09, fwe+12}. 
+The $\dot{P}_{\rm b}^{\rm exc}$ from the previous pulsar
+observations were all consistent with being zero. Their upper limits were
+largely determined by the uncertainties in the measurement of $P_{\rm b}$,
+distance, and proper motions.
+Thanks to the high time precision of NANOGrav observations, we can measure the
+all three parameters of PSR J1713+0747 to very high precision, which enable us to 
 get $\dot{P}_{\rm b}^{\rm exc}=(0.7\pm2)\times10^-13$s~s$^{-1}$ (Section
 \ref{sec:obdecay}). 
 This is the smallest fractional orbital decay rate observed in pulsar binaries
-thanks to J1713+0747's exceptionally large $P_{\rm b}$, and can be used to put new limit on
-the alternative theories of Gravity.
+thanks to PSR J1713+0747's exceptionally large $P_{\rm b}$, and can be used to put new limit on the alternative theories of Gravity.
 
-Extra orbital decay can be caused by the dipole gravitational radiation effect
-introduced in some alternative gravity theories (\citealt{Will93, Will01, lwj+09, fwe+12} and reference therein). Such effect arise when the two bodies of binary are very different in terms of their self gravity, or in another word, their compactness.
-This extra orbital decay is given by 
+Some alternative theories of gravitation predict a dipole gravitational
+radiation from compact binaries (\citealt{Will93, Will01, lwj+09, fwe+12} and reference therein). Such effect arise when the two bodies of binary are very different in terms of their self gravity, or in another word, their compactness.
+This extra dipole radiation could lead to an extra orbital decay term:
 \begin{equation}
 \dot{P}_{\rm b}^{\rm D} \simeq -4\pi\frac{T_{\odot}\mu}{P_{\rm b}}\kappa_D S^2,
 \end{equation}
@@ -437,9 +451,11 @@ between the self-gravity "sensitivity" of the two bodies ($S = s_p - s_c$;
 $s_p\sim0.1m_p/M_{\odot}$ according to \citealt{de92} ; and $s_c\ll s_p$).
 In Einstein's GR $\kappa_D=0$ --- there is no self-gravity induced
 dipole gravitational radiation, but it is often not the case in alternative
-theories.
+theories that violates the SEP.
 
-Another orbital decal term $\dot{P}_{\rm b}^{\dot{G}}$ is caused by a varying
+One particular class of alternative theories --- the Scalar-Tensor theory,
+predicts another form of excess orbital decal $\dot{P}_{\rm b}^{\dot{G}}$,
+orbital decay due to a varying
 local gravitational constant. In the framework of the scalar-tensor theories,
 the scalar field that interacts with the mass has to change over time as the
 Universe expands. This change will cause the locally measured gravitational
@@ -447,32 +463,33 @@ constant to vary. The changing gravitational constant will inevitably change
 the orbit of a binary system:
 \begin{equation}
 \dot{P}_{\rm b}^{\dot{G}} = -2 \frac{\dot{G}}{G}
-\left[1-\left(1+\frac{m_c}{2M}\right)s_p\right]P_{\rm b}
-\end{equation}
-\citep{dgt88,nor90}.
+\left[1-\left(1+\frac{m_c}{2M}\right)s_p\right]P_{\rm b},
+\end{equation} \citep{dgt88,nor90}.
 
-The orbital period of J1713+0747 is relatively long among the
+The orbital period of J1713+0747 is relatively long compared to other
 high-time-precision pulsar binaries, this make its $\dot{P}_{\rm b}^{\rm D}$
 very small. Conversely, $\dot{P}_{\rm b}^{\dot{G}}$ is larger when $P_{\rm b}$
 is large. This makes J1713+0747 the best pulsar binary system for constraining
-the change rate of gravitational constant $\dot{G}$. A combined limit on both
-$\dot{G}$ and the dipole gravitational radiation constant $\kappa_D$ can be
-done in the same fashion as in \citet{lwj+09}: solving $\dot{G}$ and $\kappa_D$
+the effect of the changing gravitational constant $\dot{G}$. Limits 
+on both $\dot{G}$ and $\kappa_D$ can be estimated in the same fashion as in
+\citet{lwj+09}: by solving $\dot{G}$ and $\kappa_D$
 from this equation $\dot{P}_{\rm b}^{\rm exc} = \dot{P}_{\rm b}^{\rm D} +
 \dot{P}_{\rm b}^{\dot{G}}$ (Equation 29 of \citealt{lwj+09}) of different
-pulsars using MCMC simulation. We applied this method to three pulsars: PSR J1012+5307, PSR
+pulsars. We applied this method to three pulsars: PSR J1012+5307, PSR
 J1738+0333, and PSR J1713+0747 using timing parameter reported in
 \citet{lwj+09}, \citet{fwe+12}, and this work.
 The resulting confidence region of $\dot{G}$ and $\kappa_D$ is shown in Figure
 \ref{fig:Gdot}.
 We got, at 95\% confidence limit, $\dot{G}/G = -2\pm8\times10^{-13}$~yr$^{-1}$;
 $\kappa_D=-0.3\pm2\time10^{-4}$. 
-This constrain on $\dot{G}$ is more than a fact of two tighter than that from
-previous pulsar-based constrain \citep{fwe+12}. 
+This constrain on $\dot{G}$ is more than a fact of two more strident than previous pulsar-based constrain \citep{fwe+12}. 
 Although slightly worse than
 the best constrain of this type
-($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the solar system LLR
-experiment \citep{hmb10}, this new pulsar-timing  $\dot{G}$ limit is still an valuable independent test.  
+($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the Luna Laser Ranging
+(LLR)
+experiment \citep{hmb10}, which measured Luna-Earth distance to $10^{-11}$
+precision using 40 years of observations,
+this new pulsar-timing  $\dot{G}$ limit is a strident and independent test.  
 
 \subsection{Strong equivalence principle and Lorentz invariance}
 \label{sec:sep}
@@ -483,7 +500,7 @@ this principle bodies of different self-gravitation should behave the same in
 the same gravitational experiments. This principle is violated in alternative
 theories of gravitations like the aforementioned Jordan-Brans-Dicke
 scalar-tensor theory. Composited of a neutron star and a
-white dwarf, the J1713+0747 pulsar binary is the best laboratory for testing 
+white dwarf, the J1713+0747 pulsar binary is an excellent laboratory for testing 
 effects of SEP violation. If SEP is violated, the neutron star and the white
 dwarf will be accelerated differently by the Galactic gravity field, causing
 the binary orbit to be polarized toward the center of the Galaxy. The excess 
@@ -497,8 +514,8 @@ and $\Delta$ is the dimensionless factor that characterizes the significance
 of SEP violation. An recent model of the Galactic acceleration can be found in
 \citealt{hf04a}.
 
-The Lorentz invariance is another principle that is satisfied in Einstein's
-general relativity and maybe violated in other theories. This principle
+The Lorentz invariance is another principle that satisfied by Einstein's
+general relativity and maybe violated by alternative theories. This principle
 states that there is no preferred inertial reference frame. The violation of
 Lorentz invariance would lead to polarization of binary orbits along the
 direction of the preferred frame.
@@ -518,12 +535,12 @@ $\textbf{\textit{w}}_{\odot}=384\pm139$km~s$^{-1}$ is the velocity of solar syst
 and $\textbf{\textit{v}}_{\rm PSR}$ is the relative speed of the pulsar to our solar system. $\textbf{\textit{v}}_{\rm PSR}$ is only partially known because we can measure the pulsar's
 proper motion on the sky but we cannot measure its radial velocity.
 
-Fortunately, many other variables in these equations are measurable in the
+Fortunately, many variables in these equations are measurable in the
 case of the J1713+0747 binary. This makes it possible to constrain $\Delta$
 and $\hat{\alpha}_3$ using Bayesian techniques assuming certain fiducial
 priors for the unmeasurable variables like the radial component of
-$v_{\rm PSR}$ \citep{sns+05, sfl+05, gsf+11}. Based on the 20 year 
-data, we found new
+$v_{\rm PSR}$ \citep{sns+05, sfl+05, gsf+11}. Based on our 20 year 
+timing results, we found new
 limits on the violations of SEP and Lorentz invariance $\Delta < 0.03$ and
 $\hat{\alpha}_3<2.6\times10^{20}$ based on this pulsar binary.
 
@@ -539,26 +556,28 @@ The pulse arrival times of this pulsar was well fit by our timing model with a
 residual consistent with Gaussian white noises.
 The lack of evidence of red noise in short- and long-timescale suggest that
 the pulsar is spinning down regularly with little deviation, supporting the
-idea that pulsars can be a stable clock in long timescale.
-After correcting the effect of fitting, the `rescaled' WRMS in the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
-the amount of noise still presence in the timing residual. The 20 years
-overall residual is $\sim 250$~ns. The WRMS of residuals from the PUPPI L-band
-observations is $\sim100$~ns.
-This measurement has significant implications to estimating a single-source
+idea that pulsars can be very stable clocks in long timescales.
+After correcting for ``over-fitting'', the ``rescaled'' weighted RMS of the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
+the amount of signal or noise remain in the timing residuals. The estimated
+weighted RMS of the 20 years timing residuals is $\sim 250$~ns. The weighted
+RMS of L-band residuals from our best instrument, the PUPPI system, is
+$\sim100$~ns, considerably better than that from the older generations of
+instruments (Table \ref{tab:wrms}).
+This measurement has significant implications to future pulsar timing array
+projects, such as the estimating of a single-source
 upper limit of the stochastic gravitational wave background.
 
 
 %Change rate of gravitational constant and limit on the dipole gravitational wave radiation.
 In this work, we measure PSR J1713+0747's $P_{\rm b}$ to 11 significant
-digits, and also detect its orbital decay $\dot{P}_{\rm b}$ due to Galactic differential accelerations.
+digits, which allowed us to detect its orbital decay $\dot{P}_{\rm b}$ due to Galactic differential accelerations.
 These measurements, when combined with that of other pulsars, can help
 significantly improve the current upper limit on the change rate of gravitational
  constant $\dot{G}$ from pulsar timing, making it almost as good as the best
-constrain of this nature from the LLR experiment \citep{hmb10}.
+constrain of this kind from the LLR experiment \citep{hmb10}.
 The new best constrain based on pulsar timing is $\dot{G}/G
 =2\pm8\times10^{-13}$~yr$^{-1}\ll0.02H_0$, where $H_0$ is the Hubble constant. . 
-In another word, the change rate of gravitational constant has to be a factor of $>50$
-slower than the Universe's average expansion rate.
+In another word, the change rate of gravitational constant has to be a factor of $>50$ slower than the Universe's expansion rate.
 
 Because $P_{\rm b}$ is a second order term in the timing 
 model, its measured precision improves very fast $\delta
@@ -566,5 +585,17 @@ P_{\rm b} \propto T^{5/2}$, where $T$ is the total observational time span.
 We can expect the precision of the above gravitation experiment from pulsar
 timing improve very quickly and hopefully will surpass the precision of LLR
 experiment in the future.
+
+The precise measurement on the pulsar binary orbit's eccentricity and
+3D-orientation enable us to test if there is any violation of SEP and the
+Lorentz invariance principle. We set new upper limit on the SEP violation
+factor $\Delta <$ and $\hat{\alpha}_3< $, these results are better/comparable
+to the previous constrains from \citealt{wex00, sns+05, sfl+05, gsf+11}.
+Ultimately, the best test on SEP violation should come from the newly
+discovered pulsar triple system PSR J0337+1715 \citep{rsa+14}. In this case, the
+inner pulsar-white dwarf orbit is free falling in the gravity field of the
+white dwarf in the outer orbit, making them the best laboratory for testing
+the free fall of objects of different self-gravity.
+
 
 
