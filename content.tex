@@ -95,14 +95,14 @@ started using
 the Green Bank Ultimate Pulsar Processing Instrument (GUPPI; reference?) for GBT 
 observations in 2010 and the Puertorican Ultimate Pulsar Processing Instrument
 (PUPPI) for Arecibo observations in 2012. 
-The date range, number of observation epochs and TOA, specification of the
-system are listed in Table \ref{tab:obs}.
+The date range, number of observation epochs, specifications of the
+systems are listed in Table \ref{tab:obs}.
 
-We combine the pulse time of arrivals (TOAs) used in \citealt{sns+05} and that
+We combine the pulse time of arrivals (ToAs) used in \citealt{sns+05} and that
 of the later NANOGrav observations. 
 The data span a total of 20 years with a noticeable gap between 1994 and 1998.
-The TOAs are measured from the observational data through a series of steps. First the data are folded, as they were being taken, into pulse profiles using an ephemeris known to be good enough for predicting the pulse periodicity for the duration of the observation. The folded profiles from different frequency channels and sub-integrations are often summed together to improve the S/N of the profiles.
-The summed profiles were then compared with a well-measured standard pulse profile  of this frequency band. We employ the cross-correlation techniques to determine the phase of the pulse peak relate to the mid point of the observation. The final TOA of a summed profile is then calculated by adding the mid observation time and the product of pulse period and the measured peak phase.
+The ToAs are measured from the observational data through a series of steps. First the data are folded, as they were being taken, into pulse profiles using an ephemeris known to be good enough for predicting the pulse periodicity for the duration of the observation. The folded profiles from different frequency channels and sub-integrations are often summed together to improve the S/N of the profiles.
+The summed profiles were then compared with a well-measured standard pulse profile  of this frequency band. We employ the cross-correlation techniques to determine the phase of the pulse peak relate to the mid point of the observation. The final ToA of a summed profile is then calculated by adding the mid observation time and the product of pulse period and the measured peak phase.
 The flux of the pulsar in these observations can also be measured by comparing the signal strength in the data with that of a calibration observation taken right before or after the pulsar observation in which a signal with known strength was injected. The flux of the calibration signal is calibrated every month by comparing it with an astronomical object of known and constant flux, in this case, the AGN J1413+1509.
 
 
@@ -170,9 +170,9 @@ neglected.
 We fit DM variation in time using the {\it DMX} model in {\it tempo}.
 The model groups observations taken within ten days and fit for one
 best DM value for each group.   
-This DM fitting was conducted with TOA from all instruments except MarkIII,
+This DM fitting was conducted with ToA from all instruments except MarkIII,
 because MarkIII had only one frequency band (L-band) and no frequency
-resolution. It is not possible to precisely measure DM from MarkIII TOAs.
+resolution. It is not possible to precisely measure DM from MarkIII ToAs.
 
 The ten days grouping is justified based on the cadence of our multi-band
 observations.
@@ -180,7 +180,7 @@ The Arecibo L- and S-band observations of J1713+0747 almost always happen on
 the same day consecutively.
 While the GBT 800~MHz and L band observations often take place on different
 days spaced by only few days.
-Therefore, most DM values in the {\it DMX} model were determined by TOAs from
+Therefore, most DM values in the {\it DMX} model were determined by ToAs from
 similar epochs and from at
 least two frequency bands. 
 
@@ -188,7 +188,7 @@ Figure \ref{fig:dmx} shows the DM variation of
 J1713+0747 as measured by {\it DMX} model.
 Note that the sudden drop of DM around MJD-53000 was not real, it was due to
 the use of different standard pulse profile templates in the calculation of
-TOAs from the early instruments (MarkIV, ABPP) and the later instruments
+ToAs from the early instruments (MarkIV, ABPP) and the later instruments
 (ASP, GASP, GUPPI, and PUPPI). The DM values inferred from these two different
 profile templates are expected to have a constant offset.
 Conversely, the sudden drop of DM around MJD 54800 was real and was probably
@@ -200,16 +200,16 @@ This DM variation may lead to ``red'' timing residuals as discussed in \citealt{
 
 It is worth noting that the first part of this DM curve (MJD$<53000$in
 Figure \ref{fig:dmx}) have much larger errors than the second half.
-This is because they are obtained using TOAs extracted from
+This is because they are obtained using ToAs extracted from
 MarkIV and ABPP data. MarkIV data have smaller frequency bandwidth 
 compared to the later data (Table \ref{tab:obs}).
-Both MarkIV and ABPP data were frequency crunched to form one TOA per band per
+Both MarkIV and ABPP data were frequency crunched to form one ToA per band per
 observation epoch, thus losing all frequency resolution. This makes it hard to
 resolve the profile-frequency evolution that we see from the later data. We
 also assumed the mid-frequency of the band being the center frequency 
-of the TOAs, while the actual center frequency may be different due to pulse
-profile evolution. This procedure is likely to produce TOAs that are slightly offset. We think this may be why the FD and
-DMX model cannot completely model the red-noise signal in these TOAs, leaving
+of the ToAs, while the actual center frequency may be different due to pulse
+profile evolution. This procedure is likely to produce ToAs that are slightly offset. We think this may be why the FD and
+DMX model cannot completely model the red-noise signal in these ToAs, leaving
 an apparent hump in the first part of the DM curve (Figure \ref{fig:dmx}) and 
 a similar shape in the S-band timing residuals from MarkIV and ABPP (Figure
 \ref{fig:res}).
@@ -218,17 +218,17 @@ a similar shape in the S-band timing residuals from MarkIV and ABPP (Figure
 \subsection{Timing noise}
 \label{sec:noise}
 The pulsar timing residuals (Figure \ref{fig:res}) are the residuals left
-after we fit the TOAs with our timing model. 
+after we fit the ToAs with our timing model. 
 This residuals is likely dominated by timing noise, DM variations, radiometer 
 noises, and other sources of noises. This section discuss J1713+0747's
-timing noises, i.e. TOA variations due to spin irregularities.
+timing noises, i.e. ToA variations due to spin irregularities.
 
 The term ``timing noises'' in pulsar timing generally refers to pulsar's spin
 irregularity, i.e. its occasional deviation from a simple linear slow down. 
 Potential causes of irregular spin behavior include unresolved
 micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar
 \citep{hlk10, ymh+13, ml14}.
-Unlike the Gaussian-like noises arise in the measurements of the TOAs, the
+Unlike the Gaussian-like noises arise in the measurements of the ToAs, the
 timing noises
 are accumulative over time. Therefore, they often manifests show a ``red'' 
 spectrum. Timing noises are often significant in younger pulsars, and often
@@ -284,7 +284,7 @@ residual are dominated by Gaussian-like noises such as the radiometer noise.
 
 \subsection{Pulse profile evolution in frequency}
 \label{sec:FD}
-After removing the dispersion effect that causes TOA delays of $\propto \nu^{-2}$,
+After removing the dispersion effect that causes ToA delays of $\propto \nu^{-2}$,
  we still see small remaining frequency-dependent residuals from wide-band
 observations using
 different instruments and different telescopes (Figure \ref{fig:FD}).  
@@ -311,12 +311,12 @@ However, the model fitting process, that minimize the residuals, have a tendency
 ``absorb'' part of the signals or noises in the residual, making the residuals
 look flatter than they actually are. 
 This is especially significant for the lower band residuals, because
-the DM fitting affects the lower frequency TOAs significantly more than the
-higher frequency TOAs, and is more likely to flatten their timing residuals. 
+the DM fitting affects the lower frequency ToAs significantly more than the
+higher frequency ToAs, and is more likely to flatten their timing residuals. 
 As a result we expect the residual weighted RMS to be slightly under-estimated. We can crudely quantify
-this under-estimation by adding random Gaussian noise to the TOAs and
+this under-estimation by adding random Gaussian noise to the ToAs and
 measure the responds in the post-fit residuals. Figure \ref{fig:overfit} show
-the weighted RMS of the post-fit residuals as a function of injected noise level for the PUPPI L-band TOAs. 
+the weighted RMS of the post-fit residuals as a function of injected noise level for the PUPPI L-band ToAs. 
 One can see that the residual increases almost linearly as a function of the
 injected noises, except that only a fraction of the injected noises are
 recovered in the timing residual.
