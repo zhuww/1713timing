@@ -6,9 +6,7 @@ gravitational theories. We report 20-year timing of one of the most precise
 pulsars---PSR J1713+0747. The pulse time of arrivals of this pulsar are well
 modeled by a binary model in which the 3-D orientation of the orbit can be
 constrained. We found that the residuals of the timing modeling show variance
-of $\sim 250$~ns consistent with
-being mostly white noise. No evidence of significant red noise was found in the
-these residuals. We also measured the binary orbit's apparent decay due to 
+of $\sim 250$~ns. We also measured the binary orbit's apparent decay due to 
 Galactic differential acceleration, and used this result to test 
 theories of gravitation. 
 We present a new generic limit on the change rate of gravitational
@@ -275,22 +273,27 @@ This result is consistent with that of \citet{pjl+13}. They
 studied the timing noises in this pulsar using an auto-correlation technique
 based on 5 year NANOGrav data, and conclude that the timing residual is
 consistent with mostly white noise.
+The lack of short- and long-timescale red noise, if confirmed,  suggests the
+deviation from simple spin down could be very small in this pulsar and its timing
+residual are dominated by Gaussian-like noises such as the radiometer noise.
 
-Our white-noise-like residuals were obtained after we fit and remove
+However, our white-noise-like residuals were obtained after we fit and remove
 DM variations. \citet{kcs+13} showed that fitting for DM variation could
 absorb a significant portion of the ``red'' signals in the ToAs through
 numerical simulations made with ToAs of one frequency band. This means
-all the ``red'' timing signals could be absorbed into our DMX model.
-Such effect should affect our pre-2005 timing
-residuals more than the post-2005 ones. Because the post-2005 DM variations 
-are well determined by at least two wide band observations, and should
-``absorb'' less frequency independent ``red'' signals.
-Conversely, we observed no obvious increase in noise level in the post-2005
-residuals, which does not support the existence of significant
-frequency independent ``red'' noise.
-The lack of short- and long-timescale red noise, if real,  suggests the
-deviation from simple spin down could be very small in this pulsar and its timing
-residual are dominated by Gaussian-like noises such as the radiometer noise.
+some ``red'' timing signals from PSR J1713+0747 could be absorbed into 
+our DMX model. Indeed, our noise-injection simulation (see Section
+\ref{sec:res})
+also show that some signals in the residuals are absorbed by model fitting
+including the DM corrections.
+Whether the ``absorbed'' signals are ``red'' is not clear.
+%Such effect should affect our pre-2005 timing
+%residuals more than the post-2005 ones. Because the post-2005 DM variations 
+%are well determined by at least two wide band observations, and should
+%``absorb'' less frequency independent ``red'' signals.
+%Conversely, we observed no obvious increase in noise level in the post-2005
+%residuals, which does not support the existence of significant
+%frequency independent ``red'' noise.
 
 
 \subsection{Pulse profile evolution in frequency}
@@ -572,7 +575,7 @@ the pulsar is spinning down regularly with little deviation, supporting the
 idea that pulsars can be very stable clocks in long timescales.
 A caveat to this analysis is that the timing model, especially the
 \textit{DMX} model we used to model ISM variations, could ``absorb'' a fraction
-of the noises in the residuals. To what extend does this prevent us from
+of the noises in the residuals \citep{kcs+13}. To what extend does this prevent us from
 seeing the red noises remains to a subject of more stringently studies in the
 future.
 
