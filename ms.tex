@@ -103,59 +103,62 @@ Research Association.
 
 \begin{figure}
 \includegraphics[width=4in]{masses.eps} \\ 
-\caption {\label{fig:mass} Top left, top right and bottom left: the pulsar and its companion's mass as drawn from a MCMC simulation. Bottom right: MCMC distribution of $\dot{P}_{\rm b}$.} 
+\caption {\label{fig:mass} Top left, top right and bottom left: the
+  pulsar and companion masses as drawn from an MCMC simulation. Bottom right: MCMC distribution of $\dot{P}_{\rm b}$.} 
 \end{figure} 
 
 \begin{figure}
 \includegraphics[width=4in]{DMX.ps} \\ 
-\caption {\label{fig:dmx} The DM variation of J1713+0747. There is a gap
-between the DM measurement based on Mark4 and ABPP data and the
-ASP, GASP, GUPPI and PUPPI, this is because the two groups were based on TOA  
+\caption {\label{fig:dmx} The DM variation of PSR~J1713+0747. There is
+  an offset
+between the DM measurements based on Mark~IV and ABPP data and those
+based on
+ASP, GASP, GUPPI and PUPPI, because the two set of measurements were based on TOAs  
 generated using different pulse profiles. } 
-\end{figure} 
-
-\begin{figure}
-\includegraphics[width=4in]{FD.ps} \\ 
-\caption {\label{fig:FD} Post-fit residual versus frequency when fitted
-without the FD model, showing TOA frequency dependency.} 
-\end{figure} 
-
-\begin{figure}
-\includegraphics[width=4in]{residual.eps} \\ 
-\caption {\label{fig:res} Top panel: The lower bands (L-band for
-Mark4, ABPP, ASP, and PUPPI, and 800MHz for GASP and GUPPI) daily-averaged residuals of
-J1713+0747. Bottom panel: The higher bands (S-band for Mark4, ABPP, ASP, and PUPPI and
-L-band for GASP and GUPPI) residuals, showing the presence of red timing noises.} 
 \end{figure} 
 
 \begin{figure}
 \includegraphics[scale=0.6]{1713_TN.ps} \\ 
 \caption {\label{fig:TN} Black squares: The timing noise characteristic
 $\sigma_z(\tau)$ \citep{mte97} for different time scale $\tau$ as calculated
-from the timing residuals J1713+0747 obtained by setting $F_2=0$ and freezing
+from the timing residuals of PSR~J1713+0747 obtained by setting $F_2=0$ and freezing
 all other parameters; blue dots:
 the $\sigma_z(\tau)$ calculated from simulated timing residuals containing 
 Gaussian white noise of the same variance as the real residuals; red dots:
-$\sigma_z(\tau)$ calculated from simulated residuals that also containing a
+$\sigma_z(\tau)$ calculated from simulated residuals that also contain a
 random walk signal (red noise). 
-The simulated residuals has a uniform 10 days cadence.
-The step size of the random walk was chosen to
+The simulated residuals have a uniform 10-day cadence.
+The step size of the random walk is chosen to
 be a Gaussian random value with 1/6 the variance of the actual timing
-residuals, which means the characteristic time scale of this red noises
-is $\sim$36 simulated epochs, which corresponds to $\sim 1$ year.  
+residuals, which means the characteristic time scale of this red noise
+is $\sim$36 simulated epochs, corresponding to $\sim 1$ year.  
 } 
+\end{figure} 
+
+\begin{figure}
+\includegraphics[width=4in]{FD.ps} \\ 
+\caption {\label{fig:FD} Post-fit residual versus frequency when fitted
+without the FD model, showing the frequency dependency of the TOAs.} 
+\end{figure} 
+
+\begin{figure}
+\includegraphics[width=4in]{residual.eps} \\ 
+\caption {\label{fig:res} Top panel: The lower bands (1400-MHz for
+Mark~IV, ABPP, ASP, and PUPPI, and 800~MHz for GASP and GUPPI) daily-averaged residuals of
+J1713+0747. Bottom panel: The higher bands (2300~MHz for Mark4, ABPP, ASP, and PUPPI and
+1400~MHz for GASP and GUPPI) residuals, showing the presence of some rednoise.} 
 \end{figure} 
 
 \begin{figure}
 \includegraphics[width=4in]{overfit.eps} \\ 
 \caption {\label{fig:overfit} Red points: post-fit residual WRMS as a function of the Gaussian
-$\sigma$ of the  injected error; Blue points --- a control experiment:
-post-fit residual as a function of injected error when freezing all fit
+$\sigma$ of the  injected error; blue points: a control experiment:
+post-fit residual WRMS as a function of injected error when freezing all fit
 parameters. The dashed lines are the best linear fit to the points. Legends
-show the best-fit slops and intercepts. 
-The blue points show a slop $\sim 1$,
-indicating that almost 100\% of the injected error were measured from the
-residuals, while only a fraction of that went into the red residuals. 
+show the best-fit slopes and intercepts. 
+The blue points show a slope $\sim 1$,
+indicating that almost 100\% of the injected errors are present in the
+residuals, while only a fraction of that amount appears in the red residuals. 
 This means that fitting the parameters absorbed part of the white noise.
 } 
 \end{figure} 
@@ -163,7 +166,7 @@ This means that fitting the parameters absorbed part of the white noise.
 \begin{figure}
 \includegraphics[width=8cm]{GdotContour.ps} \\ 
 \caption {\label{fig:Gdot} Confidence contour of $\dot{G}$ and $\kappa_D$
-calculated from J1012+5307, J1738+0333, and J1713+0747 using MCMC simulation.
+calculated from PSRs~J1012+5307, J1738+0333, and J1713+0747 using an MCMC simulation.
 The shaded area marks the 2$\sigma$ $\dot{G}$ limit from LLR. 
 } 
 \end{figure} 
