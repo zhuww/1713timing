@@ -1,4 +1,4 @@
-\begin{thebibliography}{54}
+\begin{thebibliography}{56}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -38,11 +38,16 @@
 Arzoumanian, Z., Nice, D.~J., Taylor, J.~H., \& Thorsett, S.~E. 1994, ApJ, 422,
   671
 
+\bibitem[{Backer {et~al.}(1997)Backer, Dexter, Zepka, D., Wertheimer, Ray, \&
+  Foster}]{bdz+97}
+Backer, D.~C., Dexter, M.~R., Zepka, A., D., N., Wertheimer, D.~J., Ray, P.~S.,
+  \& Foster, R.~S. 1997, PASP, 109, 61
+
+\bibitem[{Bell \& Damour(1996)}]{bd96}
+Bell, J.~F., \& Damour, T. 1996, Class. Quant Grav., 13, 3121
+
 \bibitem[{Brans \& Dicke(1961)}]{bd61}
 Brans, C., \& Dicke, R.~H. 1961, Phys. Rev., 124, 925
-
-\bibitem[{Burderi \& D'Amico(1997)}]{bd97}
-Burderi, L., \& D'Amico, N. 1997, ApJ, 490, 343
 
 \bibitem[{Camilo {et~al.}(1994)Camilo, Foster, \& Wolszczan}]{cfw94}
 Camilo, F., Foster, R.~S., \& Wolszczan, A. 1994, ApJ, 437, L39
@@ -67,6 +72,9 @@ Damour, T., \& Sch\"afer, G. 1991, Phys. Rev. Lett., 66, 2549
 
 \bibitem[{Damour \& Taylor(1991)}]{dt91}
 Damour, T., \& Taylor, J.~H. 1991, ApJ, 366, 501
+
+\bibitem[{Damour \& Taylor(1992)}]{dt92}
+---. 1992, Phys. Rev. D, 45, 1840
 
 \bibitem[{Demorest(2007)}]{dem07}
 Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
@@ -214,8 +222,8 @@ Tauris, T.~M., \& Savonije, G.~J. 1999, A\&A, 350, 928
 \bibitem[{{Tauris} \& {van den Heuvel}(2014)}]{th14}
 {Tauris}, T.~M., \& {van den Heuvel}, E.~P.~J. 2014, \apjl, 781, L13
 
-\bibitem[{Thorsett \& Chakrabarty(1999)}]{tc99}
-Thorsett, S.~E., \& Chakrabarty, D. 1999, ApJ, 512, 288
+\bibitem[{Taylor(1992)}]{tay92}
+Taylor, J.~H. 1992, Philos. Trans. Roy. Soc. London A, 341, 117
 
 \bibitem[{van Straten \& Bailes(2003)}]{vb03}
 van Straten, W., \& Bailes, M. 2003, in Radio Pulsars, ed. M.~Bailes, D.~J.
