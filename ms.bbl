@@ -1,4 +1,4 @@
-\begin{thebibliography}{56}
+\begin{thebibliography}{59}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -86,6 +86,13 @@ Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
   {Stinebring}, {Swiggum}, \& {Zhu}}]{dfg+13}
 {Demorest}, P.~B., {et~al.} 2013, \apj, 762, 94
 
+\bibitem[{{DuPlain} {et~al.}(2008){DuPlain}, {Ransom}, {Demorest}, {Brandt},
+  {Ford}, \& {Shelton}}]{GUPPI}
+{DuPlain}, R., {Ransom}, S., {Demorest}, P., {Brandt}, P., {Ford}, J., \&
+  {Shelton}, A.~L. 2008, in Society of Photo-Optical Instrumentation Engineers
+  (SPIE) Conference Series, Vol. 7019, Society of Photo-Optical Instrumentation
+  Engineers (SPIE) Conference Series
+
 \bibitem[{Fierz(1956)}]{fie56}
 Fierz, M. 1956, Helv. Phys. Acta, 29, 128
 
@@ -169,6 +176,15 @@ Nice, D.~J., \& Taylor, J.~H. 1995, ApJ, 441, 429
 
 \bibitem[{Nordtvedt(1990)}]{nor90}
 Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
+
+\bibitem[{{{\"O}zel} {et~al.}(2012){{\"O}zel}, {Psaltis}, {Narayan}, \& {Santos
+  Villarreal}}]{opns12}
+{{\"O}zel}, F., {Psaltis}, D., {Narayan}, R., \& {Santos Villarreal}, A. 2012,
+  \apj, 757, 55
+
+\bibitem[{{Pennucci} {et~al.}(2014){Pennucci}, {Demorest}, \& {Ransom}}]{pdr14}
+{Pennucci}, T.~T., {Demorest}, P.~B., \& {Ransom}, S.~M. 2014, ArXiv:1402.1672,
+  submitted to ApJ
 
 \bibitem[{{Perrodin} {et~al.}(2013){Perrodin}, {Jenet}, {Lommen}, {Finn},
   {Demorest}, {Ferdman}, {Gonzalez}, {Nice}, {Ransom}, \& {Stairs}}]{pjl+13}

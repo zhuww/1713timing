@@ -34,7 +34,7 @@
 %\newcommand{\ntst}{PSR~B1916$+$14\,}
 %\newcommand{\stet}{PSR~J1718$-$3718\,}
 
-\shorttitle{20 years timing of PSR J1713+0747.}
+\shorttitle{21 years timing of PSR J1713+0747.}
 \shortauthors{Zhu et al.}
 
 %% --------------------------------------------------------
@@ -42,7 +42,7 @@
 %% --------------------------------------------------------
 \begin{document}
 %% --------------------------------------------------------
-\title{20-Year Timing of PSR J1713+0747}
+\title{21-Year Timing of Millisecond pulsar J1713+0747 with Arecibo and GBT}
 
 %% --------------------------------------------------------
 \author{%W. W. Zhu\altaffilmark{1},
@@ -109,10 +109,8 @@ Research Association.
 
 \begin{figure}
 \includegraphics[width=4in]{DMX.ps} \\ 
-\caption {\label{fig:dmx} The DM variation of PSR~J1713+0747. There is
-  an offset
-between the DM measurements based on Mark~IV and ABPP data and those
-based on
+\caption {\label{fig:dmx} The DM variation of PSR~J1713+0747. There is an offset
+between the DM measurements based on Mark~IV and ABPP data and those based on
 ASP, GASP, GUPPI and PUPPI, because the two set of measurements were based on TOAs  
 generated using different pulse profiles. } 
 \end{figure} 
@@ -121,17 +119,18 @@ generated using different pulse profiles. }
 \includegraphics[scale=0.6]{1713_TN.ps} \\ 
 \caption {\label{fig:TN} Black squares: The timing noise characteristic
 $\sigma_z(\tau)$ \citep{mte97} for different time scale $\tau$ as calculated
-from the timing residuals of PSR~J1713+0747 obtained by setting $F_2=0$ and freezing
-all other parameters; blue dots:
+from the timing residuals of PSR~J1713+0747 obtained by setting $F_2=0$ and freezing all other parameters; blue dots:
 the $\sigma_z(\tau)$ calculated from simulated timing residuals containing 
 Gaussian white noise of the same variance as the real residuals; red dots:
 $\sigma_z(\tau)$ calculated from simulated residuals that also contain a
-random walk signal (red noise). 
-The simulated residuals have a uniform 10-day cadence.
-The step size of the random walk is chosen to
-be a Gaussian random value with 1/6 the variance of the actual timing
-residuals, which means the characteristic time scale of this red noise
-is $\sim$36 simulated epochs, corresponding to $\sim 1$ year.  
+random walk signal (red noise) which Gaussian random step sizes of
+$\sigma\simeq\sqrt{t_c/(1~{\rm yr})}\sigma_{\rm obs}$, where $t_c$ is the
+cadence of the simulated TOAs and $\sigma_{\rm obs}$ is the RMS of the
+observed timing residual.
+The simulated TOAs are uniformly distributed with a $t_c$ of 10 days.
+Here the step size of the random walk signal was chosen to simulate a red
+noise signal that grows to the same level of variance as the observed
+signal in $\sim$1 year.
 } 
 \end{figure} 
 
