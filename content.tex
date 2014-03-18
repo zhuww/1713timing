@@ -204,18 +204,20 @@ The observed  orbital period and companion mass of PSR~J1713+0747 also fit this 
 \subsection{DM variation}
 \label{sec:dmx}
 The DM of a pulsar reflects the amount of ISM between
-the pulsar and earth, and it varies because
-our sight-line through the turbulent ISM is changing as the pulsar, the Earth, and the ISM all move with respect to each other.
-the ISM varies. For most pulsars
+the pulsar and earth and the amount of free electrons in the solar wind along
+our sight-line, and it varies because
+our sight-line through the turbulent ISM and solar wind is changing as the
+pulsar, Sun, the Earth, and the ISM all move with respect to each other.
+For most pulsars
 this change is too small to be detectable. However, for the
-high-timing-precision pulsars monitored by NANOGrav, this contribution cannot be 
+high-timing-precision pulsars monitored by NANOGrav, DM variation cannot be 
 neglected.
 
-We fit DM variation in time using the {\it DMX} model in {\it tempo}.
-The model groups observations taken within ten days and fits for one
+We fit the time-varying DM using the {\it DMX} model in {\it tempo}.
+The model groups TOAs taken within ten days and fits for one
 best DM value for each group.  The same procedure was carried out in
 \citealt{dfg+13}.  This DM fitting was conducted with TOAs from all
-instruments except Mark~III, which produced single-frequency TOAs.
+instruments except Mark~III, which produced only single-frequency TOAs.
 
 The ten-day grouping is justified based on the cadence of our multi-band
 observations.
@@ -245,8 +247,7 @@ Figure \ref{fig:dmx}) has much larger uncertainties than the second half.
 This is because they are obtained using TOAs extracted from
 Mark~IV and ABPP data.  The Mark~IV data in particular have smaller frequency bandwidth 
 compared to the later data (Table \ref{tab:obs}).
-Both Mark~IV and ABPP data are collapsed in frequency to form one TOA per band per
-observation epoch, thus losing all frequency resolution. This makes it hard to
+DATA from the L- and S-band of Mark~IV and ABPP are collapsed in frequency to form one TOA per band per observation epoch, thus losing frequency resolution in the respective band. This makes it hard to
 resolve the frequency evolution of the profile that we see in the later data. We
 also assume the mid-frequency of the band is the center frequency 
 of the TOAs, while the effective center frequency may be different due to pulse
@@ -269,7 +270,7 @@ that leads to an annual DM variation.
 \label{sec:noise}
 The pulsar timing residuals (Figure \ref{fig:res}) are the residuals left
 after we fit the TOAs with our timing model. 
-These residuals are likely dominated by timing noise, DM variations, radiometer 
+These residuals are likely caused by timing noise, DM variations, radiometer 
 noise, and other sources of noise. This section discusses PSR~J1713+0747's
 timing noise, i.e. TOA variations due to spin irregularities.
 
@@ -286,8 +287,8 @@ $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency.
 
 The timing noise of radio pulsars has been studied by \citet{antt94},
 \citet{dmhd95}, \citet{mtem97} and later by \citet{hlk10} with large samples. 
-Because every pulsar has its own unique timing behavior, it is
-hard to quantify the level of timing noise.
+%Because every pulsar has its own unique timing behavior, it is
+%hard to quantify the level of timing noise.
 \citet{antt94} characterized the significance of timing noise using the second
 spin derivative $\ddot{\nu}$, because on the scale of a few years many
 pulsars show cubic terms in their residuals. They define the noise factor 
