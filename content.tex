@@ -7,12 +7,13 @@ pulsars: PSR~J1713+0747. The pulse times of arrival of this pulsar are well
 modeled by a comprehensive binary model, which included the 3-D orientation 
 of the orbit in the sky, with residuals of estimated variance of $\sim 210$~ns. 
 We also measured the binary orbit's apparent decay due to motion 
-between the pulsar and the observer. Our results can help put 
+between the pulsar and the observer. Our results set
 a limit on the change rate of the gravitational constant $\dot{G}$. 
 %as predicted in some alternative theories of strong-field gravity. 
-We found that the $\dot{G}$ is consistent with being zero and is at 
-least a factor of $43$ (99.7\% confidence level) slower than the expansion rate of the Universe. Such a
-limit has important implications for constraining the alternative theories of gravitation.
+$\dot{G}$ is found to be consistent with zero and at 
+least a factor of $43$ (99.7\% confidence level) slower than the average expansion 
+rate of the Universe. Such a limit has important implications for
+alternative theories of gravitation.
 \end{abstract}
 
 
@@ -31,26 +32,25 @@ Observations of this pulsar were reported previously in
 %and orientation on the sky (see Section \ref{sec:model} for
 %details). 
 
-Millisecond pulsars (MSPs) are very stable rotators thanks to their enormous angular momentum. PSR~J1713+0747 is one of the most stable MSPs, and it resides in a wide binary orbit with a $\sim0.3~M_{\odot}$ white dwarf companion (Section \ref{sec:model}). 
+Millisecond pulsars (MSPs) are very stable rotators thanks to their enormous angular momentum. PSR~J1713+0747 is one of the most stable MSPs, and it resides in a wide binary orbit with a white dwarf companion (Section \ref{sec:model}). 
 The latest wide-bandwidth and high-resolution instruments allow us to model and account for the variation in the interstellar medium (ISM)
 (Section \ref{sec:dmx}) and small distortions of the pulsar's magnetosphere (Section \ref{sec:FD}). 
-After removing the ISM variation and magnetosphere distortions, the
-pulse arrival times of the pulsar are well fit by a binary model with
-a nearly circular orbit.
-The orbit of the binary is almost edge on and therefore the masses of
+The pulse arrival times of the pulsar are well fit by a binary model with
+a nearly circular orbit that is edge on to our line of sight. The masses of
 the system components can be inferred through the measurement of Shapiro delay. 
-The system's distance is well-measured via timing parallax, and we detect the changes in the length of the projected semi-major axis, through which we can infer the orientation of the orbit in the sky.
-This is one of the few systems in which the 3D-orientation of the
+The system's distance is well-measured through timing parallax. We also detect
+a changing projected orbital semi-major axis due to the orbit's proper motion
+on the sky. Through the change rate of projected semi-major axis, we can infer 
+the orientation of the orbit in the sky.
+This is one of the only few systems in which the 3D-orientation of the
 binary orbit can be completely solved. Using 21 years of data, we
-refine the previously-published measurements of these orbital
-parameters.
+refine the previously-published measurements of these orbital parameters.
 %These measurements also enable better tests of the theories of gravitation (see Section \ref{sec:res} for details).
-
 
 The stability and long orbital period of the PSR~J1713+0747 binary make it the
 perfect laboratory for observing the smallest cosmic variance, 
-one such as the change of the gravitational constant $G$. 
-The interesting conjecture of $G$ varying in a cosmological timescale was first 
+one such as the time variation of Newton's gravitational ``constant'' $G$. 
+This interesting conjecture of $G$ varying in a cosmological timescale was first 
 raised by \citet{dir37} based on his large-number hypothesis, and 
 revisited later by gravitational theories involving extra dimensions
 \citep{mar84,ww86a}.
@@ -266,7 +266,10 @@ It has been shown that the DM variation of some pulsars are consistent with
 those expected from an ISM characterized by a Kolomgorov turbulence spectrum
 \citep{ric90, ktr94, yhc+07, kcs+13, fst14}. In those cases one can calculate the 
 structure function of the varying DM: 
-$D_{\phi}(\tau)=(2\pi C/f^2)\left( [DM(t+\tau)-DM(t)]^2\right)$, where $\tau$ 
+\begin{equation}
+D_{\phi}(\tau)=\left(\frac{2\pi C}{f^2}\right)\langle [DM(t+\tau)-DM(t)]^2\rangle, 
+\end{equation}
+where $\tau$ 
 is a given time delay, $C=4.148\times10^3$~MHz$^2$pc$^{-1}$cm$^3$s, and $f$ is 
 the observing frequency in MHz, and expect 
 this function to follow a Kolomgorov power law $D_{\phi}(\tau)=(\tau/\tau_0)^{\beta -2}$, 
@@ -562,7 +565,7 @@ $G$ to vary. The changing $G$ will also change
 the orbit of a binary system:
 \begin{equation}
 \dot{P}_{\rm b}^{\dot{G}} = -2 \frac{\dot{G}}{G}
-\left[1-\left(1+\frac{m_c}{2M}\right)s_p\right]P_{\rm b},
+\left[1-\left( 1+\frac{m_c}{2M}\right) s_p\right]P_{\rm b},
 \end{equation} \citep{nor90}.
 This formalism is only slightly different from the generic form of
 \citet{dgt88}.
