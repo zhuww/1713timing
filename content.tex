@@ -45,6 +45,8 @@ the orientation of the orbit in the sky.
 This is one of the only few systems in which the 3D-orientation of the
 binary orbit can be completely solved. Using 21 years of data, we
 refine the previously-published measurements of these orbital parameters.
+We also measure an apparent decay of the binary orbit due to the system's
+motion (the Shklovskii effect and Galactic differential acceleration).
 %These measurements also enable better tests of the theories of gravitation (see Section \ref{sec:res} for details).
 
 The stability and long orbital period of the PSR~J1713+0747 binary make it the
@@ -266,9 +268,11 @@ that leads to an annual DM variation.
 %check this!***), indicating that this effect is likely due to the
 %ionized component of the Solar wind.
 
+Spectrum analysis of the time variation of flux, pulse arrival phase, and DM have 
+been employed to study the turbulent nature of the ISM since \citealt{cpl86, rl90}.
 It has been shown that the DM variation of some pulsars are consistent with
 those expected from an ISM characterized by a Kolomgorov turbulence spectrum
-\citep{ric90, ktr94, yhc+07, kcs+13, fst14}. In those cases one can calculate the 
+\citep{cwd+90, ric90, ktr94, yhc+07, kcs+13, fst14}. In those cases one can calculate the 
 structure function of the varying DM: 
 \begin{equation}
 D_{\phi}(\tau)=\left(\frac{2\pi C}{f^2}\right)\langle [DM(t+\tau)-DM(t)]^2\rangle, 
@@ -282,8 +286,8 @@ the inner scale of the turbulence. The pulsars with DM variation that fits this
 theory generally have large but relatively smooth DM variations in timescale of 
 years. However, the DM variation of PSR J1713+0747 (Figure \ref{fig:dmx}) does not 
 follow the same characterization. It has a large variation around 2009 for few hundreds days,
-but not much long-term variation. Therefore, its structure function rejects
-a Kolomgorov type spectrum, instead, favors a smaller spectrum index.
+but not much long-term variation. As a result, its structure function follows a
+flatter spectrum than the Kolomgorov one.
 
 
 
@@ -307,7 +311,7 @@ gives rise to significant high-order frequency polynomials such as
 $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency.
 
 The timing noise of radio pulsars has been studied by \citet{antt94},
-\citet{dmhd95}, \citet{mtem97} and later by \citet{hlk10} with large samples. 
+\citet{dmhd95}, \citet{mtem97} and later by \citet{hlk10, sc10} with large samples. 
 %Because every pulsar has its own unique timing behavior, it is
 %hard to quantify the level of timing noise.
 \citet{antt94} characterized the significance of timing noise using the second
@@ -345,8 +349,7 @@ simulation. This suggests that the spin of PSR~J1713+0747 is likely very
 regular, as one would expect from an old recycled pulsar in a wide binary
 orbit. %with smaller than 1 year of typical timescale. 
 This result is also consistent with the timing noise analysis of this pulsar in 
-\citet{pjl+13}. They
-studied the timing noise using an auto-correlation technique
+\citet{pjl+13}. They studied the timing noise using an auto-correlation technique
 based on 5 year NANOGrav data, and conclude that the timing residuals are
 consistent with mostly white noise.
 %The lack of short- and long-timescale red noise suggests the
@@ -427,9 +430,12 @@ the ``corrected amplitude'' of the timing residuals.
 Table \ref{tab:wrms} shows the weighted RMS measured directly from the residuals 
 and the corrected RMS based on noise injection simulations. One caveat 
 of this approach is that the injected noise is white, while the actual timing
-residuals may consist of both white and red noises. More thorough and
-reliable noise analysis may require Bayesian inference and realistic
-noise modeling (Dolch et~al. 2014 in preparation). But that is out of the scope of this paper.
+residuals may consist of both white and red noises. A more detail noise
+analysis is needed for the 21-yr data set along the lines of Dolch et~al
+(2014, in preparation).
+%More thorough and
+%reliable noise analysis may require Bayesian inference and realistic
+%noise modeling (Dolch et~al. 2014 in preparation). But that is out of the scope of this paper.
 
 Our residual analysis (Table \ref{tab:wrms}) shows that the advances in
 instrumentation have made pulsar timing increasingly accurate.
@@ -445,7 +451,7 @@ systems.
 %These are clearly beeter than the corresponding residuals from ASP, but not better by a factor of three as predicted by the radiometer equation.
 \citet{sc12} studied the pulse arrival times from a single long exposure of
 PSR~J1713+0747, and found that this pulsar's single pulse showed random jitter of
-$\simeq40~\mu$s. Therefore, by averaging many pulses collected in the
+$\simeq26~\mu$s. Therefore, by averaging many pulses collected in the
 $\sim20$~min NANOGrav observation, one expect $\sim 40$~ns of jitter noise. 
 %This jitter noise is not affected by the radiometer equation and will not
 %decrease as bandwidth of the observations increases.
@@ -474,7 +480,7 @@ result of the kinetic motion between the binary and the
 observer, i.e. an relativistic effect caused by differential radial
 acceleration in the Galactic gravitational potential
 \citep{dt91} and centrifugal acceleration. The relativistic effect of centrifugal
-acceleration is also known as the(``Shklovskii'' effect (
+acceleration is also known as the ``Shklovskii'' effect (
 \citealt{shk70}). Luckily, we have good measurements of the distance and proper
 motion of the binary system, which allow us to remove these effects and study the system's intrinsic orbital decay.
 \begin{equation}
@@ -716,7 +722,7 @@ significantly improve the pulsar timing limit on the change rate of the gravitat
  constant, $\dot{G}$, making it nearly as good as the best
  constraint of this kind (LLR experiment; \citep{hmb10}).
 The new best pulsar timing limit on $\dot{G}/G$ is 
-$2\pm8\times10^{-13}$~yr$^{-1}$ ($<0.0123H_0$ based on 3-$\sigma$ limit), where $H_0$ is the Hubble constant. 
+$4\pm8\times10^{-13}$~yr$^{-1}$ ($<0.0123H_0$ based on 3-$\sigma$ limit), where $H_0$ is the Hubble constant. 
 In another word, the change rate of gravitational constant has to be a factor
 of at least $43$ (3-$\sigma$ limit) slower than the Universe's expansion rate.
 Although this $\dot{G}/G$ limit is derived in the

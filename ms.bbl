@@ -1,4 +1,4 @@
-\begin{thebibliography}{65}
+\begin{thebibliography}{69}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -51,6 +51,14 @@ Brans, C., \& Dicke, R.~H. 1961, Phys. Rev., 124, 925
 
 \bibitem[{Camilo {et~al.}(1994)Camilo, Foster, \& Wolszczan}]{cfw94}
 Camilo, F., Foster, R.~S., \& Wolszczan, A. 1994, ApJ, 437, L39
+
+\bibitem[{Cordes {et~al.}(1986)Cordes, Pidwerbetsky, \& Lovelace}]{cpl86}
+Cordes, J.~M., Pidwerbetsky, A., \& Lovelace, R. V.~E. 1986, ApJ, 310, 737
+
+\bibitem[{Cordes {et~al.}(1990)Cordes, Wolszczan, Dewey, Blaskiewicz, \&
+  Stinebring}]{cwd+90}
+Cordes, J.~M., Wolszczan, A., Dewey, R.~J., Blaskiewicz, M., \& Stinebring,
+  D.~R. 1990, ApJ, 349, 245
 
 \bibitem[{{D'Alessandro} {et~al.}(1995){D'Alessandro}, {McCulloch}, {Hamilton},
   \& {Deshpande}}]{dmhd95}
@@ -218,8 +226,14 @@ Rappaport, S., Podsiadlowski, P., Joss, P.~C., DiStefano, R., \& Han, Z. 1995,
 \bibitem[{Rickett(1990)}]{ric90}
 Rickett, B.~J. 1990, ARAA, 28, 561
 
+\bibitem[{Rickett \& Lyne(1990)}]{rl90}
+Rickett, B.~J., \& Lyne, A.~G. 1990, MNRAS, 244, 68
+
+\bibitem[{{Shannon} \& {Cordes}(2010)}]{sc10}
+{Shannon}, R.~M., \& {Cordes}, J.~M. 2010, \apj, 725, 1607
+
 \bibitem[{{Shannon} \& {Cordes}(2012)}]{sc12}
-{Shannon}, R.~M., \& {Cordes}, J.~M. 2012, \apj, 761, 64
+---. 2012, \apj, 761, 64
 
 \bibitem[{Shklovskii(1970)}]{shk70}
 Shklovskii, I.~S. 1970, Sov. Astron., 13, 562
