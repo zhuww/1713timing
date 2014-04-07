@@ -1,15 +1,17 @@
 
 \begin{abstract}
 Pulsars are precise cosmic clocks and excellent testing grounds for
-fundamental physics, especially for testing
-gravitational theories. We report 21-year timing of one of the most precise
+fundamental physics, especially for testing gravitational theories. 
+We report 21-year timing of one of the most precise
 pulsars: PSR~J1713+0747. The pulse times of arrival of this pulsar are well
 modeled by a comprehensive binary model, which included the 3-D orientation 
 of the orbit in the sky, with residuals of estimated variance of $\sim 210$~ns. 
-We also measured the binary orbit's apparent decay due to motion 
+The new dataset allows us to update and greatly improve previous measurements
+of the system properties. 
+We were able to measured for the first time a statistically significant value for the 
+binary orbit's apparent decay due to motion 
 between the pulsar and the observer. Our results set
 a limit on the change rate of the gravitational constant $\dot{G}$. 
-%as predicted in some alternative theories of strong-field gravity. 
 $\dot{G}$ is found to be consistent with zero and at 
 least a factor of $43$ (99.7\% confidence level) slower than the average expansion 
 rate of the Universe. Such a limit has important implications for
@@ -25,20 +27,20 @@ North American nano-Hertz Observatory for Gravitation Waves (NANOGrav;
 \citealt{ndf+12, dfg+13}), has the smallest timing residual of all NANOGrav
 pulsars \citep{dfg+13}, and is one of the best-timed pulsars in the world.
 Observations of this pulsar were reported previously in
-\citealt{cfw94},\citealt{ vb03}, \citealt{sns+05}, \citealt{hbo06} and \citealt{ver09}.
+\citealt{cfw94}, \citealt{vb03}, \citealt{sns+05}, \citealt{hbo06} and \citealt{ver09}.
 
 %The high timing precision and the long base line allowed us to precisely 
 %measure the pulsar binary's orbit, masses, distance, proper motion, 
 %and orientation on the sky (see Section \ref{sec:model} for
 %details). 
 
-Millisecond pulsars (MSPs) are very stable rotators thanks to their enormous angular momentum. PSR~J1713+0747 is one of the most stable MSPs, and it resides in a wide binary orbit with a white dwarf companion (Section \ref{sec:model}). 
+Millisecond pulsars (MSPs) are very stable rotators due to their enormous angular momentum. PSR~J1713+0747 is one of the most stable MSPs, and it resides in a wide binary orbit with a white dwarf companion (Section \ref{sec:model}). 
 The latest wide-bandwidth and high-resolution instruments allow us to model and account for the variation in the interstellar medium (ISM)
 (Section \ref{sec:dmx}) and small distortions of the pulsar's magnetosphere (Section \ref{sec:FD}). 
 The pulse arrival times of the pulsar are well fit by a binary model with
 a nearly circular orbit that is edge on to our line of sight. The masses of
-the system components can be inferred through the measurement of Shapiro delay. 
-The system's distance is well-measured through timing parallax. We also detect
+the system components can be inferred through the measurement of Shapiro delay \citep{sns+05}. 
+The system's distance is well-measured through a timing parallax. We also detect
 a changing projected orbital semi-major axis due to the orbit's proper motion
 on the sky. Through the change rate of projected semi-major axis, we can infer 
 the orientation of the orbit in the sky.
@@ -52,12 +54,12 @@ motion (the Shklovskii effect and Galactic differential acceleration).
 The stability and long orbital period of the PSR~J1713+0747 binary make it the
 perfect laboratory for observing the smallest cosmic variance, 
 one such as the time variation of Newton's gravitational ``constant'' $G$. 
-This interesting conjecture of $G$ varying in a cosmological timescale was first 
+This interesting conjecture of $G$ varying on a cosmological timescale was first 
 raised by \citet{dir37} based on his large-number hypothesis, and 
 revisited later by gravitational theories involving extra dimensions
 \citep{mar84,ww86a}.
-In this paper, we seek to constrain the time variation of $G$ using pulsar
-binary in the framework of one of the last remaining alternative theories of gravitation, the scalar-tensor theory \citep{jor59,fie56,bd61}. 
+In this paper, we seek to constrain the time variation of $G$ using this pulsar
+binary system in the framework of one of the last remaining alternative theories of gravitation, the scalar-tensor theory \citep{jor59,fie56,bd61}. 
 This theory modifies Einstein's equation of gravitation by coupling mass with
 a large-scale scalar-tensor field, and predicts that, as the universe expands,
 the scalar field will also expand, causing the gravitational constant to vary  
@@ -153,10 +155,13 @@ Shapiro delay and dispersion due to the ISM.
 We employed the pulsar timing tool \textit{TEMPO}
 \footnote{\url{http://tempo.sourceforge.net}} and the same
 \citet{dd86} (DD) model \citet{sns+05} used to fit for the pulsar's
-spin behavior and orbital motions, but used a Markov-Chain-Monte-Carlo
-(MCMC) simulation to determine the parameter uncertainties.
+spin behavior and orbital motions, but used a Markov Chain Monte Carlo
+\footnote{{\bf We used a Metropolis algorithm assuming the goodness of fit of
+the timing model is proportional to $e^{-\chi^2/2}$. The code for running this
+MCMC can be found here: \url{https://github.com/zhuww/tempomcmc}}}  
+(MCMC; \citealt{NR3}) simulation to determine the parameter uncertainties (Table \ref{tab:par}).
 The T2 model in \textit{TEMPO2} \citep{hem06} also can be used for modeling this pulsar. We tested the T2 model and found that its best-fit binary parameters are physically consistent with those we found using DD model.
-The DMX model was used to fit DM variations caused by changes in the ISM (see Section \ref{sec:dmx} for details). The FD model was used to model profile
+The DMX model was used to fit dispersion measure (DM) variations caused by changes in the ISM (see Section \ref{sec:dmx} for details). The FD model was used to model profile
 evolution in frequency (see Section \ref{sec:FD} for details). 
 We used the DE421 solar ephemeris instead of the DE405 used by
 \citet{sns+05} for its improved precision on the masses of the Solar system
@@ -175,10 +180,11 @@ those in \citet{sns+05} slightly but consistently within their reported uncertai
 
 \subsection{Mass measurements}
 \label{sec:mass}
-PSR~J1713+0747's timing model has been significantly improved by the 21-year timing effort.
+The timing model of PSR~J1713+0747 has been significantly improved by the 21-year timing effort.
 Most notably, the pulsar and the companion masses have been more precisely measured
 (Figure \ref{fig:mass}; Table \ref{tab:par}). The
-companion's mass $M_{\rm c} = 0.283\pm0.004$ and the pulsar $M_{\rm PSR}=1.29\pm0.1$ are in good agreement with the previously measured values \cite{sns+05}.
+companion's mass $M_{\rm c} = 0.283\pm0.004$ and the pulsar $M_{\rm
+PSR}=1.29\pm0.03$ are in good agreement with the previously measured values \cite{sns+05}.
 The pulsar's mass is comparable with the distribution of pulsar masses
 in other neutron star-white dwarf systems, and in good
 agreement with the distribution of pulsar masses found in recycled binaries
@@ -215,9 +221,9 @@ our sight-line through the turbulent ISM and solar wind is changing as the
 pulsar, the Sun, the Earth, and the ISM all move with respect to each other.
 The DM variation can affect the timing of high-precision pulsar significantly.
 
-We fit the time-varying DM using the {\it DMX} model in {\it tempo}.
+We fit the time-varying DM using the {\it DMX} model in {\it TEMPO}.
 The model groups TOAs taken within ten days and fits for one
-best DM value for each group.  The same procedure was carried out in
+value of DM value for each group.  The same procedure was carried out in
 \citealt{dfg+13}.  This DM fitting was conducted with TOAs from all
 instruments except Mark~III, which produced only single-frequency TOAs.
 
@@ -259,7 +265,7 @@ an apparent hump in the first part of the DM curve (Figure \ref{fig:dmx}) and
 a similar shape in the 2300-MHz timing residuals from Mark~IV and ABPP (Figure
 \ref{fig:res}).
 
-There is a hint of small annual DM variations, part of these variations may be 
+There is a hint of small annual DM variations, part of which may be 
 related to the varying electron density in the Solar wind as our sight line moves.
 The Earth's motion could also causes a projected helical motion through the ISM
 that leads to an annual DM variation.
@@ -283,12 +289,12 @@ the observing frequency in MHz, and expect
 this function to follow a Kolomgorov power law $D_{\phi}(\tau)=(\tau/\tau_0)^{\beta -2}$, 
 where $\beta=11/3$ and $\tau_0$ is a characteristic time scale related to 
 the inner scale of the turbulence. The pulsars with DM variation that fits this
-theory generally have large but relatively smooth DM variations in timescale of 
+theory generally have large DM variations in timescale of 
 years. However, the DM variation of PSR J1713+0747 (Figure \ref{fig:dmx}) does not 
-follow the same characterization. It has a large variation around 2009 for few hundreds days,
-but not much long-term variation. As a result, its structure function follows a
+follow the same characterization. It went trough a steep drop and recover 
+around 2009 for few hundreds days, Conversely, the overall long-term variation is smaller
+compared with the 2009 event. As a result, its structure function (Figure \ref{fig:dmx}) follows a
 flatter spectrum than the Kolomgorov one.
-
 
 
 \subsection{Timing noise}
@@ -304,14 +310,16 @@ irregularity, i.e. its long-term deviation from a simple linear slow down.
 Potential causes of irregular spin behavior include unresolved
 micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar
 \citep{hlk10, ymh+13, ml14}.
-Unlike the Gaussian-like noise due to the measurements of the TOAs, the
-timing noise accumulates over time, with a ``red'' 
-spectrum. Timing noise is often significant in younger pulsars, and often
+Such timing noise accumulates over time, therefore, often has a ``red'' 
+spectrum, meaning that they are often relatively small in short time scale,
+but become more significant over time.
+Timing noise is often significant in younger pulsars, and often
 gives rise to significant high-order frequency polynomials such as
 $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency.
 
-The timing noise of radio pulsars has been studied by \citet{antt94},
-\citet{dmhd95}, \citet{mtem97} and later by \citet{hlk10, sc10} with large samples. 
+The timing noise of radio pulsars has been studied by
+\citet{ch80,cd85,antt94,dmhd95, mtem97}, and later by \citet{hlk10} and
+\citet{sc10} with large samples. 
 %Because every pulsar has its own unique timing behavior, it is
 %hard to quantify the level of timing noise.
 \citet{antt94} characterized the significance of timing noise using the second
@@ -381,7 +389,7 @@ different instruments and different telescopes (Figure \ref{fig:FD}).
 The cause of such profile evolution is likely a change in the pulsar's
 radiation pattern with frequency.  Pulsar radiation of different frequencies may originate from
 different parts of the star's magnetosphere, and 
-the radiation region of the pulsars's magnetosphere may be slightly distorted,
+the radiation region of the pulsars' magnetosphere may be slightly distorted,
 leading to a frequency-dependent radiation pattern. \citet{pdr14} 
 extensively discussed this phenomenon and developed a TOA extraction technique
 based on phase-frequency 2-D pulse profiles matching. This technique is not
@@ -404,33 +412,46 @@ case of PSR~J1713+0747.
 \subsection{Timing residuals}
 \label{sec:res}
 
-The final timing residuals of PSR~J1713+0747 have a weighted RMS of
-$\sim 0.3\mu$s. The daily-averaged residuals have a weighted RMS of $\sim
-0.09\mu$s (Figure \ref{fig:res}, Table \ref{tab:wrms}).
-%These residuals appear to be smooth and flat, except a small red-noise like
-%peak in the residuals of the upper band (Figure \ref{fig:res}, bottom panel) around 2002. 
-%This is likely caused by timing noise left not fitted by the cubic and quadruple polynomial fit.
+The timing residuals of PSR~J1713+0747 have a weighted root mean square (WRMS) $\sim 0.3\mu$s.
+If we average the residuals in each epoch, the epoch-averaged residuals has a 
+WRMS of $\sim 0.09\mu$s (Figure \ref{fig:res}, Table \ref{tab:wrms}).
+Here we define the error weighted epoch-averaged residual as: 
+$\msR_{\rm epoch} = \langle w_j\msR_{j}\rangle$, $\sigma_{\rm
+epoch}=\{\sum [(\msR_j-\msR_{\rm epoch})^2w_j]/(N-1)/\sum w_j\}^{1/2}$, where $j$
+denote one of the $N$ TOAs from the respective observation epoch.
+
+
+
 However, the model fitting process, which minimizes the residuals, has a
 tendency to ``overfit'' or ``absorb'' part of the signal or noise and
 ``flatten'' the residuals.
 This is especially significant for the lower band residuals, because
 the DM fitting affects the lower frequency TOAs more than the
 higher frequency TOAs, and is more likely to flatten their timing residuals. 
-As a result we expect the residuals' weighted RMS to be slightly
+As a result we expect the residuals' WRMS to be slightly
 underestimated. This effect can be crudely quantified
 by injecting random Gaussian noise to the TOAs and
-measuring the response in the post-fit residuals. Figure \ref{fig:overfit} show
-the weighted RMS of the post-fit residuals as a function of injected
+measuring the response in the post-fit residuals. 
+We perform this simulation one system at a time. 
+We added Gaussian noise to the TOAs of each observation epoch of the giving system.
+The noise are random between different epochs, but they are the
+same for all the TOAs of different frequencies in any given epoch. 
+Figure \ref{fig:overfit} show
+the WRMS of the post-fit residuals as a function of injected
 noise level for the PUPPI 1400-MHz TOAs. 
 One can see that the RMS residual increases almost linearly as a function of the
 injected noise, but only a fraction of the injected noise is recovered in the timing 
 residual. Based on such simulations, we
 can estimate the level of noises ``absorbed'' by the timing models, and infer 
 the ``corrected amplitude'' of the timing residuals. 
-Table \ref{tab:wrms} shows the weighted RMS measured directly from the residuals 
-and the corrected RMS based on noise injection simulations. One caveat 
-of this approach is that the injected noise is white, while the actual timing
-residuals may consist of both white and red noises. A more detail noise
+Table \ref{tab:wrms} shows the WRMS measured directly from the residuals 
+and the ``corrected RMS'' based on noise injection simulations. 
+Please note that these ``corrected RMSs'' serve to demonstrate the effect of ``overfitting''.
+They are not the proper measurements of noise level in the data. There are some 
+caveats in our approach, firstly, we only simulate noises between different
+epochs, not noises between different frequencies of the same epoch; secondly, 
+the injected noise is Gaussian white noise, while the actual 
+noise may contain some red and non-Gaussian noises. A more realistic noise
 analysis is needed for the 21-yr data set along the lines of Dolch et~al
 (2014, in preparation).
 %More thorough and
@@ -452,7 +473,7 @@ systems.
 \citet{sc12} studied the pulse arrival times from a single long exposure of
 PSR~J1713+0747, and found that this pulsar's single pulse showed random jitter of
 $\simeq26~\mu$s. Therefore, by averaging many pulses collected in the
-$\sim20$~min NANOGrav observation, one expect $\sim 40$~ns of jitter noise. 
+$\sim20$~min NANOGrav observation, one expect $\sim 50$~ns of jitter noise. 
 %This jitter noise is not affected by the radiometer equation and will not
 %decrease as bandwidth of the observations increases.
 %If jitter noise is a significant fraction of the observed residuals, it might
@@ -699,9 +720,9 @@ of the noise in the residuals \citep{kcs+13}. The extent to which this prevents 
 identifying red noise remains a subject for more stringent studies in the
 future.
 
-After correcting for ``over-fitting'', the ``corrected'' weighted RMS of the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
+After correcting for ``over-fitting'', the ``corrected'' WRMS of the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
 the amount of signal or noise remain in the timing residuals. The estimated
-weighted RMS of the 21 years timing residuals is $\sim 210$~ns. 
+WRMS of the 21 years timing residuals is $\sim 210$~ns. 
 %The smallest RMS values are from the 1400-MHz GUPPI data ($\sim$127~ns) and the
 %2300-MHz PUPPI data ($\sim$134~ns),
 %clearly better than thos from the older generations of instruments 
@@ -724,12 +745,13 @@ significantly improve the pulsar timing limit on the change rate of the gravitat
 The new best pulsar timing limit on $\dot{G}/G$ is 
 $4\pm8\times10^{-13}$~yr$^{-1}$ ($<0.0123H_0$ based on 3-$\sigma$ limit), where $H_0$ is the Hubble constant. 
 In another word, the change rate of gravitational constant has to be a factor
-of at least $43$ (3-$\sigma$ limit) slower than the Universe's expansion rate.
-Although this $\dot{G}/G$ limit is derived in the
-framework of scalar-tensor theories, it is a more rigorous and conservative
-limit than the generic phenomenological limit 
-$\dot{G}/G\simeq-\dot{P}_{\rm b}^{\rm exc}/(2P_{\rm
-b})=4\pm7\times10^{-13}$~yr$^{-1}$ \citep{dgt88}.
+of at least $43$ (3-$\sigma$ limit) slower than the average expansion rate of
+the Universe.
+%Although this $\dot{G}/G$ limit is derived in the
+%framework of scalar-tensor theories, it is a more rigorous and conservative
+%limit than the generic phenomenological limit 
+%$\dot{G}/G\simeq-\dot{P}_{\rm b}^{\rm exc}/(2P_{\rm
+%b})=4\pm7\times10^{-13}$~yr$^{-1}$ \citep{dgt88}.
 
 %Because $\dot P_{\rm b}$ is a second order term in the timing 
 %model, its measured precision improves very fast, $\sigma \dot

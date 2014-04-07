@@ -5,7 +5,7 @@
 \tabletypesize{\footnotesize}
 \tablewidth{0pt}
 \tablecaption{\label{tab:wrms}  }
-\tablehead{ \colhead{Instrument-Backend}  &\colhead{WRMS (ms)}  &\colhead{`rescaled' WRMS (ms)}   }
+\tablehead{ \colhead{Instrument-Backend}  &\colhead{WRMS\tablenotemark{a} (ms)}  &\colhead{`rescaled' WRMS (ms)}   }
 \startdata
 Overall&  0.090&  0.21(5)\\
 MarkIII&  0.472&  0.52(4)\\
@@ -22,8 +22,12 @@ ASP-L&  0.029&  0.079(13)\\
 PUPPI-S&  0.112&  0.134(17)\\
 PUPPI-L&  0.026&  0.17(3)
 \enddata
-
-
+\tablenotetext{a}{
+Here WRMS is defined as $\{\sum [(w_i\msR_i)^2 - \bar{\msR}\sum \msR_i]/\sum w_i\}^{1/2}$, where 
+$\msR_i$ is the timing residual of TOA $i$, $w_i=1/\sigma_i^2$ is the weight
+determined by measurement error $\sigma_i$ of TOA $i$, and $\bar{\msR}=\langle w_i\msR_i\rangle$ 
+is the weighted mean of the residuals.
+}
 \end{deluxetable}
 
 \clearpage 

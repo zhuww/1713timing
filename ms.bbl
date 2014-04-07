@@ -1,4 +1,4 @@
-\begin{thebibliography}{69}
+\begin{thebibliography}{71}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -51,6 +51,12 @@ Brans, C., \& Dicke, R.~H. 1961, Phys. Rev., 124, 925
 
 \bibitem[{Camilo {et~al.}(1994)Camilo, Foster, \& Wolszczan}]{cfw94}
 Camilo, F., Foster, R.~S., \& Wolszczan, A. 1994, ApJ, 437, L39
+
+\bibitem[{Cordes \& Downs(1985)}]{cd85}
+Cordes, J.~M., \& Downs, G.~S. 1985, ApJS, 59, 343
+
+\bibitem[{Cordes \& Helfand(1980)}]{ch80}
+Cordes, J.~M., \& Helfand, D.~J. 1980, ApJ, 239, 640
 
 \bibitem[{Cordes {et~al.}(1986)Cordes, Pidwerbetsky, \& Lovelace}]{cpl86}
 Cordes, J.~M., Pidwerbetsky, A., \& Lovelace, R. V.~E. 1986, ApJ, 310, 737
