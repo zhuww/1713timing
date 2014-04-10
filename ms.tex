@@ -160,31 +160,44 @@ variation and its a power law fit (solid line). The best power law index is
 ``pure'' Kolmogorov medium. } 
 \end{figure} 
 
+%\begin{figure}
+%\includegraphics[scale=0.6]{1713_TN.ps} \\ 
+%\caption {\label{fig:TN} Black squares: The timing noise characteristic
+%$\sigma_z(\tau)$ \citep{mte97} for different time scale $\tau$ as calculated
+%from the timing residuals of PSR~J1713+0747 obtained by setting $F_2=0$ and
+%freezing all other parameters; shaded region:
+%the distribution of $\sigma_z(\tau)$ calculated from 25 simulated timing residuals containing 
+%Gaussian white noise of the same variance as the real residuals; hatched
+%region: the distribution of $\sigma_z(\tau)$ calculated from simulated 
+%residuals containing both Gaussian white noises and a
+%random walk signal (red noise) which Gaussian random step sizes of
+%$\sigma\simeq\sqrt{t_c/(1~{\rm yr})}\sigma_{\rm obs}$, where $t_c$ is the
+%cadence of the simulated TOAs and $\sigma_{\rm obs}$ is the RMS of the
+%observed timing residual.
+%The simulated TOAs are uniformly distributed with a $t_c$ of 10 days.
+%Here the step size of the random walk signal was chosen to simulate a red
+%noise signal that grows to the same level of variance as the observed
+%signal in $\sim$1 year.
+%} 
+%\end{figure} 
+
+
 \begin{figure}
-\includegraphics[scale=0.6]{1713_TN.ps} \\ 
-\caption {\label{fig:TN} Black squares: The timing noise characteristic
-$\sigma_z(\tau)$ \citep{mte97} for different time scale $\tau$ as calculated
-from the timing residuals of PSR~J1713+0747 obtained by setting $F_2=0$ and
-freezing all other parameters; shaded region:
-the distribution of $\sigma_z(\tau)$ calculated from 25 simulated timing residuals containing 
-Gaussian white noise of the same variance as the real residuals; hatched
-region: the distribution of $\sigma_z(\tau)$ calculated from simulated 
-residuals containing both Gaussian white noises and a
-random walk signal (red noise) which Gaussian random step sizes of
-$\sigma\simeq\sqrt{t_c/(1~{\rm yr})}\sigma_{\rm obs}$, where $t_c$ is the
-cadence of the simulated TOAs and $\sigma_{\rm obs}$ is the RMS of the
-observed timing residual.
-The simulated TOAs are uniformly distributed with a $t_c$ of 10 days.
-Here the step size of the random walk signal was chosen to simulate a red
-noise signal that grows to the same level of variance as the observed
-signal in $\sim$1 year.
+\includegraphics[scale=0.6]{1713_RN.ps} \\ 
+\caption{\label{fig:TN}
+Dots: residual RMS $\sigma^2_{\msR,2}$ from segments of the our data of length $T$.  
+WN: theoretical residual expected from white noises of RMS 0.09$\mu$s; RW$_0$:
+WN + random walk of phase; RW$_1$: WN + random walk of $\nu$; RW$_2$: WN +
+random walk of $\dot{\nu}$. RW$_0$, RW$_1$, RW$_2$ are scaled such that they
+produce an extra 0.1$\mu$s noise in 10 years.
 } 
 \end{figure} 
 
 \begin{figure}
 \includegraphics[width=4in]{FD.ps} \\ 
 \caption {\label{fig:FD} Post-fit residual versus frequency when fitted
-without the FD model (solid line), showing the frequency dependency of the TOAs. For
+without the FD model, showing the frequency dependency of the TOAs that is 
+accounted for by the DM. For
 clarity, this plot is made using only TOAs with error smaller than 3~$\mu$s.} 
 \end{figure} 
 

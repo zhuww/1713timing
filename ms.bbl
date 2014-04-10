@@ -1,4 +1,4 @@
-\begin{thebibliography}{71}
+\begin{thebibliography}{72}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -216,6 +216,11 @@ Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
 \bibitem[{Podsiadlowski {et~al.}(2002)Podsiadlowski, Rappaport, \&
   Pfahl}]{prp02b}
 Podsiadlowski, P., Rappaport, S., \& Pfahl, E.~D. 2002, ApJ, 565, 1107
+
+\bibitem[{Press {et~al.}(2007)Press, Teukolsky, Vetterling, \& Flannery}]{NR3}
+Press, W.~H., Teukolsky, S.~A., Vetterling, W.~T., \& Flannery, B.~P. 2007,
+  Numerical Recipes 3rd Edition: The Art of Scientific Computing, 3rd edn. (New
+  York, NY, USA: Cambridge University Press)
 
 \bibitem[{{Ransom} {et~al.}(2014){Ransom}, {Stairs}, {Archibald}, {Hessels},
   {Kaplan}, {van Kerkwijk}, {Boyles}, {Deller}, {Chatterjee},

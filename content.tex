@@ -152,18 +152,19 @@ density, in this case, the AGNs J1413+1509 and B1442+09.
 A comprehensive timing model was described by \citet{sns+05},
 including the effects of pulsar rotation, astrometry, orbital motion,
 Shapiro delay and dispersion due to the ISM.
-We employed the pulsar timing tool \textit{TEMPO}
+We employ the pulsar timing tool \textit{TEMPO}
 \footnote{\url{http://tempo.sourceforge.net}} and the same
 \citet{dd86} (DD) model \citet{sns+05} used to fit for the pulsar's
 spin behavior and orbital motions, but used a Markov Chain Monte Carlo
 \footnote{{\bf We used a Metropolis algorithm assuming the goodness of fit of
-the timing model is proportional to $e^{-\chi^2/2}$. The code for running this
+the timing model is proportional to $e^{-\chi^2/2}$. The procedure is similar
+to that in the {\textbf TEMPO2} MCMC plugin \citep{dpr+10}. The code for running this
 MCMC can be found here: \url{https://github.com/zhuww/tempomcmc}}}  
 (MCMC; \citealt{NR3}) simulation to determine the parameter uncertainties (Table \ref{tab:par}).
 The T2 model in \textit{TEMPO2} \citep{hem06} also can be used for modeling this pulsar. We tested the T2 model and found that its best-fit binary parameters are physically consistent with those we found using DD model.
 The DMX model was used to fit dispersion measure (DM) variations caused by changes in the ISM (see Section \ref{sec:dmx} for details). The FD model was used to model profile
 evolution in frequency (see Section \ref{sec:FD} for details). 
-We used the DE421 solar ephemeris instead of the DE405 used by
+We use the DE421 solar ephemeris instead of the DE405 used by
 \citet{sns+05} for its improved precision on the masses of the Solar system
 planets, despite that using DE405 gave us marginally better $\chi^2$
 ($\Delta\chi^2\sim20$ for 16750 degrees of freedom).
@@ -277,7 +278,7 @@ that leads to an annual DM variation.
 Spectrum analysis of the time variation of flux, pulse arrival phase, and DM have 
 been employed to study the turbulent nature of the ISM since \citealt{cpl86, rl90}.
 It has been shown that the DM variation of some pulsars are consistent with
-those expected from an ISM characterized by a Kolomgorov turbulence spectrum
+those expected from an ISM characterized by a Kolmogorov turbulence spectrum
 \citep{cwd+90, ric90, ktr94, yhc+07, kcs+13, fst14}. In those cases one can calculate the 
 structure function of the varying DM: 
 \begin{equation}
@@ -286,7 +287,7 @@ D_{\phi}(\tau)=\left(\frac{2\pi C}{f^2}\right)\langle [DM(t+\tau)-DM(t)]^2\rangl
 where $\tau$ 
 is a given time delay, $C=4.148\times10^3$~MHz$^2$pc$^{-1}$cm$^3$s, and $f$ is 
 the observing frequency in MHz, and expect 
-this function to follow a Kolomgorov power law $D_{\phi}(\tau)=(\tau/\tau_0)^{\beta -2}$, 
+this function to follow a Kolmogorov power law $D_{\phi}(\tau)=(\tau/\tau_0)^{\beta -2}$, 
 where $\beta=11/3$ and $\tau_0$ is a characteristic time scale related to 
 the inner scale of the turbulence. The pulsars with DM variation that fits this
 theory generally have large DM variations in timescale of 
@@ -294,28 +295,33 @@ years. However, the DM variation of PSR J1713+0747 (Figure \ref{fig:dmx}) does n
 follow the same characterization. It went trough a steep drop and recover 
 around 2009 for few hundreds days, Conversely, the overall long-term variation is smaller
 compared with the 2009 event. As a result, its structure function (Figure \ref{fig:dmx}) follows a
-flatter spectrum than the Kolomgorov one.
+flatter spectrum than the Kolmogorov one.
 
 
 \subsection{Timing noise}
 \label{sec:noise}
-The pulsar timing residuals (Figure \ref{fig:res}) are the residuals left
-after we fit the TOAs with our timing model. 
-These residuals are likely caused by timing noise, DM variations, radiometer 
-noise, and other sources of noise. This section discusses PSR~J1713+0747's
-timing noise, i.e. TOA variations due to spin irregularities.
+%The pulsar timing residuals (Figure \ref{fig:res}) are the residuals left
+%after we fit the TOAs with our timing model. 
+%These residuals are likely caused by timing noise, DM variations, radiometer 
+%noise, and other sources of noise. This section discusses PSR~J1713+0747's
+%timing noise, i.e. TOA variations due to spin irregularities.
 
 The term ``timing noise'' in pulsar timing generally refers to a pulsar's spin
 irregularity, i.e. its long-term deviation from a simple linear slow down. 
-Potential causes of irregular spin behavior include unresolved
-micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar
-\citep{hlk10, ymh+13, ml14}.
-Such timing noise accumulates over time, therefore, often has a ``red'' 
-spectrum, meaning that they are often relatively small in short time scale,
-but become more significant over time.
 Timing noise is often significant in younger pulsars, and often
 gives rise to significant high-order frequency polynomials such as
 $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency.
+Potential causes of irregular spin behavior include unresolved
+micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar \citep{hlk10, ymh+13, ml14}.
+{\bf These mechanisms could lead to accumulative random perturbations in the pulsar's phase of
+pulse arrival, spin rate, or spin-down rate. 
+\citet{sc10} point out that one could model these types of timing noises using random walks.
+Random walks in phase (RW$_0$) would grow over time ($T$) proportional to
+$T^{1/2}$, random walk in $\nu$ grows proportional to $T^{3/2}$, random walk in
+$\dot{\nu}$ grows proportional to $T^{5/2}$.
+Such timing noises would likely have a steep power spectrum with more power in
+the lower frequencies, also known as a ``red'' power spectrum.
+}
 
 The timing noise of radio pulsars has been studied by
 \citet{ch80,cd85,antt94,dmhd95, mtem97}, and later by \citet{hlk10} and
@@ -323,8 +329,12 @@ The timing noise of radio pulsars has been studied by
 %Because every pulsar has its own unique timing behavior, it is
 %hard to quantify the level of timing noise.
 \citet{antt94} characterized the significance of timing noise using the second
-spin derivative $\ddot{\nu}$, because on the scale of a few years many
-pulsars show cubic terms in their residuals. They define the noise factor 
+spin derivative $\ddot{\nu}$. 
+This is because for most pulsars except the few youngest ones, 
+The expected $\ddot{\nu}$ from regular spin down is too small to be
+measurable, therefore the higher order spin parameters we observe are most
+likely the result of timing noise.
+They define the noise factor 
 \begin{equation}
 \label{eq:delta8}
 \Delta_8 = \log_{10}\left(\frac{1}{5\nu}|\ddot{\nu}|t^3\right).
@@ -340,22 +350,71 @@ measuring clock stability) to characterize the timing instability of pulsars:
 where $\langle c^2\rangle$ denote the sum of squares of the cubic
 terms fitted to segments of length $\tau$). 
 $\Delta_8$ is basically the logarithm of a dimensionless form of $\sigma_z(10^8~s)$.
+{\bf
+\citet{hlk10} found a best-fit scaling model of $\sigma_z({\rm 10~yr})$ 
+from 366 pulsars:
+\begin{equation}
+\label{eq:hlk10}
+\log_{10}[\sigma_z({\rm 10~yr})] =
+-1.37\log_{10}[\nu^{0.29}|\dot{\nu}|^{0.55}]+0.52,
+\end{equation} 
+where $\nu$, $\dot{\nu}$ are the pulsar's spin and spin-down rate.
+We find that \citet{hlk10}'s scaling model ($\sigma^{\rm model}_{z, \rm
+10~yr}\simeq1\times10^{-12}$) over-predict $\sigma^{\rm measured}_{z, \rm
+10~yr}=2.4\times10^{-16}$ by more than three orders of magnitude. 
+%indicating that PSR~J1713+0747 has
+%significantly less timing noise than average pulsars of similar spin behavior.
 
-PSR~J1713+0747's
-best-fit $\ddot{\nu}$ (table \ref{tab:par}) is not statistically significant. 
-Therefore, there is no evidence of significant timing noise with the
-timescale of the 21 years. The only red-noise like
-signal is the small hump in the early-year 2300-MHz Mark~IV and ABPP timing
-residuals in Figure \ref{fig:res}, and we think it is likely caused by DM variations not resolved in
-these data. Figure \ref{fig:TN} 
-shows PSR~J1713+0747's $\sigma_z$ values for various timescales, compared 
-with the values from simulated residuals containing white noises and
-red noises that grow significantly in few years of time
-scales. The observed $\sigma_z$ values seem to be more consistent 
-with the white-noise simulations, not with the specific red noise
-simulation. This suggests that the spin of PSR~J1713+0747 is likely very
-regular, as one would expect from an old recycled pulsar in a wide binary
-orbit. %with smaller than 1 year of typical timescale. 
+\citet{ch80} defined a different timing noise characteristic $\sigma^2_{\rm
+TN,2}$ based on the root mean square of residuals $\sigma^2_{\msR,2}$ from a
+timing fit that does not include any higher order spin parameters like
+$\ddot{\nu}$. 
+The timing noise term is related to $\sigma^2_{\msR,2}$:
+\begin{equation}
+\sigma^2_{\msR,2}(T) = \sigma^2_{\rm TN,2}(T) + \sigma^2_W, 
+\end{equation}
+where $\sigma^2_W$ is a time-scale $T$ independent term caused by white 
+noise in the data.
+In this definition, timing noise $\sigma^2_{\rm TN,2}(T)$ grows bigger over
+time while white noise stays constant.  
+
+\citet{sc10} studied the $\sigma^2_{\rm TN,2}$ from a large sample of pulsars
+including canonical pulsars (CPs) and millisecond pulsars, they found a scaling
+model:
+\begin{equation}
+\label{eq:sc10}
+\ln(\hat{\sigma}_{\rm TN,2}) = 1.6 - 1.4\ln(\nu) +
+1.1\ln|\dot{\nu}_{-15}|+2\ln(T_{\rm yr}),
+\end{equation}
+where $\dot{\nu}_{-15}$ is $\dot{\nu}$ in units of $10^{-15}$s$^{-2}$, $T_{\rm yr}$ is the 
+observation time span in years.
+This scaling model predict a $\sigma^2_{\rm TN,2}\sim400$~ns with a large
+range for 21-year timing of PSR~J1713+0747. From our data, we measured
+$\sigma^2_{\msR,2}=90$~ns, which is consistent with the lower limit in
+$\sigma^2_{\rm TN,2}$ given by \citet{sc10}. In Section
+\ref{sec:res} we discuss that  
+fitting timing parameters could ``absorb'' some of the timing noises, and use
+noise injection simulations to correct for this effect.
+We find the ``corrected'' RMS residuals is $\sim210$~ns, in good agreement
+with \citet{sc10}'s prediction.
+
+%PSR~J1713+0747's best-fit $\ddot{\nu}$ (table \ref{tab:par}) is not statistically significant. 
+%Therefore, there is no evidence of significant timing noise with the
+%timescale of the 21 years. 
+Figure \ref{fig:TN} shows $\sigma^2_{\msR,2}$ for different time scales, and
+there is no significant evidence of a growing timing noise. We compared 
+$\sigma^2_{\msR,2}(T)$ with a white noise model as well as different random
+walk models (RW$_0$, RW$_1$, RW$_2$) to show that our timing residual is
+mostly white noise.
+%There is a small hump in the early-year 2300-MHz Mark~IV and ABPP timing
+%residuals in Figure \ref{fig:res}. We think it is likely caused by DM 
+%variations not resolved in these data. Figure \ref{fig:TN} 
+%shows PSR~J1713+0747's $\sigma_z$ values for various timescales, compared 
+%with the values from simulated residuals containing white noises and
+%red noises that grow significantly in few years of time
+%scales. The observed $\sigma_z$ values seem to be more consistent 
+%with the white-noise simulations, not with the specific red noise
+%simulation. 
 This result is also consistent with the timing noise analysis of this pulsar in 
 \citet{pjl+13}. They studied the timing noise using an auto-correlation technique
 based on 5 year NANOGrav data, and conclude that the timing residuals are
@@ -363,13 +422,11 @@ consistent with mostly white noise.
 %The lack of short- and long-timescale red noise suggests the
 %deviation from simple spin down could be very small in this pulsar and its timing
 %residuals are dominated by Gaussian-like noises such as the radiometer noise.
+%This suggests that the spin of PSR~J1713+0747 is likely very
+%regular, as one would expect from an old recycled pulsar in a wide binary
+%orbit. %with smaller than 1 year of typical timescale. 
+}
 
-Note that, \citet{kcs+13} argue that fitting for DM variation in short cadence could
-absorb a portion of the noises in the TOAs into the DMX model. 
-Indeed, our noise-injection simulation (Section \ref{sec:res})
-also show that some noises in the residuals are absorbed by model fitting
-including the DM corrections. Although a thorough noise analysis is out of the scope of
-this paper.
 %Whether the ``absorbed'' signals are ``red'' is not clear.
 %Such effect should affect our pre-2005 timing
 %residuals more than the post-2005 ones. Because the post-2005 DM variations 
@@ -632,12 +689,12 @@ J1738+0333, and PSR~J1713+0747 using timing parameter reported in
 \citet{lwj+09}, \citet{fwe+12}, and this work.
 The resulting confidence region of $\dot{G}$ and $\kappa_D$ is shown in Figure
 \ref{fig:Gdot}.
-We find, at 95\% confidence limit, $\dot{G}/G =
+We found, at 95\% confidence limit, $\dot{G}/G =
 4\pm8\times10^{-13}$~yr$^{-1}$; $\kappa_D=-0.7\pm3.3\times10^{-4}$. 
 This constraint on $\dot{G}$ is more than a factor of two more stringent than
 previous pulsar-based constraints \citep{fwe+12}, and comparable
 the best constraint of this type
-($\dot{G}/G=0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the Lunar Laser Ranging
+($\dot{G}/G=-0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the Lunar Laser Ranging
 (LLR)
 experiment \citep{hmb10}, which measured Luna-Earth distance to $10^{-11}$
 precision using 39 years of observations.
@@ -682,8 +739,7 @@ One can estimate such an effect in a strong-field version of the Post-Newtonian 
 where $\textbf{\textit{w}}$ is the absolute velocity of the binary system
 relate to the cosmic microwave background (CMB), $P$ is the pulsar's spin period, $\beta$ is the
 angle between $\textbf{\textit{w}}$ and the spin axis of the pulsar, and
-$\hat{\alpha}_3$ is the strong-field version of one of the Post-Newtonian parameters that characterize the
-violation of Lorentz invariance. 
+$\hat{\alpha}_3$ is the strong-field version of one of the Post-Newtonian parameters that characterize the violation of Lorentz invariance. 
 Here $\textbf{\textit{w}} = \textbf{\textit{w}}_{\odot} + \textbf{\textit{v}}_{\rm PSR}$, where
 $\textbf{\textit{w}}_{\odot}=384\pm139$km~s$^{-1}$ is the velocity of
 the solar system relative to the CMB (\citealt{aaa+13}),
@@ -709,35 +765,14 @@ multiple similar pulsar systems \citep{wex00,sfl+05, gsf+11}.
 %over all result, most precise pulsar timing
 In this paper, we present a comprehensive model of high precision timing observations of
 PSR~J1713+0747 that span 21 years. 
-The pulse arrival times of this pulsar are well fit by our timing model with a
-residual consistent with Gaussian white noise.
-The lack of evidence of red noise on short and long timescales suggests that
-the pulsar is spinning down regularly with little deviation, supporting the
-idea that pulsars can be very stable clocks on long timescales.
-A caveat to this analysis is that the timing model, especially the
-\textit{DMX} model we used to model ISM variations, can ``absorb'' a fraction
-of the noise in the residuals \citep{kcs+13}. The extent to which this prevents us from
-identifying red noise remains a subject for more stringent studies in the
-future.
-
-After correcting for ``over-fitting'', the ``corrected'' WRMS of the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
-the amount of signal or noise remain in the timing residuals. The estimated
-WRMS of the 21 years timing residuals is $\sim 210$~ns. 
-%The smallest RMS values are from the 1400-MHz GUPPI data ($\sim$127~ns) and the
-%2300-MHz PUPPI data ($\sim$134~ns),
-%clearly better than thos from the older generations of instruments 
-Table \ref{tab:wrms} show a systematic improvement in the timing accuracy of
-this pulsar in the last two decades, due to the advances in instrumentations.
-%, although not by as large as factor as implied
-%by the radiometer equation, perhaps because of pulse jitter. 
-The residuals of this timing analysis can be very useful for future pulsar timing array
-projects, such as the estimation of single-pulsar upper limit of the stochastic gravitational wave background.
-
-
-%Change rate of gravitational constant and limit on the dipole gravitational wave radiation.
-In this work, we measure PSR~J1713+0747's $P_{\rm b}$ to 11 significant
-digits, which allows us to detect its apparent orbital decay $\dot{P}_{\rm b}$
-due to Galactic differential accelerations and the Shklovskii effect.
+%The pulse arrival times of this pulsar are well fit by our timing model with a
+%residual consistent with Gaussian white noise.
+%The lack of evidence of red noise on short and long timescales suggests that
+%the pulsar is spinning down regularly with little deviation, supporting the
+%idea that pulsars can be very stable clocks on long timescales.
+We improvement measurements on the pulsar and its companions' masses, the
+geometry of the binary orbit. We also detect, for the first time, an apparent
+decay of the orbit due to Galactic differential accelerations and the Shklovskii effect.
 These measurements, when combined with those of other pulsars, 
 significantly improve the pulsar timing limit on the change rate of the gravitational
  constant, $\dot{G}$, making it nearly as good as the best
@@ -776,6 +811,50 @@ discovered pulsar triple system PSR J0337+1715 \citep{rsa+14}. In this case
 the inner pulsar-white dwarf binary is orbited by another white dwarf in a
 outer orbit, making this system a great laboratory for testing
 the free fall of neutron star and white dwarf in external gravity field.
+
+{\bf 
+We studied the time variation of PSR~J1713+0747's DM in the last 9 years, and found that 
+the structure function of the DM variation followed a power law of 
+index 0.74(8), which is significantly smaller than the 5/3 index expected from a ``pure''
+Kolmogorov medium. We speculate this unusually flat DM structure function may
+be partly caused by the event of large DM variation happened in 2009. This
+2009 event might have increased the average DM variation in timescale of
+hundreds of days, making the structure function appear flatter than expected.
+
+Timing residuals of MSPs are believed to contain noises from timing
+measurements, pulse phase jitter, and spin irregularities, etc. 
+We found that the level of our timing residuals is consistent with the jitter
+noise estimates from \citet{sc12} and the timing noise estimate from \citet{sc10}. However,
+the scale law extrapolate from large sample study of timing noises in \citet{hlk10}
+overestimate the timing noise level $\sigma_z({\rm 10 yr})$ in this pulsar by
+a factor of $\sim4\times10^3$.
+
+We measured the growth of timing residuals with time, and found no evidence of
+time-accumulative noises. This indicates that, unlike other younger pulsars,
+PSR~J1713+0747's timing residual consists of mostly white noise. Understanding the nature 
+of the noises in these MSPs is important for making predictions of detecting
+GWs using the pulsar timing array. Because ``red'' timing noise in MSPs reduces
+the sensitivity of the pulsar timing array to GWs.
+}
+
+A caveat to this analysis is that the timing model, especially the
+\textit{DMX} model we used to model ISM variations, can ``absorb'' a fraction
+of the noise in the residuals \citep{kcs+13}. 
+The extent to which this prevents us from
+identifying red noise remains a subject for more stringent studies in the
+future.
+After correcting for ``over-fitting'', the ``corrected'' WRMS of the post-fit residuals (Table \ref{tab:wrms}) provide a crude estimation of
+the amount of signal or noise remain in the timing residuals. The estimated
+WRMS of the 21 years timing residuals is $\sim 210$~ns. 
+%The smallest RMS values are from the 1400-MHz GUPPI data ($\sim$127~ns) and the
+%2300-MHz PUPPI data ($\sim$134~ns),
+%clearly better than thos from the older generations of instruments 
+Table \ref{tab:wrms} show a systematic improvement in the timing accuracy of
+this pulsar in the last two decades, due to the advances in instrumentations.
+%, although not by as large as factor as implied
+%by the radiometer equation, perhaps because of pulse jitter. 
+The residuals of this timing analysis can be very useful for future pulsar timing array
+projects, such as the estimation of single-pulsar upper limit of the stochastic gravitational wave background.
 
 
 
