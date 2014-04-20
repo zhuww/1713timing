@@ -1,4 +1,4 @@
-\begin{thebibliography}{72}
+\begin{thebibliography}{74}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -52,6 +52,11 @@ Brans, C., \& Dicke, R.~H. 1961, Phys. Rev., 124, 925
 \bibitem[{Camilo {et~al.}(1994)Camilo, Foster, \& Wolszczan}]{cfw94}
 Camilo, F., Foster, R.~S., \& Wolszczan, A. 1994, ApJ, 437, L39
 
+\bibitem[{{Chatterjee} {et~al.}(2009){Chatterjee}, {Brisken}, {Vlemmings},
+  {Goss}, {Lazio}, {Cordes}, {Thorsett}, {Fomalont}, {Lyne}, \&
+  {Kramer}}]{cbv+09}
+{Chatterjee}, S., {et~al.} 2009, \apj, 698, 250
+
 \bibitem[{Cordes \& Downs(1985)}]{cd85}
 Cordes, J.~M., \& Downs, G.~S. 1985, ApJS, 59, 343
 
@@ -89,6 +94,11 @@ Damour, T., \& Taylor, J.~H. 1991, ApJ, 366, 501
 
 \bibitem[{Demorest(2007)}]{dem07}
 Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
+
+\bibitem[{{Demorest} {et~al.}(2010){Demorest}, {Pennucci}, {Ransom}, {Roberts},
+  \& {Hessels}}]{dpr+10}
+{Demorest}, P.~B., {Pennucci}, T., {Ransom}, S.~M., {Roberts}, M.~S.~E., \&
+  {Hessels}, J.~W.~T. 2010, \nat, 467, 1081
 
 \bibitem[{{Demorest} {et~al.}(2013){Demorest}, {Ferdman}, {Gonzalez}, {Nice},
   {Ransom}, {Stairs}, {Arzoumanian}, {Brazier}, {Burke-Spolaor}, {Chamberlin},
@@ -174,25 +184,21 @@ Lorimer, D.~R., \& Kramer, M. 2005, Handbook of Pulsar Astronomy (Cambridge
 \bibitem[{Marciano(1984)}]{mar84}
 Marciano, W.~J. 1984, Phys. Rev. Lett., 52, 489
 
-\bibitem[{Matsakis {et~al.}(1997{\natexlab{a}})Matsakis, Taylor, \&
-  Eubanks}]{mte97}
-Matsakis, D.~N., Taylor, J.~H., \& Eubanks, T.~M. 1997{\natexlab{a}}, A\&A,
+\bibitem[{Matsakis {et~al.}(1997)Matsakis, Taylor, Eubanks, \&
+  Marshall}]{mtem97}
+Matsakis, D.~N., Taylor, J.~H., Eubanks, T.~M., \& Marshall, T. 1997, A\&A,
   326, 924
 
-\bibitem[{Matsakis {et~al.}(1997{\natexlab{b}})Matsakis, Taylor, Eubanks, \&
-  Marshall}]{mtem97}
-Matsakis, D.~N., Taylor, J.~H., Eubanks, T.~M., \& Marshall, T.
-  1997{\natexlab{b}}, A\&A, 326, 924
+\bibitem[{{McLaughlin}(2013)}]{mcl13}
+{McLaughlin}, M.~A. 2013, Classical and Quantum Gravity, 30, 224008
 
 \bibitem[{{Melatos} \& {Link}(2014)}]{ml14}
 {Melatos}, A., \& {Link}, B. 2014, \mnras, 437, 21
 
-\bibitem[{{Nice} {et~al.}(2012){Nice}, {Demorest}, {Ferdman}, {Gonzalez},
-  {Ransom}, {Stairs}, \& {NANOGrav}}]{ndf+12}
-{Nice}, D.~J., {Demorest}, P.~B., {Ferdman}, R.~D., {Gonzalez}, M.~E.,
-  {Ransom}, S.~M., {Stairs}, I.~H., \& {NANOGrav}. 2012, in American
-  Astronomical Society Meeting Abstracts, Vol. 219, American Astronomical
-  Society Meeting Abstracts \#219, 146.16
+\bibitem[{{Nice} {et~al.}(2005){Nice}, {Splaver}, {Stairs}, {L{\"o}hmer},
+  {Jessner}, {Kramer}, \& {Cordes}}]{nss+05}
+{Nice}, D.~J., {Splaver}, E.~M., {Stairs}, I.~H., {L{\"o}hmer}, O., {Jessner},
+  A., {Kramer}, M., \& {Cordes}, J.~M. 2005, ApJ, 634, 1242
 
 \bibitem[{Nice \& Taylor(1995)}]{nt95}
 Nice, D.~J., \& Taylor, J.~H. 1995, ApJ, 441, 429
