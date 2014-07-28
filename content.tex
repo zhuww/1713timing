@@ -54,7 +54,7 @@ the orientation of the orbit in the sky.
 This is one of the only few systems in which the 3D-orientation of the
 binary orbit can be completely solved. Using 21 years of data, we
 refine the previously-published measurements of these orbital parameters.
-We also measure an apparent decay of the binary orbit due to the system's
+We also find strident constraint on the decay rate of the binary orbit due to the system's
 motion (the Shklovskii effect and Galactic differential acceleration).
 %These measurements also enable better tests of the theories of gravitation (see Section \ref{sec:res} for details).
 
@@ -107,20 +107,51 @@ at 1400~MHz and 2300~MHz by the Arecibo
 observatory and at 800~MHz and 1400~MHz by the Robert C. Byrd Green Bank
 Telescope (GBT).
 
-The timing observations were conducted 
-using multiple generations of pulsar data systems. The early 
-observations in \citet{sns+05} used
- the Princeton Mark~III \citep{skn+92} and Mark~IV
-\citep{sst+00} instruments, and the Arecibo-Berkeley Pulsar Processor
-(ABPP) system \citep{bdz+97}. 
+The timing observations were conducted using multiple generations of pulsar
+data systems (Table \ref{tab:obs}).
+{\bfref
+The earliest observations (1992-1994) used the Princeton Mark~III
+\citep{skn+92}, which collects two polarization data with a filter bank of 32
+spectral channels each 1.25~MHz wide. 
+Observations between 1998 and 2004 used the Princeton Mark~IV
+\citep{sst+00} instruments and the Arecibo-Berkeley Pulsar Processor
+(ABPP) system \citep{bdz+97} in parallel.. 
+The Mark~IV system collects 10~MHz 
+passband data using 2-bit sampling. The
+data were coherently dedispersed and folded at the pulse period offline.
+The ABPP system samples voltages with 2-bit resolution and filter the passband 
+into 32 spectral channels (1.75~MHz
+per channel and 56~MHz in total for 1410~MHz band; 3.5~MHz per channel and 
+112~MHz in total for 2380~MHz band), and apply coherent dedispersion to each
+channel using 3-bit coefficients. 
+In this paper, we used daily-averaged Mark~III, Mark~IV, and ABPP TOAs reported in \citet{sns+05}, because the original 190~s integration TOAs are not accessible.
+
 From 2004 to 2011/12, pulsar data were collected with the Astronomical Signal
-Processor (ASP; \citealt{dem07}) and its Green Bank counterpart GASP \citep{dem07},
-mostly as part of the NANOGrav project. We started using 
+Processor (ASP; \citealt{dem07}) and its Green Bank counterpart GASP \citep{dem07}.
+The (G)ASP systems records 64~MHz bandwidth data and apply real-time
+coherent dedispersion and pulse period folding. The resulting data contain
+2048-bin full-Stokes pulse profiles integrated over 1-3 minutes in 16 4~MHz channels. 
+The J1713+0747 ASP/GASP data were also reported in \citet{dfg+13}.
+
+We started using 
 the Green Bank Ultimate Pulsar Processing Instrument (GUPPI; \citealt{GUPPI}) for GBT 
 observations in 2010 and its clone the ``Puerto-Rican Ultimate Pulsar Processing Instrument''
 (PUPPI) for Arecibo observations in 2012. 
-The date range, number of observation epochs, specifications of the
-systems are listed in Table \ref{tab:obs}.
+GUPPI and PUPPI uses 8-bit sampling in real-time coherent dedispersion and
+pulse period folding mode and produce 2048-bin full-Stokes
+pulse profiles integrated over 10 second intervals.
+When observing with 820~MHz receiver at GBT, We use GUPPI to collect data from 62 spectral 
+channels each 3.125~MHz wide, covering 724-918~MHz in frequency. With L-band receiver, GUPPI
+uses 58 spectral channels each 12.5~MHz wide, covering the 1150-1880~MHz band. 
+When observing with L band receiver at Arecibo, we use PUPPI to collect data from 1150-1765~MHz
+using 50 spectral channels each 12.5~MHz wide. When observing with the S band
+PUPPI takes data from 1770-1880 MHz and 2050-2405 MHz using 38 spectral
+channels each 12.5~MHz wide.
+The spectral bandwidth and resolution provided by GUPPI and PUPPI is crucial for resolving the pulse profile evolution in frequency described in Section \ref{sec:FD}.
+
+The date span, number of observation epochs, specifications of the
+systems are listed in Table \ref{tab:obs}. 
+}
 
 We combine the pulse time of arrivals (TOAs) used in \citealt{sns+05} and those
 of the later observations, for a data span of 21 years with a
@@ -152,19 +183,19 @@ density, in this case, the AGNs J1413+1509 and B1442+09.
 
 \section{Timing model}
 \label{sec:model}
-A comprehensive timing model was described by \citet{sns+05},
-including the effects of pulsar spin, astrometry, orbital motion,
-Shapiro delay and dispersion due to the ISM.
+%We model the pulsar's timing behavior with the comprehensive model described by \citet{sns+05},
+%which included the effects of pulsar spin, astrometry, orbital motion,
+%Shapiro delay and dispersion due to the ISM.
 We employ the pulsar timing package {\sc tempo}
 \footnote{\url{http://tempo.sourceforge.net}} to model the TOAs. 
 The rotation of the pulsar is modeled with polynomials of spin frequency 
-$\nu$, $\dot{\nu}$ and $\ddot{\nu}$ (Table \ref{tab:par}) in order to account
-for the pulsar's spin, spin down and long-term timing noise.
+$\nu$ and $\dot{\nu}$ (Table \ref{tab:par}) in order to account
+for the pulsar's spin, spin down.
 The pulsar's position ($\alpha$, $\delta$) and proper motion ($\nu_\alpha$, $
 \nu_\delta$) on the sky and its parallax $\pi$ is also measured through timing modeling. 
 The distance of the pulsar can be inferred accurately from our parallax
-measurement $D_{\rm PSR}=$1.12(2)~kpc. This distance is consistent with the
-VLBA parallax distance of 1.05(6)~kpc \citep{cbv+09}, but with better accuracy.
+measurement $D_{\rm PSR}=$1.12(2)~kpc. This distance is consistent with and
+more accurate than the VLBA parallax distance of 1.05(6)~kpc \citep{cbv+09}.
 We employed the \citet{dd86} (DD) model of binary motion to fit for the binary parameters, 
 including the masses of
 the neutron star ($M_{\rm PSR}$) and the white dwarf ($M_{\rm c}$) measured
@@ -178,6 +209,13 @@ effects. This is described in Section \ref{sec:obdecay}.
 The T2 model of binary motion in {\sc tempo2} \citep{hem06} also can be used for modeling this pulsar. We tested the T2 model and found that its best-fit binary parameters are physically consistent with those we found using DD model.
 The DMX model was used to fit dispersion measure (DM) variations caused by changes in the ISM (see Section \ref{sec:dmx} for details). The FD model was used to model profile
 evolution in frequency (see Section \ref{sec:FD} for details). 
+
+In order to account for unknown systematics in TOAs from different
+instruments, we use the EQUAD command in {\sc tempo} to increase the errors on
+the TOAs by adding an extra amount of error to them in quadrature, such that
+the post-fit reduced $\chi^2$ is close to unity for the TOAs of every instrument. The amount
+of extra error added for different instruments are listed in Table
+\ref{tab:equad}.
 
 %We use the DE421 solar ephemeris instead of the DE405 used by
 %\citet{sns+05} for its improved precision on the masses of the Solar system
@@ -288,21 +326,26 @@ $\sim10^{-4}$.
 %This is because the relative inferior bandwidth of the Mark~IV and ABPP
 %data. The Mark~IV data in particular have much smaller frequency bandwidth 
 %compared to the later data (Table \ref{tab:obs}).
-Data from the L- and S-band of Mark~IV and ABPP are collapsed in frequency to
-form one TOA per band per observation epoch, thus losing frequency resolution
-in the respective band. This makes it hard to resolve the profile evolution in
-frequency that we see in the later data. When summing the data in frequency, we
-also assume the center frequency of the band is the middle frequency, while the effective center frequency may be different due to pulse
-profile evolution and/or scintillation. This procedure is likely to produce TOAs that are slightly offset. We think this may be why the FD and
-DMX models cannot completely model the red-noise signal in these TOAs, leaving
-an apparent hump in the first part of the DM curve (Figure \ref{fig:dmx}) and 
-a similar shape in the 2300-MHz timing residuals from Mark~IV and ABPP (Figure
-\ref{fig:res}).
+The ABPP TOAs we have are epoch-averaged TOAs, meaning they are collapsed in frequency to form one TOA per band per observation epoch, thus losing frequency resolution in the respective band. 
+This averaging was done using an previous timing solution in previous work
+(\citep{sns+05}). Thus the ABPP TOAs may be slighted biased to favor the
+timing parameters in the previous solution. We also included the original
+before-epoch-average Mark~IV TOAs, which were taken in the same epochs of the
+ABPP data. Both of the Mark~IV and ABPP  TOAs are well fitted by our new
+timing solution.
+%This makes it hard to resolve the profile evolution in
+%frequency that we see in the later data. When summing the data in frequency, we
+%also assume the center frequency of the band is the middle frequency, while the effective center frequency may be different due to pulse profile evolution and/or scintillation. 
+%This procedure is likely to produce TOAs that are slightly offset. We think this may be why the FD and
+%DMX models cannot completely model the red-noise signal in these TOAs, leaving
+%an apparent hump in the first part of the DM curve (Figure \ref{fig:dmx}) and 
+%a similar shape in the 2300-MHz timing residuals from Mark~IV and ABPP (Figure
+%\ref{fig:res}).
 
-There is a hint of small annual DM variations, part of which may be 
-related to the varying electron density in the Solar wind as our sight line moves.
-The Earth's motion could also cause a projected helical motion through the ISM
-that leads to an annual DM variation.
+%There is a hint of small annual DM variations, part of which may be 
+%related to the varying electron density in the Solar wind as our sight line moves.
+%The Earth's motion could also cause a
+%helical motion through the ISM that leads to an annual DM variation.
 
 Spectrum analysis of the time variation of flux, pulse arrival phase, and DM have 
 been employed to study the turbulent nature of the ISM since \citealt{cpl86, rl90}.
@@ -584,7 +627,7 @@ for this pulsar.
 \subsection{Intrinsic orbital decay}
 \label{sec:obdecay}
 We have measured an orbital decay from PSR~J1713+0747, $\dot{P}_{\rm b} =
-0.39(12)\times10^{-12}$s~s$^{-1}$ (Table \ref{tab:par}).
+3.9(1.2)\times10^{-13}$s~s$^{-1}$ (Table \ref{tab:par}).
 %Such a precise measurement can be used to test Gravitational wave radiation theories of Einstein's and beyond.
 This orbital decay may not be intrinsic to the pulsar binary, but rather the
 result of the kinetic motion between the binary and the
