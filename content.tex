@@ -179,7 +179,53 @@ comparing it with an astronomical object of known and constant flux
 density, in this case, the AGNs J1413+1509 and B1442+09.
 
 
+{\bfref \bf
+The measured TOAs suffer from varying degrees of computational
+and electronic delays in the backends. 
+In order to track the changes in these delays when transiting from
+one backend to another, we allow data to be taken 
+with both backends during a period of time, usually about few years.
+As a result, the offset between GASP and GUPPI, and the offset between ASP and
+PUPPI are well measured from the these overlapping observations of all NANOGrav
+pulsars. These offsets are coded into the TOAs such that they do not affect
+TOA modeling. 
 
+The backends Mark~IV and ABPP are used in parallel for J1713+0747 
+observations between 1998 and 2004. They collect data with different bandwidth (Table
+\ref{tab:obs}). The ABPP TOAs were computed using
+profile templates different from what was used for Mark~IV. 
+To align Mark~IV and ABPP TOAs of the same epochs, we
+fitted a phase offset between the 1410~MHz TOAs of the two instruments, and found
+that ABPP 1410~MHz TOAs trails that of Mark~IV by $0.46791205$ in pulse phase.
+However, due to the difference in bandwidth and center frequencies, the S-band
+ABPP TOAs trails Mark~IV slightly more than aforementioned, and the exact
+offset value depend on our model of the profile evolution in frequency (FD
+model; see Section \ref{sec:FD} for details). Therefore, in
+addition to the aforementioned phase offset, we also 
+fit the S band ABPP TOAs with an extra time offset as an unknown parameter.
+%However, the same phase offset does not align the S band TOAs of Mark~IV and
+%ABPP. 
+
+During the transition from Mark~IV/ABPP to the ASP backend, Mark~IV
+was kept running in parallel with ASP for several epochs. 
+The overlapping Mark~IV data were not process and published in previous papers. 
+In this work, we used these overlapping data and determined that the 1410~MHz TOAs of
+Mark~IV trails that of ASP by 2.28~$\mu$s using TOAs from these overlapping epochs 
+(labeled as Mark~IV-O in Table \ref{tab:obs}). 
+
+Using the overlapping observations, we can connect all the 1410~MHz TOAs from
+different backends
+to form a uninterrupted time series spanning 14~years. Unfortunately, there is no
+over-lapping observations connecting these with the earliest  Mark~III TOAs. 
+Time offsets have to be
+fitted for the 1410~MHz Mark~III TOAs as unknown parameters in the timing
+model. The resulting timing solution is still
+clearly phase connected because the uncertainties on these time offset are
+much
+smaller than one spin period of the pulsar. However, these time offsets inhibit our
+ability to detect small variabilities in time scale longer than 14 years.
+
+}
 
 \section{Timing model}
 \label{sec:model}
@@ -366,11 +412,11 @@ theory generally have large DM variations in timescale of
 years. However, the DM variation of PSR J1713+0747 (Figure \ref{fig:dmx}) does not 
 follow the same characterization. It went trough a steep drop and recovery 
 around 2008. Conversely, the overall long-term variation is smaller
-compared with the 2008 event. As a result, its structure function (Figure \ref{fig:dmx}) follows a
-flatter spectrum than the Kolmogorov one.
+compared with the 2008 event. As a result, its structure function (Figure \ref{fig:dmx}) 
+follows a flatter spectrum than the Kolmogorov one.
 
 
-\subsection{Timing noise}
+\subsection{Pulsar spin irregularity}
 \label{sec:noise}
 %The pulsar timing residuals (Figure \ref{fig:res}) are the residuals left
 %after we fit the TOAs with our timing model. 
@@ -378,15 +424,17 @@ flatter spectrum than the Kolmogorov one.
 %noise, and other sources of noise. This section discusses PSR~J1713+0747's
 %timing noise, i.e. TOA variations due to spin irregularities.
 
-The term ``timing noise'' in pulsar timing generally refers to a pulsar's spin
+The term ``timing noise'' in pulsar timing generally refers to the non-white
+noises left in the residuals of timing modeling.
+An important part of these timing noise are expected to come from pulsar's spin
 irregularity, i.e. its long-term deviation from a simple linear slow down. 
-Timing noise is often significant in younger pulsars, and often
+Spin irregularity is often significant in younger pulsars, and often
 gives rise to significant high-order frequency polynomials such as
 $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency.
 Potential causes of irregular spin behavior include unresolved
 micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar \citep{hlk10, ymh+13, ml14}.
-{\bfref These mechanisms could lead to accumulative random perturbations in the pulsar's phase of
-pulse arrival, spin rate, or spin-down rate. 
+{\bfref These mechanisms could lead to accumulative random perturbations in the 
+pulsar's phase of pulse arrival, spin rate, or spin-down rate. 
 \citet{sc10} point out that one could model these types of timing noises using random walks.
 Random walks in phase (RW$_0$) would grow over time ($T$) proportional to
 $T^{1/2}$, random walk in $\nu$ grows proportional to $T^{3/2}$, random walk in
