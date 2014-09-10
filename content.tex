@@ -150,8 +150,7 @@ channels each 12.5~MHz wide.
 The spectral bandwidth and resolution provided by GUPPI and PUPPI is crucial for resolving the pulse profile evolution in frequency described in Section \ref{sec:FD}.
 
 The date span, number of observation epochs, specifications of the
-systems are listed in Table \ref{tab:obs}. 
-}
+systems are listed in Table \ref{tab:obs}. }
 
 We combine the pulse time of arrivals (TOAs) used in \citealt{sns+05} and those
 of the later observations, for a data span of 21 years with a
@@ -179,22 +178,13 @@ comparing it with an astronomical object of known and constant flux
 density, in this case, the AGNs J1413+1509 and B1442+09.
 
 
-{\bfref \bf
-The measured TOAs suffer from varying degrees of computational
-and electronic delays in the backends. 
-In order to track the changes in these delays when transiting from
-one backend to another, we allow data to be taken 
-with both backends during a period of time, usually about few years.
-As a result, the offset between GASP and GUPPI, and the offset between ASP and
-PUPPI are well measured from the these overlapping observations of all NANOGrav
-pulsars. These offsets are coded into the TOAs such that they do not affect
-TOA modeling. 
-
+{\bfref 
 The backends Mark~IV and ABPP are used in parallel for J1713+0747 
 observations between 1998 and 2004. They collect data with different bandwidth (Table
-\ref{tab:obs}). The ABPP TOAs were computed using
-profile templates different from what was used for Mark~IV. 
-To align Mark~IV and ABPP TOAs of the same epochs, we
+\ref{tab:obs}). The Mark~IV TOAs were computed using
+the same profile template used for later instruments like (G)ASP and (G)PUPPI. 
+But the ABPP TOAs were computed using a different template.
+To align the ABPP TOAs with Mark~IV, we
 fitted a phase offset between the 1410~MHz TOAs of the two instruments, and found
 that ABPP 1410~MHz TOAs trails that of Mark~IV by $0.46791205$ in pulse phase.
 However, due to the difference in bandwidth and center frequencies, the S-band
@@ -208,22 +198,34 @@ fit the S band ABPP TOAs with an extra time offset as an unknown parameter.
 
 During the transition from Mark~IV/ABPP to the ASP backend, Mark~IV
 was kept running in parallel with ASP for several epochs. 
-The overlapping Mark~IV data were not process and published in previous papers. 
-In this work, we used these overlapping data and determined that the 1410~MHz TOAs of
-Mark~IV trails that of ASP by 2.28~$\mu$s using TOAs from these overlapping epochs 
-(labeled as Mark~IV-O in Table \ref{tab:obs}). 
-
-Using the overlapping observations, we can connect all the 1410~MHz TOAs from
-different backends
-to form a uninterrupted time series spanning 14~years. Unfortunately, there is no
-over-lapping observations connecting these with the earliest  Mark~III TOAs. 
+The overlapping Mark~IV data were not published in previous papers. 
+In this work, we used these overlapping TOAs (labeled as Mark~IV-O in Table \ref{tab:obs}) 
+and determined that the 1410~MHz TOAs of Mark~IV trails that of ASP by
+2.28~$\mu$s. Consequently, the
+1410~MHz TOAs from Mark~IV, ABPP, (G)ASP, and (G)PUPPI form a connected time
+series spanning 14~years within which no unknown time offset has to be fitted. 
+Unfortunately, there is no
+over-lapping observations connecting these 14~yr data with the earliest  Mark~III TOAs. 
 Time offsets have to be
 fitted for the 1410~MHz Mark~III TOAs as unknown parameters in the timing
 model. The resulting timing solution is still
 clearly phase connected because the uncertainties on these time offset are
 much
-smaller than one spin period of the pulsar. However, these time offsets inhibit our
-ability to detect small variabilities in time scale longer than 14 years.
+smaller than one spin period of the pulsar. However, these time offsets will
+slightly inhibit our ability in detecting small variabilities in time scale longer 
+than 14 years.
+
+The backend instruments introduce varying degrees of computational
+and electronic delays into the measured TOAs. 
+As a result, the TOAs from different backends are different by small time
+offsets.
+In order to measure these offsets, we allow data to be taken 
+with both backends in parallel during a period of time, usually about few years.
+As a result, the offset between GASP and GUPPI, and the offset between ASP and
+PUPPI are well measured from the these parallel observations using all NANOGrav
+pulsars. These offsets are coded into the TOAs such that they do not affect
+TOA modeling. 
+
 
 }
 
@@ -257,11 +259,15 @@ The DMX model was used to fit dispersion measure (DM) variations caused by chang
 evolution in frequency (see Section \ref{sec:FD} for details). 
 
 In order to account for unknown systematics in TOAs from different
-instruments, we use the EQUAD command in {\sc tempo} to increase the errors on
-the TOAs by adding an extra amount of error to them in quadrature, such that
-the post-fit reduced $\chi^2$ is close to unity for the TOAs of every instrument. The amount
-of extra error added for different instruments are listed in Table
-\ref{tab:equad}.
+instruments, and epoch-correlated noise in TOAs caused by pulse jitter. 
+We employed a general noise model that account for both uncorrelated noise and
+correlated noise. The noise modeling is discussed in Section \ref{sec:noise} and the
+noise model parameters are listed in Table \ref{tab:noise}. 
+%we use the EQUAD command in {\sc tempo} to increase the errors on
+%the TOAs by adding an extra amount of error to them in quadrature, such that
+%the post-fit reduced $\chi^2$ is close to unity for the TOAs of every instrument. The amount
+%of extra error added for different instruments are listed in Table
+%\ref{tab:equad}.
 
 %We use the DE421 solar ephemeris instead of the DE405 used by
 %\citet{sns+05} for its improved precision on the masses of the Solar system
@@ -275,6 +281,9 @@ previous generation ephemeris, DE405, gave nearly identical, but marginally
 better timing fits ($\Delta\chi^2\sim20$ for 16750 degrees of freedom)
 
 
+
+The timing parameters and uncertainties are marginalized using a general least
+square approach and the {\sc tempo} software package. 
 We confirm that majority of the pulsar-binary parameters reported by
 \citet{sns+05} also successfully describe the 21-year data set, except for the
 high order frequency polynomials they used to treat timing noises. We also
@@ -282,17 +291,20 @@ detected for the first time an apparent decay of the binary orbit due to
 relativistic effects.
 The new timing model parameters (Table \ref{tab:par}) differ from
 those in \citet{sns+05} slightly but consistently within their reported uncertainties.
-The parameters uncertainties are estimated from a Markov Chain Monte Carlo
-\footnote{{\bfref We used a Metropolis algorithm assuming the goodness of fit of
-the timing model is proportional to $e^{-\chi^2/2}$. The procedure is similar
-to that in the {\sc tempo2} MCMC plugin \citep{dpr+10}. The code for running this
-MCMC can be found here: \url{https://github.com/zhuww/tempomcmc}}}  
-(MCMC; \citealt{NR3}) simulation to determine the parameter uncertainties (Table \ref{tab:par}).
+%The parameters uncertainties are estimated from a Markov Chain Monte Carlo
+%\footnote{{\bfref We used a Metropolis algorithm assuming the goodness of fit of
+%the timing model is proportional to $e^{-\chi^2/2}$. The procedure is similar
+%to that in the {\sc tempo2} MCMC plugin \citep{dpr+10}. The code for running this
+%MCMC can be found here: \url{https://github.com/zhuww/tempomcmc}}}  
+%(MCMC; \citealt{NR3}) simulation to determine the parameter uncertainties (Table \ref{tab:par}).
 
 
 %\begin{itemize}
 %\item T2 model versus DD? confirms that both model gives pretty much consistent results?
 %\end{itemize}
+
+\subsection{Noise model}
+\label{sec:noise}
 
 \subsection{Mass measurements}
 \label{sec:mass}
