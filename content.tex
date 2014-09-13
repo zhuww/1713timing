@@ -289,8 +289,8 @@ We confirm that majority of the pulsar-binary parameters reported by
 high order frequency polynomials they used to treat timing noises. We also
 detected for the first time an apparent decay of the binary orbit due to
 relativistic effects.
-The new timing model parameters (Table \ref{tab:par}) differ from
-those in \citet{sns+05} slightly but consistently within their reported uncertainties.
+The new timing model parameters (Table \ref{tab:par}) changed slightly from
+those in \citet{sns+05} but consistent with their reported uncertainties.
 %The parameters uncertainties are estimated from a Markov Chain Monte Carlo
 %\footnote{{\bfref We used a Metropolis algorithm assuming the goodness of fit of
 %the timing model is proportional to $e^{-\chi^2/2}$. The procedure is similar
@@ -305,6 +305,62 @@ those in \citet{sns+05} slightly but consistently within their reported uncertai
 
 \subsection{Noise model}
 \label{sec:noise}
+{\bfref 
+There are two kinds of noises affecting our TOA measurements, uncorrelated
+and correlated noise. Uncorrelated noises are 
+independent from one TOA to another, whereas the correlated noises are not. 
+For instance, the template matching errors and the radiometer noises are 
+uncorrelated noises. In contrast, the pulse jitter noise affects all the TOAs 
+in the same epoch simultaneously, therefore, it is correlated in every epoch.
+There are also time-correlated noises, such as red timing noises that are
+correlated from epochs to epochs. Among the various types of noises, only the
+template matching error $\sigma$ can be estimated when we compute the TOAs, therefore,
+these errors often come with the TOAs. The other types of noises need to be modeled
+separately.
+In this section, we discuss how to model these other noise.
+
+After we removed the timing model, the post-fit 
+residuals $\msR$ should contain mostly Gaussian noises. Thus the 
+likelihood function for given noise model is:
+\begin{equation}
+\label{eq:bigC}
+p(\msR|\vec \phi) = \frac{1}{\sqrt{\det(2 \pi \msC)}}
+\exp\left(-\frac{1}{2}\msR^T \msC^{-1} \msR \right),
+\end{equation}
+here $\vec \phi$ are the noise parameters and $\msC(\vec \phi)$ is the noise
+covariance matrix. 
+Assuming that our initial timing model is close to the true model, and their
+difference is small enough to be regarded as a linear model, $\msR=\delta t
+^{\rm pre} - M \epsilon$, here $\delta t^{\rm pre}$ is the pre-fit residual,
+$M$ is the design matrix of the timing model and $\epsilon$ denote small
+offsets in the timing parameters. 
+
+The general noise covariance matrix $\msC$ could be used to describe both
+correlated and uncorrelated noises. If we only have uncorrelated noises in our
+post-fit residuals, then $\msC$ would be a diagonal matrix $\msD$. Conversely, correlated
+noises would give rise to non-zero non-diagonal elements. If $\msC_{ij}(i\neq
+j)\neq 0$ indicates that $\msR_{i}$ is correlated with $\msR_{j}$. In the case
+of pulse jitter noise, only the TOAs from the same epoch would be correlated
+with each other, thus $\msC$ would be a block diagonal matrix $\msS$. If both types
+of noise present, then $\msC = \msD + \msS$.
+
+In the past, extra noises are often modeled crudely using the timing software
+packages {\sc tempo} and {\sc tempo2} by grouping TOAs according to their backends 
+and receiver and assign each backend-receiver combination a EFAC and a EQUAD
+parameter. Timing software then enlarge the template matching errors $\sigma$ of 
+TOAs in the same group by the value of EFAC,
+and EQUAD to $\sigma$ in quadrature.
+We continue to use the EFAC $E$ and EQUAD $Q$ parameterization for modeling extra
+uncorrelated noise like radiometer noise. The resulting diagonal covariance
+matrix $D$ can be constructed with $\msD_{ii} = E_j^2\sigma_i^2 + Q_j^2$, where
+$D_{ii}$ is the $i$th diagonal element of $\msD$, $E_j$ and $Q_j$ is the
+EFAC and EQUAD values of the TOA group that the $i$th TOA belongs to. 
+
+In order to model the correlated jitter noise, we employ another noise
+parameter ECORR. The value of ECORR parameter $J$ parameterize the correlated
+noise covariance matrix $\msS_{ij} = J_k^2$, where TOA $i$ and $j$ come from
+the same sub-integration, and $k$ is one of the backend-receiver group.
+}
 
 \subsection{Mass measurements}
 \label{sec:mass}
@@ -412,10 +468,10 @@ those expected from an ISM characterized by a Kolmogorov turbulence spectrum
 \citep{cwd+90, ric90, ktr94, yhc+07, kcs+13, fst14}. In those cases one can calculate the 
 structure function of the varying DM: 
 \begin{equation}
-D_{\phi}(\tau)=\left(\frac{2\pi C}{f^2}\right)\langle [DM(t+\tau)-DM(t)]^2\rangle, 
+D_{\phi}(\tau)=\left(\frac{2\pi K}{f^2}\right)\langle [DM(t+\tau)-DM(t)]^2\rangle, 
 \end{equation}
 where $\tau$ 
-is a given time delay, $C=4.148\times10^3$~MHz$^2$pc$^{-1}$cm$^3$s, and $f$ is 
+is a given time delay, $K=4.148\times10^3$~MHz$^2$pc$^{-1}$cm$^3$s, and $f$ is 
 the observing frequency in MHz, and expect 
 this function to follow a Kolmogorov power law $D_{\phi}(\tau)=(\tau/\tau_0)^{\beta -2}$, 
 where $\beta=11/3$ and $\tau_0$ is a characteristic time scale related to 
@@ -441,8 +497,7 @@ noises left in the residuals of timing modeling.
 An important part of these timing noise are expected to come from pulsar's spin
 irregularity, i.e. its long-term deviation from a simple linear slow down. 
 Spin irregularity is often significant in younger pulsars, and often
-gives rise to significant high-order frequency polynomials such as
-$\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency.
+requires modeling with significant high-order frequency polynomials (such as $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency) to remove. 
 Potential causes of irregular spin behavior include unresolved
 micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar \citep{hlk10, ymh+13, ml14}.
 {\bfref These mechanisms could lead to accumulative random perturbations in the 
@@ -451,8 +506,9 @@ pulsar's phase of pulse arrival, spin rate, or spin-down rate.
 Random walks in phase (RW$_0$) would grow over time ($T$) proportional to
 $T^{1/2}$, random walk in $\nu$ grows proportional to $T^{3/2}$, random walk in
 $\dot{\nu}$ grows proportional to $T^{5/2}$.
-Such timing noises would likely have a steep power spectrum with more power in
-the lower frequencies, also known as a ``red'' power spectrum.
+Such spin noises would likely have a steep power spectrum with more power in
+the lower frequencies, also known as a ``red'' power spectrum, therefore, they
+were possibly the main sources of ``red'' noises in pulsar timing.
 }
 
 The timing noise of radio pulsars has been studied by
@@ -610,75 +666,50 @@ denote one of the $N$ TOAs from the respective observation epoch and
 $w_j=1/\sigma_j^2$.
 
 
-
-%However, the model fitting process, which minimizes the residuals, has a
-%tendency to ``overfit'' or ``absorb'' part of the signal or noise and
-%``flatten'' the residuals.
-Fitting for DM variations on short timescales is necessitated by the sharp
-variations seen in DM (Figure \ref{fig:dmx}). However, this has the potential
-effect of overfitting the model and artificially reducing the spread in the
-residuals.
-This is especially significant for the lower band residuals, because
-the DM fitting affects the lower frequency TOAs more than the
-higher frequency TOAs, and is more likely to flatten their timing residuals. 
-As a result we expect the residuals' WRMS to be 
-underestimated. This effect can be crudely quantified
-by injecting random Gaussian noise to the TOAs and
-measuring the response in the post-fit residuals. 
-We perform this simulation one system at a time. 
-We added Gaussian noise to the TOAs of each observation epoch of the giving system.
-The noise are random between different epochs, but they are the
-same for all the TOAs of different frequencies in any given epoch. 
-Figure \ref{fig:overfit} shows
-the WRMS of the post-fit residuals as a function of injected
-noise level for the PUPPI 1400-MHz TOAs. 
-One can see that the RMS residual increases almost linearly as a function of the
-injected noise, but only a fraction of the injected noise is recovered in the timing 
-residual. Based on such simulations, we
-can estimate the level of noises ``absorbed'' by the timing models, and infer 
-the ``corrected amplitude'' of the timing residuals. 
-Table \ref{tab:wrms} shows the WRMS measured directly from the residuals 
-and the ``corrected RMS'' based on noise injection simulations. 
-These ``corrected RMSs'' serve to demonstrate the effect of ``overfitting''.
-They are not the proper measurements of noise level in the data. There are some 
-caveats in our approach, firstly, we only simulate noises between different
-epochs, not noises between different frequencies of the same epoch; secondly, 
-the injected noise is Gaussian white noise, while the actual 
-noise may contain some red and non-Gaussian noises. 
-%A more realistic noise analysis is needed for the 21-yr data set along the lines of Dolch et~al
-%(2014, in preparation).
+%Fitting for DM variations on short timescales is necessitated by the sharp
+%variations seen in DM (Figure \ref{fig:dmx}). However, this has the potential
+%effect of overfitting the model and artificially reducing the spread in the
+%residuals.
+%This is especially significant for the lower band residuals, because
+%the DM fitting affects the lower frequency TOAs more than the
+%higher frequency TOAs, and is more likely to flatten their timing residuals. 
+%As a result we expect the residuals' WRMS to be 
+%underestimated. This effect can be crudely quantified
+%by injecting random Gaussian noise to the TOAs and
+%measuring the response in the post-fit residuals. 
+%We perform this simulation one system at a time. 
+%We added Gaussian noise to the TOAs of each observation epoch of the giving system.
+%The noise are random between different epochs, but they are the
+%same for all the TOAs of different frequencies in any given epoch. 
+%Figure \ref{fig:overfit} shows
+%the WRMS of the post-fit residuals as a function of injected
+%noise level for the PUPPI 1400-MHz TOAs. 
+%One can see that the RMS residual increases almost linearly as a function of the
+%injected noise, but only a fraction of the injected noise is recovered in the timing 
+%residual. Based on such simulations, we
+%can estimate the level of noises ``absorbed'' by the timing models, and infer 
+%the ``corrected amplitude'' of the timing residuals. 
+%Table \ref{tab:wrms} shows the WRMS measured directly from the residuals 
+%and the ``corrected RMS'' based on noise injection simulations. 
+%These ``corrected RMSs'' serve to demonstrate the effect of ``overfitting''.
+%They are not the proper measurements of noise level in the data. There are some 
+%caveats in our approach, firstly, we only simulate noises between different
+%epochs, not noises between different frequencies of the same epoch; secondly, 
+%the injected noise is Gaussian white noise, while the actual 
+%noise may contain some red and non-Gaussian noises. 
 
 Our residual analysis (Table \ref{tab:wrms}) shows that the advances in
 instrumentation have made pulsar timing increasingly accurate.
 The timing residuals from later systems, ASP, GASP, GUPPI and PUPPI, are
 significantly smaller than those from the earlier MarkIII, MarkIV and ABPP
 systems.
-%have a wide bandwidth (800~MHz), more than
-%a factor of 10 wider than their predecessors GASP and ASP
-%(64~MHz). According to the radiometer 
-%equation, this bandwidth increase should lead to a factor of $\sim3$
-%smaller radiometer noise. 
-%Indeed, the smallest residuals (RMS $\sim100$~ns) come from PUPPI L-band observations.
-%These are clearly beeter than the corresponding residuals from ASP, but not better by a factor of three as predicted by the radiometer equation.
 \citet{sc12} studied the pulse arrival times from a single long exposure of
 PSR~J1713+0747, and found that this pulsar's single pulse showed random jitter of
 $\simeq26~\mu$s. Therefore, by averaging many pulses collected in the
 $\sim20$~min NANOGrav observation, one expect $\sim26\mu{\rm s}/\sqrt{1200\nu}=50$~ns of jitter noise. 
-%This jitter noise is not affected by the radiometer equation and will not
-%decrease as bandwidth of the observations increases.
-%If jitter noise is a significant fraction of the observed residuals, it might
-%help explain why we are not seeing the expected drop in residual
-%levels.
-%These jitter noises could be a significant part of the timing residuals 
-%observed by the modern pulsar systems.
 This level jitter noise is similar to the WRMS of our best data (Table
 \ref{tab:wrms} and likely provides a lower limit to the precision attainable
 for this pulsar.
-%A small fraction of these observed residuals could be caused by gravitational
-%wave passing by the pulsars and the Earth.
-%Ultimately, the timing solution and residuals presented in this paper
-%will be very useful for detecting gravitational waves using the pulsar timing
-%arrays.
 
 
 \section{Results}
