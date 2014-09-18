@@ -1,4 +1,4 @@
-\begin{thebibliography}{75}
+\begin{thebibliography}{78}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -37,6 +37,15 @@
   Thorsett}]{antt94}
 Arzoumanian, Z., Nice, D.~J., Taylor, J.~H., \& Thorsett, S.~E. 1994, ApJ, 422,
   671
+
+\bibitem[{{Arzoumanian} {et~al.}(2014){Arzoumanian}, {Brazier},
+  {Burke-Spolaor}, {Chamberlin}, {Chatterjee}, {Cordes}, {Demorest}, {Deng},
+  {Dolch}, {Ellis}, {Ferdman}, {Garver-Daniels}, {Jenet}, {Jones}, {Kaspi},
+  {Koop}, {Lam}, {Lazio}, {Lommen}, {Lorimer}, {Luo}, {Lynch}, {Madison},
+  {McLaughlin}, {McWilliams}, {Nice}, {Palliyaguru}, {Pennucci}, {Ransom},
+  {Sesana}, {Siemens}, {Stairs}, {Stinebring}, {Stovall}, {Swiggum},
+  {Vallisneri}, {van Haasteren}, {Wang}, \& {Zhu}}]{abb+14}
+{Arzoumanian}, Z., {et~al.} 2014, ArXiv e-prints
 
 \bibitem[{Backer {et~al.}(1997)Backer, Dexter, Zepka, D., Wertheimer, Ray, \&
   Foster}]{bdz+97}
@@ -95,11 +104,6 @@ Damour, T., \& Taylor, J.~H. 1991, ApJ, 366, 501
 \bibitem[{Demorest(2007)}]{dem07}
 Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
 
-\bibitem[{{Demorest} {et~al.}(2010){Demorest}, {Pennucci}, {Ransom}, {Roberts},
-  \& {Hessels}}]{dpr+10}
-{Demorest}, P.~B., {Pennucci}, T., {Ransom}, S.~M., {Roberts}, M.~S.~E., \&
-  {Hessels}, J.~W.~T. 2010, \nat, 467, 1081
-
 \bibitem[{{Demorest} {et~al.}(2013){Demorest}, {Ferdman}, {Gonzalez}, {Nice},
   {Ransom}, {Stairs}, {Arzoumanian}, {Brazier}, {Burke-Spolaor}, {Chamberlin},
   {Cordes}, {Ellis}, {Finn}, {Freire}, {Giampanis}, {Jenet}, {Kaspi}, {Lazio},
@@ -116,6 +120,9 @@ Dirac, P. A.~M. 1937, Nature, 139, 323
   {Shelton}, A.~L. 2008, in Society of Photo-Optical Instrumentation Engineers
   (SPIE) Conference Series, Vol. 7019, Society of Photo-Optical Instrumentation
   Engineers (SPIE) Conference Series
+
+\bibitem[{{Ellis}(2013)}]{ell13}
+{Ellis}, J.~A. 2013, Classical and Quantum Gravity, 30, 224004
 
 \bibitem[{Fierz(1956)}]{fie56}
 Fierz, M. 1956, Helv. Phys. Acta, 29, 128
@@ -227,11 +234,6 @@ Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
   Pfahl}]{prp02b}
 Podsiadlowski, P., Rappaport, S., \& Pfahl, E.~D. 2002, ApJ, 565, 1107
 
-\bibitem[{Press {et~al.}(2007)Press, Teukolsky, Vetterling, \& Flannery}]{NR3}
-Press, W.~H., Teukolsky, S.~A., Vetterling, W.~T., \& Flannery, B.~P. 2007,
-  Numerical Recipes 3rd Edition: The Art of Scientific Computing, 3rd edn. (New
-  York, NY, USA: Cambridge University Press)
-
 \bibitem[{{Ransom} {et~al.}(2014){Ransom}, {Stairs}, {Archibald}, {Hessels},
   {Kaplan}, {van Kerkwijk}, {Boyles}, {Deller}, {Chatterjee},
   {Schechtman-Rook}, {Berndsen}, {Lynch}, {Lorimer}, {Karako-Argaman}, {Kaspi},
@@ -287,6 +289,15 @@ Tauris, T.~M., \& Savonije, G.~J. 1999, A\&A, 350, 928
 
 \bibitem[{Taylor(1992)}]{tay92}
 Taylor, J.~H. 1992, Philos. Trans. Roy. Soc. London A, 341, 117
+
+\bibitem[{{van Haasteren} \& {Levin}(2013)}]{vl13}
+{van Haasteren}, R., \& {Levin}, Y. 2013, \mnras, 428, 1147
+
+\bibitem[{{van Haasteren} \& {Vallisneri}(2014{\natexlab{a}})}]{vv14a}
+{van Haasteren}, R., \& {Vallisneri}, M. 2014{\natexlab{a}}, ArXiv e-prints
+
+\bibitem[{{van Haasteren} \& {Vallisneri}(2014{\natexlab{b}})}]{vv14}
+---. 2014{\natexlab{b}}, ArXiv e-prints
 
 \bibitem[{van Straten \& Bailes(2003)}]{vb03}
 van Straten, W., \& Bailes, M. 2003, in Radio Pulsars, ed. M.~Bailes, D.~J.

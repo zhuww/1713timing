@@ -124,7 +124,7 @@ def loglikelihood(plist):
     #print 'len(S_ele)', len(S_ele)
 
 
-    """computing Ntilt*"""
+    """computing Ntilde*"""
     Nir = r / Nvec
     NiF = ((1.0/Nvec) * F.T).T
     FNiF = np.dot(F.T, NiF)

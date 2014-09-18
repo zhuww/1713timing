@@ -308,65 +308,141 @@ those in \citet{sns+05} but consistent with their reported uncertainties.
 {\bfref 
 There are two kinds of noises affecting our TOA measurements, uncorrelated
 and correlated noise. Uncorrelated noises are 
-independent from one TOA to another, whereas the correlated noises are not. 
+independent from one TOA to another, while the correlated noises are not. 
 For instance, the template matching errors and the radiometer noises are 
-uncorrelated noises. In contrast, the pulse jitter noise affects all the TOAs 
-in the same epoch simultaneously, therefore, it is correlated in every epoch.
+uncorrelated, the pulse jitter noise, which affects all the TOAs 
+in the same epoch simultaneously, is correlated noise.
 There are also time-correlated noises, such as red timing noises that are
 correlated from epochs to epochs. Among the various types of noises, only the
 template matching error $\sigma$ can be estimated when we compute the TOAs, therefore,
 these errors often come with the TOAs. The other types of noises need to be modeled
 separately.
-In this section, we discuss how to model these other noise.
+%In this section, we discuss how to model these other noise.
+The solution to this problem has been discussed extensively in \citet{vl13, ell13, vv14a, vv14, abb+14} and Ellis (thesis 2014). In this section, we outline the parts that are relevant to our noise model.
+
 
 After we removed the timing model, the post-fit 
 residuals $\msR$ should contain mostly Gaussian noises. Thus the 
 likelihood function for given noise model is:
 \begin{equation}
 \label{eq:bigC}
-p(\msR|\vec \phi) = \frac{1}{\sqrt{\det(2 \pi \msC)}}
+p(\msR|\vec \phi) = \frac{1}{\sqrt{|2 \pi \msC|}}
 \exp\left(-\frac{1}{2}\msR^T \msC^{-1} \msR \right),
 \end{equation}
 here $\vec \phi$ are the noise parameters and $\msC(\vec \phi)$ is the noise
 covariance matrix. 
 Assuming that our initial timing model is close to the true model, and their
 difference is small enough to be regarded as a linear model, $\msR=\delta t
-^{\rm pre} - M \epsilon$, here $\delta t^{\rm pre}$ is the pre-fit residual,
+ - M \epsilon$, here $\delta t$ is the pre-fit residual,
 $M$ is the design matrix of the timing model and $\epsilon$ denote small
 offsets in the timing parameters. 
 
-The general noise covariance matrix $\msC$ could be used to describe both
+The noise covariance matrix $\msC$ could be used to describe both
 correlated and uncorrelated noises. If we only have uncorrelated noises in our
 post-fit residuals, then $\msC$ would be a diagonal matrix $\msD$. Conversely, correlated
-noises would give rise to non-zero non-diagonal elements. If $\msC_{ij}(i\neq
+noises would give rise to non-zero non-diagonal elements. $\msC_{ij}(i\neq
 j)\neq 0$ indicates that $\msR_{i}$ is correlated with $\msR_{j}$. In the case
-of pulse jitter noise, only the TOAs from the same epoch would be correlated
-with each other, thus $\msC$ would be a block diagonal matrix $\msS$. If both types
-of noise present, then $\msC = \msD + \msS$.
+of pulse jitter noise, only the TOAs from the same sub-integration could be correlated
+with each other, thus $\msC$ would be a block diagonal matrix $\msJ$. If both types
+of noise present, then $\msC = \msD + \msJ$.
 
 In the past, extra noises are often modeled crudely using the timing software
 packages {\sc tempo} and {\sc tempo2} by grouping TOAs according to their backends 
 and receiver and assign each backend-receiver combination a EFAC and a EQUAD
-parameter. Timing software then enlarge the template matching errors $\sigma$ of 
-TOAs in the same group by the value of EFAC,
-and EQUAD to $\sigma$ in quadrature.
-We continue to use the EFAC $E$ and EQUAD $Q$ parameterization for modeling extra
+parameter. Timing software then enlarge the uncertainty ($\sigma$) of 
+the TOAs in the same group by a factor of EFAC ($E$),
+and increase $\sigma$ by adding the value of EQUAD ($Q$) to it in quadrature.
+
+We continue to use the EFAC and EQUAD parameterization for modeling 
 uncorrelated noise like radiometer noise. The resulting diagonal covariance
 matrix $D$ can be constructed with $\msD_{ii} = E_j^2\sigma_i^2 + Q_j^2$, where
 $D_{ii}$ is the $i$th diagonal element of $\msD$, $E_j$ and $Q_j$ is the
 EFAC and EQUAD values of the TOA group that the $i$th TOA belongs to. 
 
-In order to model the correlated jitter noise, we employ another noise
-parameter ECORR. The value of ECORR parameter $J$ parameterize the correlated
-noise covariance matrix $\msS_{ij} = J_k^2$, where TOA $i$ and $j$ come from
-the same sub-integration, and $k$ is one of the backend-receiver group.
+To model the correlated jitter noise, we employ another noise
+parameter ECORR and parameterize the correlated
+noise covariance matrix $\msJ_{ij} = J_k^2$, where TOA $i$ and $j$ come from
+the same sub-integration, and $J_k$ is the ECORR value for the $k$th backend-receiver group.
+We can further simplify the matrix $\msJ$ by rewriting it as 
+$\msJ = U \tilde{\msJ} U^{T}$, where $\tilde{\msJ}$ is a
+N$_{\rm subint}\times$N$_{\rm subint}$ diagonal matrix with $\tilde{\msJ}_{jj} =
+J_k$ when the $j$th TOA sub-integration belongs to the $k$th backend-receiver
+group; and $U$ is a N$_{\rm TOA}\times$N$_{\rm subint}$ projection matrix,
+$U_{ij} = 1$ when the $i$th TOA comes from the $j$th sub-integration, otherwise $U_{ij}=0$. 
+
+As a result, the noise covariance matrix constructed from the EFAC, EQUAD, and
+ECORR parameters is:
+\begin{equation}
+\label{eq:decom}
+\msC = \msD + U \tilde{\msJ} U^{T}.
+\end{equation}
+To maximize the likelihood $p(\msR|\vec \phi)$ requires inverting the large covariance 
+matrix $\msC$ many times. A direct approach is too computationally costly to be viable, we had to employ some linear algebra tricks to make this work. 
+
+
+It was shown by \citet{vl13} that likelihood function in Equation
+\ref{eq:bigC} can be marginalized over timing parameters and re-written as:
+\begin{equation}
+\label{eq:Gintro}
+p(\delta t|\vec \phi) = \frac{\exp(-\frac{1}{2}\delta t^TG(G^T \msC G)^{-1}G^T\delta t)}
+{\sqrt{(2\pi)^{n-m}|G^{T}\msC G|}},
+\end{equation}
+where $n$ denote the total number of TOAs, and $m$ denote the total number of
+timing parameters.
+Here the matrix $G$ comes from the singular variable decomposition of the design
+matrix: $M = U\Sigma V^*$, where U and V are $n\times n$ and $m\times m$ orthogonal
+matrix, and $\Sigma$ is a ($n\times m$) diagonal matrix.
+We define $U = (F G)$, where $F$ consists of the first $m$ columns of $U$ and
+$G$ consists of the next ($n-m$) columns of $U$.
+
+Using equation \ref{eq:decom} and the Woodbury Lemma
+\footnote{$(A+DBE^T)^{-1}=A^{-1}-A^{-1}D(B^{-1}+E^TA^{-1}D)^{-1}E^TA^{-1}$ and
+$|A+DBE^T| = |A||B||B^{-1}+E^TA^{-1}D|$} we get:
+\begin{equation}
+\label{eq:Gform}
+p(\delta t|\vec \phi) = \frac{\exp[-\frac{1}{2}(\delta t^T \tilde{\msD}^{-1} \delta t -
+d^T\msS^{-1} d)]}{\sqrt{(2\pi)^{(n-m)}|\tilde{\msJ}||G^T \msD
+G||\msS|}},
+\end{equation}
+where $\tilde{\msD}^{-1} = G(G^T \msD G)^{-1}G^T$, $d=U^T \tilde{\msD}^{-1}\delta
+t$, and $\msS = (\tilde{\msJ}^{-1} + U^T \tilde{\msD}^{-1}U)$.
+Here $\tilde{\msD}^{-1}$ can also be calculated using the $F$ matrix 
+(see equation 29 in \citealt{vv14a}):
+\begin{equation}
+\label{eq:tildeD}
+\tilde{\msD}^{-1} = G(G^T\msD G)^{-1}G^T = \msD^{-1} -
+\msD^{-1}F(F^T\msD^{-1}F)^{-1}F^T\msD^{-1}.
+\end{equation}
+
+The $F$ formalism of $\tilde{\msD}^{-1}$ is much easier to compute because $F^T\msD^{-1}F$ is a $m\times m$ matrix whereas $G^T\msD G$ is $(n-m)\times(n-m)$.
+Similarly, the determinants in the denominator also can be computed using a $F$ matrix formalism: $|G^{T}\msD G| = |\msD||F^T\msD^{-1}F|$ (See appendix A of \citet{vv14a} for a more detailed proof).
+This is because orthogonal transformations like $U$ keep determinants invariant, and 
+\begin{equation}
+|\msD| = |U^T \msD U| = |G^T\msD G||(F^T\msD^{-1}F)^{-1}| = |G^T\msD G|/|F^T
+\msD^{-1} F|.
+\end{equation}
+After using the $F$ matrix to reduce matrix ranks, the matrix inversion
+$F^T\msD^{-1}F$ and its determinant can be computed quickly using Cholesky
+factorization:
+$LL^* = F^T\msD^{-1}F$, where $L$ is the lower(or upper) triangle matrix, and $|F^T\msD^{-1}F| = |L|^2 = (\prod_i L_{ii})^2$.
+
+With the $F$ matrix formalism, $p(\delta t|\vec \phi)$ can be computed
+efficiently. We wrote a program\footnote{\url{https://github.com/zhuww/noisemodel}}  to search over many combinations of noise parameters $\vec
+\phi$ (EFAC, EQUAD, and ECORR), and find the maximum likelihood model for the 
+data. Our program works in conjunction with the {\sc tempo} software package.
+We use {\sc tempo}'s general least square fitting routine to fit for the
+timing model and our code to model the noise parameters, and run both programs
+in alternation for few iterations to make sure that both the timing model and the
+noise model are marginalized simultaneously.
+
 }
+
 
 \subsection{Mass measurements}
 \label{sec:mass}
 The timing model of PSR~J1713+0747 has been significantly improved by the 21-year timing effort.
 Most notably, the pulsar and the companion masses have been more precisely measured
-(Figure \ref{fig:mass}; Table \ref{tab:par}). The
+(Table \ref{tab:par}). The
 companion's mass $M_{\rm c} = 0.283\pm0.004$~\Msun and the pulsar $M_{\rm
 PSR}=1.29\pm0.03$~\Msun are in good agreement with the previously measured values \cite{sns+05}.
 The pulsar's mass is comparable with the distribution of pulsar masses
