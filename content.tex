@@ -431,8 +431,8 @@ $LL^* = F^T\msD^{-1}F$, where $L$ is the lower(or upper) triangle matrix, and $|
 With the $F$ matrix formalism, $p(\delta t|\vec \phi)$ can be computed
 efficiently. 
 We wrote a program\footnote{\url{https://github.com/zhuww/noisemodel}} to search over many combinations of noise parameters $\vec
-\phi$ (EFAC, EQUAD, and ECORR), and find one that maximize the likelihood
-function. Our program works in conjunction with the {\sc tempo} software package.
+\phi$ (EFAC, EQUAD, and ECORR) to maximize the likelihood
+function. This program works in conjunction with the {\sc tempo} software package.
 We use {\sc tempo}'s general least square fit routine to fit for the
 timing model and our code to model the noise parameters, and run both programs
 in alternation for few iterations to make sure that both the timing model and the
@@ -703,7 +703,7 @@ from 366 pulsars:
 where $\nu$, $\dot{\nu}$ are the pulsar's spin and spin-down rate.
 We find that \citet{hlk10}'s scaling model ($\sigma^{\rm model}_{z, \rm
 10~yr}\simeq1\times10^{-12}$) over-predict $\sigma^{\rm measured}_{z, \rm
-10~yr}=2.4\times10^{-16}$ by more than three orders of magnitude. 
+10~yr}=4.9\times10^{-16}$ by more than three orders of magnitude. 
 %indicating that PSR~J1713+0747 has
 %significantly less timing noise than average pulsars of similar spin behavior.
 
@@ -744,7 +744,7 @@ Figure \ref{fig:TN} shows $\sigma^2_{\msR,2}$ for different time scales, and
 there is no significant evidence of a growing timing noise. We compared 
 $\sigma^2_{\msR,2}(T)$ with a white noise model as well as different random
 walk models (RW$_0$, RW$_1$, RW$_2$) to show that our timing residual is
-mostly white noise.
+mostly white.
 This result is also consistent with the timing noise analysis of this pulsar in 
 \citet{pjl+13}. They studied the timing noise using an auto-correlation technique
 based on 5 year NANOGrav data, and conclude that the timing residuals are
