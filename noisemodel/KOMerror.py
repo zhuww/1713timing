@@ -22,14 +22,16 @@ def calchisq(offset):
     os.system('cp %s/%s %s/%s' % (cwd, parfile, tmpdir, parfile))
     m = model(parfile)
     m.PAASCNODE += Decimal(offset)
-    m.write()
+    m.freezeall()
+    m.write(parfile)
     t = TOAfile('../' + toafile)
     m.tempofit(t, GLS=True)
+    os.chdir(cwd)
     return m.chisq
 
 #print calchisq(0.)
 
-offsets = [ [x] for x in np.linspace(-40,40,20)]
+offsets = [ [x] for x in np.linspace(-10,10,20)]
 chisqs = threadit(calchisq, offsets)
 np.save('KOMs', (offsets,chisqs))
 plot(offsets, chisqs, 'o')
