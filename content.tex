@@ -260,7 +260,8 @@ evolution in frequency (see Section \ref{sec:FD} for details).
 
 {\bfref
 In order to account for unknown systematics in TOAs from different
-instruments, and epoch-correlated noise in TOAs caused by pulse jitter. 
+instruments, and epoch-correlated noise like pulse jitter noise from pulsar
+magnetosphere activities.. 
 We employed a general noise model that parameterize both uncorrelated noise and
 correlated noise. The noise modeling is discussed in Section \ref{sec:noise} and the
 noise model parameters are listed in Table \ref{tab:wrms}. 
@@ -320,7 +321,8 @@ template matching error $\sigma$ can be estimated when we compute the TOAs, ther
 these errors often come with the TOAs. The other types of noises need to be modeled
 separately.
 %In this section, we discuss how to model these other noise.
-The solution to this problem has been discussed extensively in \citet{vl13, ell13, vv14a, vv14, abb+14} and Ellis (thesis 2014). In this section, we outline the parts that are relevant to our noise model.
+The solution to this problem has been discussed extensively in \citet{vl13,
+ell13, vv14a, vv14, abb+14} and J. A. Ellis (PhD thesis 2014). In this section, we outline the parts that are relevant to our noise model.
 
 
 After we removed the timing model, the post-fit 
@@ -399,7 +401,8 @@ $G$ consists of the next ($n-m$) columns of $U$.
 
 Using equation \ref{eq:decom} and the Woodbury Lemma
 \footnote{$(A+DBE^T)^{-1}=A^{-1}-A^{-1}D(B^{-1}+E^TA^{-1}D)^{-1}E^TA^{-1}$ and
-$|A+DBE^T| = |A||B||B^{-1}+E^TA^{-1}D|$} we get:
+$|A+DBE^T| = |A||B||B^{-1}+E^TA^{-1}D|$}, we get (equation 25 of
+\citealt{abb+14}):
 \begin{equation}
 \label{eq:Gform}
 p(\delta t|\vec \phi) = \frac{\exp[-\frac{1}{2}(\delta t^T \tilde{\msD}^{-1} \delta t -
@@ -652,7 +655,7 @@ noises left in the residuals of timing modeling.
 An important part of these timing noise are expected to come from pulsar's spin
 irregularity, i.e. its long-term deviation from a simple linear slow down. 
 Spin irregularity is often significant in younger pulsars, and often
-requires modeling with significant high-order frequency polynomials (such as $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency) to remove. 
+requires modeling with significant high-order frequency polynomials (such as $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency). 
 Potential causes of irregular spin behavior include unresolved
 micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar \citep{hlk10, ymh+13, ml14}.
 {\bfref These mechanisms could lead to accumulative random perturbations in the 
@@ -662,8 +665,8 @@ Random walks in phase (RW$_0$) would grow over time ($T$) proportional to
 $T^{1/2}$, random walk in $\nu$ grows proportional to $T^{3/2}$, random walk in
 $\dot{\nu}$ grows proportional to $T^{5/2}$.
 Such spin noises would likely have a steep power spectrum with more power in
-the lower frequencies, also known as a ``red'' power spectrum, therefore, they
-were possibly the main sources of ``red'' noises in pulsar timing.
+the lower frequencies, also known as a ``red'' power spectrum. They
+are considered as one of the main sources of ``red'' noises in pulsar timing.
 }
 
 The timing noise of radio pulsars has been studied by
