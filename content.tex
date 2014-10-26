@@ -319,12 +319,13 @@ There are also time-correlated noises, such as red timing noises that are
 correlated from epochs to epochs. 
 The template matching error $\sigma$ can be estimated when we compute the
 TOAs, and therefore, often come as the by-products of TOA measurements. 
-The other types of noises need to be modeled separately.
-%In this section, we discuss how to model these other noise.
-The solution to this problem has been discussed extensively in \citet{vl13,
+Correctly accounting for these noises is a crucial for accurately
+model the pulsar's timing behavior.
+It has been proposed that the correlated and uncorrelated noises can be
+modeled as Gaussian processes in a Bayesian approach. This approach has 
+been discussed extensively in \citet{vl13,
 ell13, vv14a, vv14, abb+14} and J. A. Ellis (PhD thesis 2014). In this
-section, we outline noise models we used to characterize noises in our 21-yr
-dataset.
+section, we outline the noise modeling procedure used in this paper. 
 
 
 After we removed the timing model, the post-fit 
