@@ -261,7 +261,7 @@ evolution in frequency (see Section \ref{sec:FD} for details).
 {\bfref
 In order to account for unknown systematics in TOAs from different
 instruments, and epoch-correlated noise like pulse jitter noise from pulsar
-magnetosphere activities.. 
+magnetospheric activities. 
 We employed a general noise model that parameterize both uncorrelated noise and
 correlated noise. The noise modeling is discussed in Section \ref{sec:noise} and the
 noise model parameters are listed in Table \ref{tab:wrms}. 
@@ -314,15 +314,17 @@ and correlated noise. Uncorrelated noises are
 independent from one TOA to another, while the correlated noises are not. 
 For instance, the template matching errors and the radiometer noises are 
 uncorrelated, the pulse jitter noise, which affects all the TOAs 
-in the same epoch simultaneously, is correlated noise.
+in the same epoch simultaneously, is epoch-correlated noise.
 There are also time-correlated noises, such as red timing noises that are
-correlated from epochs to epochs. Among the various types of noises, only the
-template matching error $\sigma$ can be estimated when we compute the TOAs, therefore,
-these errors often come with the TOAs. The other types of noises need to be modeled
-separately.
+correlated from epochs to epochs. 
+The template matching error $\sigma$ can be estimated when we compute the
+TOAs, and therefore, often come as the by-products of TOA measurements. 
+The other types of noises need to be modeled separately.
 %In this section, we discuss how to model these other noise.
 The solution to this problem has been discussed extensively in \citet{vl13,
-ell13, vv14a, vv14, abb+14} and J. A. Ellis (PhD thesis 2014). In this section, we outline the parts that are relevant to our noise model.
+ell13, vv14a, vv14, abb+14} and J. A. Ellis (PhD thesis 2014). In this
+section, we outline noise models we used to characterize noises in our 21-yr
+dataset.
 
 
 After we removed the timing model, the post-fit 
@@ -346,7 +348,7 @@ correlated and uncorrelated noises. If we only have uncorrelated noises in our
 post-fit residuals, then $\msC$ would be a diagonal matrix $\msD$. Conversely, correlated
 noises would give rise to non-zero non-diagonal elements. $\msC_{ij}(i\neq
 j)\neq 0$ indicates that $\msR_{i}$ is correlated with $\msR_{j}$. In the case
-of pulse jitter noise, only the TOAs from the same sub-integration could be correlated
+of pulse jitter noise, only the TOAs from the same sub-integration are correlated
 with each other, thus $\msC$ would be a block diagonal matrix $\msJ$. If both types
 of noise present, then $\msC = \msD + \msJ$.
 
@@ -564,25 +566,30 @@ our sight-line through the turbulent ISM and solar wind is changing as the
 pulsar, the Sun, the Earth, and the ISM all move with respect to each other.
 The DM variation can affect the timing of high-precision pulsar significantly.
 
+{\bfref
 We fit simultaneously with other parameters the time-varying DM using the {\it DMX} model in {\sc tempo}.
-This model groups TOAs taken within 14 days and fits independent DM values for each group, resulting in a DM time series over the length of the data set.
-We made sure that in each group we have TOAs
-from at least two different bands (such as L-band and S-band). 
-The same procedure was carried out in
-\citet{dfg+13}.  This DM fitting was conducted with TOAs from all
-instruments except Mark~III, which produced only single-frequency TOAs.
+This model fits independent DM values for TOAs groups taken within 14 days
+intervals, except for the L-band-only Mark~III TOAs. We grouped the Mark~III
+TOAs together as a single group, because their frequency resolution and timing
+precision are not sufficient for measuring epoch-to-epoch DM changes.
 
-The grouping is feasible because of the frequency of our multi-band
-observations.
-The Arecibo 1400-MHz and 2300-MHz observations of PSR~J1713+0747 almost
-always happen consecutively on
-the same day, while the GBT 800-MHz and 1400-MHz observations often take place on different
-days spaced by only few days apart.
-Therefore, the DM values in our {\it DMX} model were determined by TOAs from
-similar epochs and from at least two frequency bands. 
+%The best-fit {\it DMX} model is consist of a DM time series over the length 
+%of the data set.
+%We made sure that in each group we have TOAs
+%from at least two different bands (such as L-band and S-band). 
+%The same procedure was carried out in
+%\citet{dfg+13}.  This DM fitting was conducted with TOAs from all
+%instruments except Mark~III, which produced only single-frequency TOAs.
 
-Figure \ref{fig:dmx} shows the DM variation of PSR~J1713+0747 as measured
-using {\it DMX} model.
+%The grouping is feasible because of the frequency of our multi-band
+%observations.
+%The Arecibo 1400-MHz and 2300-MHz observations of PSR~J1713+0747 almost
+%always happen consecutively on
+%the same day, while the GBT 800-MHz and 1400-MHz observations often take place 
+%on different days spaced by only few days apart.
+%Therefore, the DM values in our {\it DMX} model were determined by TOAs from
+%similar epochs and from at least two frequency bands. 
+Figure \ref{fig:dmx} shows the measured DM variation of PSR~J1713+0747.
 Note that the systematic drop of DM around MJD 53200 is likely instrumental, due to
 the use of different standard pulse profile templates when extracting 
 TOAs from the Mark~IV, ABPP data. The DM values inferred from different
@@ -593,6 +600,7 @@ observed independently by the Parkes observatory \citep{kcs+13}.
 There is clear red-noise-like variance in the pulsar's DM with a RMS of
 $\sim10^{-4}$. 
 %This DM variation may lead to ``red'' timing residuals as discussed in \citealt{kcs+13}.
+}
 
 %Note that the first part of this DM curve (MJD$<53200$) in
 %Figure \ref{fig:dmx} has much larger uncertainties than the second half.
