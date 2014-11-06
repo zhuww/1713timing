@@ -3,7 +3,7 @@
 
 \tabletypesize{\footnotesize}
 \tablewidth{0pt}
-\tablecaption{\label{tab:rms} Noise parameters\tablenotemark{a} and residual RMS in $\mu$s. }
+\tablecaption{\label{tab:wrms} Noise parameters\tablenotemark{a} and residual RMS in $\mu$s. }
 \tablehead{ \colhead{Backends}  &\colhead{$\bar{\sigma}$\tablenotemark{b}}  &\colhead{EFAC}  &\colhead{EQUAD}  &\colhead{ECORR}  &\colhead{WRMS\tablenotemark{c}}  &\colhead{AWRMS\tablenotemark{d} ($\mu$s)}   }
 \startdata
 all&  0.932&  --&  --&  --&  0.245&  0.118\\
@@ -29,7 +29,7 @@ PUPPI-S&  0.644&  1.067&  0.048&  0.117&  0.191&  0.099
 respectively.}
 \tablenotetext{b}{The averaged TOA template matching errors
 $\left<\sigma\right>$.}
-\tablenotetext{c}{Here WRMS is defined as $[(\sum w_i\msR_i^2)/\sum w_i -
+\tablenotetext{c}{Here WRMS is defined as $[(\sum w_i\msR_i^2/\sum w_i) -
 \bar{\msR}^2]^{1/2}$, where $\msR_i$ is the timing residual of TOA $i$,
 $w_i=1/\sigma_i^2$ is the weight determined by the TOA errors including EFAC
 and EQUAD, and $\bar{\msR} = (\sum w_i\msR_i)/\sum w_i$ is the weighted mean
