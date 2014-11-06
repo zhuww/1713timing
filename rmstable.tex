@@ -1,0 +1,43 @@
+\clearpage
+\begin{deluxetable}{lcccccc}
+
+\tabletypesize{\footnotesize}
+\tablewidth{0pt}
+\tablecaption{\label{tab:rms} Noise parameters\tablenotemark{a} and residual RMS in $\mu$s. }
+\tablehead{ \colhead{Backends}  &\colhead{$\bar{\sigma}$\tablenotemark{b}}  &\colhead{EFAC}  &\colhead{EQUAD}  &\colhead{ECORR}  &\colhead{WRMS\tablenotemark{c}}  &\colhead{AWRMS\tablenotemark{d} ($\mu$s)}   }
+\startdata
+all&  0.932&  --&  --&  --&  0.245&  0.118\\
+M3A-L&  0.267&  --&  0.671&  --&  0.550&  0.543\\
+M3B-L&  0.167&  --&  0.422&  --&  0.441&  0.438\\
+M4-L&  0.172&  --&  0.127&  --&  0.349&  0.140\\
+M4-S&  0.183&  --&  0.404&  --&  0.628&  0.418\\
+M4O-L&  0.416&  --&  0.294&  --&  0.324&  0.101\\
+M4O-S&  0.355&  --&  0.001&  --&  0.305&  0.141\\
+ABPP-L&  0.106&  --&  0.142&  --&  0.265&  0.086\\
+ABPP-S&  0.134&  --&  0.292&  --&  0.440&  0.310\\
+ASP-L&  0.524&  1.023&  0.024&  0.090&  0.246&  0.075\\
+ASP-S&  0.604&  1.113&  0.004&  0.094&  0.260&  0.113\\
+GASP-8&  1.451&  1.164&  0.063&  0.028&  0.628&  0.097\\
+GASP-L&  0.999&  1.017&  0.060&  0.054&  0.331&  0.082\\
+GUPPI-8&  1.550&  1.049&  0.094&  0.271&  0.680&  0.211\\
+GUPPI-L&  0.883&  1.217&  0.006&  0.118&  0.273&  0.083\\
+PUPPI-L&  0.303&  1.179&  0.000&  0.111&  0.145&  0.075\\
+PUPPI-S&  0.644&  1.067&  0.048&  0.117&  0.191&  0.099
+\enddata
+
+\tablenotetext{a}{The unmodeled EFAC and ECORR values were default to 1 and 0,
+respectively.}
+\tablenotetext{b}{The averaged TOA template matching errors
+$\left<\sigma\right>$.}
+\tablenotetext{c}{Here WRMS is defined as $[(\sum w_i\msR_i^2)/\sum w_i -
+\bar{\msR}^2]^{1/2}$, where $\msR_i$ is the timing residual of TOA $i$,
+$w_i=1/\sigma_i^2$ is the weight determined by the TOA errors including EFAC
+and EQUAD, and $\bar{\msR} = (\sum w_i\msR_i)/\sum w_i$ is the weighted mean
+of the residuals.}
+\tablenotetext{d}{(AWRMS) weighted RMS of Epoch-averaged residual }
+\tablenotetext{e}{Here Mark IV O stands for the recently-processed Mark IV
+data that overlap with ASP data.}
+
+\end{deluxetable}
+
+\clearpage 
