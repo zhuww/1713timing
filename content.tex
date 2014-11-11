@@ -309,161 +309,102 @@ those in \citet{sns+05} but consistent with their reported uncertainties.
 
 \subsection{Noise model}
 \label{sec:noise}
-{\bfref 
-There are two kinds of noises affecting our TOA measurements, uncorrelated
-and correlated noise. Uncorrelated noises are 
-independent from one TOA to another, while the correlated noises are not. 
-For instance, the template matching errors and the radiometer noises are 
-uncorrelated, the pulse jitter noise, which affects all the TOAs 
-in the same epoch simultaneously, is epoch-correlated noise.
-There are also time-correlated noises, such as red timing noises that are
-correlated from epochs to epochs. 
-The template matching error $\sigma$ can be estimated when we compute the
-TOAs, and therefore, often come as the by-products of TOA measurements. 
-Correctly accounting for these noises is a crucial for accurately
-model the pulsar's timing behavior.
-It has been proposed that the correlated and uncorrelated noises can be
-modeled as Gaussian processes in a Bayesian approach. This approach has 
-been discussed extensively in \citet{vl13,
-ell13, vv14a, vv14, abb+14} and J. A. Ellis (PhD thesis 2014). In this
-section, we outline the noise modeling procedure used in this paper. 
+{\B The noise model used in this analysis is a parameterized model that is a function of several unknown quantities describing both correlated and uncorrelated noise sources. Uncorrelated noise is 
+independent from one TOA to another, while the correlated noise is not. 
+For instance, the template matching error and the radiometer noise is
+uncorrelated, the pulse jitter noise \citep{cs10}, which affects all the TOAs 
+in the same epoch simultaneously, is correlated noise.
+There is also time-correlated noise, such as red timing noise that are
+correlated from epoch to epoch. Among the various types of noise only the
+template matching error $\sigma$ can be estimated when we compute the TOAs and 
+other source of noise must be modeled separately. The solution to this problem has been discussed extensively in \citet{vl13, ell13, vv14a, vv14, abb+14} and J. A. Ellis (PhD thesis 2014). In this section, we follow the noise model used in \citet{abb+14} closely but will make a few modifications.
 
+We begin by forming a set of residuals via the standard weighted least squares fitting routine. An $N_{\rm toa}$ length vector of  residuals can be modeled mathematically as the sum of several deterministic and stochastic sources as follows
+\be
+\delta\mathbf{t} = M\boldsymbol{\epsilon} + F\mathbf{a} + U\mathbf{j} +\mathbf{n}.
+\ee
+The first term on the right hand side describes small deterministic trends left over in the residuals because one cannot perfectly remove the deterministic timing model when noise is present. Here $M$ is the timing model design matrix and $\boldsymbol{\epsilon}$ is a vector of small timing model parameter offsets. Next, we model the red noise via a Fourier decomposition (this need not be the case as this basis was chosen to increase computational efficiency as we shall see later) where $F$ is the so-called Fourier design matrix that has columns of alternating sine and cosine functions for frequencies in the range $[1/T,n_{\rm mode}/T]$ with $\Delta f=1/T$ and $n_{\rm mode}$ is the number of frequencies to include in the sum. Furthermore, $\mathbf{a}$ are the amplitudes of the Fourier basis functions defined above \citep[see][for more details]{lah+13,abb+14}. The next term describes short timescale correlated noise. This term could be due to pulse phase jitter but could also have other components not due to jitter. This term characterized noise that is completely correlated for all TOAs in a given epoch but completely \emph{uncorrelated} between epochs. The matrix $U$ is an $N_{\rm TOA}\times N_{\rm epoch}$ matrix that maps TOAs to a given epoch and $\mathbf{j}$ is the amplitude of the epoch-to-epoch fluctuations. Finally the last term describes a Gaussian white noise process which is generally the dominant source of noise in pulsar timing data.
 
-After we removed the timing model, the post-fit 
-residuals $\msR$ should contain mostly Gaussian noises. Thus the 
-likelihood function for given noise model is:
-\begin{equation}
-\label{eq:bigC}
-p(\msR|\vec \phi) = \frac{1}{\sqrt{|2 \pi \msC|}}
-\exp\left(-\frac{1}{2}\msR^T \msC^{-1} \msR \right),
-\end{equation}
-here $\vec \phi$ are the noise parameters and $\msC(\vec \phi)$ is the noise
-covariance matrix. 
-Assuming that our initial timing model is close to the true model, and their
-difference is small enough to be regarded as a linear model, $\msR=\delta t
- - M \epsilon$, here $\delta t$ is the pre-fit residual,
-$M$ is the design matrix of the timing model and $\epsilon$ denote small
-offsets in the timing parameters. 
+Since the white noise is modeled as Gaussian, the likelihood function for the noise is given by
+\be
+p(\mathbf{n}|\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j}) = \frac{\exp\left( -\frac{1}{2}\mathbf{n}^TN^{-1}\mathbf{n} \right)}{\sqrt{\det(2\pi N)}},
+\ee
+where 
+\be
+N_{ij,k}=E_{k}^2W_{ij}+Q_{k}^2\delta_{ij},
+\ee
+is an $N_{\rm TOA}\times N_{\rm TOA}$ matrix with $E_{k}$ and $Q_{k}$ the ``EFAC" and ``EQUAD" parameters for each observing backend, respectively, $W={\rm diag}\{\sigma_i^2\}$ is a diagonal matrix of TOA uncertainties, and $\delta_{ij}$ is the Kronecker delta function. The notation is such that the matrix elements $(i,j)$ apply to those TOAs corresponding to the backend observing system labeled by $k$. We can now write the likelihood function of the residuals as
+\be
+p(\delta\mathbf{t}|\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi}) = \frac{\exp\left( -\frac{1}{2}\mathbf{r}^TN^{-1}\mathbf{r} \right)}{\sqrt{\det(2\pi N)}},
+\ee
+where $\boldsymbol{\phi}$ describes the EFAC and EQUAD parameters and 
+\be
+\mathbf{r} = \delta\mathbf{t}-M\boldsymbol{\epsilon}-F\mathbf{a}-U\mathbf{j}
+\ee
+We now wish to impose prior distributions on our short timescale correlated noise and red noise. Both can be modeled as Gaussian processes by imposing the following priors
+\begin{align}
+p(\mathbf{j}|J_{k}) &= \frac{\exp\left( -\frac{1}{2}\mathbf{j}^{T}\msJ^{-1}\mathbf{j} \right)}{\sqrt{\det(2\pi\msJ)}}\\
+p(\mathbf{a}|\rho_{n}) &= \frac{\exp\left( -\frac{1}{2}\mathbf{a}^{T}\varphi^{-1}\mathbf{a} \right)}{\sqrt{\det(2\pi\varphi)}},
+\end{align}
+where $\msJ_{ij,k} = J_{k}^{2}\delta_{ij}$ s an $N_{\rm epoch}\times N_{\rm epoch}$ matrix with diagonal elements, $J_{k}^{2}$ describing the variance of the short timescale correlated noise for each observing backend. We will henceforth refer to $J_{k}$ as the ECORR parameter. Furthermore $\varphi_{ij} = {\rm diag}\{10^{\rho_{n}}\}$ is an $2n_{\rm mode}\times 2n_{\rm mode}$ matrix describing the variance of the red noise Fourier coefficients at each frequency. In this framework, the coefficients of the $\varphi$-matrix are related to the power spectral density evaluated at a given frequency via the Wiener-Khinchin theorem. In principle we could use the power spectrum coefficients, $10^{\rho_{n}}$, themselves as free parameters but in this work we parameterize them via a power law
+\be
+\varphi_{n} \equiv 10^{\rho_{n}} = \frac{1}{T}\frac{A_{\rm red}^{2}}{12\pi^{2}}\left( \frac{f_{n}}{f_{\rm yr}} \right)^{3-\gamma_{\rm red}}f_{n}^{-3},
+\ee
+where $T$ is the total observation time, $A_{\rm red}$ is the amplitude of the red noise, $\gamma_{\rm red}$ is the spectral index of the red noise, $f_{\rm yr}$ is the reference frequency of ${\rm yr}^{-1}$, and $f_{n}$ is the $n$th Fourier frequency assuming Nyquist sampling. We see that the prior distributions on short-timescale correlated noise and red noise are themselves parameterized by some combination of \emph{hyper-parameters}, which in turn have their own \emph{hyper-priors} that we define as uniform in the following parameters: $\log_{10}J_{k}\in[-8.5, -4]$, with $J_{k}$ in units of seconds, $\log_{10}A_{\rm red}\in[-20,-11]$ where $A_{\rm red}$ is unitless, and $\gamma_{\rm red}\in[0,7]$. Finally we can write down the posterior distribution for the residuals
+\be
+p(\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi}|\delta\mathbf{t}) \propto
+p(\delta\mathbf{t}|\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi})p(\mathbf{j}|J_{k})p(\mathbf{a}|\rho_{n}),
+\ee
+where we have expanded $\boldsymbol{\phi}$ to contains the hyper-parameters and we assume uniform priors on EFAC in the range $E\in[0.5,5]$ and the logarithm of EQUAD in the range $\log_{10}Q\in[-8.5, -4]$. 
 
-The noise covariance matrix $\msC$ could be used to describe both
-correlated and uncorrelated noises. If we only have uncorrelated noises in our
-post-fit residuals, then $\msC$ would be a diagonal matrix $\msD$. Conversely, correlated
-noises would give rise to non-zero non-diagonal elements. $\msC_{ij}(i\neq
-j)\neq 0$ indicates that $\msR_{i}$ is correlated with $\msR_{j}$. In the case
-of pulse jitter noise, only the TOAs from the same sub-integration are correlated
-with each other, thus $\msC$ would be a block diagonal matrix $\msJ$. If both types
-of noise present, then $\msC = \msD + \msJ$.
+For the purposes of estimating the underlying noise characteristics of our data set, the parameters $\mathbf{\epsilon}$, $\mathbf{j}$, $\mathbf{a}$ are nuisance parameters that we wish to marginalize over. This can be done in a sequential fashion as was presented in \cite{abb+14} but here we take a different approach. Notice that all nuisance parameters are linear and can be described with Gaussian prior distrubutions\footnote{We use uniform priors on the timing model parameter offsets, $\mathbf{\epsilon}$ but this is the same as a Gaussian prior with infinite variance. Technically this prior is not normalizable but since we are interested in parameter estimation and not Bayesian model selection here, this non-normalizable prior is not a problem.}. We can thus define a combined operator matrix and amplitude vector
+\be
+T = \bb M  & F  & U \eb, \quad
+\mathbf{b} = \bb \boldsymbol{\epsilon} \\ \mathbf{a} \\ \mathbf{j} \eb
+\ee
+with prior distribution
+\be
+p(\mathbf{b}|\boldsymbol{\theta}) = \frac{\exp\left( -\frac{1}{2}\mathbf{b}^{T}B^{-1}\mathbf{b} \right)}{\sqrt{\det(2\pi B)}}
+\ee
+and covariance matrix is defined in terms of the following block matrix
+\be
+B = \bb \infty & 0 & 0 \\ 0 & \varphi & 0 \\ 0 & 0 & \msJ \eb,
+\ee
+where $\infty$ is a diagonal matrix of infinities to describe a uniform prior on $\boldsymbol{\epsilon}$. The marginalized posterior distribution is then
+\be
+\begin{split}
+p(\boldsymbol{\phi}|\delta\mathbf{t}) & \propto \int_{-\infty}^{\infty}d\mathbf{b}\, p(\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi}|\delta\mathbf{t}) \\
+&= \frac{\exp\left[-\frac{1}{2}(\delta\mathbf{t}^{T}N^{-1}\delta\mathbf{t} - \mathbf{d}^{T}\Sigma^{-1}\mathbf{d})  \right]}
+{\sqrt{(2\pi)^{N_{\rm TOA}-{\rm dim\,}\mathbf{b}}\det(N)\det(B) \det(\Sigma)}},
+\end{split}
+\ee
+where
+\begin{align}
+\mathbf{d} &= T^{T}N^{-1}\delta\mathbf{t} \\
+\Sigma &= (B^{-1} + T^{T}N^{-1}T).
+\end{align}
+Furthermore, the maximum likelihood values of $\mathbf{b}$ and their uncertainties can be found by
+\begin{align}
+\hat{\mathbf{b}} &= \Sigma^{-1}\mathbf{d} \\
+{\rm cov}(\mathbf{b}) &= \Sigma^{-1}.
+\end{align}
+This allows us to determine the maximum likelihood timing model parameters via the equivalent of a generalized least squares fit and also allows us to determine the maximum likelihood red noise realization present in the data. This scheme has the advantage of being computationally efficient in that it bypasses $N_{\rm TOA}^{3}$ matrix operations via rank reduced matrices \citep{vv14} resulting in a likelihood evaluation that instead scales as $N_{\rm TOA}^{2}$; a factor of $\sim 2\times 10^{4}$ for this dataset.
 
-In the past, extra noises are often modeled crudely using the timing software
-packages {\sc tempo} and {\sc tempo2} by grouping TOAs according to their backends 
-and receiver and assign each backend-receiver combination a EFAC and a EQUAD
-parameter. Timing software then enlarge the uncertainty ($\sigma$) of 
-the TOAs in the same group by a factor of EFAC ($E$),
-and increase $\sigma$ by adding the value of EQUAD ($Q$) to it in quadrature.
-
-We continue to use the EFAC and EQUAD parameterization for modeling 
-uncorrelated noise like radiometer noise. The resulting diagonal covariance
-matrix $D$ can be constructed with $\msD_{ii} = E_j^2\sigma_i^2 + Q_j^2$, where
-$D_{ii}$ is the $i$th diagonal element of $\msD$, $E_j$ and $Q_j$ is the
-EFAC and EQUAD values of the TOA group that the $i$th TOA belongs to. 
-
-To model the correlated jitter noise, we employ another noise
-parameter ECORR and parameterize the correlated
-noise covariance matrix $\msJ_{ij} = J_k^2$, where TOA $i$ and $j$ come from
-the same sub-integration, and $J_k$ is the ECORR value for the $k$th backend-receiver group.
-We can further simplify the matrix $\msJ$ by rewriting it as 
-$\msJ = U \tilde{\msJ} U^{T}$, where $\tilde{\msJ}$ is a
-N$_{\rm subint}\times$N$_{\rm subint}$ diagonal matrix with $\tilde{\msJ}_{jj} =
-J_k$ when the $j$th TOA sub-integration belongs to the $k$th backend-receiver
-group; and $U$ is a N$_{\rm TOA}\times$N$_{\rm subint}$ projection matrix,
-$U_{ij} = 1$ when the $i$th TOA comes from the $j$th sub-integration, otherwise $U_{ij}=0$. 
-
-As a result, the noise covariance matrix constructed from the EFAC, EQUAD, and
-ECORR parameters is:
-\begin{equation}
-\label{eq:decom}
-\msC = \msD + U \tilde{\msJ} U^{T}.
-\end{equation}
-To maximize the likelihood $p(\msR|\vec \phi)$ requires inverting the large covariance 
-matrix $\msC$ many times. A direct approach is too computationally costly to be viable, we had to employ some linear algebra tricks to make this work. 
-
-
-It was shown by \citet{vl13} that likelihood function in Equation
-\ref{eq:bigC} can be marginalized over timing parameters and re-written as:
-\begin{equation}
-\label{eq:Gintro}
-p(\delta t|\vec \phi) = \frac{\exp(-\frac{1}{2}\delta t^TG(G^T \msC G)^{-1}G^T\delta t)}
-{\sqrt{(2\pi)^{n-m}|G^{T}\msC G|}},
-\end{equation}
-where $n$ denote the total number of TOAs, and $m$ denote the total number of
-timing parameters.
-Here the matrix $G$ comes from the singular variable decomposition of the design
-matrix: $M = U\Sigma V^*$, where U and V are $n\times n$ and $m\times m$ orthogonal
-matrix, and $\Sigma$ is a ($n\times m$) diagonal matrix.
-We define $U = (F G)$, where $F$ consists of the first $m$ columns of $U$ and
-$G$ consists of the next ($n-m$) columns of $U$.
-
-Using equation \ref{eq:decom} and the Woodbury Lemma
-\footnote{$(A+DBE^T)^{-1}=A^{-1}-A^{-1}D(B^{-1}+E^TA^{-1}D)^{-1}E^TA^{-1}$ and
-$|A+DBE^T| = |A||B||B^{-1}+E^TA^{-1}D|$}, we get (equation 25 of
-\citealt{abb+14}):
-\begin{equation}
-\label{eq:Gform}
-p(\delta t|\vec \phi) = \frac{\exp[-\frac{1}{2}(\delta t^T \tilde{\msD}^{-1} \delta t -
-d^T\msS^{-1} d)]}{\sqrt{(2\pi)^{(n-m)}|\tilde{\msJ}||G^T \msD
-G||\msS|}},
-\end{equation}
-where $\tilde{\msD}^{-1} = G(G^T \msD G)^{-1}G^T$, $d=U^T \tilde{\msD}^{-1}\delta
-t$, and $\msS = (\tilde{\msJ}^{-1} + U^T \tilde{\msD}^{-1}U)$.
-Here $\tilde{\msD}^{-1}$ can also be calculated using the $F$ matrix 
-(see equation 29 in \citealt{vv14a}):
-\begin{equation}
-\label{eq:tildeD}
-\tilde{\msD}^{-1} = G(G^T\msD G)^{-1}G^T = \msD^{-1} -
-\msD^{-1}F(F^T\msD^{-1}F)^{-1}F^T\msD^{-1}.
-\end{equation}
-
-The $F$ formalism of $\tilde{\msD}^{-1}$ is much easier to compute because $F^T\msD^{-1}F$ is a $m\times m$ matrix whereas $G^T\msD G$ is $(n-m)\times(n-m)$.
-Similarly, the determinants in the denominator also can be computed using a $F$ matrix formalism: $|G^{T}\msD G| = |\msD||F^T\msD^{-1}F|$ (See appendix A of \citet{vv14a} for a more detailed proof).
-This is because orthogonal transformations like $U$ keep determinants invariant, and 
-\begin{equation}
-|\msD| = |U^T \msD U| = |G^T\msD G||(F^T\msD^{-1}F)^{-1}| = |G^T\msD G|/|F^T
-\msD^{-1} F|.
-\end{equation}
-After using the $F$ matrix to reduce matrix ranks, the matrix inversion
-$F^T\msD^{-1}F$ and its determinant can be computed quickly using Cholesky
-factorization:
-$LL^* = F^T\msD^{-1}F$, where $L$ is the lower(or upper) triangle matrix, and $|F^T\msD^{-1}F| = |L|^2 = (\prod_i L_{ii})^2$.
-
-With the $F$ matrix formalism, $p(\delta t|\vec \phi)$ can be computed
-efficiently. 
-We wrote a program\footnote{\url{https://github.com/zhuww/noisemodel}} to search over many combinations of noise parameters $\vec
-\phi$ (EFAC, EQUAD, and ECORR) to maximize the likelihood
-function. This program works in conjunction with the {\sc tempo} software package.
-We use {\sc tempo}'s general least square fit routine to fit for the
-timing model and our code to model the noise parameters, and run both programs
-in alternation for few iterations to make sure that both the timing model and the
-noise model are marginalized simultaneously.
-
-In our noise model, we marginalized over the EFAC, EQUAD, and ECORR parameters
+In our noise model we include EFAC, EQUAD, and ECORR parameters
 for data collected by different backend and receivers systems. However, we did not model 
-EFAC and ECORR of the Mark~III, Mark~IV, and ABPP data. Because there were not
-enough number of TOAs in the legacy dataset to constrain both EFAC and EQUAD,
-there were only one TOA per epoch so we cannot constrain the epoch-correlated
-noise modeled by ECORR such as jitter noise. Instead, we set EFAC values to 1
-and ECORR to 0 for these data sets, and use only EQUAD to model extra noises
-in them.
-
-%\subsection{Timing residuals}
-%\label{sec:res}
+EFAC and ECORR of the Mark~III, Mark~IV, and ABPP data because there were not
+enough TOAs in the legacy dataset to constrain both EFAC and EQUAD. Furthermore,
+there was only one TOA per epoch so we cannot constrain the epoch-correlated
+noise modeled by ECORR. Instead, we set EFAC values to 1
+and ECORR to 0 for these data sets, and use only EQUAD to model the white noise in these epochs.
 
 The timing residuals of PSR~J1713+0747 have a weighted root mean square (WRMS)
-$\sim 245$ns.
-If we average the residuals in each epoch, the epoch-averaged residuals has a 
-WRMS of $\sim 118$ns (Figure \ref{fig:res}, Table \ref{tab:wrms}).
+$\sim 212$ns.
+If we average the residuals in each epoch, the epoch-averaged residuals have a 
+WRMS of $\sim 106$ns (Figure \ref{fig:res}, Table \ref{tab:wrms}).
 Here we define the error weighted epoch-averaged residual as: 
-$\msR_{\rm epoch} = \langle w_j\msR_{j}\rangle$, $\sigma_{\rm
-epoch}=\{\sum [(\msR_j-\msR_{\rm epoch})^2w_j]/(N-1)/\sum w_j\}^{1/2}$, where $j$
+$r_{\rm epoch} = \langle w_j r_{j}\rangle$, $\sigma_{\rm
+epoch}=\{\sum [(r_j-r_{\rm epoch})^2w_j]/(N-1)/\sum w_j\}^{1/2}$, where $j$
 denote one of the $N$ TOAs from the respective observation epoch and
 $w_j=1/\sigma_j^2$.
 
@@ -471,7 +412,16 @@ Our noise and residual analysis shows that the advances in
 instrumentation have made pulsar timing increasingly accurate.
 The average timing residuals from ASP, GASP, GUPPI and PUPPI, are
 systematically smaller than those from the earlier Mark~III, Mark~IV and ABPP
-systems.
+systems. However, we do see evidence for red noise in this dataset. The bottom
+panels of Figure \ref{fig:res} show the one and two dimensional posterior probability plots
+of the red noise. It should be noted that the spectral index is reasonably low as can be 
+deduced from the maximum likelihood red noise realization in the top panel. This is not
+a red noise process that reveals itself as a very low frequency sinusoid or cubic but instead
+it seems that the red noise is modeling a feature that is localized to the time period of 1999 through 2005.
+Since this is when dual-frequency observations begin, it is likely that this is in fact due to DM 
+variations that cannot be modeled in the earlier data. Nonetheless, this noise model describes
+the data very well ({\bf probably should use other plot here with noise subtracted}) but makes 
+physical interpretations of red noise difficuld because of the lack of multi-frequency data at early epochs.
 
 \citet{sc12} studied the pulse arrival times from a single long exposure of
 PSR~J1713+0747, and found that this pulsar's single pulse showed random jitter of
