@@ -16,9 +16,12 @@ tf = TOAfile('1713.Sep.T2.tim')
 #md = model('1713_noise_gls.par')
 #md = model('1713_noise_fmin.par')
 #md = model('1713.Sep.T1.par')
-md = model('1713_21yr_simple.par')
+md = model('1713.Sep.KOM.par')
+#md = model('J1713+0747.par')
+#md = model('1713_21yr_simple.par')
 #md = model('1713.Sep.NM.par')
 #md = model('1713_21yr_fmin.par')
+#md = model('1713.Sep.dmx.par')
 md.tempofit(tf, DesignMatrix=True)
 #md.tempofit(tf) #get Design matrix from outside.
 
@@ -109,7 +112,7 @@ def loglikelihood(plist):
             ECORR = md.__dict__['ECORR %s' % key]
         except:
             ECORR = ECORR_default
-        for epochs in md.toagrps[key]:
+        for epochs in sorted(md.toagrps[key].keys()):
             S_ele.append(float(ECORR)**2)
             aveeph.append(epochs)
             idx = md.toagrps[key][epochs]
@@ -124,7 +127,7 @@ def loglikelihood(plist):
     #print 'len(S_ele)', len(S_ele)
 
 
-    """computing Ntilde*"""
+    """computing Ntilt*"""
     Nir = r / Nvec
     NiF = ((1.0/Nvec) * F.T).T
     FNiF = np.dot(F.T, NiF)
@@ -187,4 +190,4 @@ for i,p in enumerate(T2EQUAD):
 for i,p in enumerate(T2ECORR):
     md.__dict__[p] = p2[i]
 
-md.write('1713_21yr_simple.par')
+md.write('1713_21yr_fmin.par')

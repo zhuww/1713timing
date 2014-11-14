@@ -1277,8 +1277,8 @@ PBDOT            0.4570204  1           0.1737834
 SINI              0.949010  1            0.003990
 M2                0.290183  1            0.013773
 XDOT              0.006294  1            0.000107
-PAASCNODE           91.0808313674
-#PAASCNODE           101.0808313674
+#PAASCNODE           91.0808313674
+PAASCNODE           101.0808313674
 T2EFAC -f Rcvr_800_GUPPI   1.050
 T2EFAC -f Rcvr1_2_GUPPI   1.207
 T2EFAC -f S-wide_ASP   1.105

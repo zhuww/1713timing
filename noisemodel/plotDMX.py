@@ -5,18 +5,18 @@ from numpy import genfromtxt
 from datatools.MJD import MJD_to_datetime
 from pylab import *
 
+
+
 #m = model('1713.Apr.dmx.par')
 #t = TOAfile('1713.Apr.tim')
-m = model('1713.Sep.T1.par')
+m = model('Oct.T1.RN.par')
 t = TOAfile('1713.Sep.T2.tim')
 m.tempofit(t)
 #os.system('tempo -f %s %s -a' % (m.parfile, t.toafile)) #run tempo to generate the chisun.tmp file
 phisun = genfromtxt('phisun.tmp')
-#del m
-#m = model('J1713+0747.par')
 phisun = phisun[:len(t.toalist)]
 DMX, DMXErr, DMXR1, DMXR2 = m.dmxlist
-meanDMX = float(mean([DMX[i] for i in DMX]))
+meanDMX = mean([float(DMX[i]) for i in DMX])
 dmxvalues = genfromtxt('PaulDMX.par', dtype = [('DMXEP', 'f8'), ('DMX', 'f8'), ('DMXErr', 'f8'), ('DMXR1', 'f8'), ('DMXR2', 'f8'), ('DMXF1', 'f8'), ('DMXF2', 'f8'), ('DMXbin', 'S5')])
 DMX= {}
 DMXErr = {}
@@ -105,10 +105,9 @@ ax.errorbar([MJD_to_year(d+50000) for d in dmr1], dmx1, dmxerr1, fmt='k.')
 #ax1.set_ylim(15.9688, 15.9705)
 
 ax.errorbar([MJD_to_year(d+50000) for d in dmr2], dmx2, dmxerr2, fmt='k.')
-"""set y limit here """
-ax.set_ylim(-0.0308, -0.0285)
-
 #ax2.set_ylim(15.9626, 15.9639)
+ax.set_ylim(-0.0338, -0.0315)
+
 #ax1.spines['bottom'].set_visible(False)
 #ax2.spines['top'].set_visible(False)
 #ax1.xaxis.tick_top()
@@ -141,8 +140,7 @@ import ephem
 from MJD import *
 from astropy import coordinates as coord
 from tools.Coordinate import RA, Dec
-mjd = np.linspace(51000, 56500, 500)
-#mjd = np.linspace(51500, 56500, 500)
+mjd = np.linspace(51500, 56500, 500)
 #mjd = np.linspace(53200, 57000, 500)
 #dates = [MJD_to_datetime(m).strfmt('%Y/%m/%d') for  m in mjd]
 dates = [MJD_to_datetime(jd) for  jd in mjd]
@@ -185,8 +183,8 @@ ddmers = data[3,...]
 a = axes([.62, .6, .25, .3])
 def func(x,  b , c):
     return c * (x)**(b-2) 
-popt, pcov = curve_fit(func, delays, ddmsqs)
-popt, pcov = curve_fit(func, delays, ddmsqs, sigma=ddmers, p0=popt)
+popt, pcov = curve_fit(func, delays, ddmsqs, sigma=ddmers)
+#popt, pcov = curve_fit(func, delays, ddmsqs)
 B,C = popt
 Berr = np.sqrt(pcov[0,0])
 Cerr = np.sqrt(pcov[1,1])
