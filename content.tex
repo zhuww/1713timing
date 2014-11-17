@@ -423,10 +423,10 @@ Furthermore, the maximum likelihood values of $\mathbf{b}$ and their uncertainti
 {\rm cov}(\mathbf{b}) &= \Sigma^{-1}.
 \end{align}
 This scheme has the advantage of being computationally efficient in that it
-bypasses $N_{\rm TOA}^{3}$ matrix operations via rank reduced matrices
+bypasses $O(N_{\rm TOA}^{3})$ matrix operations via rank reduced matrices
 \citep{vv14} resulting in a likelihood evaluation that instead scales as
 %$N_{\rm TOA}^{2}$; a factor of $\sim 2\times 10^{4}$ for this dataset.
-$N_{\rm par}^{3}$, where $N_{\rm par}$ is the sum of the number of timing
+$O(N_{\rm par}^{3})$, where $N_{\rm par}$ is the sum of the number of timing
 parameters, red noise sample frequencies, and observing epochs. For this
 dataset the computational speed up is a factor of $\sim 10^{3}$.
 
