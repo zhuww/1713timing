@@ -312,7 +312,7 @@ those in \citet{sns+05} but consistent with their reported uncertainties.
 {\B The noise model used in this analysis is a parameterized model that is a function of several unknown quantities describing both correlated and uncorrelated noise sources. Uncorrelated noise is 
 independent from one TOA to another, while the correlated noise is not. 
 For instance, the template matching error and the radiometer noise is
-uncorrelated, the pulse jitter noise \citep{cs10}, which affects all the TOAs 
+uncorrelated, the pulse jitter noise \citep{sc10}, which affects all the TOAs 
 in the same epoch simultaneously, is correlated noise.
 There is also time-correlated noise, such as red timing noise that are
 correlated from epoch to epoch. Among the various types of noise only the
@@ -323,7 +323,28 @@ We begin by forming a set of residuals via the standard weighted least squares f
 \be
 \delta\mathbf{t} = M\boldsymbol{\epsilon} + F\mathbf{a} + U\mathbf{j} +\mathbf{n}.
 \ee
-The first term on the right hand side describes small deterministic trends left over in the residuals because one cannot perfectly remove the deterministic timing model when noise is present. Here $M$ is the timing model design matrix and $\boldsymbol{\epsilon}$ is a vector of small timing model parameter offsets. Next, we model the red noise via a Fourier decomposition (this need not be the case as this basis was chosen to increase computational efficiency as we shall see later) where $F$ is the so-called Fourier design matrix that has columns of alternating sine and cosine functions for frequencies in the range $[1/T,n_{\rm mode}/T]$ with $\Delta f=1/T$ and $n_{\rm mode}$ is the number of frequencies to include in the sum. Furthermore, $\mathbf{a}$ are the amplitudes of the Fourier basis functions defined above \citep[see][for more details]{lah+13,abb+14}. The next term describes short timescale correlated noise. This term could be due to pulse phase jitter but could also have other components not due to jitter. This term characterized noise that is completely correlated for all TOAs in a given epoch but completely \emph{uncorrelated} between epochs. The matrix $U$ is an $N_{\rm TOA}\times N_{\rm epoch}$ matrix that maps TOAs to a given epoch and $\mathbf{j}$ is the amplitude of the epoch-to-epoch fluctuations. Finally the last term describes a Gaussian white noise process which is generally the dominant source of noise in pulsar timing data.
+The first term on the right hand side describes small deterministic trends
+left over in the residuals because one cannot perfectly remove the
+deterministic timing model when noise is present. Here $M$ is the timing model
+design matrix and $\boldsymbol{\epsilon}$ is a vector of small timing model
+parameter offsets. Next, we model the red noise via a Fourier decomposition
+(this need not be the case as this basis was chosen to increase computational
+efficiency as we shall see later) where $F$ is the so-called Fourier design
+matrix that has columns of alternating sine and cosine functions for
+frequencies in the range $[1/T,n_{\rm mode}/T]$ with $\Delta f=1/T$ and
+$n_{\rm mode}$ is the number of frequencies to include in the sum.
+Furthermore, $\mathbf{a}$ are the amplitudes of the Fourier basis functions
+defined above \citep[see][for more details]{lah+13,abb+14}. 
+
+The next term
+describes short timescale correlated noise. This term could be due to pulse
+phase jitter but could also have other components not due to jitter. This term
+characterized noise that is completely correlated for all TOAs in a given
+epoch but completely \emph{uncorrelated} between epochs. The matrix $U$ is an
+$N_{\rm TOA}\times N_{\rm epoch}$ matrix that maps TOAs to a given epoch and
+$\mathbf{j}$ is the amplitude of the epoch-to-epoch fluctuations. Finally the
+last term describes a Gaussian white noise process which characterize
+epoch, time, and frequency independent random noises left in the data. %is generally the dominant source of noise in pulsar timing data.
 
 Since the white noise is modeled as Gaussian, the likelihood function for the noise is given by
 \be
@@ -333,7 +354,8 @@ where
 \be
 N_{ij,k}=E_{k}^2W_{ij}+Q_{k}^2\delta_{ij},
 \ee
-is an $N_{\rm TOA}\times N_{\rm TOA}$ matrix with $E_{k}$ and $Q_{k}$ the ``EFAC" and ``EQUAD" parameters for each observing backend, respectively, $W={\rm diag}\{\sigma_i^2\}$ is a diagonal matrix of TOA uncertainties, and $\delta_{ij}$ is the Kronecker delta function. The notation is such that the matrix elements $(i,j)$ apply to those TOAs corresponding to the backend observing system labeled by $k$. We can now write the likelihood function of the residuals as
+is an $N_{\rm TOA}\times N_{\rm TOA}$ matrix with $E_{k}$ and $Q_{k}$
+corresponding to {\sc tempo} and {\sc tempo2}'s ``EFAC" and ``EQUAD" parameters for each observing backend, respectively, $W={\rm diag}\{\sigma_i^2\}$ is a diagonal matrix of TOA uncertainties, and $\delta_{ij}$ is the Kronecker delta function. The notation is such that the matrix elements $(i,j)$ apply to those TOAs corresponding to the backend observing system labeled by $k$. We can now write the likelihood function of the residuals as
 \be
 p(\delta\mathbf{t}|\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi}) = \frac{\exp\left( -\frac{1}{2}\mathbf{r}^TN^{-1}\mathbf{r} \right)}{\sqrt{\det(2\pi N)}},
 \ee
@@ -346,18 +368,30 @@ We now wish to impose prior distributions on our short timescale correlated nois
 p(\mathbf{j}|J_{k}) &= \frac{\exp\left( -\frac{1}{2}\mathbf{j}^{T}\msJ^{-1}\mathbf{j} \right)}{\sqrt{\det(2\pi\msJ)}}\\
 p(\mathbf{a}|\rho_{n}) &= \frac{\exp\left( -\frac{1}{2}\mathbf{a}^{T}\varphi^{-1}\mathbf{a} \right)}{\sqrt{\det(2\pi\varphi)}},
 \end{align}
-where $\msJ_{ij,k} = J_{k}^{2}\delta_{ij}$ s an $N_{\rm epoch}\times N_{\rm epoch}$ matrix with diagonal elements, $J_{k}^{2}$ describing the variance of the short timescale correlated noise for each observing backend. We will henceforth refer to $J_{k}$ as the ECORR parameter. Furthermore $\varphi_{ij} = {\rm diag}\{10^{\rho_{n}}\}$ is an $2n_{\rm mode}\times 2n_{\rm mode}$ matrix describing the variance of the red noise Fourier coefficients at each frequency. In this framework, the coefficients of the $\varphi$-matrix are related to the power spectral density evaluated at a given frequency via the Wiener-Khinchin theorem. In principle we could use the power spectrum coefficients, $10^{\rho_{n}}$, themselves as free parameters but in this work we parameterize them via a power law
+where $\msJ_{ij,k} = J_{k}^{2}\delta_{ij}$ s an $N_{\rm epoch}\times N_{\rm
+epoch}$ matrix with diagonal elements, $J_{k}^{2}$ describing the variance of
+the jitter-like correlated noise for each observing backend. It is also
+referred to as the ECORR parameter in {\sc tempo} and {\sc tempo2}. Furthermore $\varphi_{ij} = {\rm diag}\{10^{\rho_{n}}\}$ is an $2n_{\rm mode}\times 2n_{\rm mode}$ matrix describing the variance of the red noise Fourier coefficients at each frequency. In this framework, the coefficients of the $\varphi$-matrix are related to the power spectral density evaluated at a given frequency via the Wiener-Khinchin theorem. In principle we could use the power spectrum coefficients, $10^{\rho_{n}}$, themselves as free parameters but in this work we parameterize them via a power law
 \be
 \varphi_{n} \equiv 10^{\rho_{n}} = \frac{1}{T}\frac{A_{\rm red}^{2}}{12\pi^{2}}\left( \frac{f_{n}}{f_{\rm yr}} \right)^{3-\gamma_{\rm red}}f_{n}^{-3},
 \ee
-where $T$ is the total observation time, $A_{\rm red}$ is the amplitude of the red noise, $\gamma_{\rm red}$ is the spectral index of the red noise, $f_{\rm yr}$ is the reference frequency of ${\rm yr}^{-1}$, and $f_{n}$ is the $n$th Fourier frequency assuming Nyquist sampling. We see that the prior distributions on short-timescale correlated noise and red noise are themselves parameterized by some combination of \emph{hyper-parameters}, which in turn have their own \emph{hyper-priors} that we define as uniform in the following parameters: $\log_{10}J_{k}\in[-8.5, -4]$, with $J_{k}$ in units of seconds, $\log_{10}A_{\rm red}\in[-20,-11]$ where $A_{\rm red}$ is unitless, and $\gamma_{\rm red}\in[0,7]$. Finally we can write down the posterior distribution for the residuals
+where $T$ is the total observation time, $A_{\rm red}$ is the amplitude of the
+red noise, $\gamma_{\rm red}$ is the spectral index of the red noise, $f_{\rm
+yr}$ is the reference frequency of ${\rm yr}^{-1}$, and $f_{n}$ is the $n$th
+Fourier frequency assuming Nyquist sampling. We see that the prior
+distributions on jitter-like correlated noise and red noise are themselves
+parameterized by some combination of \emph{hyper-parameters}. 
+We can write down the posterior distribution for the residuals
 \be
 p(\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi}|\delta\mathbf{t}) \propto
 p(\delta\mathbf{t}|\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi})p(\mathbf{j}|J_{k})p(\mathbf{a}|\rho_{n}),
 \ee
-where we have expanded $\boldsymbol{\phi}$ to contains the hyper-parameters and we assume uniform priors on EFAC in the range $E\in[0.5,5]$ and the logarithm of EQUAD in the range $\log_{10}Q\in[-8.5, -4]$. 
 
-For the purposes of estimating the underlying noise characteristics of our data set, the parameters $\mathbf{\epsilon}$, $\mathbf{j}$, $\mathbf{a}$ are nuisance parameters that we wish to marginalize over. This can be done in a sequential fashion as was presented in \cite{abb+14} but here we take a different approach. Notice that all nuisance parameters are linear and can be described with Gaussian prior distrubutions\footnote{We use uniform priors on the timing model parameter offsets, $\mathbf{\epsilon}$ but this is the same as a Gaussian prior with infinite variance. Technically this prior is not normalizable but since we are interested in parameter estimation and not Bayesian model selection here, this non-normalizable prior is not a problem.}. We can thus define a combined operator matrix and amplitude vector
+For the purposes of estimating the underlying noise characteristics of our
+data set, the parameters $\mathbf{\epsilon}$, $\mathbf{j}$, $\mathbf{a}$ are
+nuisance parameters that we wish to marginalize over. This can be done in a
+sequential fashion as was presented in \cite{abb+14} but here we take a
+different approach. Notice that all timing parameters are ``linear'' and can be described with Gaussian prior distributions\footnote{We use uniform priors on the timing model parameter offsets, $\mathbf{\epsilon}$ but this is the same as a Gaussian prior with infinite variance. Technically this prior is not normalizable but since we are interested in parameter estimation and not Bayesian model selection here, this non-normalizable prior is not a problem.}. We can thus define a combined operator matrix and amplitude vector
 \be
 T = \bb M  & F  & U \eb, \quad
 \mathbf{b} = \bb \boldsymbol{\epsilon} \\ \mathbf{a} \\ \mathbf{j} \eb
@@ -388,48 +422,86 @@ Furthermore, the maximum likelihood values of $\mathbf{b}$ and their uncertainti
 \hat{\mathbf{b}} &= \Sigma^{-1}\mathbf{d} \\
 {\rm cov}(\mathbf{b}) &= \Sigma^{-1}.
 \end{align}
-This allows us to determine the maximum likelihood timing model parameters via the equivalent of a generalized least squares fit and also allows us to determine the maximum likelihood red noise realization present in the data. This scheme has the advantage of being computationally efficient in that it bypasses $N_{\rm TOA}^{3}$ matrix operations via rank reduced matrices \citep{vv14} resulting in a likelihood evaluation that instead scales as $N_{\rm TOA}^{2}$; a factor of $\sim 2\times 10^{4}$ for this dataset.
+This scheme has the advantage of being computationally efficient in that it
+bypasses $N_{\rm TOA}^{3}$ matrix operations via rank reduced matrices
+\citep{vv14} resulting in a likelihood evaluation that instead scales as
+%$N_{\rm TOA}^{2}$; a factor of $\sim 2\times 10^{4}$ for this dataset.
+$N_{\rm par}^{3}$, where $N_{\rm par}$ is the sum of the number of timing
+parameters, red noise sample frequencies, and observing epochs. For this
+dataset the computational speed up is a factor of $\sim 10^{3}$.
+
+
+For a given set of hyper-parameters, this allows us to determine the maximum likelihood timing model parameters via the equivalent of a generalized least squares fit and also allows us to determine the maximum likelihood red noise realization present in the data. 
+We can also evaluate the posterior of the hyper-parameters $\boldsymbol{\phi}$
+and thus find the maximum likelihood noise parameters including the EFAC, EQUAD,
+ECORR and red noise amplitude $A_{\rm red}$ and spectral index $\gamma_{\rm
+red}$ (Table \ref{tab:wrms}).
+The posterior of the noise parameters are sampled using a Markov Chain Monte
+Carlo process in which we sample some parameters in $\log_{10}$ space and limit them to $\log_{10}J_{k}\in[-8.5, -4]$, with $J_{k}$ in units of seconds, $\log_{10}A_{\rm red}\in[-20,-11]$ where $A_{\rm red}$ is unitless, and $\gamma_{\rm red}\in[0,7]$. 
 
 In our noise model we include EFAC, EQUAD, and ECORR parameters
-for data collected by different backend and receivers systems. However, we did not model 
+for data collected by different backend and receivers systems. However, we do not model 
 EFAC and ECORR of the Mark~III, Mark~IV, and ABPP data because there were not
 enough TOAs in the legacy dataset to constrain both EFAC and EQUAD. Furthermore,
 there was only one TOA per epoch so we cannot constrain the epoch-correlated
 noise modeled by ECORR. Instead, we set EFAC values to 1
 and ECORR to 0 for these data sets, and use only EQUAD to model the white noise in these epochs.
 
-The timing residuals of PSR~J1713+0747 have a weighted root mean square (WRMS)
-$\sim 212$ns.
-If we average the residuals in each epoch, the epoch-averaged residuals have a 
-WRMS of $\sim 106$ns (Figure \ref{fig:detres}, Table \ref{tab:wrms}).
-Here we define the error weighted epoch-averaged residual as: 
-$r_{\rm epoch} = \langle w_j r_{j}\rangle$, $\sigma_{\rm
-epoch}=\{\sum [(r_j-r_{\rm epoch})^2w_j]/(N-1)/\sum w_j\}^{1/2}$, where $j$
-denote one of the $N$ TOAs from the respective observation epoch and
-$w_j=1/\sigma_j^2$.
 
-Our noise and residual analysis shows that the advances in
-instrumentation have made pulsar timing increasingly accurate.
-The average timing residuals from ASP, GASP, GUPPI and PUPPI, are
-systematically smaller than those from the earlier Mark~III, Mark~IV and ABPP
-systems. However, we do see evidence for red noise in this dataset. The bottom
-panels of Figure \ref{fig:res} show the one and two dimensional posterior probability plots
-of the red noise. It should be noted that the spectral index is reasonably low as can be 
-deduced from the maximum likelihood red noise realization in the top panel. Nonetheless, this noise model describes
-the data very well as we can see in Figure \ref{fig:detres} in which the maximum likelihood realizations of red and jitter noise are subtracted out. We see from the figure that both the high and low frequency residuals (with red and jitter noise realizations subtracted) are white and the weighted residuals follow a zero-mean unit-variance gaussian distribution. 
+%The timing residuals of PSR~J1713+0747 have a weighted root mean square (WRMS)
+%$\sim 245$ns.
+%If we average the residuals in each epoch, the epoch-averaged residuals have a 
+%WRMS of $\sim 118$ns (Figure \ref{fig:detres}, Table \ref{tab:wrms}).
+%Here we define the error weighted epoch-averaged residual as: 
+%$r_{\rm epoch} = \langle w_j r_{j}\rangle$, $\sigma_{\rm
+%epoch}=\{\sum [(r_j-r_{\rm epoch})^2w_j]/(N-1)/\sum w_j\}^{1/2}$, where $j$
+%denote one of the $N$ TOAs from the respective observation epoch and
+%$w_j=1/\sigma_j^2$.
+
+%Our noise and residual analysis shows that the advances in
+%instrumentation have made pulsar timing increasingly accurate.
+%The average timing residuals from ASP, GASP, GUPPI and PUPPI, are
+%systematically smaller than those from the earlier Mark~III, Mark~IV and ABPP
+%systems. However, we do see evidence for red noise in this dataset. The bottom
+%panels of Figure \ref{fig:res} show the one and two dimensional posterior probability plots
+%of the red noise. It should be noted that the spectral index is reasonably low as can be 
+%deduced from the maximum likelihood red noise realization in the top panel. Nonetheless, this noise model describes
+%the data very well as we can see in Figure \ref{fig:detres} in which the maximum likelihood realizations of red and jitter noise are subtracted out. We see from the figure that both the high and low frequency residuals (with red and jitter noise realizations subtracted) are white and the weighted residuals follow a zero-mean unit-variance gaussian distribution. 
 
 \citet{sc12} studied the pulse arrival times from a single long exposure of
 PSR~J1713+0747, and found that this pulsar's single pulse showed random jitter of
 $\simeq26~\mu$s. Therefore, by averaging many pulses collected in the
 $\sim20$~min NANOGrav observation, one expect $\sim26\mu{\rm s}/\sqrt{1200\nu}=50$~ns of jitter noise. 
+Table \ref{tab:par1, tab:par2} show the best-fit timing parameters before and
+after we applied our noise model to the data. It is clear that the jitter
+noises significantly impacted the arrival time of the pulses, such that 
+some timing parameters changed significantly after including the jitter model.
 The optimal jitter parameters (ECORR, as shown in Table \ref{tab:wrms}) from
 our noise modeling are mostly consistent with the prediction from
 \citet{sc12}, with some of them being higher. This could be due to the
 covariance between the jitter parameters and the EQUAD parameters.
 
-%It is reassuring that the predicted level jitter noise is about the same order
-%of magnitude as our ECORR values and the smallest residual RMS (Table \ref{tab:wrms}). 
+In Figure \ref{fig:res} we show the red noise realization based on our best
+noise model (Table \ref{tab:wrms}) and compare it to the post-fit residual of
+a {\sc tempo} general least square (GLS) fitting. Unlike in our reduced rank
+approach, in the {\sc tempo} 
+GLS fit the big covariance matrix $N$ of the entire dataset
+is inverted and the correlated red noises terms in the covariance matrix are 
+computed with an analytical expression derive from the power law spectrum.
+The resulting {\sc tempo } GLS residual was well fit by our red noise realization.
+In fact, if we subtract these two, the difference residuals, as shown in
+Figure \ref{fig:detres}, are well consistent
+with white noises modeled by our EFAC and EQUAD parameters.
 
+The red noise signal seen in the data (i.e. Figure \ref{fig:res}) does not
+resemble a low-frequency frequency sinusoid or cubic
+but instead it seems to be modeling a feature that is
+localized to the time period of 1999 through 2005. Since this is when
+dual-frequency observations begin, it is possible that part of the red noise
+signal contain contributions from unmodeled DM variations in data before 1999, thus making physical interpretations of red noise difficult because of the lack of multi-frequency data at early epochs.
+A second possibility is that there were instrumental drifts in either the
+Mark~IV or the APBB. This possibility can only be tested by examining data of
+this pulsar from other telescopes and instruments. 
 }
 
 %Fitting for DM variations on short timescales is necessitated by the sharp
@@ -475,7 +547,7 @@ The timing model of PSR~J1713+0747 has been significantly improved by the 21-yea
 Most notably, the pulsar and the companion masses have been more precisely
 constrained (Table \ref{tab:par}) through Shapiro delay measurements. The
 companion's mass $M_{\rm c} = 0.290\pm0.014$~\Msun and the pulsar $M_{\rm
-PSR}=1.3\pm0.1$~\Msun are in good agreement with the previously measured values \cite{sns+05}.
+PSR}=1.3\pm0.1$~\Msun\, are in good agreement with the previously measured values \cite{sns+05}.
 We note that the derived pulsar mass tend to be underestimated 
 if no jitter parameters were included in our noise model, suggesting that
 correlated noises could significantly impact the result of high
@@ -699,10 +771,21 @@ residual RMS without removing timing noises $\sigma^2_{\rm TN,2}$ would be
 $\sim0.4$~$\mu $s. The measured RMS of the red noise residual 
 $\sigma^2_{\msR,RN}=395$~ns, is consistent with the extrapolation
 from \citet{sc10}. }
+%{\B
+%While the integrated RMS of the red noise is consistent with the prediction of
+%\cite{sc10}, the red noise spectral index is not. \cite{sc10} predict that the
+%spectral index of the red noise will be $\sim-5$, whereas the spectral index
+%that we measure is $\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$. 
 
-{\B
-While the integrated RMS of the red noise is consistent with the prediction of \cite{sc10}, the red noise spectral index is not. \cite{sc10} predict that the spectral index of the red noise will be $\sim-5$, whereas the spectral index that we measure is $\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$. Therefore, the red noise process seen in the data (i.e. Figure \ref{fig:res}) is not a red noise process that reveals itself as a very low frequency sinusoid or cubic but instead it seems that the red noise is modeling a feature that is localized to the time period of 1999 through 2005. Since this is when dual-frequency observations begin, it is likely that this is in fact due to DM variations that cannot be modeled in the earlier data, thus making physical interpretations of red noise difficult because of the lack of multi-frequency data at early epochs.
-}
+As we discussed in Section \ref{sec:noise}, there are other possible
+sources for the observed red noise signals.
+Wether or not they can be interpreted as pulsar spin irregularity is inconclusive.
+If we assume that they are from spin irregularity, 
+the estimated maximum likelihood red noise spectral index 
+$\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$ suggest that it could be due to
+random perturbations in the pulse phase of the arrival time, although other
+explanations cannot be ruled out.
+%}
 
 %Figure \ref{fig:TN} shows $\sigma^2_{\msR,2}$ for different time scales, and
 %there is no significant evidence of a growing timing noise. We compared 
@@ -742,9 +825,6 @@ frequency (Demorest et~al.\ in prep.; solid line in Figure
 evolution. This model successfully removes the extra
 frequency-dependent residuals and it requires only four parameters in the
 case of PSR~J1713+0747.
-
-
-
 
 
 \section{Results}
@@ -850,7 +930,7 @@ and proper motions.
 PSR~J1713+0747 has the smallest known $\dot{P}_{\rm b}^{\rm exc}/(2P_{\rm
 b})\simeq(-0.2\pm1)\times10^{-12}$~yr$^{-1}$ (Section \ref{sec:obdecay}) and is
 particularly useful for constraining the time variability of gravitational
-constant .
+constant.
 
 However, we would like to approach the $\dot{G}$ constrain in a more rigorous fashion,
 by incorporating a class of realistic alternative gravitational theory --- the 
@@ -979,10 +1059,11 @@ geometry of the binary orbit. We also detect, for the first time, an apparent
 decay of the orbit due to Galactic differential accelerations and the Shklovskii effect.
 These measurements, when combined with those of other pulsars, 
 significantly improve the pulsar timing limit on the change rate of the gravitational
- constant, $\dot{G}$, making it nearly as good as the best
- constraint of this kind (LLR experiment; \citep{hmb10}).
+ constant, $\dot{G}$. Although the constraint is not better than the
+ LLR experiment \citep{hmb10}, it is nevertheless the best constraint in
+the strong-field region and a independent test using an extra-solar binary system.
 The new best pulsar timing limit on $\dot{G}/G$ is 
-$0.4\pm11\times10^{-12}$~yr$^{-1}$ ($<0.023H_0$ based on 3-$\sigma$ limit), where $H_0$ is the Hubble constant. 
+$0.3\pm11\times10^{-12}$~yr$^{-1}$ ($<0.029H_0$ based on 3-$\sigma$ limit), where $H_0$ is the Hubble constant. 
 In other words, the change rate of gravitational constant has to be a factor
 of at least $34$ (3-$\sigma$ limit) slower than the average expansion rate of
 the Universe.
@@ -1021,18 +1102,13 @@ fitted the structure function of the DM variation with a power law.
 The best-fit power law index is 0.52(9), significantly smaller than the 5/3 
 index expected from a ``pure'' Kolmogorov medium. However, the structure
 function is not well fit by a simple power law, it is steeper than the best-fit
- line for time scales longer than 1000 days. The 
-event of large DM variation happened in 2008  
+ line for time scales longer than 1000 days. The event of large DM variation happened in 2008  
 might have increased the average DM variation in timescale shorter than
 hundreds of days, making the structure function appear flatter than expected
 in these time scales.
 
-Timing residuals of MSPs are believed to contain noises from timing
-measurements, pulse phase jitter, and spin irregularities, etc. 
-We found that the level of our timing residuals is consistent with the jitter
-noise estimates from \citet{sc12} and the timing noise estimate from \citet{sc10}. However,
-the scale law extrapolate from large sample study of timing noises in \citet{hlk10}
-overestimate the timing noise level $\sigma_z({\rm 10 yr})$ in this pulsar.
+%Timing residuals of MSPs are believed to contain noises from timing
+%measurements, pulse phase jitter, and spin irregularities, etc. 
 
 %We measured the growth of timing residuals with time, and found no evidence of
 %time-accumulative noises. This indicates that, unlike other younger pulsars,
@@ -1045,6 +1121,14 @@ In conjunction with the timing modeling, we also modeled observational noise
 such as jitter and red noise
  using the generalized least square fit and a covariance matrix that included the
 correlated and uncorrelated noise terms.
+We found that our timing model is significantly affected by the noise
+model, especially the jitter noise model, suggesting that the adoption of jitter
+modeling may be necessary in many cases of high precision pulsar timing. 
+We found that that our noise parameters and timing residuals are consistent with the jitter
+noise estimates from \citet{sc12} and the timing noise estimate from \citet{sc10}. However,
+the scale law extrapolate from large sample study of timing noises in \citet{hlk10}
+overestimate the timing noise level $\sigma_z({\rm 10 yr})$ in this pulsar.
+
 Our noise model parameters and timing residual RMS (Table \ref{tab:wrms})
 provide a crude estimation of the amount of noise in our data. The WRMS of
 the 21 years daily-averaged timing residuals is $\sim 118$~ns. 
@@ -1053,17 +1137,21 @@ the 21 years daily-averaged timing residuals is $\sim 118$~ns.
 %clearly better than thos from the older generations of instruments 
 Table \ref{tab:wrms} show a systematic improvement in the timing accuracy of
 this pulsar in the last two decades, due to the advances in instrumentation.
-%, although not by as large as factor as implied
-%by the radiometer equation, perhaps because of pulse jitter. 
-The significance of the red noise signal is consistent 
-with the extrapolation from \citet{sc10}. The best-fit spectrum index is consistent with
-spin irregularity that was caused by random perturbations in
-the spin down rate of the pulsar, but it does not exclude other explanations
-due to its large uncertainty (see bottom panel of Figure \ref{fig:res}.
+Although the improvements are not as large as expected from the radiometer 
+equation, perhaps because of pulse jitter. 
+
 Our reconstructed red noise signal is most prominent in the Mark~IV and ABPP data
 but not significant in the ASP, GASP, GUPPI, and PUPPI data.
 This is consistent with the non-detection of red noise in the 5 year 
 of ASP and GASP data by \citet{pjl+13} using an auto-correlation technique.
+It is not clear if the red noise processes in Mark~IV and ABPP data
+are from pulsar spin noises, because we cannot rule out other sources such as
+instrumental drift.
+Assuming that the red noise is caused by spin irregularity,
+the best-fit spectrum index is consistent with
+spin irregularity that was caused by random perturbations in
+the pulse phase of the pulsar, but it does not exclude other explanations
+due to its large uncertainty (see bottom panel of Figure \ref{fig:res}.
 
 
 
