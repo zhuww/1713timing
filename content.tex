@@ -481,16 +481,34 @@ our noise modeling are mostly consistent with the prediction from
 covariance between the jitter parameters and the EQUAD parameters.
 
 In Figure \ref{fig:res} we show the red noise realization based on our best
-noise model (Table \ref{tab:wrms}) and compare it to the post-fit residual of
-a {\sc tempo} general least square (GLS) fitting. Unlike in our reduced rank
-approach, in the {\sc tempo} 
-GLS fit the big covariance matrix $N$ of the entire dataset
-is inverted and the correlated red noises terms in the covariance matrix are 
-computed with an analytical expression derive from the power law spectrum.
-The resulting {\sc tempo } GLS residual was well fit by our red noise realization.
-In fact, if we subtract these two, the difference residuals, as shown in
-Figure \ref{fig:detres}, are well consistent
-with white noises modeled by our EFAC and EQUAD parameters.
+noise model (Table \ref{tab:wrms}) and compare it to the post-fit residuals of
+a {\sc tempo} general least squares (GLS) fit. The bottom
+panels of Figure \ref{fig:res} show the one and two dimensional posterior probability plots
+of the red noise. It should be noted that the spectral index is reasonably low as can be 
+deduced from the maximum likelihood red noise realization in the top panel. Nonetheless, this noise model describes
+the data very well as we can see in Figure \ref{fig:detres} in which the maximum likelihood realizations of red and jitter noise are subtracted out. We see from the figure that both the high and low frequency residuals (with red and jitter noise realizations subtracted) are white (described by our EFAC and EQUAD parameters) and the weighted residuals follow a zero-mean unit-variance Gaussian distribution.
+
+%Unlike in our reduced rank
+%approach, in the {\sc tempo} 
+%GLS fit the big covariance matrix $N$ of the entire dataset
+%is inverted and the correlated red noises terms in the covariance matrix are 
+%computed with an analytical expression derive from the power law spectrum.
+%The resulting {\sc tempo } GLS residual was well fit by our red noise realization.
+%In fact, if we subtract these two, the difference residuals, as shown in
+%Figure \ref{fig:detres}, are well consistent
+%with white noises modeled by our EFAC and EQUAD parameters.
+
+%In Figure \ref{fig:res} we show the red noise realization based on our best
+%noise model (Table \ref{tab:wrms}) and compare it to the post-fit residual of
+%a {\sc tempo} general least square (GLS) fitting. Unlike in our reduced rank
+%approach, in the {\sc tempo} 
+%GLS fit the big covariance matrix $N$ of the entire dataset
+%is inverted and the correlated red noises terms in the covariance matrix are 
+%computed with an analytical expression derive from the power law spectrum.
+%The resulting {\sc tempo } GLS residual was well fit by our red noise realization.
+%In fact, if we subtract these two, the difference residuals, as shown in
+%Figure \ref{fig:detres}, are well consistent
+%with white noises modeled by our EFAC and EQUAD parameters.
 
 The red noise signal seen in the data (i.e. Figure \ref{fig:res}) does not
 resemble a low-frequency frequency sinusoid or cubic
@@ -769,19 +787,16 @@ This scaling model predict that, for 21-year timing of PSR~J1713+0747, the
 residual RMS without removing timing noises $\sigma^2_{\rm TN,2}$ would be
 $\sim0.4$~$\mu $s. The measured RMS of the red noise residual 
 $\sigma^2_{\msR,RN}=395$~ns, is consistent with the extrapolation
-from \citet{sc10}. }
-%{\B
-%While the integrated RMS of the red noise is consistent with the prediction of
-%\cite{sc10}, the red noise spectral index is not. \cite{sc10} predict that the
-%spectral index of the red noise will be $\sim-5$, whereas the spectral index
-%that we measure is $\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$. 
-
-As we discussed in Section \ref{sec:noise}, there are other possible
+from \citet{sc10}. } While the integrated RMS of the red noise is consistent with the prediction of
+\cite{sc10}, the red noise spectral index is not. \cite{sc10} predict that the
+spectral index of the red noise will be $\sim-5$, whereas the spectral index
+that we measure is $\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$. 
+However, as we discussed in Section \ref{sec:noise}, there are other possible
 sources for the observed red noise signals.
-Wether or not they can be interpreted as pulsar spin irregularity is inconclusive.
-If we assume that they are from spin irregularity, 
+Whether or not they can be interpreted as pulsar spin irregularity is inconclusive.
+If we do assume that they are from spin irregularity, 
 the estimated maximum likelihood red noise spectral index 
-$\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$ suggest that it could be due to
+ suggests that it could be due to
 random perturbations in the pulse phase of the arrival time, although other
 explanations cannot be ruled out.
 %}
