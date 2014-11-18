@@ -1,0 +1,35 @@
+MODE 1
+EMAX 3.0
+
+EQUAD 0.0
+EFAC 1.0
+EMIN 0.208
+INFO GASP-L
+INCLUDE ../../../../toas/gasp/J1713+0747.Rcvr1_2.GASP.8y.x.tim
+INFO GUPPI-L
+EMIN 0.531
+C INCLUDE ../../toas/guppi/J1713+0747.Rcvr1_2.GUPPI.8y.x.tim
+INCLUDE ../../J1713+0747.Rcvr1_2.GUPPI.8y.x.tim
+
+INFO ASP-L
+EMIN 0.083
+INCLUDE ../../../../toas/asp/J1713+0747.L-wide.ASP.8y.x.tim
+INFO PUPPI-L
+EMIN 0.181
+INCLUDE ../../J1713+0747.L-wide.PUPPI.8y.x.tim
+
+EFAC 1.0
+EMIN 0.310
+INFO ASP-S
+INCLUDE ../../../../toas/asp/J1713+0747.S-wide.ASP.8y.x.tim
+INFO PUPPI-S
+EMIN 0.248
+INCLUDE ../../../../toas/puppi/J1713+0747.S-wide.PUPPI.8y.x.tim
+
+EFAC 1.0
+EMIN 0.812
+INFO GASP-8
+INCLUDE ../../../../toas/gasp/J1713+0747.Rcvr_800.GASP.8y.x.tim
+INFO GUPPI-8
+EMIN 0.544
+INCLUDE ../../../../toas/guppi/J1713+0747.Rcvr_800.GUPPI.8y.x.tim
