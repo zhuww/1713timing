@@ -20,7 +20,10 @@ We use this to place limits on changes in the gravitational constant $\dot{G}$.
 $\dot{G}/G$ is found to be $-0.3(1.1)\times10^{-12}$~yr$^{-1}$ and at 
 least a factor of $34$ (99.7\% confidence level) slower than the average expansion 
 rate of the Universe. 
-%Such a limit has important implications for alternative theories of gravitation.
+\bfref{
+Through pulse timing analysis, we detect evidences of short-time-scale pulse
+jitter noises and long-time-scale red noises in our data.
+}
 \end{abstract}
 
 
@@ -110,7 +113,6 @@ Telescope (GBT).
 
 The timing observations were conducted using multiple generations of pulsar
 data backends (Table \ref{tab:obs}).
-{\bfref
 The earliest observations (1992-1994) used the Princeton Mark~III
 \citep{skn+92}, which collects two polarization data with a filter bank of 32
 spectral channels each 1.25~MHz wide. 
@@ -129,9 +131,13 @@ In this paper, we used daily-averaged Mark~III, Mark~IV, and ABPP TOAs reported 
 
 From 2004 to 2011/12, pulsar data were collected with the Astronomical Signal
 Processor (ASP; \citealt{dem07}) and its Green Bank counterpart GASP \citep{dem07}.
-The (G)ASP systems records 64~MHz bandwidth data and apply real-time
+The (G)ASP systems records 8-bit sampled $\sim$64~MHz bandwidth data and apply real-time
 coherent dedispersion and pulse period folding. The resulting data contain
-2048-bin full-Stokes pulse profiles integrated over 1-3 minutes in 16 4~MHz channels. 
+2048-bin full-Stokes pulse profiles integrated over 1-3 minutes. 
+When observing with ASP we used 20 4~MHz channels between 1440 and
+1360~MHz, 16 channels between 2318 and 2382~MHz. 
+When observing with GASP we used 12 channels between 1386 and 1434~MHz, and 16
+channels between 822 and 886~MHz.
 The J1713+0747 ASP/GASP data were also reported in \citet{dfg+13}.
 
 We started using 
@@ -151,7 +157,7 @@ channels each 12.5~MHz wide.
 The spectral bandwidth and resolution provided by GUPPI and PUPPI is crucial for resolving the pulse profile evolution in frequency described in Section \ref{sec:FD}.
 
 The date span, number of observation epochs, specifications of the
-systems are listed in Table \ref{tab:obs}. }
+systems are listed in Table \ref{tab:obs}. 
 
 We combine the pulse time of arrivals (TOAs) used in \citealt{sns+05} and those
 of the later observations, for a data span of 21 years with a
@@ -179,7 +185,6 @@ comparing it with an astronomical object of known and constant flux
 density, in this case, the AGNs J1413+1509 and B1442+09.
 
 
-{\bfref 
 The backends Mark~IV and ABPP are used in parallel for J1713+0747 
 observations between 1998 and 2004. They collect data with different bandwidth (Table
 \ref{tab:obs}). The Mark~IV TOAs were computed using
@@ -228,7 +233,7 @@ pulsars. These offsets are coded into the TOAs such that they do not affect
 TOA modeling. 
 
 
-}
+
 
 \section{Timing model}
 \label{sec:model}
@@ -238,7 +243,7 @@ TOA modeling.
 We employ the pulsar timing package {\sc tempo}
 \footnote{\url{http://tempo.sourceforge.net}} to model the TOAs. 
 The rotation of the pulsar is modeled with polynomials of spin frequency 
-$\nu$ and $\dot{\nu}$ (Table \ref{tab:par}) in order to account
+$\nu$ and $\dot{\nu}$ (Table \ref{tab:par1} and \ref{tab:par2}) in order to account
 for the pulsar's spin, spin down.
 The pulsar's position ($\alpha$, $\delta$) and proper motion ($\nu_\alpha$, $
 \nu_\delta$) on the sky and its parallax $\pi$ is also measured through timing modeling. 
@@ -259,14 +264,12 @@ The T2 model of binary motion in {\sc tempo2} \citep{hem06} also can be used for
 The DMX model was used to fit dispersion measure (DM) variations caused by changes in the ISM (see Section \ref{sec:dmx} for details). The FD model was used to model profile
 evolution in frequency (see Section \ref{sec:FD} for details). 
 
-{\bfref
 In order to account for unknown systematics in TOAs from different
 instruments, and epoch-correlated noise like pulse jitter noise from pulsar
 magnetospheric activities. 
 We employed a general noise model that parameterize both uncorrelated noise and
 correlated noise. The noise modeling is discussed in Section \ref{sec:noise} and the
 noise model parameters are listed in Table \ref{tab:wrms}. 
-}
 %we use the EQUAD command in {\sc tempo} to increase the errors on
 %the TOAs by adding an extra amount of error to them in quadrature, such that
 %the post-fit reduced $\chi^2$ is close to unity for the TOAs of every instrument. The amount
@@ -292,8 +295,9 @@ We confirm that majority of the pulsar-binary parameters reported by
 high order frequency polynomials they used to treat timing noises. We also
 detected for the first time an apparent decay of the binary orbit due to
 relativistic effects.
-The new timing model parameters (Table \ref{tab:par}) changed slightly from
+The new timing model parameters (Table \ref{tab:par1} and \ref{tab:par2}) changed slightly from
 those in \citet{sns+05} but consistent with their reported uncertainties.
+
 %The parameters uncertainties are estimated from a Markov Chain Monte Carlo
 %\footnote{{\bfref We used a Metropolis algorithm assuming the goodness of fit of
 %the timing model is proportional to $e^{-\chi^2/2}$. The procedure is similar
@@ -469,9 +473,11 @@ and ECORR to 0 for these data sets, and use only EQUAD to model the white noise 
 
 \citet{sc12} studied the pulse arrival times from a single long exposure of
 PSR~J1713+0747, and found that this pulsar's single pulse showed random jitter of
-$\simeq26~\mu$s. Therefore, by averaging many pulses collected in the
-$\sim20$~min NANOGrav observation, one expect $\sim26\mu{\rm s}/\sqrt{1200\nu}=50$~ns of jitter noise. 
-Table \ref{tab:par1, tab:par2} show the best-fit timing parameters before and
+$\simeq26~\mu$s. 
+A similar result of $\simeq27~\mu$s was found by \citet{dlc+14} from a more recently study using a 24~h continuous observation of PSR~J1713+0747 conducted with major telescopes around the Globe.
+Therefore, by averaging many pulses collected in the
+$\sim20$~min NANOGrav observation, one expect $\sim27\mu{\rm s}/\sqrt{1200\nu}=51$~ns of jitter noise. 
+Table \ref{tab:par1} and \ref{tab:par2} show the best-fit timing parameters before and
 after we applied our noise model to the data. It is clear that the jitter
 noises significantly impacted the arrival time of the pulses, such that 
 some timing parameters changed significantly after including the jitter model.
@@ -562,7 +568,7 @@ this pulsar from other telescopes and instruments.
 \label{sec:mass}
 The timing model of PSR~J1713+0747 has been significantly improved by the 21-year timing effort.
 Most notably, the pulsar and the companion masses have been more precisely
-constrained (Table \ref{tab:par}) through Shapiro delay measurements. The
+constrained (Table \ref{tab:par1} and \ref{tab:par2}) through Shapiro delay measurements. The
 companion's mass $M_{\rm c} = 0.290\pm0.014$~\Msun and the pulsar $M_{\rm
 PSR}=1.3\pm0.1$~\Msun\, are in good agreement with the previously measured values \cite{sns+05}.
 We note that the derived pulsar mass tend to be underestimated 
@@ -607,7 +613,6 @@ our sight-line through the turbulent ISM and solar wind is changing as the
 pulsar, the Sun, the Earth, and the ISM all move with respect to each other.
 The DM variation can affect the timing of high-precision pulsar significantly.
 
-{\bfref
 We fit simultaneously with other parameters the time-varying DM using the {\it DMX} model in {\sc tempo}.
 This model fits independent DM values for TOAs groups taken within 14 days
 intervals, except for the L-band-only Mark~III TOAs. We grouped the Mark~III
@@ -641,7 +646,7 @@ observed independently by the Parkes observatory \citep{kcs+13}.
 There is clear red-noise-like variance in the pulsar's DM with a RMS of
 $\sim10^{-4}$. 
 %This DM variation may lead to ``red'' timing residuals as discussed in \citealt{kcs+13}.
-}
+
 
 %Note that the first part of this DM curve (MJD$<53200$) in
 %Figure \ref{fig:dmx} has much larger uncertainties than the second half.
@@ -650,7 +655,7 @@ $\sim10^{-4}$.
 %compared to the later data (Table \ref{tab:obs}).
 The ABPP TOAs we have are epoch-averaged TOAs, meaning they are collapsed in frequency to form one TOA per band per observation epoch, thus losing frequency resolution in the respective band. 
 This averaging was done using an previous timing solution in previous work
-(\citep{sns+05}). Thus the ABPP TOAs may be slighted biased to favor the
+\citep{sns+05}. Thus the ABPP TOAs may be slighted biased to favor the
 timing parameters in the previous solution. We also included the original
 before-epoch-average Mark~IV TOAs, which were taken in the same epochs of the
 ABPP data. Both of the Mark~IV and ABPP  TOAs are well fitted by our new
@@ -691,9 +696,12 @@ around 2008. Conversely, the overall long-term variation is smaller
 compared with the 2008 event. As a result, its structure function (Figure \ref{fig:dmx}) 
 follows a flatter spectrum than the Kolmogorov one.
 
+DM variation could be studied using alternative methods such as Gaussian processes 
+\citep{vv14a} or optimal filtering \citep{lbj+14}, but that is out side of the scope of 
+this paper.
 
 \subsection{Pulsar spin irregularity}
-\label{sec:noise}
+\label{sec:spin}
 %The pulsar timing residuals (Figure \ref{fig:res}) are the residuals left
 %after we fit the TOAs with our timing model. 
 %These residuals are likely caused by timing noise, DM variations, radiometer 
@@ -708,7 +716,7 @@ Spin irregularity is often significant in younger pulsars, and often
 requires modeling with significant high-order frequency polynomials (such as $\ddot{\nu}$, where $\nu$ is the pulsar's spin frequency). 
 Potential causes of irregular spin behavior include unresolved
 micro-glitches, internal superfluid turbulence, magnetosphere variations, or external torques caused by matter surrounding the pulsar \citep{hlk10, ymh+13, ml14}.
-{\bfref These mechanisms could lead to accumulative random perturbations in the 
+These mechanisms could lead to accumulative random perturbations in the 
 pulsar's phase of pulse arrival, spin rate, or spin-down rate. 
 \citet{sc10} point out that one could model these types of timing noises using random walks.
 Random walks in phase (RW$_0$) would grow over time ($T$) proportional to
@@ -717,7 +725,7 @@ $\dot{\nu}$ grows proportional to $T^{5/2}$.
 Such spin noises would likely have a steep power spectrum with more power in
 the lower frequencies, also known as a ``red'' power spectrum. They
 are considered as one of the main sources of ``red'' noises in pulsar timing.
-}
+
 
 The timing noise of radio pulsars has been studied by
 \citet{ch80,cd85,antt94,dmhd95, mtem97}, and later by \citet{hlk10} and
@@ -745,7 +753,6 @@ measuring clock stability) to characterize the timing instability of pulsars:
 where $\langle c^2\rangle$ denote the sum of squares of the cubic
 terms fitted to segments of length $\tau$). 
 $\Delta_8$ is the logarithm of a dimensionless form of $\sigma_z(10^8~s)$.
-{\bfref
 \citet{hlk10} found a best-fit scaling model of $\sigma_z({\rm 10~yr})$ 
 from 366 pulsars:
 \begin{equation}
@@ -787,11 +794,22 @@ This scaling model predict that, for 21-year timing of PSR~J1713+0747, the
 residual RMS without removing timing noises $\sigma^2_{\rm TN,2}$ would be
 $\sim0.4$~$\mu $s. The measured RMS of the red noise residual 
 $\sigma^2_{\msR,RN}=395$~ns, is consistent with the extrapolation
-from \citet{sc10}. } While the integrated RMS of the red noise is consistent with the prediction of
-\cite{sc10}, the red noise spectral index is not. \cite{sc10} predict that the
-spectral index of the red noise will be $\sim-5$, whereas the spectral index
-that we measure is $\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$. 
-However, as we discussed in Section \ref{sec:noise}, there are other possible
+from \citet{sc10}.  
+%While the integrated RMS of the red noise is consistent with the prediction of
+%\cite{sc10}, the red noise spectral index is not. \cite{sc10} predict that the
+%spectral index of the red noise will be $\sim-5$, whereas the spectral index
+%that we measure is $\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$. 
+However, the best-fit scaling law also indicates that the residuals of the
+sampled pulsars $\hat{\sigma}_{\rm TN,2}$ seem to grow with $T_{\rm yr}^2$. 
+If the timing noises of the sampled pulsars are due to the accumulation of 
+spin noises, and the spin noises are caused by the same physical processes,
+then this RMS growth rate would imply that the spin noise of pulsars have a
+frequency power spectrum of power-law index $\gamma_{\rm red}\simeq-5$. This 
+spectral index is inconsistent with the $\gamma_{\rm red} = -2.17^{+0.44}_{-0.09}$
+we measured from our red noise model.
+
+
+Finally, as we discussed in Section \ref{sec:noise}, there are other possible
 sources for the observed red noise signals.
 Whether or not they can be interpreted as pulsar spin irregularity is inconclusive.
 If we do assume that they are from spin irregularity, 
@@ -847,7 +865,7 @@ case of PSR~J1713+0747.
 \subsection{Intrinsic orbital decay}
 \label{sec:obdecay}
 We have measured an orbital decay from PSR~J1713+0747, $\dot{P}_{\rm b} =
-0.48\pm0.18\times10^{-12}$s~s$^{-1}$ (Table \ref{tab:par}).
+0.48\pm0.18\times10^{-12}$s~s$^{-1}$ (Table \ref{tab:par1} and \ref{tab:par2}).
 %Such a precise measurement can be used to test Gravitational wave radiation theories of Einstein's and beyond.
 This orbital decay may not be intrinsic to the pulsar binary, but rather the
 result of the kinetic motion between the binary and the
@@ -933,9 +951,9 @@ b}^{\dot{M}}  - \dot{P}_{\rm b}^{\rm T} - \dot{P}_{\rm b}^{\rm GR}$,
 \citet{dgt88} derived a generic phenomenological limit for $\dot{G}$: 
 $\dot{G}/G\simeq-\dot{P}_{\rm b}^{\rm exc}/(2P_{\rm
 b})=1.0\pm2.3\times10^{-11}$~yr$^{-1}$ using timing of binary PSR~1913+16. 
-{\bfref Since then $\dot{P}_{\rm b}^{\rm exc}$ of pulsar binaries, including 
+Since then $\dot{P}_{\rm b}^{\rm exc}$ of pulsar binaries, including 
 PSR~J1713+0747, have been used to 
-constrain $\dot{G}/G$ \citep{ktr94, lwj+09, fwe+12, nss+05}. }
+constrain $\dot{G}/G$ \citep{ktr94, lwj+09, fwe+12, nss+05}. 
 So far all pulsar observations show $\dot{G}/G$ consistent with being zero, with 
 upper limits largely determined by the uncertainties in $\dot P_{\rm b}$, distance, 
 and proper motions.
@@ -994,7 +1012,7 @@ The resulting confidence region of $\dot{G}$ and $\kappa_D$ is shown in Figure
 \ref{fig:Gdot}.
 We found, at 95\% confidence limit, $\dot{G}/G =
 0.3\pm1.1\times10^{-12}$~yr$^{-1}$; $\kappa_D=-0.6\pm3.4\times10^{-4}$. 
-This constraint on $\dot{G}$ is more than a factor of two more stringent than
+This constraint on $\dot{G}$ is more stringent than
 previous pulsar-based constraints \citep{fwe+12}, and close to 
 the best constraint of this type
 ($\dot{G}/G=-0.7\pm7.6\times10^{-13}$~yr$^{-1}$) from the Lunar Laser Ranging

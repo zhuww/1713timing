@@ -1,4 +1,4 @@
-\begin{thebibliography}{80}
+\begin{thebibliography}{82}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -44,8 +44,9 @@ Arzoumanian, Z., Nice, D.~J., Taylor, J.~H., \& Thorsett, S.~E. 1994, ApJ, 422,
   {Koop}, {Lam}, {Lazio}, {Lommen}, {Lorimer}, {Luo}, {Lynch}, {Madison},
   {McLaughlin}, {McWilliams}, {Nice}, {Palliyaguru}, {Pennucci}, {Ransom},
   {Sesana}, {Siemens}, {Stairs}, {Stinebring}, {Stovall}, {Swiggum},
-  {Vallisneri}, {van Haasteren}, {Wang}, \& {Zhu}}]{abb+14}
-{Arzoumanian}, Z., {et~al.} 2014, ArXiv: 1404.1267
+  {Vallisneri}, {van Haasteren}, {Wang}, {Zhu}, \& {NANOGrav
+  Collaboration}}]{abb+14}
+{Arzoumanian}, Z., {et~al.} 2014, \apj, 794, 141
 
 \bibitem[{Backer {et~al.}(1997)Backer, Dexter, Zepka, D., Wertheimer, Ray, \&
   Foster}]{bdz+97}
@@ -113,6 +114,15 @@ Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
 
 \bibitem[{Dirac(1937)}]{dir37}
 Dirac, P. A.~M. 1937, Nature, 139, 323
+
+\bibitem[{{Dolch} {et~al.}(2014){Dolch}, {Lam}, {Cordes}, {Chatterjee},
+  {Bassa}, {Bhattacharyya}, {Champion}, {Cognard}, {Crowter}, {Demorest},
+  {Hessels}, {Janssen}, {Jenet}, {Jones}, {Jordan}, {Karuppusamy}, {Keith},
+  {Kondratiev}, {Kramer}, {Lazarus}, {Lazio}, {Lee}, {McLaughlin}, {Roy},
+  {Shannon}, {Stairs}, {Stovall}, {Verbiest}, {Madison}, {Palliyaguru},
+  {Perrodin}, {Ransom}, {Stappers}, {Zhu}, {Dai}, {Desvignes}, {Guillemot},
+  {Liu}, {Lyne}, {Perera}, {Petroff}, {Rankin}, \& {Smits}}]{dlc+14}
+{Dolch}, T., {et~al.} 2014, \apj, 794, 21
 
 \bibitem[{{DuPlain} {et~al.}(2008){DuPlain}, {Ransom}, {Demorest}, {Brandt},
   {Ford}, \& {Shelton}}]{GUPPI}
@@ -188,6 +198,11 @@ Kaspi, V.~M., Taylor, J.~H., \& Ryba, M. 1994, ApJ, 428, 713
   {Jordan}, \& {Zensus}}]{lwj+09}
 {Lazaridis}, K., {et~al.} 2009, \mnras, 400, 805
 
+\bibitem[{{Lee} {et~al.}(2014){Lee}, {Bassa}, {Janssen}, {Karuppusamy},
+  {Kramer}, {Liu}, {Perrodin}, {Smits}, {Stappers}, {van Haasteren}, \&
+  {Lentati}}]{lbj+14}
+{Lee}, K.~J., {et~al.} 2014, \mnras, 441, 2831
+
 \bibitem[{{Lentati} {et~al.}(2013){Lentati}, {Alexander}, {Hobson}, {Taylor},
   {Gair}, {Balan}, \& {van Haasteren}}]{lah+13}
 {Lentati}, L., {Alexander}, P., {Hobson}, M.~P., {Taylor}, S., {Gair}, J.,
@@ -232,8 +247,7 @@ Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
   \apj, 757, 55
 
 \bibitem[{{Pennucci} {et~al.}(2014){Pennucci}, {Demorest}, \& {Ransom}}]{pdr14}
-{Pennucci}, T.~T., {Demorest}, P.~B., \& {Ransom}, S.~M. 2014, ArXiv:1402.1672,
-  submitted to ApJ
+{Pennucci}, T.~T., {Demorest}, P.~B., \& {Ransom}, S.~M. 2014, \apj, 790, 93
 
 \bibitem[{{Perrodin} {et~al.}(2013){Perrodin}, {Jenet}, {Lommen}, {Finn},
   {Demorest}, {Ferdman}, {Gonzalez}, {Nice}, {Ransom}, \& {Stairs}}]{pjl+13}
@@ -248,7 +262,7 @@ Podsiadlowski, P., Rappaport, S., \& Pfahl, E.~D. 2002, ApJ, 565, 1107
   {Schechtman-Rook}, {Berndsen}, {Lynch}, {Lorimer}, {Karako-Argaman}, {Kaspi},
   {Kondratiev}, {McLaughlin}, {van Leeuwen}, {Rosen}, {Roberts}, \&
   {Stovall}}]{rsa+14}
-{Ransom}, S.~M., {et~al.} 2014, ArXiv:1401.0535
+{Ransom}, S.~M., {et~al.} 2014, \nat, 505, 520
 
 \bibitem[{Rappaport {et~al.}(1995)Rappaport, Podsiadlowski, Joss, DiStefano, \&
   Han}]{rpj+95}
@@ -306,7 +320,7 @@ Taylor, J.~H. 1992, Philos. Trans. Roy. Soc. London A, 341, 117
 {van Haasteren}, R., \& {Vallisneri}, M. 2014{\natexlab{a}}, ArXiv:1407.6710
 
 \bibitem[{{van Haasteren} \& {Vallisneri}(2014{\natexlab{b}})}]{vv14}
----. 2014{\natexlab{b}}, ArXiv:1407.1838
+---. 2014{\natexlab{b}}, \prd, 90, 104012
 
 \bibitem[{van Straten \& Bailes(2003)}]{vb03}
 van Straten, W., \& Bailes, M. 2003, in Radio Pulsars, ed. M.~Bailes, D.~J.
