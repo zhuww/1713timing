@@ -4,17 +4,15 @@ Pulsars are precise cosmic clocks and excellent testing grounds for
 fundamental physics, especially for testing gravitational theories. 
 We report 21-year timing of one of the most precise
 pulsars: PSR~J1713+0747. The pulse times of arrival of this pulsar are well
-modeled by a comprehensive binary model, which included the 3-D orientation 
-of the orbit in the sky, with residuals of weighted root mean square of $\sim 118$~ns. 
+modeled, with residuals of weighted root mean square of $\sim 118$~ns, by the
+spin down and proper motion of the pulsar, 
+a comprehensive binary model that included the 3-D orientation 
+of the orbit in the sky, and a noise model that incorporates potential
+correlated noises such as jitter and red noies. 
 The new dataset allows us to update and greatly improve previous measurements
 of the system properties, including the masses of the neutron star
 [1.3(1)~\Msun] and white dwarf [0.290(14)~\Msun] and the parallax
  [$\pi=$0.83(3)~mas].  
-\bfref{
-We employed modern noise analysis techniques that allow proper modeling of
-correlated noises in the data and detecting potential jitter and red noise.
-The noise analysis also improved the reliability and robustness of our timing analysis.
-}
 We have measured a change in the observed orbital period of PSR~J1713+0747. We
 attribute this to the relative motion of the pulsar system and the Earth, and
 find that the intrinsic change in orbital period is $\dot{P}^{\rm Int}_{\rm
@@ -41,7 +39,7 @@ pulsars \citep{dfg+13}.
 The timing analysis reported in this paper is pivotal to future pulsar timing array
 projects, such as the estimation of single-pulsar upper limit of the stochastic gravitational wave background.
 Observations of this pulsar were reported previously in
-\citealt{cfw94}, \citealt{vb03}, \citealt{sns+05}, \citealt{hbo06} and \citealt{ver09}.
+\citealt{cfw94}, \citealt{lb01}, \citealt{vb03}, \citealt{sns+05}, \citealt{hbo06} and \citealt{ver09}.
 %The high timing precision and the long base line allowed us to precisely 
 %measure the pulsar binary's orbit, masses, distance, proper motion, 
 %and orientation on the sky (see Section \ref{sec:model} for
@@ -315,7 +313,7 @@ those in \citet{sns+05} but consistent with their reported uncertainties.
 
 \subsection{Noise model}
 \label{sec:noise}
-{\B The noise model used in this analysis is a parameterized model that is a function of several unknown quantities describing both correlated and uncorrelated noise sources. Uncorrelated noise is 
+The noise model used in this analysis is a parameterized model that is a function of several unknown quantities describing both correlated and uncorrelated noise sources. Uncorrelated noise is 
 independent from one TOA to another, while the correlated noise is not. 
 For instance, the template matching error and the radiometer noise is
 uncorrelated, the pulse jitter noise \citep{sc10}, which affects all the TOAs 
@@ -528,7 +526,6 @@ signal contain contributions from unmodeled DM variations in data before 1999, t
 A second possibility is that there were instrumental drifts in either the
 Mark~IV or the APBB. This possibility can only be tested by examining data of
 this pulsar from other telescopes and instruments. 
-}
 
 %Fitting for DM variations on short timescales is necessitated by the sharp
 %variations seen in DM (Figure \ref{fig:dmx}). However, this has the potential

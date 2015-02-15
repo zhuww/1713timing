@@ -1,4 +1,4 @@
-\begin{thebibliography}{82}
+\begin{thebibliography}{39}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Aghanim} {et~al.}(2013){Aghanim}, {Armitage-Caplan}, {Arnaud},
@@ -33,11 +33,6 @@
   {White}, {Yvon}, {Zacchei}, {Zibin}, \& {Zonca}}]{aaa+13}
 {Aghanim}, N., {et~al.} 2013, ArXiv:1303.5087
 
-\bibitem[{Arzoumanian {et~al.}(1994)Arzoumanian, Nice, Taylor, \&
-  Thorsett}]{antt94}
-Arzoumanian, Z., Nice, D.~J., Taylor, J.~H., \& Thorsett, S.~E. 1994, ApJ, 422,
-  671
-
 \bibitem[{{Arzoumanian} {et~al.}(2014){Arzoumanian}, {Brazier},
   {Burke-Spolaor}, {Chamberlin}, {Chatterjee}, {Cordes}, {Demorest}, {Deng},
   {Dolch}, {Ellis}, {Ferdman}, {Garver-Daniels}, {Jenet}, {Jones}, {Kaspi},
@@ -48,62 +43,15 @@ Arzoumanian, Z., Nice, D.~J., Taylor, J.~H., \& Thorsett, S.~E. 1994, ApJ, 422,
   Collaboration}}]{abb+14}
 {Arzoumanian}, Z., {et~al.} 2014, \apj, 794, 141
 
-\bibitem[{Backer {et~al.}(1997)Backer, Dexter, Zepka, D., Wertheimer, Ray, \&
-  Foster}]{bdz+97}
-Backer, D.~C., Dexter, M.~R., Zepka, A., D., N., Wertheimer, D.~J., Ray, P.~S.,
-  \& Foster, R.~S. 1997, PASP, 109, 61
-
-\bibitem[{Bell \& Damour(1996)}]{bd96}
-Bell, J.~F., \& Damour, T. 1996, Class. Quant Grav., 13, 3121
-
-\bibitem[{Brans \& Dicke(1961)}]{bd61}
-Brans, C., \& Dicke, R.~H. 1961, Phys. Rev., 124, 925
-
-\bibitem[{Camilo {et~al.}(1994)Camilo, Foster, \& Wolszczan}]{cfw94}
-Camilo, F., Foster, R.~S., \& Wolszczan, A. 1994, ApJ, 437, L39
-
 \bibitem[{{Chatterjee} {et~al.}(2009){Chatterjee}, {Brisken}, {Vlemmings},
   {Goss}, {Lazio}, {Cordes}, {Thorsett}, {Fomalont}, {Lyne}, \&
   {Kramer}}]{cbv+09}
 {Chatterjee}, S., {et~al.} 2009, \apj, 698, 250
 
-\bibitem[{Cordes \& Downs(1985)}]{cd85}
-Cordes, J.~M., \& Downs, G.~S. 1985, ApJS, 59, 343
-
-\bibitem[{Cordes \& Helfand(1980)}]{ch80}
-Cordes, J.~M., \& Helfand, D.~J. 1980, ApJ, 239, 640
-
-\bibitem[{Cordes {et~al.}(1986)Cordes, Pidwerbetsky, \& Lovelace}]{cpl86}
-Cordes, J.~M., Pidwerbetsky, A., \& Lovelace, R. V.~E. 1986, ApJ, 310, 737
-
-\bibitem[{Cordes {et~al.}(1990)Cordes, Wolszczan, Dewey, Blaskiewicz, \&
-  Stinebring}]{cwd+90}
-Cordes, J.~M., Wolszczan, A., Dewey, R.~J., Blaskiewicz, M., \& Stinebring,
-  D.~R. 1990, ApJ, 349, 245
-
 \bibitem[{{D'Alessandro} {et~al.}(1995){D'Alessandro}, {McCulloch}, {Hamilton},
   \& {Deshpande}}]{dmhd95}
 {D'Alessandro}, F., {McCulloch}, P.~M., {Hamilton}, P.~A., \& {Deshpande},
   A.~A. 1995, \mnras, 277, 1033
-
-\bibitem[{Damour \& Deruelle(1986)}]{dd86}
-Damour, T., \& Deruelle, N. 1986, Ann. Inst. H. Poincar\'e (Physique
-  Th\'eorique), 44, 263
-
-\bibitem[{Damour \& Esposito-Far\`ese(1992)}]{de92}
-Damour, T., \& Esposito-Far\`ese, G. 1992, Class. Quant Grav., 9, 2093
-
-\bibitem[{Damour {et~al.}(1988)Damour, Gibbons, \& Taylor}]{dgt88}
-Damour, T., Gibbons, G.~W., \& Taylor, J.~H. 1988, Phys. Rev. Lett., 61, 1151
-
-\bibitem[{Damour \& Sch\"afer(1991)}]{ds91}
-Damour, T., \& Sch\"afer, G. 1991, Phys. Rev. Lett., 66, 2549
-
-\bibitem[{Damour \& Taylor(1991)}]{dt91}
-Damour, T., \& Taylor, J.~H. 1991, ApJ, 366, 501
-
-\bibitem[{Demorest(2007)}]{dem07}
-Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
 
 \bibitem[{{Demorest} {et~al.}(2013){Demorest}, {Ferdman}, {Gonzalez}, {Nice},
   {Ransom}, {Stairs}, {Arzoumanian}, {Brazier}, {Burke-Spolaor}, {Chamberlin},
@@ -111,9 +59,6 @@ Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
   {Lommen}, {McLaughlin}, {Palliyaguru}, {Perrodin}, {Shannon}, {Siemens},
   {Stinebring}, {Swiggum}, \& {Zhu}}]{dfg+13}
 {Demorest}, P.~B., {et~al.} 2013, \apj, 762, 94
-
-\bibitem[{Dirac(1937)}]{dir37}
-Dirac, P. A.~M. 1937, Nature, 139, 323
 
 \bibitem[{{Dolch} {et~al.}(2014){Dolch}, {Lam}, {Cordes}, {Chatterjee},
   {Bassa}, {Bhattacharyya}, {Champion}, {Cognard}, {Crowter}, {Demorest},
@@ -134,18 +79,12 @@ Dirac, P. A.~M. 1937, Nature, 139, 323
 \bibitem[{{Ellis}(2013)}]{ell13}
 {Ellis}, J.~A. 2013, Classical and Quantum Gravity, 30, 224004
 
-\bibitem[{Fierz(1956)}]{fie56}
-Fierz, M. 1956, Helv. Phys. Acta, 29, 128
-
 \bibitem[{{Folkner} {et~al.}(2009){Folkner}, {Williams}, \& {Boggs}}]{fwb09}
 {Folkner}, W.~M., {Williams}, J.~G., \& {Boggs}, D.~H. 2009, Interplanetary
   Network Progress Report, 178, C1
 
 \bibitem[{{Fonseca} {et~al.}(2014){Fonseca}, {Stairs}, \& {Thorsett}}]{fst14}
 {Fonseca}, E., {Stairs}, I.~H., \& {Thorsett}, S.~E. 2014, \apj, 787, 82
-
-\bibitem[{Foster {et~al.}(1993)Foster, Wolszczan, \& Camilo}]{fwc93}
-Foster, R.~S., Wolszczan, A., \& Camilo, F. 1993, ApJ, 410, L91
 
 \bibitem[{{Freire} {et~al.}(2012){Freire}, {Wex}, {Esposito-Far{\`e}se},
   {Verbiest}, {Bailes}, {Jacoby}, {Kramer}, {Stairs}, {Antoniadis}, \&
@@ -160,24 +99,12 @@ Foster, R.~S., Wolszczan, A., \& Camilo, F. 1993, ApJ, 410, L91
 \bibitem[{{Hobbs} {et~al.}(2010){Hobbs}, {Lyne}, \& {Kramer}}]{hlk10}
 {Hobbs}, G., {Lyne}, A.~G., \& {Kramer}, M. 2010, \mnras, 402, 1027
 
-\bibitem[{{Hobbs} {et~al.}(2006){Hobbs}, {Edwards}, \& {Manchester}}]{hem06}
-{Hobbs}, G.~B., {Edwards}, R.~T., \& {Manchester}, R.~N. 2006, MNRAS, 369, 655
-
 \bibitem[{{Hofmann} {et~al.}(2010){Hofmann}, {M{\"u}ller}, \&
   {Biskupek}}]{hmb10}
 {Hofmann}, F., {M{\"u}ller}, J., \& {Biskupek}, L. 2010, \aap, 522, L5
 
 \bibitem[{{Holmberg} \& {Flynn}(2004)}]{hf04a}
 {Holmberg}, J., \& {Flynn}, C. 2004, \mnras, 352, 440
-
-\bibitem[{Hotan {et~al.}(2006)Hotan, Bailes, \& Ord}]{hbo06}
-Hotan, A.~W., Bailes, M., \& Ord, S.~M. 2006, MNRAS, 369, 1502
-
-\bibitem[{Jordan(1959)}]{jor59}
-Jordan, P. 1959, Z. Phys., 157, 112
-
-\bibitem[{Kaspi {et~al.}(1994)Kaspi, Taylor, \& Ryba}]{ktr94}
-Kaspi, V.~M., Taylor, J.~H., \& Ryba, M. 1994, ApJ, 428, 713
 
 \bibitem[{{Keith} {et~al.}(2013){Keith}, {Coles}, {Shannon}, {Hobbs},
   {Manchester}, {Bailes}, {Bhat}, {Burke-Spolaor}, {Champion}, {Chaudhary},
@@ -212,34 +139,14 @@ Kaspi, V.~M., Taylor, J.~H., \& Ryba, M. 1994, ApJ, 428, 713
   {Verbiest}, {Lee}, {Champion}, {Kramer}, {Freire}, \& {Karuppusamy}}]{ldc+14}
 {Liu}, K., {et~al.} 2014, \mnras, 443, 3752
 
-\bibitem[{Lorimer \& Kramer(2005)}]{lk05}
-Lorimer, D.~R., \& Kramer, M. 2005, Handbook of Pulsar Astronomy (Cambridge
-  University Press)
-
-\bibitem[{Marciano(1984)}]{mar84}
-Marciano, W.~J. 1984, Phys. Rev. Lett., 52, 489
-
-\bibitem[{Matsakis {et~al.}(1997)Matsakis, Taylor, Eubanks, \&
-  Marshall}]{mtem97}
-Matsakis, D.~N., Taylor, J.~H., Eubanks, T.~M., \& Marshall, T. 1997, A\&A,
-  326, 924
+\bibitem[{{Lommen} \& {Backer}(2001)}]{lb01}
+{Lommen}, A.~N., \& {Backer}, D.~C. 2001, \apj, 562, 297
 
 \bibitem[{{McLaughlin}(2013)}]{mcl13}
 {McLaughlin}, M.~A. 2013, Classical and Quantum Gravity, 30, 224008
 
 \bibitem[{{Melatos} \& {Link}(2014)}]{ml14}
 {Melatos}, A., \& {Link}, B. 2014, \mnras, 437, 21
-
-\bibitem[{{Nice} {et~al.}(2005){Nice}, {Splaver}, {Stairs}, {L{\"o}hmer},
-  {Jessner}, {Kramer}, \& {Cordes}}]{nss+05}
-{Nice}, D.~J., {Splaver}, E.~M., {Stairs}, I.~H., {L{\"o}hmer}, O., {Jessner},
-  A., {Kramer}, M., \& {Cordes}, J.~M. 2005, ApJ, 634, 1242
-
-\bibitem[{Nice \& Taylor(1995)}]{nt95}
-Nice, D.~J., \& Taylor, J.~H. 1995, ApJ, 441, 429
-
-\bibitem[{Nordtvedt(1990)}]{nor90}
-Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
 
 \bibitem[{{{\"O}zel} {et~al.}(2012){{\"O}zel}, {Psaltis}, {Narayan}, \& {Santos
   Villarreal}}]{opns12}
@@ -253,10 +160,6 @@ Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
   {Demorest}, {Ferdman}, {Gonzalez}, {Nice}, {Ransom}, \& {Stairs}}]{pjl+13}
 {Perrodin}, D., {et~al.} 2013, ArXiv:1311.3693
 
-\bibitem[{Podsiadlowski {et~al.}(2002)Podsiadlowski, Rappaport, \&
-  Pfahl}]{prp02b}
-Podsiadlowski, P., Rappaport, S., \& Pfahl, E.~D. 2002, ApJ, 565, 1107
-
 \bibitem[{{Ransom} {et~al.}(2014){Ransom}, {Stairs}, {Archibald}, {Hessels},
   {Kaplan}, {van Kerkwijk}, {Boyles}, {Deller}, {Chatterjee},
   {Schechtman-Rook}, {Berndsen}, {Lynch}, {Lorimer}, {Karako-Argaman}, {Kaspi},
@@ -264,54 +167,14 @@ Podsiadlowski, P., Rappaport, S., \& Pfahl, E.~D. 2002, ApJ, 565, 1107
   {Stovall}}]{rsa+14}
 {Ransom}, S.~M., {et~al.} 2014, \nat, 505, 520
 
-\bibitem[{Rappaport {et~al.}(1995)Rappaport, Podsiadlowski, Joss, DiStefano, \&
-  Han}]{rpj+95}
-Rappaport, S., Podsiadlowski, P., Joss, P.~C., DiStefano, R., \& Han, Z. 1995,
-  MNRAS, 273, 731
-
-\bibitem[{Rickett(1990)}]{ric90}
-Rickett, B.~J. 1990, ARAA, 28, 561
-
-\bibitem[{Rickett \& Lyne(1990)}]{rl90}
-Rickett, B.~J., \& Lyne, A.~G. 1990, MNRAS, 244, 68
-
 \bibitem[{{Shannon} \& {Cordes}(2010)}]{sc10}
 {Shannon}, R.~M., \& {Cordes}, J.~M. 2010, \apj, 725, 1607
 
 \bibitem[{{Shannon} \& {Cordes}(2012)}]{sc12}
 ---. 2012, \apj, 761, 64
 
-\bibitem[{Shklovskii(1970)}]{shk70}
-Shklovskii, I.~S. 1970, Sov. Astron., 13, 562
-
-\bibitem[{Splaver {et~al.}(2005)Splaver, Nice, Stairs, Lommen, \&
-  Backer}]{sns+05}
-Splaver, E.~M., Nice, D.~J., Stairs, I.~H., Lommen, A.~N., \& Backer, D.~C.
-  2005, ApJ, 620, 405
-
-\bibitem[{Stairs {et~al.}(2000)Stairs, Splaver, Thorsett, Nice, \&
-  Taylor}]{sst+00}
-Stairs, I.~H., Splaver, E.~M., Thorsett, S.~E., Nice, D.~J., \& Taylor, J.~H.
-  2000, MNRAS, 314, 459, (astro-ph/9912272)
-
-\bibitem[{Stairs {et~al.}(2005)Stairs, Faulkner, Lyne, Kramer, Lorimer,
-  McLaughlin, Manchester, Hobbs, Camilo, Possenti, Burgay, D'Amico, Freire,
-  Gregory, \& Wex}]{sfl+05}
-Stairs, I.~H., {et~al.} 2005, ApJ, 632, 1060
-
-\bibitem[{Stinebring {et~al.}(1992)Stinebring, Kaspi, Nice, Ryba, Taylor,
-  Thorsett, \& Hankins}]{skn+92}
-Stinebring, D.~R., Kaspi, V.~M., Nice, D.~J., Ryba, M.~F., Taylor, J.~H.,
-  Thorsett, S.~E., \& Hankins, T.~H. 1992, Rev. Sci. Instrum., 63, 3551
-
-\bibitem[{Tauris \& Savonije(1999)}]{ts99a}
-Tauris, T.~M., \& Savonije, G.~J. 1999, A\&A, 350, 928
-
 \bibitem[{{Tauris} \& {van den Heuvel}(2014)}]{th14}
 {Tauris}, T.~M., \& {van den Heuvel}, E.~P.~J. 2014, \apjl, 781, L13
-
-\bibitem[{Taylor(1992)}]{tay92}
-Taylor, J.~H. 1992, Philos. Trans. Roy. Soc. London A, 341, 117
 
 \bibitem[{{van Haasteren} \& {Levin}(2013)}]{vl13}
 {van Haasteren}, R., \& {Levin}, Y. 2013, \mnras, 428, 1147
@@ -322,37 +185,14 @@ Taylor, J.~H. 1992, Philos. Trans. Roy. Soc. London A, 341, 117
 \bibitem[{{van Haasteren} \& {Vallisneri}(2014{\natexlab{b}})}]{vv14}
 ---. 2014{\natexlab{b}}, \prd, 90, 104012
 
-\bibitem[{van Straten \& Bailes(2003)}]{vb03}
-van Straten, W., \& Bailes, M. 2003, in Radio Pulsars, ed. M.~Bailes, D.~J.
-  Nice, \& S.~Thorsett (San Francisco: Astronomical Society of the Pacific),
-  65--68
-
-\bibitem[{van Straten {et~al.}(2001)van Straten, Bailes, Britton, Kulkarni,
-  Anderson, Manchester, \& Sarkissian}]{vbb+01}
-van Straten, W., Bailes, M., Britton, M., Kulkarni, S.~R., Anderson, S.~B.,
-  Manchester, R.~N., \& Sarkissian, J. 2001, Nature, 412, 158
-
 \bibitem[{{Verbiest}(2009)}]{ver09}
 {Verbiest}, J.~P.~W. 2009, ArXiv:0906.4246
-
-\bibitem[{Wex(2000)}]{wex00}
-Wex, N. 2000, in Pulsar Astronomy - 2000 and Beyond, {IAU} Colloquium 177, ed.
-  M.~Kramer, N.~Wex, \& R.~Wielebinski (San Francisco: Astronomical Society of
-  the Pacific), 113--116
 
 \bibitem[{{Will}(2001)}]{Will01}
 {Will}, C. 2001, Living Reviews in Relativity, 4, 4
 
 \bibitem[{{Will}(1993)}]{Will93}
 {Will}, C.~M. 1993, {Theory and Experiment in Gravitational Physics}
-
-\bibitem[{Wu \& Wang(1986)}]{ww86a}
-Wu, Y.-S., \& Wang, Z. 1986, Phys. Rev. Lett., 57, 1978
-
-\bibitem[{{You} {et~al.}(2007){You}, {Hobbs}, {Coles}, {Manchester}, {Edwards},
-  {Bailes}, {Sarkissian}, {Verbiest}, {van Straten}, {Hotan}, {Ord}, {Jenet},
-  {Bhat}, \& {Teoh}}]{yhc+07}
-{You}, X.~P., {et~al.} 2007, MNRAS, 378, 493
 
 \bibitem[{{Yu} {et~al.}(2013){Yu}, {Manchester}, {Hobbs}, {Johnston}, {Kaspi},
   {Keith}, {Lyne}, {Qiao}, {Ravi}, {Sarkissian}, {Shannon}, \& {Xu}}]{ymh+13}
