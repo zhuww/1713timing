@@ -7,11 +7,11 @@ pulsars: PSR~J1713+0747. The pulse times of arrival of this pulsar are well
 modeled, with residuals of weighted root mean square of $\sim 118$~ns, by the
 spin down and proper motion of the pulsar, 
 a comprehensive binary model that included the 3-D orientation 
-of the orbit in the sky, and a noise model that incorporates potential
-correlated noises such as jitter and red noies. 
+of the orbit in the sky, and a noise model that incorporates short- and
+long-timescale correlated noises such as jitter and red noises. 
 The new dataset allows us to update and greatly improve previous measurements
 of the system properties, including the masses of the neutron star
-[1.34(9)~\Msun] and white dwarf [0.291(11)~\Msun] and the parallax
+[1.31(11)~\Msun] and white dwarf [0.286(12)~\Msun] and the parallax
  [$\pi=$0.87(3)~mas].  
 We have measured a change in the observed orbital period of PSR~J1713+0747. We
 attribute this to the relative motion of the pulsar system and the Earth, and
@@ -434,7 +434,8 @@ parameters, red noise sample frequencies, and observing epochs. For this
 dataset the computational speed up is a factor of $\sim 10^{3}$.
 
 
-For a given set of hyper-parameters, this allows us to determine the maximum likelihood timing model parameters via the equivalent of a generalized least squares fit and also allows us to determine the maximum likelihood red noise realization present in the data. 
+For a given set of hyper-parameters, this allows us to determine the maximum likelihood timing model parameters via the equivalent of a generalized least squares fit 
+and the maximum likelihood red noise realization present in the data. 
 We can also evaluate the posterior of the hyper-parameters $\boldsymbol{\phi}$
 and thus find the maximum likelihood noise parameters including the EFAC, EQUAD,
 ECORR and red noise amplitude $A_{\rm red}$ and spectral index $\gamma_{\rm
@@ -521,10 +522,12 @@ resemble a low-frequency frequency sinusoid or cubic
 but instead it seems to be modeling a feature that is
 localized to the time period of 1999 through 2005. Since this is when
 dual-frequency observations begin, it is possible that part of the red noise
-signal contain contributions from unmodeled DM variations in data before 1999, thus making physical interpretations of red noise difficult because of the lack of multi-frequency data at early epochs.
+signal contain contributions from unmodeled DM variations in data before 1999, 
+thus making physical interpretations of red noise difficult because of the lack of multi-frequency data at early epochs.
 A second possibility is that there were instrumental drifts in either the
 Mark~IV or the APBB. This possibility can only be tested by examining data of
-this pulsar from other telescopes and instruments. 
+this pulsar taken by other telescopes and instruments from the same period of
+time. 
 
 %Fitting for DM variations on short timescales is necessitated by the sharp
 %variations seen in DM (Figure \ref{fig:dmx}). However, this has the potential
@@ -568,8 +571,8 @@ this pulsar from other telescopes and instruments.
 The timing model of PSR~J1713+0747 has been significantly improved by the 21-year timing effort.
 Most notably, the pulsar and the companion masses have been more precisely
 constrained (Table \ref{tab:par1} and \ref{tab:par2}) through Shapiro delay measurements. The
-companion's mass $M_{\rm c} = 0.291\pm0.011$~\Msun and the pulsar $M_{\rm
-PSR}=1.34\pm0.1=09$~\Msun\, are in good agreement with the previously measured values \cite{sns+05}.
+companion's mass $M_{\rm c} = 0.286\pm0.012$~\Msun and the pulsar $M_{\rm
+PSR}=1.32\pm0.11$~\Msun\, are in good agreement with the previously measured values \cite{sns+05}.
 We note that the derived pulsar mass tend to be underestimated 
 if no jitter parameters were included in our noise model, suggesting that
 correlated noise could significantly impact the result of high
@@ -804,18 +807,18 @@ If the timing noise of the sampled pulsars are due to the accumulation of
 spin noise, and the spin noise are caused by the same physical processes,
 then this RMS growth rate would imply that the spin noise of pulsars have a
 frequency power spectrum of power-law index $\gamma_{\rm red}\simeq-5$. This 
-spectral index is inconsistent with the $\gamma_{\rm red} = -2.92^{+0.44}_{-0.09}$
-we measured from our red noise model.
-
+spectral index is marginally consistent with the $\gamma_{\rm red}$
+from our noise model (Figure \ref{fig:res}).
 
 Finally, as we discussed in Section \ref{sec:noise}, there are other possible
 sources for the observed red noise signals.
 Whether or not they can be interpreted as pulsar spin irregularity is inconclusive.
 If we do assume that they are from spin irregularity, 
-the estimated maximum likelihood red noise spectral index 
- suggests that it could be due to
-random perturbations in the pulse phase of the arrival time, although other
-explanations cannot be ruled out.
+the estimated maximum likelihood red noise spectral index of $\sim-3$ 
+favors that the pulsar spin irregularities come from
+random perturbations in either spin rate ($\nu$) or spin-down rate
+($\dot{\nu}$), although other explanations cannot be ruled out due to the
+substantial uncertainty on the red noise spectral index (Figure \ref{fig:res}).
 %}
 
 %Figure \ref{fig:TN} shows $\sigma^2_{\msR,2}$ for different time scales, and
@@ -832,7 +835,8 @@ explanations cannot be ruled out.
 
 \subsection{Pulse profile evolution in frequency}
 \label{sec:FD}
-After removing the dispersion that causes ToA delays of $\propto \nu^{-2}$,
+After removing the dispersion that causes ToA delays of $\propto f^{-2}$,
+where $f$ is the observing frequency,
  we still see small remaining frequency-dependent residuals from wide-band
 observations using
 different instruments and different telescopes (Figure \ref{fig:FD}).  
