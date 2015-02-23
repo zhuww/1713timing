@@ -91,14 +91,14 @@ Observable = OrderedDict([
         ('PX',r'Parallax, $\pi$ (mas)'),
         ('DM',r'Dispersion Measure# (pc~cm$^{-3}$)'),
         ('SINI', r'$\sin i$, where $i$ is the orbital inclination angle'),
+        ('M2',r'Companion Mass, $M_c$ ($M_{\odot}$)'),
         ('PB',r'Orbital Period, $P_{\rm b}$ (day)'),
-        ('E',r'Eccentricity, $e$'),
-        ('OM',r'Angle of periastron#, $\omega$ (deg)'),
-        ('T0',r'Time of periastron passage, $T_0$ (MJD)'),
         ('PBDOT',r'Change rate of $P_{\rm b}$, $\dot{P}_{\rm b}$ ($10^{-12}$s~s$^{-1}$)'),
+        ('E',r'Eccentricity, $e$'),
+        ('T0',r'Time of periastron passage, $T_0$ (MJD)'),
+        ('OM',r'Angle of periastron#, $\omega$ (deg)'),
         ('A1',r'Projected semi-major axis, $x$ (lt-s)'),
         ('XDOT',r'Apparent change rate of $x$, $\dot{x}$ (lt-s~s$^{-1}$)'),
-        ('M2',r'Companion Mass, $M_c$ ($M_{\odot}$)'),
         ('FD1',r'Profile frequency dependency parameter, FD1 '),
         ('FD2',r'Profile frequency dependency parameter, FD2 '),
         ('FD3',r'Profile frequency dependency parameter, FD3 '),
@@ -110,6 +110,8 @@ Fixed = OrderedDict([
     ('PEPOCH',r'Reference epoch for $\alpha$, $\delta$, and $\nu$ (MJD)'),
     ('OMDOT',r'Rate of periastron advance, $\dot{\omega}$ (deg/yr)'),
     ('PAASCNODE',r'Position angle of ascending node, $\Omega$ (deg)'),
+    ('RNAMP', 'Red Noise Amplitude ($\mu$s/${\rm yr}^{-1/2}$)'),
+    ('RNIDX', 'Red Noise Spectral Index'),
     ])
 
 Derived = OrderedDict([
@@ -164,6 +166,8 @@ def addmodeldata(m):
         #parameter.append(Fixed[k])
         if k == 'PAASCNODE':
             value.append(m.__dict__[k])
+        elif not m.__dict__.has_key(k):
+            value.append('--')
         else:
             try:
                 value.append(parseerror(*m.__dict__[k]))
@@ -173,7 +177,9 @@ def addmodeldata(m):
                 elif k == 'PEPOCH':
                     value.append(m.__dict__[k].quantize(50000))
                 elif k == 'OMDOT':
-                    value.append(m.__dict__[k].quantize(Decimal(0.0001)))
+                    value.append(m.__dict__[k].quantize(Decimal(0.00001)))
+                elif k in ['RNAMP', 'RNIDX']:
+                    value.append(m.__dict__[k].quantize(Decimal(0.001)))
                 else:
                     value.append(SF(globals()[k](m)))
     #data = [parameter, value]
@@ -191,13 +197,13 @@ def addmodeldata(m):
                 value.append(SF(globals()[k](m)))
     return value
 
-m = model('Oct.T1.nml.par')
+m = model('Feb.T1.nml.par')
 value1 = addmodeldata(m)
 del m
-m = model('Oct.T1.jtr.par')
+m = model('Feb.T1.jtr.par')
 value2 = addmodeldata(m)
 del m
-m = model('Oct.T1.RN.par')
+m = model('Feb.T1.RN.par')
 value3 = addmodeldata(m)
 del m
 
@@ -211,7 +217,7 @@ comments=[
 
 #print len(parameter), len(value)
 
-table = deluxetable(Caption=Caption, colsetting='lccc', colnames = colnames, data=data, label="tab:par", comments=comments, fontsize='scriptsize')
+table = deluxetable(Caption=Caption, colsetting='lccc', colnames = colnames, data=data, label="tab:par1", comments=comments, fontsize='scriptsize')
 
 print table
 

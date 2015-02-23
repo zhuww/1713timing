@@ -20,14 +20,15 @@ LARGE_NUMBER = np.exp(300)
 ampfac = ((secperyear*1e6)/(2.0*np.pi*np.sqrt(3.0)))
 
 tstart = time.time()
-tf = TOAfile('1713.Sep.T2.tim')
+#tf = TOAfile('1713.Sep.T2.tim')
+tf = TOAfile('1713.Feb.T2.tim')
 Tstart = float(tf.start)
 Tspan = float(tf.end - tf.start)/dayperyear #in unit of year
 toas = np.array([(float(toa.TOA)-Tstart)/dayperyear for toa in tf.toalist]) #in unit of year
 
 
 
-md = model('Oct.T1.omdot.par')
+md = model('Feb.T1.RN.par')
 #md = model('Oct.T1.par')
 md.tempofit(tf, DesignMatrix=True)
 #md.tempofit(tf, GLS=True)#DesignMatrix=True)

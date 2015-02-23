@@ -11,12 +11,12 @@ def SF(f):
     else:
         return '%.3f' % f
 
-m = model('Oct.T1.omdot.par')
-t = TOAfile('1713.Sep.T2.tim')
-#m.tempofit(t, GLS=True)
+m = model('Feb.T1.RN.par')
+t = TOAfile('1713.Feb.T2.tim')
+m.tempofit(t, GLS=True)
 del m
-#pickle.dump(m, open('Oct.T1.omdot.pkl', 'wb'), protocol=2)
-m = pickle.load(open('Oct.T1.omdot.pkl', 'rb'))
+pickle.dump(m, open('Feb.T1.RN.pkl', 'wb'), protocol=2)
+#m = pickle.load(open('Oct.T1.omdot.pkl', 'rb'))
 m.groups['all'] = range(len(t.toalist))
 y,err = np.load('RNrealization.npy')
 #m.res -= y

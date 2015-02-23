@@ -9,10 +9,11 @@ from pylab import *
 
 #m = model('1713.Apr.dmx.par')
 #t = TOAfile('1713.Apr.tim')
-m = model('Oct.T1.RN.par')
-t = TOAfile('1713.Sep.T2.tim')
-m.tempofit(t)
+m = model('Feb.T1.RN.par')
+t = TOAfile('1713.Feb.T2.tim')
+m.tempofit(t) #, GLS=True)
 #os.system('tempo -f %s %s -a' % (m.parfile, t.toafile)) #run tempo to generate the chisun.tmp file
+#sys.exit(0)
 phisun = genfromtxt('phisun.tmp')
 phisun = phisun[:len(t.toalist)]
 DMX, DMXErr, DMXR1, DMXR2 = m.dmxlist
@@ -106,7 +107,8 @@ ax.errorbar([MJD_to_year(d+50000) for d in dmr1], dmx1, dmxerr1, fmt='k.')
 
 ax.errorbar([MJD_to_year(d+50000) for d in dmr2], dmx2, dmxerr2, fmt='k.')
 #ax2.set_ylim(15.9626, 15.9639)
-ax.set_ylim(-0.0338, -0.0315)
+#ax.set_ylim(-0.0338, -0.0315)
+ax.set_ylim(-0.0308, -0.0285)
 
 #ax1.spines['bottom'].set_visible(False)
 #ax2.spines['top'].set_visible(False)
@@ -140,7 +142,7 @@ import ephem
 from MJD import *
 from astropy import coordinates as coord
 from tools.Coordinate import RA, Dec
-mjd = np.linspace(51500, 56500, 500)
+mjd = np.linspace(50900, 56500, 500)
 #mjd = np.linspace(53200, 57000, 500)
 #dates = [MJD_to_datetime(m).strfmt('%Y/%m/%d') for  m in mjd]
 dates = [MJD_to_datetime(jd) for  jd in mjd]
@@ -148,17 +150,19 @@ if type(m.RAJ) == list:
     ra = RA(m.RAJ[0])
     dec = Dec(m.DECJ[0])
     #pulsar = ephem.Equatorial(m.RAJ[0], m.DECJ[0], epoch='2000')
-    psr = coord.FK5Coordinates(str(ra) +' '+str(dec))
+    #psr = coord.FK5Coordinates(str(ra) +' '+str(dec))
+    #print str(ra) +' '+str(dec)
+    psr = coord.SkyCoord(str(ra) +' '+str(dec))
 PHI = []
-pr = psr.ra.radians
-pd = psr.dec.radians
+pr = psr.ra.rad
+pd = psr.dec.rad
 for date in dates:
     sun = ephem.Sun()
     sun.compute(date, epoch='2000')
     sunstr = str(RA(str(sun.g_ra)))+' '+ str(Dec(str(sun.g_dec)))
-    sunpos = coord.FK5Coordinates(sunstr)
-    sr = sunpos.ra.radians
-    sd = sunpos.dec.radians
+    sunpos = coord.SkyCoord(sunstr)
+    sr = sunpos.ra.rad
+    sd = sunpos.dec.rad
     psr = np.array((np.cos(pd)*np.sin(pr), np.cos(pd)*np.cos(pr), np.sin(pd)))
     sun = np.array((np.cos(sd)*np.sin(sr), np.cos(sd)*np.cos(sr), np.sin(sd)))
     PHI.append(np.arccos(np.dot(psr, sun))*180./np.pi)
@@ -183,14 +187,14 @@ ddmers = data[3,...]
 a = axes([.62, .6, .25, .3])
 def func(x,  b , c):
     return c * (x)**(b-2) 
-popt, pcov = curve_fit(func, delays, ddmsqs, sigma=ddmers)
-#popt, pcov = curve_fit(func, delays, ddmsqs)
+popt, pcov = curve_fit(func, delays, ddmsqs)
+popt, pcov = curve_fit(func, delays, ddmsqs, sigma=ddmers, p0= popt)
 B,C = popt
 Berr = np.sqrt(pcov[0,0])
 Cerr = np.sqrt(pcov[1,1])
 from round import shortform as SF
 print 'beta:', SF((B,Berr)), 'C:', SF((C,Cerr))
-x = np.linspace(1, 1.e4, 30)
+x = np.linspace(10, 1.e4, 30)
 y = func(x, B, C)
 a.plot(x,y, 'k-')
 

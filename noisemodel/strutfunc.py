@@ -5,19 +5,35 @@ import matplotlib.pyplot as pyplot
 fig = pyplot.figure()
 ax1 = fig.add_subplot(2,1,1)
 
-m = model('1713.Sep.dmx.par')
-t = TOAfile('1713.Sep.T2.tim')
-#m = model('1713.DMX.par')
-#t = TOAfile('1713.8y.tim')
-#m.thawall('DMX_')
-#m.write('1713.DMX.par')
-#sys.exit(0)
-m.tempofit(t)
-nm = model(m.newpar.parfile)
-DMX, DMXErr, DMXR1, DMXR2 = nm.dmxlist
+m = model('1713.Feb.dmx.par')
+t = TOAfile('1713.Feb.T2.tim')
+m.tempofit(t) #, GLS=True)
+#nm = model(m.newpar.parfile)
+#nm = model('1713.Feb.dmx.par')
+#DMX, DMXErr, DMXR1, DMXR2 = nm.dmxlist
 DMXR = {}
 #print  DMXR1.keys()
 #sys.exit(0)
+
+DMX, DMXErr, DMXR1, DMXR2 = m.dmxlist
+"""
+meanDMX = mean([float(DMX[i]) for i in DMX])
+#dmxvalues = genfromtxt('PaulDMX.par', dtype = [('DMXEP', 'f8'), ('DMX', 'f8'), ('DMXErr', 'f8'), ('DMXR1', 'f8'), ('DMXR2', 'f8'), ('DMXF1', 'f8'), ('DMXF2', 'f8'), ('DMXbin', 'S5')])
+DMX= {}
+DMXErr = {}
+DMXR1 = {}
+DMXR2 = {}
+DM = float(m.DM)
+#print meanDMX - DM
+for rec in dmxvalues:
+    i = int(rec['DMXbin'][2:].lstrip('0'))
+    DMX[i] = rec['DMX'] + meanDMX
+    DMXErr[i] = rec['DMXErr']
+    DMXR1[i] = rec['DMXR1']
+    DMXR2[i] = rec['DMXR2']
+"""
+
+
 for j in [k for k in DMXR1.keys() if not k == 1]:
     #DMXR[j] = (DMXR1[j] + DMXR2[j])/2
     toa_in_DMbin = []
@@ -81,26 +97,29 @@ ax = fig.add_subplot(2,1,2)
 delays = []
 ddmsqs = []
 ddmers = []
+binszs = []
 C = 4.148e3*1.e6
 f = 1400.
 fac = (2*np.pi*C/f)**2
-for bin in pairbin:
+for i, bin in enumerate(pairbin):
     #ax.plot(bin['delay'],bin['ddm'] - bin['esq'], 'r.')
-    delays.append(bin['delay'].mean())
-    ddmsqs.append((bin['ddm'].mean() - bin['esq'].mean())*fac)
-    #print bin['delay']
-    #ddmsqs.append(bin['ddm'].mean()) #- bin[...,2].mean())
-    #ddmers.append(bin['ddm'].std())
-    #ddmers.append((2*np.sqrt(bin['ddm']*bin['esq'])).mean())
-    ddmers.append((2*np.sqrt(sum(bin['ddm']*bin['esq'])))/bin['ddm'].size*fac)
+    if (bin['ddm'].mean() - bin['esq'].mean()) > 0:
+        ddmsqs.append((bin['ddm'].mean() - bin['esq'].mean())*fac)
+        delays.append(bin['delay'].mean())
+        #print bin['delay']
+        #ddmsqs.append(bin['ddm'].mean()) #- bin[...,2].mean())
+        #ddmers.append(bin['ddm'].std())
+        #ddmers.append((2*np.sqrt(bin['ddm']*bin['esq'])).mean())
+        ddmers.append((2*np.sqrt(sum(bin['ddm']*bin['esq'])))/bin['ddm'].size*fac)
+        binszs.append(binsize[i]/2)
 
 #print ddmsqs
 #print ddmers
 #print len(delays), binsize.size
-ax.errorbar(delays, ddmsqs, xerr=binsize/2, yerr=ddmers, fmt='o')
-#ax.semilogx()
-#ax.semilogy()
+ax.errorbar(delays, ddmsqs, xerr=binszs, yerr=ddmers, fmt='o')
+ax.semilogx()
+ax.semilogy()
 show()
 
-data = np.vstack((delays, ddmsqs, binsize/2, ddmers))
+data = np.vstack((delays, ddmsqs, binszs, ddmers))
 np.save('strucfunc', data)
