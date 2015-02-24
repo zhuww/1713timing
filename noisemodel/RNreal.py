@@ -30,8 +30,8 @@ toas = np.array([(float(toa.TOA)-Tstart)/dayperyear for toa in tf.toalist]) #in 
 
 md = model('Feb.T1.RN.par')
 #md = model('Oct.T1.par')
-md.tempofit(tf, DesignMatrix=True)
-#md.tempofit(tf, GLS=True)#DesignMatrix=True)
+#md.tempofit(tf, DesignMatrix=True)
+md.tempofit(tf, GLS=True)#DesignMatrix=True)
 
 T2EFAC = [par for par in md.__dict__ if par.startswith('T2EFAC')]
 T2EQUAD = [par for par in md.__dict__ if par.startswith('T2EQUAD')]
