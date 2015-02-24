@@ -4,19 +4,21 @@ import numpy as np
 secperday = 24*3600
 initmatplotlib(cols=1)
 
-m = model('1713.FD0.par')
+m = model('1713.9yr.FD0.par')
 #m = model('1713.pbd.par')
-t = TOAfile('1713.8y.tim')
-m.tempofit(t)
+t = TOAfile('1713.9yr.tim')
+m.tempo2fit(t)
 #m.freezeall('DM')
 #m.write('1713.DM0.par')
-m.groups['GUPPI'] = m.groups['GUPPI-L'] + m.groups['GUPPI-8']
-m.groups['PUPPI'] = m.groups['PUPPI-L'] + m.groups['PUPPI-S']
+#m.groups['GUPPI'] = m.groups['GUPPI-L'] + m.groups['GUPPI-8']
+#m.groups['PUPPI'] = m.groups['PUPPI-L'] + m.groups['PUPPI-S']
+m.groups['GUPPI'] = m.groups['Rcvr1_2_GUPPI'] + m.groups['Rcvr_800_GUPPI']
+m.groups['PUPPI'] = m.groups['L-wide_PUPPI'] + m.groups['S-wide_PUPPI']
 
 colors = {'GUPPI':'r', 'PUPPI':'c'}
 m.plot('freq','res', groups=['GUPPI', 'PUPPI'], colors={'GUPPI':'r', 'PUPPI':'c'}, LegendOn=True, LegendLoc=1, capsize=0, elinewidth=0.5, marker='.', ms=0, NoZeroLine=True)
 
-m1=model('1713.DM0.par')
+m1=model('1713.9yr.DM0.par')
 FD1 = float(m1.FD1[0])
 FD2 = float(m1.FD2[0])
 FD3 = float(m1.FD3[0])

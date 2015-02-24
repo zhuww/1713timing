@@ -3,14 +3,14 @@ from datatools.tempo import *
 import numpy as np
 secperday = 24*3600
 
-m = model('1713.pbd.par')
+m = model('1713.9yr.par')
 #m = model('1713.pbd.par')
-t = TOAfile('1713.8y.tim')
-m.tempofit(t)
+t = TOAfile('1713.9yr.tim')
+m.tempo2fit(t)
 #m.freezeall('DM')
 #m.write('1713.DM0.par')
-m.groups['GUPPI'] = m.groups['GUPPI-L'] + m.groups['GUPPI-8']
-m.groups['PUPPI'] = m.groups['PUPPI-L'] + m.groups['PUPPI-S']
+m.groups['GUPPI'] = m.groups['Rcvr1_2_GUPPI'] + m.groups['Rcvr_800_GUPPI']
+m.groups['PUPPI'] = m.groups['L-wide_PUPPI'] + m.groups['S-wide_PUPPI']
 m.average(freqbin=30.)
 
 colors = {'GUPPI':'r', 'PUPPI':'c'}
