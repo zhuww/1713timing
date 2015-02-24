@@ -5,26 +5,24 @@ fundamental physics, especially for testing gravitational theories.
 We report 21-year timing of one of the most precise
 pulsars: PSR~J1713+0747. The pulse times of arrival of this pulsar are well
 modeled, with residuals of weighted root mean square of $\sim 92$~ns, by the
-spin down and proper motion of the pulsar, 
-a comprehensive binary model that included the 3-D orientation 
-of the orbit in the sky, and a noise model that incorporates short- and
+spin down and proper motion of the pulsar, the mass and 3D orbit of its
+companion white dwarf, and a noise model that incorporates short- and
 long-timescale correlated noises such as jitter and red noises. 
 The new dataset allows us to update and greatly improve previous measurements
 of the system properties, including the masses of the neutron star
-[1.31(11)~\Msun] and white dwarf [0.286(12)~\Msun] and the parallax
- [$\pi=$0.87(3)~mas].  
-We have measured a change in the observed orbital period of PSR~J1713+0747. We
-attribute this to the relative motion of the pulsar system and the Earth, and
+[1.31(11)~\Msun] and white dwarf [0.286(12)~\Msun] as well as their parallax 
+distance [1.15(3)~kpc].  
+We measured a change in the observed orbital period of PSR~J1713+0747, and
+attribute this to the relative motion of the binary system and the Earth. We 
 find that the intrinsic change in orbital period is $\dot{P}^{\rm Int}_{\rm
 b}=-0.20\pm0.17\times10^{-12}$s~s$^{-1}$, not distinguishable from zero.
-We use this to place limits on changes in the gravitational constant $\dot{G}$. 
-$\dot{G}/G$ is found to be $-0.6(1.1)\times10^{-12}$~yr$^{-1}$ and at 
+This result combined with the measured $\dot{P}^{\rm Int}_{\rm b}$ of other pulsars 
+can place limits on potential changes in the gravitational constant $\dot{G}$
+as predicted in some alternative theories of gravitation. 
+$\dot{G}/G$ is found to be consistent with zero [$-0.6(1.1)\times10^{-12}$~yr$^{-1}$] and at 
 least a factor of $31$ (99.7\% confidence level) slower than the average expansion 
-rate of the Universe. 
-%\bfref{
-%Through pulse timing analysis, we detect evidences of both pulse
-%jitter noises and red timing noises in our data.
-%}
+rate of the Universe. This is the best $\dot{G}/G$ limit from extra-solar
+systems.
 \end{abstract}
 
 
@@ -326,11 +324,11 @@ We begin by forming a set of residuals via the standard weighted least squares f
 \be
 \delta\mathbf{t} = M\boldsymbol{\epsilon} + F\mathbf{a} + U\mathbf{j} +\mathbf{n}.
 \ee
-The first term on the right hand side describes small deterministic trends
+The first term on the right hand side ($M\boldsymbol{\epsilon}$) describes small deterministic trends
 left over in the residuals because one cannot perfectly remove the
 deterministic timing model when noise is present. Here $M$ is the timing model
 design matrix and $\boldsymbol{\epsilon}$ is a vector of small timing model
-parameter offsets. Next, we model the red noise via a Fourier decomposition
+parameter offsets. Next term $F\mathbf{a}$ models the red noise via a Fourier decomposition
 (this need not be the case as this basis was chosen to increase computational
 efficiency as we shall see later) where $F$ is the so-called Fourier design
 matrix that has columns of alternating sine and cosine functions for
@@ -338,15 +336,13 @@ frequencies in the range $[1/T,n_{\rm mode}/T]$ with $\Delta f=1/T$ and
 $n_{\rm mode}$ is the number of frequencies to include in the sum.
 Furthermore, $\mathbf{a}$ are the amplitudes of the Fourier basis functions
 defined above \citep[see][for more details]{lah+13,abb+14}. 
-
-The next term
-describes short timescale correlated noise. This term could be due to pulse
+$U\mathbf{j}$ describes short timescale correlated noise. This term could be due to pulse
 phase jitter but could also have other components not due to jitter. This term
 characterized noise that is completely correlated for all ToAs in a given
 epoch but completely \emph{uncorrelated} between epochs. The matrix $U$ is an
 $N_{\rm ToA}\times N_{\rm epoch}$ matrix that maps ToAs to a given epoch and
 $\mathbf{j}$ is the amplitude of the epoch-to-epoch fluctuations. Finally the
-last term describes a Gaussian white noise process which characterize
+last term $\mathbf{n}$ describes a Gaussian white noise process which characterize
 epoch, time, and frequency independent random noise left in the data. %is generally the dominant source of noise in pulsar timing data.
 
 Since the white noise is modeled as Gaussian, the likelihood function for the noise is given by
@@ -956,18 +952,17 @@ $\dot{G}/G\simeq-\dot{P}_{\rm b}^{\rm exc}/(2P_{\rm
 b})=1.0\pm2.3\times10^{-11}$~yr$^{-1}$ using timing of binary PSR~1913+16. 
 Since then $\dot{P}_{\rm b}^{\rm exc}$ of pulsar binaries, including 
 PSR~J1713+0747, have been used to 
-constrain $\dot{G}/G$ \citep{ktr94, lwj+09, fwe+12, nss+05}. 
+constrain $\dot{G}/G$ \citep{ktr94, nss+05, lwj+09, fwe+12}. 
 So far all pulsar observations show $\dot{G}/G$ consistent with being zero, with 
-upper limits largely determined by the uncertainties in $\dot P_{\rm b}$, distance, 
+upper limits largely determined by the uncertainties in orbit decay rate, distance, 
 and proper motions.
-%Thanks to the effort of NANOGrav timing project, all these parameters are 
-%measured for PSR~J1713+0747 to great precision.  
 PSR~J1713+0747 has the smallest known $\dot{P}_{\rm b}^{\rm exc}/(2P_{\rm
 b})\simeq(-0.5\pm0.9)\times10^{-12}$~yr$^{-1}$ (Section \ref{sec:obdecay}) and is
 particularly useful for constraining the time variability of gravitational
 constant.
 
-However, we would like to approach the $\dot{G}$ constrain in a more rigorous fashion,
+\citealt{lwj+09} and \citealt{fwe+12} show that $\dot{G}/G$ can be constrained by pulsar
+binaries in a more rigorous fashion
 by incorporating a class of realistic alternative gravitational theory --- the 
 scalar-tensor theory.
 In the framework of this theory,
@@ -1091,8 +1086,8 @@ multiple similar pulsar systems \citep{wex00,sfl+05, gsf+11}.
 \section{Summary}
 In this paper, we present a comprehensive model of high precision timing observations of
 PSR~J1713+0747 that span 21 years. 
-We improvement measurements on the pulsar and its companions' masses, the
-geometry of the binary orbit. We also detect, for the first time, an apparent
+We improved measurements on the pulsar and its companions' masses and the
+shape and orientation of the binary orbit. We also detect, for the first time, an apparent
 decay of the orbit due to Galactic differential accelerations and the Shklovskii effect.
 These measurements, when combined with those of other pulsars, 
 significantly improve the pulsar timing limit on the change rate of the gravitational
@@ -1123,8 +1118,8 @@ Meanwhile, the precise measurements of the PSR J1713+0747's orbit eccentricity a
 3-D orientation allow us to test the violation of SEP and 
 Lorentz invariance with it. We found a single-pulsar 95\% upper limit on 
 $\Delta <0.01$, the SEP violation factor, and
-$\hat{\alpha}_3<2\times10^{-20}$, the PPN parameter that characterize Lorentz
-violation. 
+$\hat{\alpha}_3<2\times10^{-20}$, the PPN parameter that characterizes
+violation of Lorentz invariance. 
 Because of the different statistical analysis methods were used, our PSR
 $\Delta$ and $\hat{\alpha}_3$ limits  are slightly
 different but still consistent with the results of the same tests in previous publications 
@@ -1145,23 +1140,13 @@ might have increased the average DM variation in timescale shorter than
 hundreds of days, making the structure function appear flatter than expected
 in these time scales.
 
-%Timing residuals of MSPs are believed to contain noise from timing
-%measurements, pulse phase jitter, and spin irregularities, etc. 
-
-%We measured the growth of timing residuals with time, and found no evidence of
-%time-accumulative noise. This indicates that, unlike other younger pulsars,
-%PSR~J1713+0747's timing residual consists of mostly white noise. Understanding the nature 
-%of the noise in these MSPs is important for making predictions of detecting
-%GWs using the pulsar timing array. Because ``red'' timing noise in MSPs reduces
-%the sensitivity of the pulsar timing array to GWs.
-
 In conjunction with the timing modeling, we also modeled observational noise
 such as jitter and red noise
  using the generalized least square fit and a covariance matrix that included the
 correlated and uncorrelated noise terms.
-We found that our timing model is significantly affected by the noise
-model, especially the jitter noise model, suggesting that the adoption of jitter
-modeling may be necessary in many cases of high precision pulsar timing. 
+We found that our timing result is significantly affected by the noise
+model, especially the jitter noise, suggesting that the adoption of jitter
+modeling may be necessary in cases of high precision pulsar timing. 
 We found that our noise parameters and timing residuals are consistent with the jitter
 noise estimates from \citet{sc12} and the timing noise estimate from \citet{sc10}. However,
 the scale law extrapolate from large sample study of timing noise in \citet{hlk10}
@@ -1170,12 +1155,9 @@ overestimate the timing noise level $\sigma_z({\rm 10 yr})$ in this pulsar.
 Our noise model parameters and timing residual RMS (Table \ref{tab:wrms})
 provide a crude estimation of the amount of noise in our data. The WRMS of
 the 21 years daily-averaged timing residuals is $\sim 92$~ns. 
-%The smallest RMS values are from the 1400-MHz GUPPI data ($\sim$127~ns) and the
-%2300-MHz PUPPI data ($\sim$134~ns),
-%clearly better than thos from the older generations of instruments 
-Table \ref{tab:wrms} show a systematic improvement in the timing accuracy of
+Table \ref{tab:wrms} shows a systematic improvement in the timing accuracy of
 this pulsar in the last two decades, due to the advances in instrumentation.
-Although the improvements are not as large as expected from the radiometer 
+But the improvements are not as large as expected from the radiometer 
 equation, perhaps because of pulse jitter. 
 
 Our reconstructed red noise signal is most prominent in the Mark~IV and ABPP data
@@ -1188,7 +1170,7 @@ instrumental drift.
 Assuming that the red noise is caused by spin irregularity,
 the best-fit spectrum index is consistent with
 spin irregularity that was caused by random perturbations in
-the pulse phase of the pulsar, but it does not exclude other explanations
+either the spin or the spin down of the pulsar, but it does not exclude other explanations
 due to its large uncertainty (see bottom panel of Figure \ref{fig:res}).
 
 
