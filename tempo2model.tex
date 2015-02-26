@@ -32,7 +32,7 @@ Profile frequency dependency parameter, FD4 &  0.0000147(4)&  0.0000154(4)&  0.0
 \textit{Fixed Parameters}&  &  &  \\
 Solar system ephemeris&  DE421&  DE421&  DE421\\
 Reference epoch for $\alpha$, $\delta$, and $\nu$ (MJD)&  53729&  53729&  53729\\
-Rate of periastron advance, $\dot{\omega}$ (deg/yr)&  0.00024&  0.00024&  0.00024\\
+Rate of periastron advance, $\dot{\omega}$ (deg/yr)\tablenotemark{d}&  0.00024&  0.00024&  0.00024\\
 Red Noise Amplitude ($\mu$s/${m yr}^{-1/2}$)&  --&  --&  --\\
 Red Noise Spectral Index&  --&  --&  --\\
 \textit{Derived Parameters}&  &  &  \\
@@ -45,6 +45,8 @@ implicitly account for the change of the projected semi-major axis ($\dot{x}$
 and allows us to fit for the position angle of ascending node ($\Omega$). Numbers in parentheses indicate the uncertainties on the last digit(s).  Uncertainties on parameters are estimated by the {\it tempo2} program using information in the covariance matrix.}
 \tablenotetext{b}{The averaged DM value; See Section 3.2 and Figure 2 for more discussion.}
 \tablenotetext{c}{See Figure 2 of \citealt{sns+05} for definition.}
+\tablenotetext{d}{The rate of periastron advance was not fitted but fixed to the GR value
+because it is higher co-variant with the orbital period.}
 
 
 \end{deluxetable}

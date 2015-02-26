@@ -377,7 +377,7 @@ referred to as the ECORR parameter in {\sc tempo} and {\sc tempo2}. Furthermore 
 \varphi_{n} \equiv 10^{\rho_{n}} = \frac{1}{T} A_{\rm red}^2\left( \frac{f}{f_{\rm yr}} \right)^{\gamma_{\rm red}}
 \ee
 where $T$ is the total observation time, $A_{\rm red}$ is the amplitude of the
-red noise in $\mu$s/${\rm yr}^{-1/2}$, $\gamma_{\rm red}$ is the spectral index of the red noise, $f_{\rm
+red noise in $\mu$s~${\rm yr}^{1/2}$, $\gamma_{\rm red}$ is the spectral index of the red noise, $f_{\rm
 yr}$ is the reference frequency of 1~${\rm yr}^{-1}$, and $f_{n}$ is the $n$th
 Fourier frequency assuming Nyquist sampling. We see that the prior
 distributions on jitter-like correlated noise and red noise are themselves
@@ -519,7 +519,10 @@ the data very well as we can see in Figure \ref{fig:detres} in which the maximum
 The red noise signal seen in the data (i.e. Figure \ref{fig:res}) does not
 resemble a low-frequency sinusoid or cubic
 but instead it seems to be modeling a feature that is
-localized to the time period of 1999 through 2005. Since this is when
+localized to the time period of 1999 through 2005. 
+The same feature was also observed by \citet{sns+05}, and they modeled it
+using higher order (up to the 8th order) frequency polynomials.
+Since this is when
 dual-frequency observations begin, it is possible that part of the red noise
 signal contains contributions from unmodeled DM variations in data before 1999, 
 thus making physical interpretations of red noise difficult because of the lack of multi-frequency data at early epochs.
@@ -798,7 +801,7 @@ is the observation time span in years.
 This scaling model predicts that, for 21-yr timing of PSR~J1713+0747, the
 residual RMS without removing timing noise $\sigma^2_{\rm TN,2}$ would be
 $\sim0.4$~$\mu $s. The measured RMS of the red noise residual 
-$\sigma^2_{\msR,RN}=395$~ns, is consistent with the extrapolation
+$\sigma^2_{\msR,RN}=364$~ns, is consistent with the extrapolation
 from \citet{sc10}.  
 %While the integrated RMS of the red noise is consistent with the prediction of
 %\cite{sc10}, the red noise spectral index is not. \cite{sc10} predict that the
