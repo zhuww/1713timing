@@ -1,4 +1,4 @@
-\begin{thebibliography}{84}
+\begin{thebibliography}{86}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Arzoumanian {et~al.}(1994)Arzoumanian, Nice, Taylor, \&
@@ -69,6 +69,11 @@ Damour, T., \& Sch\"afer, G. 1991, Phys. Rev. Lett., 66, 2549
 
 \bibitem[{Damour \& Taylor(1991)}]{dt91}
 Damour, T., \& Taylor, J.~H. 1991, ApJ, 366, 501
+
+\bibitem[{{Deller} {et~al.}(2008){Deller}, {Verbiest}, {Tingay}, \&
+  {Bailes}}]{dvtb08}
+{Deller}, A.~T., {Verbiest}, J.~P.~W., {Tingay}, S.~J., \& {Bailes}, M. 2008,
+  \apjl, 685, L67
 
 \bibitem[{Demorest(2007)}]{dem07}
 Demorest, P.~B. 2007, PhD thesis, University of California, Berkeley
@@ -180,6 +185,10 @@ Kaspi, V.~M., Taylor, J.~H., \& Ryba, M. 1994, ApJ, 428, 713
   {Gair}, {Balan}, \& {van Haasteren}}]{lah+13}
 {Lentati}, L., {Alexander}, P., {Hobson}, M.~P., {Taylor}, S., {Gair}, J.,
   {Balan}, S.~T., \& {van Haasteren}, R. 2013, \prd, 87, 104021
+
+\bibitem[{{Lewandowski} {et~al.}(2015){Lewandowski}, {Kowalinska}, \&
+  {Kijak}}]{lkk15}
+{Lewandowski}, W., {Kowalinska}, M., \& {Kijak}, J. 2015, ArXiv e-prints
 
 \bibitem[{{Liu} {et~al.}(2014){Liu}, {Desvignes}, {Cognard}, {Stappers},
   {Verbiest}, {Lee}, {Champion}, {Kramer}, {Freire}, \& {Karuppusamy}}]{ldc+14}

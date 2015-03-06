@@ -131,9 +131,9 @@ ax.set_ylim(-0.0308, -0.0285)
 #ax.annotate('Instrumental', fontsize=18, xy=(MJD_to_year(53200), -0.0087), xycoords='data', xytext=(-59,-90), textcoords='offset points', arrowprops=dict(arrowstyle="->"))
 
 #plt.ylabel('                                                DM - 16 (pc~mc$^{-3}$)')
-plt.ylabel('DM - 16 (pc~mc$^{-3}$)')
+plt.ylabel('DM - 16 (pc~cm$^{-3}$)')
 #plt.xlabel('MJD-50000')
-plt.xlabel('date')
+plt.xlabel('Year')
 #show()
 #sys.exit()
 

@@ -7,15 +7,17 @@ import numpy as np
 from math import *
 year = 365.24218967
 
-m = model('1713.Sep.KOM.par')
+#m = model('1713.Sep.KOM.par')
+m = model('Feb.T2.RN.par')
 #m = np.load('1713.Sep.sav')
 #m = model('1713.Apr.TN.par')
 #t = TOAfile('1713.Nov.Paul.tim')
-#m.tempofit(t)
-#m.average(groups='allinone')
+t = TOAfile('1713.Feb.T2.tim')
+m.tempo2fit(t)
+m.average(groups='allinone')
 
-#wrms = m.wrms['all']
-wrms = 0.2124
+wrms = m.wrms['all']
+#wrms = 0.2124
 #wrms = 0.306400344221
 
 CPMSP_sc10= lambda nv, nvdot, T:exp(1.6) * nv**-1.4*abs(nvdot/1.e-15)**1.1*T**2

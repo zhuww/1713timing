@@ -5,11 +5,18 @@ import numpy as np
 from ordereddict import OrderedDict
 import decimal
 from tools.Coordinate import RA, Dec
+from tools.Coordinate import RA, Dec
+from astropy import coordinates as coord
+from astropy import constants as const
 
 
 secperyear = 3600*24*Decimal('365.24218967')
 secperday = 3600 * 24
 PI = np.pi
+secperday = 24*3600
+secperyear = secperday*365.24218967
+c = const.c.cgs.value
+kpc = const.kpc.cgs.value
 
 def M1(pf):
     G = float(6.673e-11)
@@ -44,12 +51,99 @@ def M1(pf):
                 + dm2**2)
         return Decimal(M1), Decimal(dM1)
 
+def Shlkovskii_corr(pf, Pb):
+    PI = Decimal(pi)
+    #d = AU * 180 / PI * 3600 / pf.PX[0] * 1000 
+    d = float(1/pf.PX[0]) * kpc
+    #Pb = float(pf.PB[0]) * secperday
+    Pb = float(Pb)
+    PMRA = pf.PMRA[0] / 3600000 * PI / 180 / secperday / Decimal(365.24218967)
+    PMDEC = pf.PMDEC[0] / 3600000 * PI / 180 / secperday / Decimal(365.24218967) #* Decimal(str(sin(inc)))
+    val = float(PMRA**2 + PMDEC**2)*Pb*d/c
+    fac1 = float(pf.PX[1]/pf.PX[0])
+    fac2 = (sqrt(float(pf.PMRA[1]**2 + pf.PMDEC[1]**2)/float(pf.PMRA[0]**2+pf.PMDEC[0]**2)))
+    err = sqrt(fac1**2 + fac2**2)*abs(val)
+    #print 'Shlkovskii_corr:', val, err
+    return val, err
+
+def Gal_Acc_Corr(pf, Pb):
+    PI = Decimal(pi)
+    try:
+        name = pf.PSRJ
+    except:
+        name = pf.PSR
+    ra = RA(pf.RAJ[0])
+    dec = Dec(pf.DECJ[0])
+    pos = coord.SkyCoord(str(ra) +' '+ str(dec))
+    l = pos.galactic.l.rad
+    b = pos.galactic.b.rad
+    #Pb = float(pf.PB[0] * secperday)
+    Pb = float(Pb)
+    #d = AU * 180 / PI * 3600 / pf.PX[0] * 1000 
+    d = float(1/pf.PX[0])
+    pf.DIST = d
+    z_kpc = float(d)*(abs(sin(b)))#/kpc must be positive
+    a_z = ((2.27)*z_kpc + (3.68)*(1 - exp((-4.31)*z_kpc)))*(1.e-9) #cm s^-2
+    #print 'a_z:', a_z
+    A_z = -1 * a_z *abs(sin(b))/c
+    pf.A_z = A_z
+    R0 = (8.34) #* kpc # Reid et al. 2014
+    beta = float(d/R0) * cos(b) - cos(l)
+    Omega0 = (240. * 1.e5) #240+/-8 km/s; Reid et al  2014
+    #print b,l, cos(b), cos(l), beta
+    A_x = -1/c * (cos(b)) * (Omega0**2/R0/kpc) * (cos(l) + beta/(sin(l)**2 + beta**2))
+    pf.A_x = A_x
+    #print 'Ax, Az: ',A_x, A_z
+    fac1 = float(pf.PX[1]/pf.PX[0])
+    fac2 = 8/240 #Omega_0
+    fac3 = 0.16/8.34 #R0 Reid et al 2014
+    val = float(Pb*(A_z + A_x))
+    err1 = A_x * fac1 
+    err2 = A_z * sqrt(fac1**2 + fac2**2 + fac3**2)
+    err = sqrt(err1**2 + err2**2) * float(Pb)
+    #print 'Gal_Acc_Corr:', val, err
+    return val, err
+
+def P(pf):
+    return Decimal(1)/pf.F0[0], (pf.F0[1]/pf.F0[0])/pf.F0[0]
+
+def Pdot(pf):
+    fac = Decimal(1)/pf.F0[0]/pf.F0[0]
+    val = -1 * fac * pf.F1[0] 
+    err = np.sqrt( (val * pf.F0[1]/pf.F0[0])**2 + (fac * pf.F1[1])**2 )
+    return Decimal(val), Decimal(err)
+
+def Pdot_int(pf):
+    v,e = Pdot(pf)
+    Pdot_Shl = Shlkovskii_corr(pf, P(pf)[0])
+    Pdot_Gal = Gal_Acc_Corr(pf, P(pf)[0])
+    val =  float(v) + Pdot_Shl[0] + Pdot_Gal[0]
+    err = np.sqrt(float(e)**2 + Pdot_Shl[1]**2 + Pdot_Gal[1]**2)
+    return Decimal(val), Decimal(err)
+
 def B(pf):
-    return 3.2e19*np.sqrt(np.abs(float(pf.F1[0]/pf.F0[0]**3)))
+    #return 3.2e19*np.sqrt(np.abs(float(pf.F1[0]/pf.F0[0]**3)))
+    p,perr = P(pf)
+    pd, pderr = Pdot_int(pf)
+    pef = perr/p
+    pdef = pderr/pd
+    val = Decimal(3.2e19) * Decimal(np.sqrt((p * pd)))
+    ef = Decimal(np.sqrt(pef**2 + pdef**2))/2
+    err = ef * val
+    return val, err
+    
 
 
 def Age(pf):
-    return np.abs(float(pf.F0[0]/pf.F1[0]/secperyear/2))
+    secperyear = 3600*24*Decimal('365.24218967')
+    p,perr = P(pf)
+    pd, pderr = Pdot_int(pf)
+    pef = perr/p
+    pdef = pderr/pd
+    ef = Decimal(np.sqrt(pef**2 + pdef**2))
+    val = p/pd/2/secperyear
+    return val, ef*val
+    #return np.abs(float(pf.F0[0]/pf.F1[0]/secperyear/2))
 
 def aveDM(pf):
     DMX, DMXErr, DMXR1, DMXR2 = pf.dmxlist
@@ -117,6 +211,7 @@ Fixed = OrderedDict([
     ])
 
 Derived = OrderedDict([
+        ('Pdot_int', r'Intrinsic period derivative, $\dot{P}_{\rm Int}$(s~s$^{-1}$)'),
         ('M1',r'Pulsar mass, $M_{\rm PSR}$ ($M_{\odot}$)'),
         ('B',r'Dipole magnetic field, $B$ (G)'),
         ('Age',r'Characteristic age, $\tau_c$ (yr)'),
@@ -200,7 +295,7 @@ def addmodeldata(m):
             if k == 'M1':
                 value.append(parseerror(*M1(m)))
             else:
-                value.append(SF(globals()[k](m)))
+                value.append(parseerror(*globals()[k](m)))
     return value
 
 m = model('Feb.T2.nml.par')
