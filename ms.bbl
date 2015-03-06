@@ -1,4 +1,4 @@
-\begin{thebibliography}{86}
+\begin{thebibliography}{87}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Arzoumanian {et~al.}(1994)Arzoumanian, Nice, Taylor, \&
@@ -188,7 +188,7 @@ Kaspi, V.~M., Taylor, J.~H., \& Ryba, M. 1994, ApJ, 428, 713
 
 \bibitem[{{Lewandowski} {et~al.}(2015){Lewandowski}, {Kowalinska}, \&
   {Kijak}}]{lkk15}
-{Lewandowski}, W., {Kowalinska}, M., \& {Kijak}, J. 2015, ArXiv e-prints
+{Lewandowski}, W., {Kowalinska}, M., \& {Kijak}, J. 2015, ArXiv:1502.06330
 
 \bibitem[{{Liu} {et~al.}(2014){Liu}, {Desvignes}, {Cognard}, {Stappers},
   {Verbiest}, {Lee}, {Champion}, {Kramer}, {Freire}, \& {Karuppusamy}}]{ldc+14}
@@ -299,6 +299,11 @@ Rickett, B.~J., \& Lyne, A.~G. 1990, MNRAS, 244, 68
 
 \bibitem[{{Shannon} \& {Cordes}(2012)}]{sc12}
 ---. 2012, \apj, 761, 64
+
+\bibitem[{{Shannon} {et~al.}(2013){Shannon}, {Ravi}, {Coles}, {Hobbs}, {Keith},
+  {Manchester}, {Wyithe}, {Bailes}, {Bhat}, {Burke-Spolaor}, {Khoo}, {Levin},
+  {Oslowski}, {Sarkissian}, {van Straten}, {Verbiest}, \& {Wang}}]{src+13}
+{Shannon}, R.~M., {et~al.} 2013, Science, 342, 334
 
 \bibitem[{Shklovskii(1970)}]{shk70}
 Shklovskii, I.~S. 1970, Sov. Astron., 13, 562
