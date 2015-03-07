@@ -4,14 +4,18 @@
 
 \documentclass[iop,apj,tighten]{emulateapj} 
 %\documentclass{emulateapj}
-%\usepackage{apjfonts}
+\usepackage{apjfonts}
 \usepackage{lineno} 
 \usepackage{natbib}
 \usepackage{epsf}
 \usepackage{url}
 \usepackage{color}
 \usepackage{mathrsfs, amsmath}
-\citestyle{aa}
+
+\usepackage[plainpages=false, colorlinks=true, anchorcolor=blue, linkcolor=blue, citecolor=blue, bookmarks=false]{hyperref}
+\citestyle{apj}
+%\citestyle{aa}
+
 %% --------------------------------------------------------
 \newcommand{\tc}[2]{\textcolor{#1}{#2}}
 \newcommand{\Msun}{\ifmmode\mbox{M}_{\odot}\else$\mbox{M}_{\odot}$\fi}
@@ -168,53 +172,53 @@ JAE acknowledges support by NASA through Einstein Fellowship grant PF4-150120.
   %pulsar and companion masses as drawn from an MCMC simulation. Bottom right: MCMC distribution of $\dot{P}_{\rm b}$.} 
 %\end{figure} 
 
-\begin{figure}
-\includegraphics[width=4in]{DMX.ps} \\ 
-\caption {\label{fig:dmx} The DM variation of PSR~J1713+0747. The DM plot is
-separated into two segments with a small ``instrumental'' DM offset. This offset exists 
-because the Mark~IV and ABPP ToAs (before mid 2004) are extracted using
-different pulse
-profile templates from those used for ASP, GASP, GUPPI and PUPPI ToAs (after
-mid 2004). This template difference leads to a systematic
-frequency-dependent arrival time shift. This shift is then absorbed by the DM
-fitting and manifest a systematic DM offset. The dotted line shows the Solar
-elongation of the pulsar. The subplot shows the structure
-function (error bars) of the bottom half (i.e. last $\sim 16$~years) of DM
-variation and its a power law fit (solid line). The best power law index is
-0.49(5), different from the value of $5/3$ expected from a
-``pure'' Kolmogorov medium. } 
-\end{figure} 
+%\begin{figure}
+%\includegraphics[width=4in]{DMX.ps} \\ 
+%\caption {\label{fig:dmx} The DM variation of PSR~J1713+0747. The DM plot is
+%separated into two segments with a small ``instrumental'' DM offset. This offset exists 
+%because the Mark~IV and ABPP ToAs (before mid 2004) are extracted using
+%different pulse
+%profile templates from those used for ASP, GASP, GUPPI and PUPPI ToAs (after
+%mid 2004). This template difference leads to a systematic
+%frequency-dependent arrival time shift. This shift is then absorbed by the DM
+%fitting and manifest a systematic DM offset. The dotted line shows the Solar
+%elongation of the pulsar. The subplot shows the structure
+%function (error bars) of the bottom half (i.e. last $\sim 16$~years) of DM
+%variation and its a power law fit (solid line). The best power law index is
+%0.49(5), different from the value of $5/3$ expected from a
+%``pure'' Kolmogorov medium. } 
+%\end{figure} 
 
 
-\begin{figure}
-\includegraphics[width=4in]{FD.ps} \\ 
-\caption {\label{fig:FD} GUPPI and PUPPI post-fit residuals versus frequency when fitted
-without the FD model, showing the frequency dependence of the ToAs that is 
-not accounted for by the DM. For
-clarity, this plot is made using only ToAs with error smaller than 3~$\mu$s.} 
-\end{figure} 
+%\begin{figure}
+%\includegraphics[width=4in]{FD.ps} \\ 
+%\caption {\label{fig:FD} GUPPI and PUPPI post-fit residuals versus frequency when fitted
+%without the FD model, showing the frequency dependence of the ToAs that is 
+%not accounted for by the DM. For
+%clarity, this plot is made using only ToAs with error smaller than 3~$\mu$s.} 
+%\end{figure} 
 
-\begin{figure}
-\includegraphics[scale=1.0]{fig3.eps} \\ 
-%\showthe\columnwidth
-\caption{\label{fig:res} Top panel: Daily-averaged residuals of J1713+0747 produced from a GLS that includes a 
-full noise model. The black dashed line and the gray shaded area show the maximum likelihood red noise
-realization and uncertainty. Bottom-left panel: Two-dimensional marginalized posterior probability plot of red
-noise spectral index vs. red noise amplitude where the solid, dashed and
-dashed-dot lines represent the 68, 95, and 99.7 percent credible regions.
-Bottom-right panel: One dimensional marginalized posterior probability for the
-red noise spectral index where the solid line denotes the maximum a-posteriori
-value and the dashed lines denote the 68\% credible interval. Note that the
-1D maximum marginalized posterior spectral index usually differs slightly from the
-global maximum likelihood value ($-2.92$).}
-\end{figure} 
+%\begin{figure}
+%\includegraphics[scale=1.0]{fig3.eps} \\ 
+%%\showthe\columnwidth
+%\caption{\label{fig:res} Top panel: Daily-averaged residuals of J1713+0747 produced from a GLS that includes a 
+%full noise model. The black dashed line and the gray shaded area show the maximum likelihood red noise
+%realization and uncertainty. Bottom-left panel: Two-dimensional marginalized posterior probability plot of red
+%noise spectral index vs. red noise amplitude where the solid, dashed and
+%dashed-dot lines represent the 68, 95, and 99.7 percent credible regions.
+%Bottom-right panel: One dimensional marginalized posterior probability for the
+%red noise spectral index where the solid line denotes the maximum a-posteriori
+%value and the dashed lines denote the 68\% credible interval. Note that the
+%1D maximum marginalized posterior spectral index usually differs slightly from the
+%global maximum likelihood value ($-2.92$).}
+%\end{figure} 
 
-\begin{figure}
-\includegraphics[scale=1.0]{fig4.eps} \\ 
-%\showthe\columnwidth
-\caption{\label{fig:detres} Top panel: Low frequency daily-averaged residuals of J1713+0747 with maximum likelihood
-jitter and red noise realization subtracted out. Bottom panel: High frequency daily-averaged residuals of J1713+0747 with maximum likelihood jitter and red noise realization subtracted out. The insets in both top and bottom panels show the histogram of the weighted residuals (weighted by EFAC and EQUAD corrected ToA uncertainties) in blue, along with a zero-mean unit-variance Gaussian distribution in red.}
-\end{figure} 
+%\begin{figure}[!h]
+%\includegraphics[scale=1.0]{fig4.eps} \\ 
+%%\showthe\columnwidth
+%\caption{\label{fig:detres} Top panel: Low frequency daily-averaged residuals of J1713+0747 with maximum likelihood
+%jitter and red noise realization subtracted out. Bottom panel: High frequency daily-averaged residuals of J1713+0747 with maximum likelihood jitter and red noise realization subtracted out. The insets in both top and bottom panels show the histogram of the weighted residuals (weighted by EFAC and EQUAD corrected ToA uncertainties) in blue, along with a zero-mean unit-variance Gaussian distribution in red.}
+%\end{figure} 
 
 %\begin{figure}
 %\includegraphics[width=4in]{residual.eps} \\ 
@@ -238,23 +242,23 @@ jitter and red noise realization subtracted out. Bottom panel: High frequency da
 %} 
 %\end{figure} 
 
-\begin{figure}
-%\includegraphics[width=8cm]{GdotContour.ps} \\ 
-\includegraphics[width=8cm]{finalGdot.ps} \\ 
-\caption {\label{fig:Gdot} Confidence contour of $\dot{G}$ and $\kappa_D$
-calculated from PSRs~J1012+5307, J1738+0333, and J1713+0747 using an MCMC simulation.
-The shaded area marks the 2$\sigma$ $\dot{G}$ limit from LLR. 
-} 
-\end{figure} 
+%\begin{figure}
+%%\includegraphics[width=8cm]{GdotContour.ps} \\ 
+%\includegraphics[width=8cm]{finalGdot.ps} \\ 
+%\caption {\label{fig:Gdot} Confidence contour of $\dot{G}$ and $\kappa_D$
+%calculated from PSRs~J1012+5307, J1738+0333, and J1713+0747 using an MCMC simulation.
+%The shaded area marks the 2$\sigma$ $\dot{G}$ limit from LLR. 
+%} 
+%\end{figure} 
 
 
-\input{obs.tex}
+%\input{obs.tex}
 
 %\input{model.tex}
-\input{tempomodel.tex}
-\input{tempo2model.tex}
+%\input{tempomodel.tex}
+%\input{tempo2model.tex}
 
-\input{rmstable.tex}
+%\input{rmstable.tex}
 
 \end{document}
 

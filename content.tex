@@ -31,7 +31,7 @@ systems.
 
 \section{Introduction}
 \label{sec:intro}
-\linenumbers
+%\linenumbers
 We present 21-yr timing of the millisecond pulsar (MSP) J1713+0747. This
 pulsar was discovered in 1993 \citep{fwc93}. It is one of the brightest pulsars timed by the
 North American Nanohertz Observatory for Gravitational Waves (NANOGrav;
@@ -102,6 +102,7 @@ Telescope (GBT).
 
 The timing observations were conducted using multiple generations of pulsar
 data backends (Table \ref{tab:obs}).
+\input{obs.tex}
 The earliest observations (1992--1994) used the Princeton Mark~III
 \citep{skn+92}, which collects two polarization data with a filter bank of 32
 spectral channels each 1.25~MHz wide. 
@@ -257,6 +258,10 @@ parameters (Table \ref{tab:par1}).
 In the T2 model of {\sc tempo2}, $\Omega$ is explicitly modeled and
 fitted, while $\dot{x}$ is implicitly modeled and not fitted as a parameter
 (Table \ref{tab:par2}).  
+%
+\input{tempomodel.tex}
+\input{tempo2model.tex}
+%
 Compared with previous timing efforts, we detected, for the first time, a
 significant decay rate of binary period $\dot{P}_{\rm b}$ due to relativistic
 effects. This is described in Section \ref{sec:obdecay}.    
@@ -314,6 +319,23 @@ those in \citet{sns+05} but are consistent with their reported uncertainties.
 
 \subsection{Noise model}
 \label{sec:noise}
+
+%
+\begin{figure*}[!ht]
+\includegraphics[scale=1.0]{fig3.eps} \\ 
+%\showthe\columnwidth
+\caption{\label{fig:res} Top panel: Daily-averaged residuals of J1713+0747 produced from a GLS that includes a 
+full noise model. The black dashed line and the gray shaded area show the maximum likelihood red noise
+realization and uncertainty. Bottom-left panel: Two-dimensional marginalized posterior probability plot of red
+noise spectral index vs. red noise amplitude where the solid, dashed and
+dashed-dot lines represent the 68, 95, and 99.7 percent credible regions.
+Bottom-right panel: One dimensional marginalized posterior probability for the
+red noise spectral index where the solid line denotes the maximum a-posteriori
+value and the dashed lines denote the 68\% credible interval. Note that the
+1D maximum marginalized posterior spectral index usually differs slightly from the
+global maximum likelihood value ($-2.92$).}
+\end{figure*} 
+%
 The noise model used in this analysis is a parameterized model that is a function of several unknown quantities describing both correlated and uncorrelated noise sources. Uncorrelated noise is 
 independent from one ToA to another, while the correlated noise is not. 
 For instance, the template matching error and the radiometer noise are
@@ -391,6 +413,13 @@ p(\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi}|\delta\mathbf{
 p(\delta\mathbf{t}|\boldsymbol{\epsilon}, \mathbf{a}, \mathbf{j},\boldsymbol{\phi})p(\mathbf{j}|J_{k})p(\mathbf{a}|\rho_{n}),
 \ee
 
+\begin{figure*}[!ht]
+\includegraphics[scale=1.0]{fig4.eps} \\ 
+%\showthe\columnwidth
+\caption{\label{fig:detres} Top panel: Low frequency daily-averaged residuals of J1713+0747 with maximum likelihood
+jitter and red noise realization subtracted out. Bottom panel: High frequency daily-averaged residuals of J1713+0747 with maximum likelihood jitter and red noise realization subtracted out. The insets in both top and bottom panels show the histogram of the weighted residuals (weighted by EFAC and EQUAD corrected ToA uncertainties) in blue, along with a zero-mean unit-variance Gaussian distribution in red.}
+\end{figure*} 
+
 For the purposes of estimating the underlying noise characteristics of our
 data set, the parameters $\mathbf{\epsilon}$, $\mathbf{j}$, $\mathbf{a}$ are
 nuisance parameters that we wish to marginalize over. This can be done in a
@@ -434,6 +463,8 @@ $O(N_{\rm par}^{3})$, where $N_{\rm par}$ is the sum of the number of timing
 parameters, red noise sample frequencies, and observing epochs. For this
 dataset the computational speed up is a factor of $\sim10^{3}$.
 
+\input{rmstable.tex}
+
 
 For a given set of hyper-parameters, this allows us to determine the maximum
 likelihood timing model parameters via the equivalent of a generalized least
@@ -476,7 +507,8 @@ covariance between the jitter parameters and the EQUAD parameters.
 
 In Figure \ref{fig:res} we show the red noise realization based on our best
 noise model (Table \ref{tab:wrms}) and compare it to the post-fit residuals of
-a {\sc tempo} general least squares (GLS) fit. The bottom
+a {\sc tempo} general least squares (GLS) fit.
+The bottom
 panels of Figure \ref{fig:res} show the one- and two-dimensional posterior probability plots
 of the red noise. This noise model describes the data very well as we can see in Figure \ref{fig:detres} in which the maximum likelihood realizations of red and jitter noise are subtracted out. We see from the figure that both the high and low frequency residuals (with red and jitter noise realizations subtracted) are white (described by our EFAC and EQUAD parameters) and the weighted residuals follow a zero-mean unit-variance Gaussian distribution.
 
@@ -558,15 +590,24 @@ time.
 \label{sec:mass}
 The timing model of PSR~J1713+0747 has been significantly improved by the 21-yr timing effort.
 Most notably, the pulsar and the companion masses have been more precisely
-constrained (Table \ref{tab:par1} and \ref{tab:par2}) through Shapiro delay measurements. The
+constrained (Table \ref{tab:par1} and \ref{tab:par2}, Figure \ref{fig:masses}) through Shapiro delay measurements. The
 companion's mass $M_{\rm c} = 0.286\pm0.012$~\Msun\, and the pulsar $M_{\rm
 PSR}=1.31\pm0.11$~\Msun\, are in good agreement with the previously measured
-values \citep{sns+05}.
+values \citep{sns+05}. Furthermore, we have carried out an MCMC run that uses the non-linear timing
+model in order to map out any non-Gaussian correlations in parameter space. We find that the the non-linear
+model gives nearly identical results to the standard linear-least-squares method of textsc{Tempo}/\textsc{tempo2}.
 We note that the derived pulsar mass tends to be significantly underestimated
 ($\Delta M_{\rm PSR} \sim 0.3 M_{\odot}$) if no jitter parameters were included in our noise model (Table
 \ref{tab:par1} and \ref{tab:par2}), suggesting that
 correlated noise could significantly impact the result of high
 precision timing analysis.
+
+\begin{figure*}[!ht]
+\includegraphics[scale=1]{1713_masses_color.eps} \\ 
+\caption {\label{fig:masses}  One and two dimensional posterior probability distributions of the cosine of the inclination
+angle, pulsar mass and companion mass. The maximum marginalized posterior value and credible interval is very consistent with the standard linear least squares solution from \textsc{Tempo}/\textsc{tempo2}.
+} 
+\end{figure*} 
 
 
 The pulsar's mass is comparable with the distribution of pulsar masses
@@ -628,6 +669,24 @@ precision are not sufficient for measuring epoch-to-epoch DM changes.
 %Therefore, the DM values in our {\it DMX} model were determined by ToAs from
 %similar epochs and from at least two frequency bands. 
 Figure \ref{fig:dmx} shows the measured DM variation of PSR~J1713+0747.
+%
+\begin{figure}
+\includegraphics[width=3.4in]{DMX.ps} \\ 
+\caption {\label{fig:dmx} The DM variation of PSR~J1713+0747. The DM plot is
+separated into two segments with a small ``instrumental'' DM offset. This offset exists 
+because the Mark~IV and ABPP ToAs (before mid 2004) are extracted using
+different pulse
+profile templates from those used for ASP, GASP, GUPPI and PUPPI ToAs (after
+mid 2004). This template difference leads to a systematic
+frequency-dependent arrival time shift. This shift is then absorbed by the DM
+fitting and manifest a systematic DM offset. The dotted line shows the Solar
+elongation of the pulsar. The subplot shows the structure
+function (error bars) of the bottom half (i.e. last $\sim 16$~years) of DM
+variation and its a power law fit (solid line). The best power law index is
+0.49(5), different from the value of $5/3$ expected from a
+``pure'' Kolmogorov medium. } 
+\end{figure} 
+%
 %Note that the systematic drop of DM around 2009 is likely instrumental, due to
 %the use of different standard pulse profile templates when extracting 
 %ToAs from the Mark~IV, ABPP data. The DM values inferred from different
@@ -811,7 +870,16 @@ After removing the dispersion that causes ToA delays proportional to $f^{-2}$,
 where $f$ is the observing frequency,
  we still see small remaining frequency-dependent residuals from wide-band
 observations using
-different instruments and telescopes (Figure \ref{fig:FD}).  
+different instruments and telescopes (Figure \ref{fig:FD}). 
+%
+\begin{figure}
+\includegraphics[width=3.4in]{FD.ps} \\ 
+\caption {\label{fig:FD} GUPPI and PUPPI post-fit residuals versus frequency when fitted
+without the FD model, showing the frequency dependence of the ToAs that is 
+not accounted for by the DM. For
+clarity, this plot is made using only ToAs with error smaller than 3~$\mu$s.} 
+\end{figure} 
+% 
 It appears that the low-frequency ($\sim$800~MHz) signals lead the
 high-frequency (L and S band) signals by tens of microseconds.
 The cause of such profile evolution is not clear. It could be a change in the pulsar's
@@ -937,6 +1005,15 @@ PSR~J1713+0747 has the smallest known $\dot{P}_{\rm b}^{\rm exc}/(2P_{\rm
 b})\simeq(-0.5\pm0.9)\times10^{-12}$~yr$^{-1}$ (Section \ref{sec:obdecay}) and is
 particularly useful for constraining the time variability of gravitational
 constant.
+
+\begin{figure}
+%\includegraphics[width=8cm]{GdotContour.ps} \\ 
+\includegraphics[width=8cm]{finalGdot.ps} \\ 
+\caption {\label{fig:Gdot} Confidence contour of $\dot{G}$ and $\kappa_D$
+calculated from PSRs~J1012+5307, J1738+0333, and J1713+0747 using an MCMC simulation.
+The shaded area marks the 2$\sigma$ $\dot{G}$ limit from LLR. 
+} 
+\end{figure} 
 
 \citealt{lwj+09} and \citealt{fwe+12} showed that $\dot{G}/G$ can be constrained by pulsar
 binaries in a more rigorous fashion
