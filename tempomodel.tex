@@ -7,13 +7,13 @@
 \tablecaption{\label{tab:par1} Timing model parameters\tablenotemark{a} from {\it tempo}. }
 \tablehead{ \colhead{Parameter}  &\colhead{EFAC \& EQUAD}  &\colhead{with jitter model}  &\colhead{jitter \& red noise model}   }
 \startdata
-\textit{Measured Parameters}&  &  &  \\
+\textit{Measured Parameters}&  &  &  \\[1 mm]
 Right Ascension, $\alpha$ (J2000)&  17:13:49.5320251(5)&  17:13:49.5320248(7)&  17:13:49.5320252(8)\\
 Declination, $\delta$ (J2000)&  7:47:37.506150(12)&  7:47:37.506155(19)&  7:47:37.50616(2)\\
 Spin Frequecy $\nu$~(s$^{-1}$)&  218.81184385472585(6)&  218.81184385472594(10)&  218.8118438547254(9)\\
 Spin down rate $\dot{\nu}$ (s$^{-2}$)&  $-4.083891(4)\times10^{-16}$&  $-4.083894(7)\times10^{-16}$&  $-4.08385(5)\times10^{-16}$\\
-Proper motion in $\alpha$, $\nu_{\alpha}=\dot{\alpha}\cos \delta$ (mas~yr$^{-1}$)&  4.9177(11)&  4.9179(18)&  4.917(2)\\
-Proper motion in $\delta$, $\nu_{\delta}=\dot{\delta}$ (mas~yr$^{-1}$)&  -3.917(2)&  -3.915(3)&  -3.916(4)\\
+Proper motion in $\alpha$, $\mu_{\alpha}=\dot{\alpha}\cos \delta$ (mas~yr$^{-1}$)&  4.9177(11)&  4.9179(18)&  4.917(2)\\
+Proper motion in $\delta$, $\mu_{\delta}=\dot{\delta}$ (mas~yr$^{-1}$)&  -3.917(2)&  -3.915(3)&  -3.916(4)\\
 Parallax, $\pi$ (mas)&  0.871(15)&  0.84(3)&  0.86(3)\\
 Dispersion Measure\tablenotemark{b} (pc~cm$^{-3}$)&  15.97000(14)&  15.97002(13)&  15.97002(13)\\
 Orbital Period, $P_{\rm b}$ (day)&  67.82513826918(16)&  67.82513826935(19)&  67.82513826929(19)\\
@@ -29,15 +29,15 @@ Profile frequency dependency parameter, FD1 &  -0.00016271(19)&  -0.0001623(2)& 
 Profile frequency dependency parameter, FD2 &  0.0001352(3)&  0.0001350(3)&  0.0001350(3)\\
 Profile frequency dependency parameter, FD3 &  -0.0000660(6)&  -0.0000668(6)&  -0.0000668(6)\\
 Profile frequency dependency parameter, FD4 &  0.0000145(4)&  0.0000153(4)&  0.0000153(4)\\
-\textit{Fixed Parameters}&  &  &  \\
+\textit{Fixed Parameters}&  &  &  \\[1 mm]
 Solar system ephemeris&  DE421&  DE421&  DE421\\
 Reference epoch for $\alpha$, $\delta$, and $\nu$ (MJD)&  53729&  53729&  53729\\
 Solar wind electron density $n_0$ (cm~$^{-3}$)\tablenotemark{d}& 0 & 0 & 0 \\
 Rate of periastron advance, $\dot{\omega}$ (deg/yr)\tablenotemark{e}&  0.00024&  0.00024&  0.00024\\
 Position angle of ascending node, $\Omega$ (deg)\tablenotemark{f}&  88.43&  88.43&  88.43\\
-Red Noise Amplitude ($\mu$s/${m yr}^{-1/2}$)&  --&  --&  0.025 \tablenotemark{g}\\
+Red Noise Amplitude ($\mu$s/${\rm yr}^{-1/2}$)&  --&  --&  0.025 \tablenotemark{g}\\
 Red Noise Spectral Index&  --&  --&  -2.92\\
-\textit{Derived Parameters}&  &  &  \\
+\textit{Derived Parameters}&  &  &  \\[1 mm]
 Intrinsic period derivative, $\dot{P}_{\rm Int}$(s~s$^{-1}$)\tablenotemark{*}&  $8.958(12)\times10^{-21}$&  $8.98(2)\times10^{-21}$&  $8.97(2)\times10^{-21}$\\
 Dipole magnetic field, $B$ (G)\tablenotemark{*}&  $2.0475(14)\times10^{8}$&  $2.050(3)\times10^{8}$&  $2.049(3)\times10^{8}$\\
 Characteristic age, $\tau_c$ (yr)\tablenotemark{*}&  $8.083(11)\times10^{9}$& $8.07(2)\times10^{9}$&  $8.07(2)\times10^{9}$\\
@@ -47,8 +47,9 @@ Pulsar mass, $M_{\rm PSR}$ ($M_{\odot}$)&  0.90(4)&  1.32(11)&  1.21(7)
 allows us to assume a position angle of ascending node ($\Omega$) and fit for the apparent change rate of the projected semi-major axis ($\dot{x}$) due to proper motion. Numbers in parentheses indicate the uncertainties on the last digit(s).  Uncertainties on parameters are estimated by the {\it tempo} program using information in the covariance matrix.}
 \tablenotetext{b}{The averaged DM value; See Section 3.2 and Figure 2 for more discussion.}
 \tablenotetext{c}{See Figure 2 of \citealt{sns+05} for definition.}
-\tablenotetext{d}{The model for estimating solar wind contribution in DM: DM$_\odot=4.85\times10^{-6}n_0\frac{\theta}{\sin
-\theta}$cm$^{-3}$~pc, where $\theta$ is the solar elongation of the pulsar and $n_0$ is the solar wind electron density at 1 AU from the Sun. We fix $n_0$
+\tablenotetext{d}{The model for estimating solar wind contribution in DM:
+    DM$_\odot=4.85\times10^{-6}n_0(\pi - \theta)/\sin
+    \theta$~cm$^{-3}$~pc \citep{yhc+07}, where $\theta$ is the solar elongation of the pulsar and $n_0$ is the solar wind electron density at 1 AU from the Sun. We fix $n_0$
 to the value that minimize annual variations in the DM curve (Figure \ref{fig:dmx}).}
 \tablenotetext{e}{The rate of periastron advance was not fitted but fixed to the GR value
 because it is highly co-variant with the orbital period. }
