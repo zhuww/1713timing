@@ -1,4 +1,4 @@
-\begin{thebibliography}{87}
+\begin{thebibliography}{93}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Arzoumanian {et~al.}(1994)Arzoumanian, Nice, Taylor, \&
@@ -23,6 +23,17 @@ Backer, D.~C., Dexter, M.~R., Zepka, A., D., N., Wertheimer, D.~J., Ray, P.~S.,
 
 \bibitem[{Bell \& Damour(1996)}]{bd96}
 Bell, J.~F., \& Damour, T. 1996, Class. Quant Grav., 13, 3121
+
+\bibitem[{{Berti} {et~al.}(2015){Berti}, {Barausse}, {Cardoso}, {Gualtieri},
+  {Pani}, {Sperhake}, {Stein}, {Wex}, {Yagi}, {Baker}, {Burgess}, {Coelho},
+  {Doneva}, {De Felice}, {Ferreira}, {Freire}, {Healy}, {Herdeiro},
+  {Horbatsch}, {Kleihaus}, {Klein}, {Kokkotas}, {Kunz}, {Laguna}, {Lang}, {Li},
+  {Littenberg}, {Matas}, {Mirshekari}, {Okawa}, {Radu}, {O'Shaughnessy},
+  {Sathyaprakash}, {Van Den Broeck}, {Winther}, {Witek}, {Emad Aghili},
+  {Alsing}, {Bolen}, {Bombelli}, {Caudill}, {Chen}, {Degollado}, {Fujita},
+  {Gao}, {Gerosa}, {Kamali}, {Silva}, {Rosa}, {Sadeghian}, {Sampaio}, {Sotani},
+  \& {Zilhao}}]{bbc+15}
+{Berti}, E., {et~al.} 2015, ArXiv:1501.07274
 
 \bibitem[{Brans \& Dicke(1961)}]{bd61}
 Brans, C., \& Dicke, R.~H. 1961, Phys. Rev., 124, 925
@@ -135,6 +146,12 @@ Foster, R.~S., Wolszczan, A., \& Camilo, F. 1993, ApJ, 410, L91
   {Lyne}}]{gsf+11}
 {Gonzalez}, M.~E., {et~al.} 2011, \apj, 743, 102
 
+\bibitem[{{Hinshaw} {et~al.}(2009){Hinshaw}, {Weiland}, {Hill}, {Odegard},
+  {Larson}, {Bennett}, {Dunkley}, {Gold}, {Greason}, {Jarosik}, {Komatsu},
+  {Nolta}, {Page}, {Spergel}, {Wollack}, {Halpern}, {Kogut}, {Limon}, {Meyer},
+  {Tucker}, \& {Wright}}]{hwh+09}
+{Hinshaw}, G., {et~al.} 2009, \apjs, 180, 225
+
 \bibitem[{{Hobbs} {et~al.}(2010){Hobbs}, {Lyne}, \& {Kramer}}]{hlk10}
 {Hobbs}, G., {Lyne}, A.~G., \& {Kramer}, M. 2010, \mnras, 402, 1027
 
@@ -151,8 +168,12 @@ Foster, R.~S., Wolszczan, A., \& Camilo, F. 1993, ApJ, 410, L91
 \bibitem[{Hotan {et~al.}(2006)Hotan, Bailes, \& Ord}]{hbo06}
 Hotan, A.~W., Bailes, M., \& Ord, S.~M. 2006, MNRAS, 369, 1502
 
+\bibitem[{Jordan(1955)}]{jor55}
+Jordan, P. 1955, Schwerkraft und Weltall Grundlagen Der Theoretischen
+  Kosmologie (Vieweg)
+
 \bibitem[{Jordan(1959)}]{jor59}
-Jordan, P. 1959, Z. Phys., 157, 112
+---. 1959, Z. Phys., 157, 112
 
 \bibitem[{Kaspi {et~al.}(1994)Kaspi, Taylor, \& Ryba}]{ktr94}
 Kaspi, V.~M., Taylor, J.~H., \& Ryba, M. 1994, ApJ, 428, 713
@@ -238,40 +259,6 @@ Nordtvedt, K. 1990, Phys. Rev. Lett., 65, 953
   {Demorest}, {Ferdman}, {Gonzalez}, {Nice}, {Ransom}, \& {Stairs}}]{pjl+13}
 {Perrodin}, D., {et~al.} 2013, ArXiv:1311.3693
 
-\bibitem[{{Planck Collaboration}(2014){Planck Collaboration},
-  {Aghanim}, {Armitage-Caplan}, {Arnaud}, {Ashdown}, {Atrio-Barandela},
-  {Aumont}, {Baccigalupi}, {Banday}, {Barreiro}, {Bartlett}, {Benabed},
-  {Benoit-L{\'e}vy}, {Bernard}, {Bersanelli}, {Bielewicz}, {Bobin}, {Bock},
-  {Bond}, {Borrill}, {Bouchet}, {Bridges}, {Burigana}, {Butler}, {Cardoso},
-  {Catalano}, {Challinor}, {Chamballu}, {Chiang}, {Chiang}, {Christensen},
-  {Clements}, {Colombo}, {Couchot}, {Crill}, {Curto}, {Cuttaia}, {Danese},
-  {Davies}, {Davis}, {de Bernardis}, {de Rosa}, {de Zotti}, {Delabrouille},
-  {Diego}, {Donzelli}, {Dor{\'e}}, {Dupac}, {Efstathiou}, {En{\ss}lin},
-  {Eriksen}, {Finelli}, {Forni}, {Frailis}, {Franceschi}, {Galeotta}, {Ganga},
-  {Giard}, {Giardino}, {Gonz{\'a}lez-Nuevo}, {G{\'o}rski}, {Gratton},
-  {Gregorio}, {Gruppuso}, {Hansen}, {Hanson}, {Harrison}, {Helou},
-  {Hildebrandt}, {Hivon}, {Hobson}, {Holmes}, {Hovest}, {Huffenberger},
-  {Jones}, {Juvela}, {Keih{\"a}nen}, {Keskitalo}, {Kisner}, {Knoche}, {Knox},
-  {Kunz}, {Kurki-Suonio}, {L{\"a}hteenm{\"a}ki}, {Lamarre}, {Lasenby},
-  {Laureijs}, {Lawrence}, {Leonardi}, {Lewis}, {Liguori}, {Lilje},
-  {Linden-V{\o}rnle}, {L{\'o}pez-Caniego}, {Lubin}, {Mac{\'{\i}}as-P{\'e}rez},
-  {Mandolesi}, {Maris}, {Marshall}, {Martin}, {Mart{\'{\i}}nez-Gonz{\'a}lez},
-  {Masi}, {Massardi}, {Matarrese}, {Mazzotta}, {Meinhold}, {Melchiorri},
-  {Mendes}, {Migliaccio}, {Mitra}, {Moneti}, {Montier}, {Morgante}, {Mortlock},
-  {Moss}, {Munshi}, {Naselsky}, {Nati}, {Natoli}, {N{\o}rgaard-Nielsen},
-  {Noviello}, {Novikov}, {Novikov}, {Osborne}, {Oxborrow}, {Pagano}, {Pajot},
-  {Paoletti}, {Pasian}, {Patanchon}, {Perdereau}, {Perrotta}, {Piacentini},
-  {Pierpaoli}, {Pietrobon}, {Plaszczynski}, {Pointecouteau}, {Polenta},
-  {Ponthieu}, {Popa}, {Pratt}, {Pr{\'e}zeau}, {Puget}, {Rachen}, {Reach},
-  {Reinecke}, {Ricciardi}, {Riller}, {Ristorcelli}, {Rocha}, {Rosset},
-  {Rubi{\~n}o-Mart{\'{\i}}n}, {Rusholme}, {Santos}, {Savini}, {Scott},
-  {Seiffert}, {Shellard}, {Spencer}, {Sunyaev}, {Sureau}, {Suur-Uski},
-  {Sygnet}, {Tauber}, {Tavagnacco}, {Terenzi}, {Toffolatti}, {Tomasi},
-  {Tristram}, {Tucci}, {T{\"u}rler}, {Valenziano}, {Valiviita}, {Van Tent},
-  {Vielva}, {Villa}, {Vittorio}, {Wade}, {Wandelt}, {White}, {Yvon}, {Zacchei},
-  {Zibin}, \& {Zonca}}]{aaa+13}
-  {Planck Collaboration} 2014, \aap, 571, A27
-
 \bibitem[{Podsiadlowski {et~al.}(2002)Podsiadlowski, Rappaport, \&
   Pfahl}]{prp02b}
 Podsiadlowski, P., Rappaport, S., \& Pfahl, E.~D. 2002, ApJ, 565, 1107
@@ -287,6 +274,11 @@ Podsiadlowski, P., Rappaport, S., \& Pfahl, E.~D. 2002, ApJ, 565, 1107
   Han}]{rpj+95}
 Rappaport, S., Podsiadlowski, P., Joss, P.~C., DiStefano, R., \& Han, Z. 1995,
   MNRAS, 273, 731
+
+\bibitem[{{Reid} {et~al.}(2014){Reid}, {Menten}, {Brunthaler}, {Zheng}, {Dame},
+  {Xu}, {Wu}, {Zhang}, {Sanna}, {Sato}, {Hachisuka}, {Choi}, {Immer},
+  {Moscadelli}, {Rygl}, \& {Bartkiewicz}}]{rmb+14}
+{Reid}, M.~J., {et~al.} 2014, \apj, 783, 130
 
 \bibitem[{Rickett(1990)}]{ric90}
 Rickett, B.~J. 1990, ARAA, 28, 561
@@ -304,6 +296,11 @@ Rickett, B.~J., \& Lyne, A.~G. 1990, MNRAS, 244, 68
   {Manchester}, {Wyithe}, {Bailes}, {Bhat}, {Burke-Spolaor}, {Khoo}, {Levin},
   {Oslowski}, {Sarkissian}, {van Straten}, {Verbiest}, \& {Wang}}]{src+13}
 {Shannon}, R.~M., {et~al.} 2013, Science, 342, 334
+
+\bibitem[{{Shao} {et~al.}(2015){Shao}, {Stairs}, {Antoniadis}, {Deller},
+  {Freire}, {Hessels}, {Janssen}, {Kramer}, {Kunz}, {L{\"a}mmerzahl},
+  {Perlick}, {Possenti}, {Ransom}, {Stappers}, \& {van Straten}}]{ssa+15}
+{Shao}, L., {et~al.} 2015, ArXiv:1501.00058
 
 \bibitem[{Shklovskii(1970)}]{shk70}
 Shklovskii, I.~S. 1970, Sov. Astron., 13, 562
@@ -364,11 +361,17 @@ Wex, N. 2000, in Pulsar Astronomy - 2000 and Beyond, {IAU} Colloquium 177, ed.
   M.~Kramer, N.~Wex, \& R.~Wielebinski (San Francisco: Astronomical Society of
   the Pacific), 113--116
 
+\bibitem[{{Wex}(2014)}]{wex14}
+{Wex}, N. 2014, ArXiv:1402.5594
+
 \bibitem[{{Will}(2001)}]{Will01}
 {Will}, C. 2001, Living Reviews in Relativity, 4, 4
 
 \bibitem[{{Will}(1993)}]{Will93}
 {Will}, C.~M. 1993, {Theory and Experiment in Gravitational Physics}
+
+\bibitem[{{Will}(2014)}]{will14}
+---. 2014, Living Reviews in Relativity, 17, 4
 
 \bibitem[{Wu \& Wang(1986)}]{ww86a}
 Wu, Y.-S., \& Wang, Z. 1986, Phys. Rev. Lett., 57, 1978
