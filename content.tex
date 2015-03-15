@@ -1,7 +1,7 @@
 
 \begin{abstract}
-Pulsars are precise cosmic clocks and excellent testing grounds for
-fundamental physics, especially for testing gravitational theories. 
+%Pulsars are precise cosmic clocks and excellent testing grounds for
+%fundamental physics, especially for testing gravitational theories. 
 We report 21-yr timing of one of the most precise
 pulsars: PSR~J1713+0747. The pulsar's pulse times of arrival are well
 modeled, with residuals having weighted root mean square of $\sim 92$~ns, by a
@@ -10,11 +10,11 @@ white dwarf companion and a noise model that incorporates short- and
 long-timescale correlated noise such as jitter and red noise. 
 The new dataset allows us to update and greatly improve previous measurements
 of the system properties, including the masses of the neutron star
-[1.31(11)~\Msun] and white dwarf [0.286(12)~\Msun] as well as their parallax 
+($1.31\pm0.11$~\Msun) and white dwarf ($0.286\pm0.012$~\Msun) as well as their parallax 
 distance [1.15(3)~kpc].  
 We measured a change in the observed orbital period of PSR~J1713+0747, and
 attribute this to the relative motion of the binary system and the Earth. 
-The intrinsic change in orbital period, $\dot{P}^{\rm Int}_{\rm b}$, is $-0.20(17)$~ps~s$^{-1}$,
+The intrinsic change in orbital period, $\dot{P}^{\rm Int}_{\rm b}$, is $-0.20\pm0.17$~ps~s$^{-1}$,
 %$\dot{P}^{\rm Int}_{\rm b}=-0.20\pm0.17\times10^{-12}$s~s$^{-1}$, 
 not distinguishable from zero.
 This result, combined with the measured $\dot{P}^{\rm Int}_{\rm b}$ of other
@@ -22,7 +22,7 @@ pulsars,
 can place limits on potential changes in the gravitational constant $G$
 as predicted in some alternative theories of gravitation. 
 We found that $\dot{G}/G$ is consistent with zero
-[$-0.6(1.1)\times10^{-12}$~yr$^{-1}$, 95\% confidence level] and changes at 
+[$(-0.6\pm1.1)\times10^{-12}$~yr$^{-1}$, 95\% confidence level] and changes at 
 least a factor of $31$ (99.7\% confidence level) more slowly than the average expansion 
 rate of the Universe. This is the current best $\dot{G}/G$ limit from pulsar binary
 systems.
@@ -63,7 +63,8 @@ the orientation of the orbit in the sky.
 This is one of the few binaries in which the 3D-orientation of the
 binary orbit can be completely solved. Using 21 yrs of data, we
 refine the previously-published measurements of these orbital parameters.
-We also find stringent constraint on the decay rate of the binary orbit due to the system's
+We also find stringent constraint on the apparent variation of the orbital
+period due to the system's
 motion (the Shklovskii effect and Galactic differential acceleration).
 %These measurements also enable better tests of the theories of gravitation (see Section \ref{sec:res} for details).
 
@@ -75,8 +76,8 @@ raised by \citet{dir37} based on his large-number hypothesis.
 Later this become a prediction of some alternative theories of gravitation. 
 For example, the scalar-tensor theory \citep{jor55,jor59,fie56,bd61} 
 modifies Einstein's equation of gravitation by coupling mass with
-large-scale scalar-tensor fields, and predicts that, as the universe expands,
-the scalar field will also change, causing the gravitational constant to vary  
+long-range scalar-tensor fields, and predicts that, as the universe expands,
+the scalar field will also change, causing the effective gravitational constant to vary  
 on the cosmological timescale. 
 Similar ideas were also revisited by gravitational theories involving extra dimensions
 \citep{mar84,ww86a}.
@@ -85,13 +86,14 @@ $G$ thanks to its high timing precision and long orbital period. Using timing
 results reported in this paper, we found a stringent generic upper limit on 
 $\dot{G}$ (see Section \ref{sec:Gdot} for details). 
 
-The PSR~J1713+0747 binary is also an excellent laboratory for testing physical 
-principles such as the strong equivalence principle (SEP) and the preferred
-frame effect (PFE), because small violation of these principles could polarize the
-binary orbit and result in potentially observable effects \citep{will14}. We can set
-upper limits on the violations of these principles by observing
+The PSR~J1713+0747 binary is also an excellent laboratory for testing 
+the strong equivalence principle (SEP) and the preferred
+frame effect (PFE), because the violation of SEP or the existence of PFE could polarize the
+binary orbit and result in potentially observable effects. Some of these
+effects are discussed in \citep{fkw12, will14}. We can put stringent generic
+constrains on alternative theories by observing
 low-eccentricity pulsar binary systems. Section \ref{sec:sep} presents the
-constraint on the violation of SEP and PFE from our 21 yrs of observation of PSR~J1713+0747.
+constraint on the violation of SEP and the significance of PFE from our 21 yrs of observation of PSR~J1713+0747.
 
 \section{Observations}
 Timing observations of PSR~J1713+0747 started in 1993 at the Arecibo
@@ -144,9 +146,6 @@ from 1150--1765~MHz using 50 spectral channels each 12.5~MHz wide. When observin
 PUPPI takes data from 1770--1880 MHz and 2050--2405 MHz using 38 spectral
 channels each 12.5~MHz wide.
 The spectral bandwidth and resolution provided by GUPPI and PUPPI are crucial for resolving the pulse profile evolution in frequency described in Section \ref{sec:FD}.
-
-The date span, number of observation epochs, specifications of the
-systems are listed in Table \ref{tab:obs}. 
 
 We combine the pulse time of arrivals (ToAs) used in \citealt{sns+05} and those
 of the later observations, for a data span of 21 yrs, with a
@@ -223,6 +222,8 @@ As a result, the offset between GASP and GUPPI, and the offset between ASP and
 PUPPI are well measured from these parallel observations using all NANOGrav
 pulsars. These offsets are fixed when modeling the ToAs. 
 
+The date span, number of observation epochs, specifications of the
+systems are listed in Table \ref{tab:obs}. 
 
 
 
@@ -256,8 +257,9 @@ The orientation of the orbit in the sky is modeled by the
 parameter $\Omega$, which represents the position angle of the ascending node.
 In {\sc tempo}, we grid search for the best $\Omega$ and then hold it fixed when fitting other
 parameters (Table \ref{tab:par1}).
-In the T2 model of {\sc tempo2}, $\Omega$ is explicitly modeled and
-fitted, while $\dot{x}$ is implicitly modeled and not fitted as a parameter
+In the T2 model of {\sc tempo2} \citep{ehm06}, $\Omega$ is explicitly modeled and
+fitted, while the changing of $x$, including the $\dot{x}$ caused by proper motion and the 
+periodic changes due to orbital parallaxes of the earth and the pulsar \citep{kop96}, are implicitly modeled and not fitted as a parameter
 (Table \ref{tab:par2}).  
 %
 \input{tempomodel.tex}
@@ -587,57 +589,6 @@ time.
 
 
 
-\subsection{Mass measurements}
-\label{sec:mass}
-The timing model of PSR~J1713+0747 has been significantly improved by the 21-yr timing effort.
-Most notably, the pulsar and the companion masses have been more precisely
-constrained (Table \ref{tab:par1} and \ref{tab:par2}, Figure \ref{fig:masses}) through Shapiro delay measurements. The
-companion's mass $M_{\rm c} = 0.286\pm0.012$~\Msun\, and the pulsar $M_{\rm
-PSR}=1.31\pm0.11$~\Msun\, are in good agreement with the previously measured
-values \citep{sns+05}. Furthermore, we have carried out an MCMC run that uses the non-linear timing
-model in order to map out any non-Gaussian correlations in parameter space. We find that the the non-linear
-model gives nearly identical results to the standard linear-least-squares method of textsc{Tempo}/\textsc{tempo2}.
-We note that the derived pulsar mass tends to be significantly underestimated
-($\Delta M_{\rm PSR} \sim 0.3 M_{\odot}$) if no jitter parameters were included in our noise model (Table
-\ref{tab:par1} and \ref{tab:par2}), suggesting that
-correlated noise could significantly impact the result of high
-precision timing analysis.
-
-\begin{figure*}[!ht]
-\includegraphics[scale=1]{1713_masses_color.eps} \\ 
-\caption {\label{fig:masses}  One and two dimensional posterior probability distributions of the cosine of the inclination
-angle, pulsar mass and companion mass. The maximum marginalized posterior value and credible interval is very consistent with the standard linear least squares solution from \textsc{Tempo}/\textsc{tempo2} The solid, dashed and dash-dotted lines represent the one, two and three-sigma credible regions, respectively.
-} 
-\end{figure*} 
-
-
-The pulsar's mass is comparable with the distribution of pulsar masses
-in other neutron star-white dwarf systems, and in good
-agreement with the distribution of pulsar masses found in recycled binaries
-\citep{opns12,kkdt13}. The precise measurement of neutron star masses like this
-may eventually help us understand the properties of matter in extreme 
-density \citep{lat12}.
-
-In the standard picture of binary evolution, an MSP with a low-mass white dwarf companion must have been spun up through accretion when the white dwarf was a giant star filling its Roche lobe. 
-This should lead to a strong correlation between the binary period and the mass of the white dwarf companion \citep{rpj+95, ts99a, prp02b}. 
-Indeed, this picture has been supported by the measurements of several pulsar
-binary systems \citep[e.g.,][]{vbb+01, ktr94, th14}.  
-The orbital period and companion mass of PSR~J1713+0747 fits
-this correlation very well, thus supporting the standard MSP evolution theory. %Notably, not all MSP companions follow the same orbital period -- companion
-%mass relation, for instance, J1903+0327 has an orbit of 95~days but a
-%companion of $\sim 1M_{\odot}$ \citep{fbw+11}. Such peculiar systems requires
-%more than the simple scenario considered above to explain.
-
-%Some early statistical analysis shows that pulsars 
-%might have a very narrow mass distribution 1.35$\pm0.04M_{\odot}$ \citep{tc99}. 
-%However, several massive ($\sim2M_{\odot}$) pulsars have been found in recent
-%years (J1614$-$2230 1.97$\pm0.04M_{\odot}$\citealt{dpr+10}; J1913+0327
-%1.67$\pm0.02M_{\odot}$ \citealt{fbw+11}, J0348+0432 2.01$\pm0.04M_{\odot}$
-%\citealt{afw+13}) that clearly out-lie this distribution.
-
-%J1713+0747 appears to be nominal when compared with the early year samples
-%despite of its recycling history.
-
 
 \subsection{DM variation}
 \label{sec:dmx}
@@ -908,30 +859,83 @@ case of PSR~J1713+0747.
 \section{Results}
 \label{sec:res}
 
+\subsection{Mass measurements}
+\label{sec:mass}
+The timing model of PSR~J1713+0747 has been significantly improved by the 21-yr timing effort.
+Most notably, the pulsar and the companion masses have been more precisely
+constrained (Table \ref{tab:par1} and \ref{tab:par2}, Figure \ref{fig:masses}) through Shapiro delay measurements. The
+companion's mass $M_{\rm c} = 0.286\pm0.012$~\Msun\, and the pulsar $M_{\rm
+PSR}=1.31\pm0.11$~\Msun\, are in good agreement with the previously measured
+values \citep{sns+05}. Furthermore, we have carried out an MCMC run that uses the non-linear timing
+model in order to map out any non-Gaussian correlations in parameter space. We find that the the non-linear
+model gives nearly identical results to the standard linear-least-squares method of textsc{Tempo}/\textsc{tempo2}.
+We note that the derived pulsar mass tends to be significantly underestimated
+($\Delta M_{\rm PSR} \sim 0.3 M_{\odot}$) if no jitter parameters were included in our noise model (Table
+\ref{tab:par1} and \ref{tab:par2}), suggesting that
+correlated noise could significantly impact the result of high
+precision timing analysis.
+
+\begin{figure*}[!ht]
+\includegraphics[scale=1]{1713_masses_color.eps} \\ 
+\caption {\label{fig:masses}  One and two dimensional posterior probability distributions of the cosine of the inclination
+angle, pulsar mass and companion mass. The maximum marginalized posterior value and credible interval is very consistent with the standard linear least squares solution from \textsc{Tempo}/\textsc{tempo2} The solid, dashed and dash-dotted lines represent the one, two and three-sigma credible regions, respectively.
+} 
+\end{figure*} 
+
+
+The pulsar's mass is comparable with the distribution of pulsar masses
+in other neutron star-white dwarf systems, and in good
+agreement with the distribution of pulsar masses found in recycled binaries
+\citep{opns12,kkdt13}. The precise measurement of neutron star masses 
+may eventually help us understand the properties of matter in extreme 
+density \citep{dpr+10, lat12, afw+13}.
+
+In the standard picture of binary evolution, an MSP with a low-mass white dwarf companion must have been spun up through accretion when the white dwarf was a giant star filling its Roche lobe. 
+This should lead to a strong correlation between the binary period and the mass of the white dwarf companion \citep{rpj+95, ts99a, prp02b}. 
+Indeed, this picture has been supported by the measurements of several pulsar
+binary systems \citep[e.g.,][]{vbb+01, ktr94, th14, rsa+14}.  
+The orbital period and companion mass of PSR~J1713+0747 fits
+this correlation very well, thus supporting the standard MSP evolution theory. %Notably, not all MSP companions follow the same orbital period -- companion
+%mass relation, for instance, J1903+0327 has an orbit of 95~days but a
+%companion of $\sim 1M_{\odot}$ \citep{fbw+11}. Such peculiar systems requires
+%more than the simple scenario considered above to explain.
+
+%Some early statistical analysis shows that pulsars 
+%might have a very narrow mass distribution 1.35$\pm0.04M_{\odot}$ \citep{tc99}. 
+%However, several massive ($\sim2M_{\odot}$) pulsars have been found in recent
+%years (J1614$-$2230 1.97$\pm0.04M_{\odot}$\citealt{dpr+10}; J1913+0327
+%1.67$\pm0.02M_{\odot}$ \citealt{fbw+11}, J0348+0432 2.01$\pm0.04M_{\odot}$
+%\citealt{afw+13}) that clearly out-lie this distribution.
+
+%J1713+0747 appears to be nominal when compared with the early year samples
+%despite of its recycling history.
+
+
 \subsection{Intrinsic orbital decay}
 \label{sec:obdecay}
-We have measured an orbital decay from PSR~J1713+0747, $\dot{P}_{\rm b} =
+We have observed an apparent changes in orbital period from PSR~J1713+0747, $\dot{P}_{\rm b} =
 (0.36\pm0.17)\times10^{-12}$~s~s$^{-1}$ (Table \ref{tab:par1} and \ref{tab:par2}).
 %Such a precise measurement can be used to test Gravitational wave radiation theories of Einstein's and beyond.
 This orbital decay may not be intrinsic to the pulsar binary, but rather the
-result of the kinetic motion between the binary and the
-observer, i.e. a relativistic effect caused by differential 
-acceleration in the Galactic gravitational potential
-\citep{dt91} and a relativistic effect caused by the proper motion of the
-pulsar. The relativistic effect
-of proper motion is also known as the ``Shklovskii'' effect (
-\citealt{shk70}). Luckily, we have good measurements of the distance and proper
+result of the relative acceleration between the binary and the
+observer, i.e. the combination of differential acceleration in the Galactic gravitational potential
+\citep{dt91} and the ``Shklovskii'' effect (\citealt{shk70}) which is caused
+by the transverse motion of the pulsar binary relative to earth. Luckily, we have good measurements of the distance and proper
 motion of the binary system, which allow us to remove these effects and study the system's intrinsic orbital decay.
+
+The apparent change in orbital period due to differential acceleration in
+Galactic gravitational potential can be derived from
 \begin{equation}
 \dot{P}_{\rm b}^{\rm Gal} = \frac{A_{\rm G}}{c} P_{\rm b} =
--0.10\pm0.02\times10^{-12}~{\rm s~s^{-1}}
+(-0.10\pm0.02)\times10^{-12}~{\rm s~s^{-1}},
 \end{equation}
-where $A_{\rm G}$ is the line-of-sight acceleration of the pulsar binary;
-this term is dominated by the difference in the Galactic accelerations of the
-binary and our solar system, and is obtained using
-Equation 5 in \citet{nt95}, Equation 17 in \citet{lwj+09} and the Galactic
-potential model by \citet{hf04a}.
-On the other hand, the Shklovskii effect causes $P_{\rm b}$ to
+where $A_{\rm G}$ is the line-of-sight acceleration of the pulsar binary.
+$A_{\rm G}$ is obtained using
+Equation 5 in \citet{nt95}, Equation 17 in \citet{lwj+09}, the
+local matter density of Galactic disk around solar system \citep{hf04a}
+and the Galactic potential model by \citet{rmb+14}.
+
+The Shklovskii effect causes $P_{\rm b}$ to
 change by
 \begin{equation}
 \dot{P}_{\rm b}^{\rm Shk} = (\mu_{\alpha}^2+\mu_{\delta}^2)\frac{d}{c}P_{\rm
@@ -969,7 +973,7 @@ b}^{\dot{M}}\sim 1\times10^{-14}$~s~s$^{-1}$ (\citealt{dt91}; Equation 9 and 10
 of \citealt{fwe+12}). This is an order of magnitude smaller than the measured
 uncertainties on $\dot{P}_{\rm b}^{\rm Int}$.
 The tidal effect in this binary system is expected to be $\dot{P}_{\rm b}^{\rm
-T}\ll1\times10^{-14}$~s~s$^{-1}$ based on the most extreme scenarios (the white
+T}\ll3\times10^{-14}$~s~s$^{-1}$ based on the most extreme scenarios (the white
 dwarf spins at its break-up velocity and the tidal synchronizing time scale equals the
 characteristic age of the pulsar; see Equation 11 in \citealt{fwe+12} and
 references therein).
@@ -1036,14 +1040,15 @@ The changing $G$ will now change the orbital period of a pulsar binary system \c
 %This formalism is only slightly different from the generic form of
 %\citet{dgt88}.
 This formalism is more generic in the sense that it incorporates the compactness of the neutron star, 
-but it also assumes that the non-perturbative effects are small
+but it also assumes that non-perturbative effects are absent 
 and higher order contributions in the self-gravity sensitivity can be neglected.
 
 Meanwhile, in the framework of an alternative gravitation theory that violates
 SEP, a binary system may emit dipole gravitational radiation (\citealt{Will93, Will01, lwj+09, fwe+12} and references
 therein). Such effects arise when the two bodies are very different in terms
 of their self-gravity, i.e.  their compactness.
-This extra dipole radiation could lead to an extra orbital decay term:
+Under the aforementioned assumptions of neglecting non-perturbative effects and higher order contributions of self-gravity sensitivity,
+this extra dipole radiation could lead to an extra orbital decay term:
 \begin{equation}
 \dot{P}_{\rm b}^{\rm D} \simeq -4\pi\frac{T_{\odot}\mu}{P_{\rm b}}\kappa_D S^2,
 \end{equation}
@@ -1053,7 +1058,7 @@ gravitational radiation ``coupling constant'', and $S$ is the difference
 between the self-gravity ``sensitivity'' of the two bodies ($S = s_p - s_c$;
 $s_p\sim0.1m_p/M_{\odot}$ according to \citealt{de92} ; and $s_c\ll s_p$).
 In Einstein's general relativity $\kappa_D=0$ --- there is no self-gravity induced
-dipole gravitational radiation, but it is often not the case in alternative
+dipole gravitational radiation, but it is generally not the case in alternative
 theories that violate the SEP.
 
 PSR~J1713+0747 has a wider binary orbit than most other
@@ -1102,19 +1107,20 @@ the binary orbit to be polarized toward the center of the Galaxy. The excess
 eccentricity is expected to be (\citealt{ds91}):
 \begin{equation}
 |\textbf{\textit{e}}_F| = \frac{1}{2}\frac{\Delta\, g_{\bot}
-  c^2}{\msG(M_{\rm PSR}+M_{\rm
+  c^2}{\msF\msG(M_{\rm PSR}+M_{\rm
 c})(2\pi/P_{\rm b})^2},
 \end{equation}
-where $\msG$ is the effective gravitational constant in the interaction
+where $\msF$ is a factor accounts for potential changes in the periastron advance rate
+due to deviations from GR, $\msG$ is the effective gravitational constant in the interaction
 between the pulsar and the white dwarf, and $g_{\bot}$ is the projection of Galactic acceleration on the orbital plane 
 and $\Delta$ is the dimensionless factor that characterizes the significance 
-of SEP violation. Here we assume $\msG\approx G$.
+of SEP violation. Here we assume $\msF\msG\approx G$.
 The Galactic acceleration of the pulsar system is derived from \citet{hf04a, rmb+14}.
 
 GR predict no preferred reference frame in the universe but this may
-be violated in alternative theories. 
-Violating this principle would lead to both the isotropic violations of the
-Lorentz invariance in gravitation and the breaking of conservation of momentum.
+be different in alternative theories. 
+Existence of PFE would lead to the isotropic violations of the
+Lorentz invariance in gravitation and even the breaking of conservation of momentum.
 The existence of  
 a preferred frame would lead to polarization of binary orbits along the
 direction of a preferred frame.
@@ -1122,13 +1128,13 @@ One can estimate such an effect in a version of the Post-Newtonian Parameterizat
 (PPN) framework \cite{de92}; the excess eccentricity is expected to be (\citealt{bd96}):
 \begin{equation}
 |\textbf{\textit{e}}_F| = \hat{\alpha}_3 \frac{c_p|\textbf{\textit{w}}|P_{\rm b}^2}{24\pi P}
-\frac{c^2}{\msG (M_{PSR}+M_{\rm c})}\sin \beta,
+\frac{c^2}{\msF\msG (M_{PSR}+M_{\rm c})}\sin \beta,
 \end{equation}
 where $\textbf{\textit{w}}$ is the absolute velocity of the binary system
 relative to the preferred frame of reference, typically taken as that of the cosmic microwave background (CMB), $P$ is the pulsar's spin period, $\beta$ is the
 angle between $\textbf{\textit{w}}$ and the spin axis of the pulsar, and
-$\hat{\alpha}_3$ is the strong-field version of one of the Post-Newtonian
-parameters that characterizes the significance of PFE.
+$\hat{\alpha}_3$ is the strong-field version of the Post-Newtonian
+parameters $\alpha_3$ that characterizes the significance of PFE.
 Here $\textbf{\textit{w}} = \textbf{\textit{w}}_{\odot} + \textbf{\textit{v}}_{\rm PSR}$, where
 $\textbf{\textit{w}}_{\odot}=369\pm0.9$km~s$^{-1}$ is the velocity of
 the solar system relative to the CMB (\citealt{hwh+09}),
@@ -1166,7 +1172,7 @@ constant, $\dot{G}$. Although the pulsar constraint is not better than the
 best solar system ones, it is nevertheless an independent test using 
 extra-solar binary systems thousands of light-years away. The pulsar tests
 also could be more constraining for some
-variances of scalar-tensor theories that predict stronger non-GR effects in
+classes of alternative gravitational theories that predict stronger non-GR effects in
 strong-field regime \citep{wex14}.
 The new best pulsar timing limit on $\dot{G}/G$ is 
 $(0.6\pm1.1)\times10^{-12}$~yr$^{-1}$ ($<0.033H_0$ based on the 3-$\sigma$ limit), where $H_0$ is the Hubble constant. 
@@ -1196,9 +1202,9 @@ violation of Lorentz invariance.
 Because of the different statistical analysis methods were used, our 
 $\Delta$ and $\hat{\alpha}_3$ limits  are slightly
 different but still consistent with the results of the same tests in previous publications 
-\citep{wex00, sns+05, sfl+05, gsf+11}.
-Ultimately, the best test on SEP violation could come from the newly
-discovered pulsar triple system PSR J0337+1715 \citep{rsa+14, ssa+15, bbc+15}. In this case 
+\citep{wex00, sns+05, sfl+05, gsf+11, fkw12}.
+Ultimately, the newly discovered pulsar triple system PSR J0337+1715 \citep{rsa+14} 
+could yield the best test on SEP violation \citep{fkw12, ssa+15, bbc+15}. In this case 
 the inner pulsar-white dwarf binary is orbited by another white dwarf in an
 outer orbit, making this system a great laboratory for testing
 the free fall of a neutron star and white dwarf in external gravity field.
