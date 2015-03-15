@@ -1,4 +1,4 @@
-\begin{thebibliography}{98}
+\begin{thebibliography}{97}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{Antoniadis} {et~al.}(2013){Antoniadis}, {Freire}, {Wex}, {Tauris},
@@ -218,11 +218,6 @@ Kopeikin, S.~M. 1996, ApJ, 467, L93
   {Stappers}, {Janssen}, {Desvignes}, {Purver}, {Cognard}, {Theureau}, {Lyne},
   {Jordan}, \& {Zensus}}]{lwj+09}
 {Lazaridis}, K., {et~al.} 2009, \mnras, 400, 805
-
-\bibitem[{{Lee} {et~al.}(2014){Lee}, {Bassa}, {Janssen}, {Karuppusamy},
-  {Kramer}, {Liu}, {Perrodin}, {Smits}, {Stappers}, {van Haasteren}, \&
-  {Lentati}}]{lbj+14}
-{Lee}, K.~J., {et~al.} 2014, \mnras, 441, 2831
 
 \bibitem[{{Lentati} {et~al.}(2013){Lentati}, {Alexander}, {Hobson}, {Taylor},
   {Gair}, {Balan}, \& {van Haasteren}}]{lah+13}
