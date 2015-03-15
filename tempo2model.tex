@@ -4,7 +4,8 @@
 
 \tabletypesize{\scriptsize}
 \tablewidth{0pt}
-\tablecaption{\label{tab:par2} Timing model parameters\tablenotemark{a} from {\it tempo2}. }
+\tablecaption{\label{tab:par2} Timing model parameters\tablenotemark{a} from
+{\sc TEMPO2}. }
 \tablehead{ \colhead{Parameter}  &\colhead{EFAC \& EQUAD}  &\colhead{with jitter model}  &\colhead{jitter \& red noise model}   }
 \startdata
 \textit{Measured Parameters}&  &  &  \\[1 mm]
@@ -13,7 +14,8 @@ Declination, $\delta$ (J2000)&  7:47:37.506130(13)&  7:47:37.506130(19)&  7:47:3
 Spin Frequecy $\nu$~(s$^{-1}$)&  218.81184385472582(6)&  218.81184385472589(10)&  218.8118438547255(5)\\
 Spin down rate $\dot{\nu}$ (s$^{-2}$)&  $-4.083889(5)\times10^{-16}$&  $-4.083892(7)\times10^{-16}$&  $-4.08386(5)\times10^{-16}$\\
 Proper motion in $\alpha$, $\mu_{\alpha}=\dot{\alpha}\cos \delta$ (mas~yr$^{-1}$)&  4.9171(12)&  4.9181(18)&  4.915(3)\\
-Proper motion in $\delta$, $\mu_{\delta}=\dot{\delta}$ (mas~yr$^{-1}$)&  -3.915(2)&  -3.910(3)&  -3.914(5)\\
+Proper motion in $\delta$, $\mu_{\delta}=\dot{\delta}$ (mas~yr$^{-1}$)&
+$-$3.915(2)&  $-$3.910(3)&  $-$3.914(5)\\
 Parallax, $\pi$ (mas)&  0.856(16)&  0.83(3)&  0.87(3)\\
 Dispersion Measure\tablenotemark{b} (pc~cm$^{-3}$)&  15.97005(13)&  15.97006(12)&  15.97007(13)\\
 Orbital Period, $P_{\rm b}$ (day)&  67.8251383100(12)&  67.8251383194(16)&  67.8251383185(17)\\
@@ -25,9 +27,11 @@ Projected semi-major axis, $x$ (lt-s)&  32.34242239(5)&  32.34242189(13)&  32.34
 Orbital inclination, $i$ (deg)&  75.1(3)&  71.9(7)&  71.9(7)\\
 Companion Mass, $M_c$ ($M_{\odot}$)&  0.237(4)&  0.286(13)&  0.286(12)\\
 Position angle of ascending node, $\Omega$ (deg)&  78.8(14)&  89.6(20)&  88(2)\\
-Profile frequency dependency parameter, FD1 &  -0.0001632(2)&  -0.0001628(2)&  -0.0001628(2)\\
+Profile frequency dependency parameter, FD1 &  $-$0.0001632(2)&
+$-$0.0001628(2)&  $-$0.0001628(2)\\
 Profile frequency dependency parameter, FD2 &  0.0001357(3)&  0.0001355(3)&  0.0001355(3)\\
-Profile frequency dependency parameter, FD3 &  -0.0000664(6)&  -0.0000671(6)&  -0.0000672(6)\\
+Profile frequency dependency parameter, FD3 &  $-$0.0000664(6)&
+$-$0.0000671(6)&  $-$0.0000672(6)\\
 Profile frequency dependency parameter, FD4 &  0.0000147(4)&  0.0000154(4)&  0.0000155(4)\\
 \textit{Fixed Parameters}&  &  &  \\[1 mm]
 Solar system ephemeris&  DE421&  DE421&  DE421\\
@@ -35,20 +39,20 @@ Reference epoch for $\alpha$, $\delta$, and $\nu$ (MJD)&  53729&  53729&  53729\
 Solar wind electron density $n_0$ (cm~$^{-3}$)& 0 & 0 & 0 \\
 Rate of periastron advance, $\dot{\omega}$ (deg/yr)\tablenotemark{d}&  0.00024&  0.00024&  0.00024\\
 Red Noise Amplitude ($\mu$s/${\rm yr}^{-1/2}$)&  --&  --&  0.025 \tablenotemark{e}\\
-Red Noise Spectral Index&  --&  --& -2.92\\
+Red Noise Spectral Index&  --&  --& $-$2.92\\
 \textit{Derived Parameters}&  &  &  \\[1 mm]
 Intrinsic period derivative, $\dot{P}_{\rm Int}$(s~s$^{-1}$)\tablenotemark{*}&  $8.967(13)\times10^{-21}$&  $8.98(2)\times10^{-21}$&  $8.96(2)\times10^{-21}$\\
 Dipole magnetic field, $B$ (G)\tablenotemark{*}&  $2.0486(15)\times10^{8}$&  $2.050(3)\times10^{8}$&  $2.048(3)\times10^{8}$\\
 Characteristic age, $\tau_c$ (yr)\tablenotemark{*}&  $8.075(12)\times10^{9}$& $8.06(2)\times10^{9}$&  $8.08(2)\times10^{9}$\\
 Pulsar mass, $M_{\rm PSR}$ ($M_{\odot}$)&  1.00(3)&  1.31(11)&  1.31(11)
 \enddata
-\tablenotetext{a}{We used {\it tempo2}'s {\it T2} binary model, which
+\tablenotetext{a}{We used {\sc TEMPO2}'s {\it T2} binary model, which
 implicitly account for the changes of the projected semi-major axis, including
 $\dot{x}$ due to proper motion of the binary (this allows us to fit for the
 position angle of ascending node, $\Omega$) and the changes due to the orbital
 parallaxes of the earth and the pulsar \citep{kop96, ehm06}. 
-Numbers in parentheses indicate the uncertainties on the last digit(s).  
-Uncertainties on parameters are estimated by the {\it tempo2} program using information in the covariance matrix.}
+Numbers in parentheses indicate the 1 $\sigma$ uncertainties on the last digit(s).  
+Uncertainties on parameters are estimated by the {\sc TEMPO2} program using information in the covariance matrix.}
 \tablenotetext{b}{The averaged DM value; See Section 3.2 and Figure 2 for more discussion.}
 \tablenotetext{d}{The rate of periastron advance was not fitted but fixed to the GR value
 because it is highly co-variant with the orbital period.}
