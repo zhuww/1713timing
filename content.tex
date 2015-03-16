@@ -402,7 +402,7 @@ Bottom-right panel: One dimensional marginalized posterior probability for the
 red noise spectral index where the solid line denotes the maximum a-posteriori
 value and the dashed lines denote the 68\% credible interval. Note that the
 1D maximum marginalized posterior spectral index usually differs slightly from the
-global maximum likelihood value ($-2.92$).}
+global maximum likelihood value ($2.92$).}
 \end{figure*} 
 %
 The noise model used in this analysis is a parameterized model that is a function of several unknown quantities describing both correlated and uncorrelated noise sources. Uncorrelated noise is 
@@ -468,7 +468,7 @@ epoch}$ matrix with diagonal elements, $J_{k}^{2}$ describes the variance of
 the jitter-like correlated noise for each observing backend. It is also
 referred to as the ECORR parameter in {\sc TEMPO} and {\sc TEMPO2}. Furthermore $\varphi_{ij} = {\rm diag}\{10^{\rho_{n}}\}$ is an $2n_{\rm mode}\times 2n_{\rm mode}$ matrix describing the variance of the red noise Fourier coefficients at each frequency. In this framework, the coefficients of the $\varphi$-matrix are related to the power spectral density evaluated at a given frequency via the Wiener-Khinchin theorem. In principle we could use the power spectrum coefficients, $10^{\rho_{n}}$, themselves as free parameters but in this work we parameterize them via a power law
 \be
-\varphi_{n} \equiv 10^{\rho_{n}} = \frac{1}{T} A_{\rm red}^2\left( \frac{f}{f_{\rm yr}} \right)^{\gamma_{\rm red}}
+\varphi_{n} \equiv 10^{\rho_{n}} = \frac{1}{T} A_{\rm red}^2\left( \frac{f}{f_{\rm yr}} \right)^{-\gamma_{\rm red}}
 \ee
 where $T$ is the total observation time, $A_{\rm red}$ is the amplitude of the
 red noise in $\mu$s~${\rm yr}^{1/2}$, $\gamma_{\rm red}$ is the spectral index of the red noise, $f_{\rm
@@ -580,8 +580,7 @@ noise model (Table \ref{tab:wrms}) and compare it to the post-fit residuals of
 a {\sc TEMPO} GLS fit.
 The bottom
 panels of Figure \ref{fig:res} show the one- and two-dimensional posterior probability plots
-of the red noise. This noise model describes the data very well as we can see in Figure \ref{fig:detres} in which the maximum likelihood realizations of red and jitter noise are subtracted out. We see from the figure that both the high and low frequency residuals (with red and jitter noise realizations subtracted) are white (described by our EFAC and EQUAD parameters) and the weighted residuals follow a zero-mean unit-variance Gaussian distribution.
-
+of the red noise. This noise model describes the data well as we can see in Figure \ref{fig:detres} in which the maximum likelihood realizations of red and jitter noise are subtracted out. We see from the figure that both the high and low frequency residuals (with red and jitter noise realizations subtracted) are white (described by our EFAC and EQUAD parameters) and the weighted residuals follow a zero-mean unit-variance Gaussian distribution. We do note that the normalized residuals do not follow a guassian distribution outside of the 3-sigma range; however, since the full data set has 14,750 TOAs, this means that only $\sim$ 50 do not follow a gaussian distribution and will not significantly affect the results presented here. 
 
 The red noise signal seen in the data (i.e. Figure \ref{fig:res}) does not
 resemble a low-frequency sinusoid or cubic
