@@ -413,19 +413,22 @@ those in \citet{sns+05} but are consistent within their reported uncertainties.
 
 %
 \begin{figure*}[!ht]
+\centering
 \includegraphics[scale=1.0]{fig3.eps} \\ 
 %\showthe\columnwidth
 \caption{\label{fig:res} Top panel: Daily-averaged residuals of J1713+0747 produced from a GLS that includes a 
-full noise model. The black dashed line and the gray shaded area show the maximum likelihood red noise
-realization and uncertainty. 
+full noise model. The red dashed line and the gray shaded area show the maximum likelihood red noise
+realization and one-sigma uncertainty. The thick dashed vertical lines separate out various generations
+of backends used at both AO and GBT.
 Bottom-left panel: Two-dimensional marginalized posterior probability plot of red
-noise spectral index vs. red noise amplitude where the solid, dashed and
-dashed-dot lines represent the 68, 95, and 99.7 percent credible regions.
+noise spectral index vs. logarithm of the red noise amplitude where the solid, dashed and
+dashed-dot lines represent the 50, 90, and 95 percent credible regions. The ``x'' denotes
+the maximum likelihood value of the spectral index and amplitude.
 Bottom-right panel: One dimensional marginalized posterior probability for the
-red noise spectral index where the solid line denotes the maximum a-posteriori
+red noise spectral index where the solid line denotes the maximum marginalzed a-posteriori
 value and the dashed lines denote the 68\% credible interval. Note that the
 1D maximum marginalized posterior spectral index usually differs slightly from the
-global maximum likelihood value ($2.92$).}
+global maximum likelihood value ($-2.92$) due to correlations with other parameters}
 \end{figure*} 
 %
 The noise model used in this analysis is a parameterized model that is a function of several unknown quantities describing both correlated and uncorrelated noise sources. Uncorrelated noise is 
@@ -473,7 +476,7 @@ observation. The exact details of the implementation are described in
 observation-to-observation variance. 
 Lastly, we model the red noise as a stationary gaussian process that is parameterized by a power spectrum of the form
 \be
-P(f) = A_{\rm red}^2\left( \frac{f}{f_{\rm yr}} \right)^{-\gamma_{\rm red}},
+P(f) = A_{\rm red}^2\left( \frac{f}{f_{\rm yr}} \right)^{\gamma_{\rm red}},
 \ee
 where $A_{\rm red}$ is the amplitude of the red noise in $\mu$s~${\rm yr}^{1/2}$, $\gamma_{\rm red}$ is the spectral index.
 
@@ -519,7 +522,7 @@ and jitter noise are subtracted out. We see from the figure that both the high
 and low frequency residuals (with red and jitter noise realizations
 subtracted) are white (described by our EFAC and EQUAD parameters) and the
 weighted residuals follow a zero-mean unit-variance Gaussian distribution. We
-do note that the normalized residuals do not seem to follow exactly the guassian 
+do note that the normalized residuals do not seem to follow exactly the gaussian 
 distribution outside of the 3-sigma range, this affects only $\lesssim0.3$\% of the TOAs 
 and will not significantly affect the results presented here. 
 
@@ -527,7 +530,7 @@ Red noise was previously reported for PSR~J1713+0747 by \citet{sns+05}, who
 modeled it using an eighth-order polynomial. The largest residual in the
 present dataset appears in the time period 1999 to 2005 (Figure
 \ref{fig:res}). This is when dual-frequency observations begin, and it is
-possible that the red noise model is absorbing numodeled DM variations in
+possible that the red noise model is absorbing unmodeled DM variations in
 singe-frequency data collected before 1999, thus making physical
 interpretations of red noise difficult.
 
@@ -687,7 +690,7 @@ sampled pulsars $\hat{\sigma}_{\rm TN,2}$ seem to grow linearly with $T_{\rm yr}
 If the timing noise of the sampled pulsars is due to the accumulation of 
 spin noise, and the spin noise is caused by the same physical processes,
 then this RMS growth rate would imply that the spin noise of pulsars has a
-frequency power spectrum of power-law index $\gamma_{\rm red}\simeq 5$. This 
+frequency power spectrum of power-law index $\gamma_{\rm red}\simeq -5$. This 
 spectral index is consistent with the $\gamma_{\rm red}$
 from our noise model (Figure \ref{fig:res}).
 
