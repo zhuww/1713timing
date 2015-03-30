@@ -383,10 +383,16 @@ to the International Celestial Reference Frame (ICRF) and thus our astrometric
 results are also given in the ICRF frame. We note parenthetically that a
 previous generation ephemeris, DE405, gave nearly identical but marginally
 better timing fits ($\Delta\chi^2\sim6$ for 14528 degrees of freedom in both
-{\sc TEMPO} and {\sc TEMPO2}).
+{\sc TEMPO} and {\sc TEMPO2}). 
 
 The timing parameters and uncertainties are calculated using a generalized least
 square (GLS) approach available in the {\sc TEMPO} and {\sc TEMPO2} software packages. 
+Furthermore we also run a Markov Chain Monte Carlo (MCMC) \citep[similar to][]{lah+14, vv14} 
+analysis that simultaneously 
+includes the noise parameters (See Section \ref{sec:noise}) and the non-linear timing model. 
+As shown in Table \ref{tab:par2} and Figure \ref{fig:masses}, the results from this analysis
+are very consistent with the GLS approach, indicating that the assumption of linearity holds
+over the full timing parameter range.
 We confirm that the majority of the pulsar-binary parameters reported by
 \citet{sns+05} also successfully describe the 21-yr data set. Using a new
 noise modeling technique, we detected 
@@ -439,7 +445,7 @@ the multi-frequency TOAs measured simultaneously across the band, is correlated 
 There is also time-correlated noise, such as red timing noise that is
 correlated from epoch to epoch. Among the various types of noise only the
 template matching error $\sigma$ can be estimated when we compute the TOAs.
-Other sources of noise must be modeled separately. The solution to this problem has been discussed extensively in \citet{vl13, ell13, vv14a, vv14, abb+14} and J. A. Ellis (PhD thesis 2014). In this section, we summarize the noise model used in this analysis \citep[see e.g.][for more details]{abb+15b}.
+Other sources of noise must be modeled separately. The solution to this problem has been discussed extensively in \citet{vl13, ell13, vhv14a, vhv14, abb+14} and J. A. Ellis (PhD thesis 2014). In this section, we summarize the noise model used in this analysis \citep[see e.g.][for more details]{abb+15b}.
 
 
 
@@ -480,7 +486,7 @@ P(f) = A_{\rm red}^2\left( \frac{f}{f_{\rm yr}} \right)^{\gamma_{\rm red}},
 \ee
 where $A_{\rm red}$ is the amplitude of the red noise in $\mu$s~${\rm yr}^{1/2}$, $\gamma_{\rm red}$ is the spectral index.
 
-These noise parameters are included in a joint likelihood that contains all timing model parameters. For the purposes of this paper, we analytically marginalize over the linear timing model parameters and explore the space of noise parameters via Markov Chain Monte-Carlo (MCMC). We then use the MCMC results to determine the maximum likelihood noise parameters which are subsequently used as inputs to \textsc{TEMPO}/\textsc{TEMPO2} GLS fitting routines. 
+These noise parameters are included in a joint likelihood that contains all timing model parameters. For the purposes of noise modeling, we analytically marginalize over the linear timing model parameters and explore the space of noise parameters via MCMC. We then use the MCMC results to determine the maximum likelihood noise parameters which are subsequently used as inputs to \textsc{TEMPO}/\textsc{TEMPO2} GLS fitting routines. 
 In our noise model we include EFAC, EQUAD, and ECORR parameters
 for data collected by different backend and receiver systems. However, we do not model 
 EFAC and ECORR of the Mark~III, Mark~IV, and ABPP data because there were not
@@ -609,7 +615,7 @@ light of sight, such ISM variations do not fit the general characteristics of
 a Kolmogorov medium. 
 
 %DM variation could be studied using alternative methods such as Gaussian processes 
-%\citep{vv14a} or optimal filtering \citep{lbj+14}, but that is out of the scope of 
+%\citep{vhv14a} or optimal filtering \citep{lbj+14}, but that is out of the scope of 
 %this paper.
 
 \subsection{Pulsar spin irregularity}
@@ -782,9 +788,9 @@ precision timing analysis.
 \includegraphics[scale=1]{1713_masses_color.eps} \\ 
 \caption {\label{fig:masses}  One and two dimensional posterior probability
 distributions of the cosine of the inclination
-angle, pulsar mass and companion mass from the noise model MCMC. The maximum marginalized posterior
+angle, pulsar mass, and companion mass from the noise model MCMC including the full non-linear timing model. The maximum marginalized posterior
 value and 1$\sigma$ credible interval is very consistent with the standard linear least
-squares solution from \textsc{TEMPO}/\textsc{TEMPO2} The solid, dashed and dash-dotted lines represent the one, two and three-sigma credible regions, respectively.
+squares solution from \textsc{TEMPO}/\textsc{TEMPO2}. The solid, dashed and dash-dotted lines represent the one, two and three-sigma credible regions, respectively.
 } 
 \end{figure*} 
 
