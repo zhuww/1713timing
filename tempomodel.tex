@@ -8,7 +8,7 @@
 {\it TEMPO}. }
 \tablehead{ \colhead{Parameter}  &\colhead{EFAC \& EQUAD}  &\colhead{with jitter model}  &\colhead{jitter \& red noise model}   }
 \startdata
-\textit{Measured Parameters}&  &  &  \\[1 mm]
+\textit{Measured Parameters}&  &  &  \\%[1mm]
 Right Ascension, $\alpha$ (J2000)&  17:13:49.5320251(5)&  17:13:49.5320248(7)&  17:13:49.5320252(8)\\
 Declination, $\delta$ (J2000)&  7:47:37.506150(12)&  7:47:37.506155(19)&  7:47:37.50614(2)\\
 Spin Frequecy $\nu$~(s$^{-1}$)&  218.81184385472585(6)&  218.81184385472594(10)&  218.8118438547251(9)\\
@@ -32,16 +32,17 @@ $-$0.0001623(2)&  $-$0.00016(3)\\
 Profile frequency dependency parameter, FD2 &  0.0001352(3)&  0.0001350(3)&  0.00014(3)\\
 Profile frequency dependency parameter, FD3 &  $-$0.0000660(6)&
 $-$0.0000668(6)&  $-$0.000067(17)\\
-Profile frequency dependency parameter, FD4 &  0.0000145(4)&  0.0000153(4)&  0.000015(5)\\
-\textit{Fixed Parameters}&  &  &  \\[1 mm]
+Profile frequency dependency parameter, FD4 &  0.0000145(4)&  0.0000153(4)&
+0.000015(5)\\[4pt]
+\textit{Fixed Parameters}&  &  &  \\%[1mm]
 Solar system ephemeris&  DE421&  DE421&  DE421\\
 Reference epoch for $\alpha$, $\delta$, and $\nu$ (MJD)&  53729&  53729&  53729\\
-Solar wind electron density $n_0$ (cm~$^{-3}$)\tablenotemark{d}& 0 & 0 & 0 \\
-Rate of periastron advance, $\dot{\omega}$ (deg/yr)\tablenotemark{e}&  0.00024&  0.00024&  0.00024\\
-Position angle of ascending node, $\Omega$ (deg)\tablenotemark{f}&  88.43&  88.43&  88.43\\
-Red Noise Amplitude ($\mu$s/${\rm yr}^{-1/2}$)&  --&  --&  0.025 \tablenotemark{g}\\
-Red Noise Spectral Index, $\gamma_{\rm red} $&  --&  --&  2.92\\
-\textit{Derived Parameters}&  &  &  \\[1 mm]
+Solar wind electron density $n_{\rm 0}$ (cm~$^{-3}$) & 0 & 0 & 0 \\
+Rate of periastron advance, $\dot{\omega}$ (deg/yr)\tablenotemark{d}&  0.00024&  0.00024&  0.00024\\
+Position angle of ascending node, $\Omega$ (deg)\tablenotemark{e}&  88.43&  88.43&  88.43\\
+Red Noise Amplitude ($\mu$s/${\rm yr}^{-1/2}$)&  --&  --&  0.025 \tablenotemark{f}\\
+Red Noise Spectral Index, $\gamma_{\rm red} $&  --&  --&  $-$2.92\\[4pt]
+\textit{Derived Parameters}&  &  &  \\%[1mm]
 Intrinsic period derivative, $\dot{P}_{\rm Int}$(s~s$^{-1}$)\tablenotemark{*}&  $8.958(12)\times10^{-21}$&  $8.98(2)\times10^{-21}$&  $8.97(2)\times10^{-21}$\\
 Dipole magnetic field, $B$ (G)\tablenotemark{*}&  $2.0475(14)\times10^{8}$&  $2.050(3)\times10^{8}$&  $2.049(3)\times10^{8}$\\
 Characteristic age, $\tau_c$ (yr)\tablenotemark{*}&  $8.083(11)\times10^{9}$& $8.07(2)\times10^{9}$&  $8.07(2)\times10^{9}$\\
@@ -55,16 +56,16 @@ digit(s). Uncertainties on parameters are estimated by the {\it TEMPO} program
 using information in the covariance matrix.}
 \tablenotetext{b}{The averaged DM value; See Section 3.2 and Figure 2 for more discussion.}
 \tablenotetext{c}{See Figure 2 of \citealt{sns+05} for definition.}
-\tablenotetext{d}{The model for estimating solar wind contribution in arrival time delay:
-$\Delta t_\odot=10^{14}n_0(\pi - \theta)/\sin\theta/r/f^2$~s, where $n_0$ is the solar wind
-electron density at 1 AU from the Sun, $\theta$ is the solar elongation of the
-pulsar, $r$ is the light travel time between the Sun and the observotary, and
-$f$ is the observing frequency in Hz.}
-\tablenotetext{e}{The rate of periastron advance was not fitted but fixed to the GR value
+%\tablenotetext{d}{The model for estimating solar wind contribution in arrival time delay:
+%$\Delta t_\odot=10^{14}n_0(\pi - \theta)/\sin\theta/r/f^2$~s, where $n_0$ is the solar wind
+%electron density at 1 AU from the Sun, $\theta$ is the solar elongation of the
+%pulsar, $r$ is the light travel time between the Sun and the observatory, and
+%$f$ is the observing frequency in Hz.}
+\tablenotetext{d}{The rate of periastron advance was not fitted but fixed to the GR value
 because it is highly co-variant with the orbital period. }
-\tablenotetext{f}{We optimized $\Omega$ using a grid search and held it fix to the value that
+\tablenotetext{e}{We optimized $\Omega$ using a grid search and held it fix to the value that
 minimized $\chi^2$.}
-\tablenotetext{g}{The value corresponds to $8.7\times10^{-15}$ in the dimensionless strain amplitude unit.}
+\tablenotetext{f}{The value corresponds to $8.7\times10^{-15}$ in the dimensionless strain amplitude unit.}
 \tablenotetext{*}{These parameters are corrected for Shklovskii effect and
 Galactic differential accelerations.}
 

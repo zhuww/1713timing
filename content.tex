@@ -574,6 +574,11 @@ intervals, except for the L-band-only Mark~III TOAs. We grouped the Mark~III
 TOAs together as a single group, because their frequency resolution and timing
 precision are not sufficient for measuring epoch-to-epoch DM changes.
 
+We turned off the solar wind model for \textsc{TEMPO} and \textsc{TEMPO2} by
+setting the solar wind electron density (at 1~AU from the Sun) parameter
+$n_{\rm 0}$ to 0~cm$^{-3}$ (the default value is 10~cm$^{-3}$), and used the
+DMX model to model all DM variations including contribution from solar wind.
+
 Figure \ref{fig:dmx} shows the measured DM variation of PSR~J1713+0747.
 %
 \begin{figure}
@@ -587,8 +592,8 @@ The sudden dip and recovery of DM around 2008 (MJD 54800) is
 due to changes either in the ISM or in the solar wind. This DM dip is also
 observed independently by the Parkes observatory \citep{kcs+13} and the
 European Pulsar Timing Array (Desvignes et.~al.\ in prep.).
-There is clear red-noise-like variance in the pulsar's DM with an RMS of
-$\sim10^{-4}$ pc~cm$^{-3}$. 
+%There is clear red-noise-like variance in the pulsar's DM with an RMS of
+%$\sim10^{-4}$ pc~cm$^{-3}$. 
 
 
 
@@ -1029,7 +1034,7 @@ relative to the preferred frame of reference, typically taken as that of the cos
 angle between $\textbf{\textit{w}}$ and the spin axis of the pulsar, and
 $\hat{\alpha}_3$ is the strong-field version of the PPN parameters $\alpha_3$.
 Here $\textbf{\textit{w}} = \textbf{\textit{w}}_{\odot} + \textbf{\textit{v}}_{\rm PSR}$, where
-$\textbf{\textit{w}}_{\odot}=369\pm0.9$km~s$^{-1}$ is the velocity of
+$\textbf{\textit{w}}_{\odot}=369\pm0.9$~km~s$^{-1}$ is the velocity of
 the solar system relative to the CMB (\citealt{hwh+09}),
 and the term $\textbf{\textit{v}}_{\rm PSR}$ is the relative speed of the pulsar to our solar system. 
 $\textbf{\textit{v}}_{\rm PSR}$ is only partially known because we can measure
