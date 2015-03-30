@@ -579,7 +579,8 @@ function (error bars) and its a power law fit (solid line). The best-fit power l
 \end{figure} 
 The sudden dip and recovery of DM around 2008 (MJD 54800) is 
 due to changes either in the ISM or in the solar wind. This DM dip is also
-observed independently by the Parkes observatory \citep{kcs+13}.
+observed independently by the Parkes observatory \citep{kcs+13} and the
+European Pulsar Timing Array (Desvignes et.~al.\ in prep.).
 There is clear red-noise-like variance in the pulsar's DM with an RMS of
 $\sim10^{-4}$ pc~cm$^{-3}$. 
 
@@ -647,7 +648,7 @@ where $\langle c^2\rangle$ denotes the sum of squares of the cubic
 terms fitted to segments of length $\tau$. 
 %$\Delta_8$ is the logarithm of a dimensionless form of $\sigma_z(10^8~\rm s)$.
 \citet{hlk10} found a best-fit scaling model of $\sigma_z({\rm 10~yr})$ 
-from 366 pulsars:
+from a large sample of canonical pulsars (CPs) and MSPs:
 \begin{equation}
 \label{eq:hlk10}
 \log_{10}[\sigma_z({\rm 10~yr})] =
@@ -671,9 +672,8 @@ noise in the data.
 In this definition, timing noise $\sigma^2_{\rm TN,2}(T)$ grows bigger over
 time while white noise stays constant.  
 
-\citet{sc10} studied the $\sigma^2_{\rm TN,2}$ from a large sample of pulsars
-including canonical pulsars (CPs) and millisecond pulsars. They found a scaling
-model:
+\citet{sc10} studied the $\sigma^2_{\rm TN,2}$ from a large sample of CPs and
+MSPs. They found a scaling model:
 \begin{equation}
 \label{eq:sc10}
 \ln(\hat{\sigma}_{\rm TN,2}) = 1.6 - 1.4\ln(\nu) +
@@ -782,7 +782,7 @@ precision timing analysis.
 \includegraphics[scale=1]{1713_masses_color.eps} \\ 
 \caption {\label{fig:masses}  One and two dimensional posterior probability
 distributions of the cosine of the inclination
-angle, pulsar mass and companion mass. The maximum marginalized posterior
+angle, pulsar mass and companion mass from the noise model MCMC. The maximum marginalized posterior
 value and 1$\sigma$ credible interval is very consistent with the standard linear least
 squares solution from \textsc{TEMPO}/\textsc{TEMPO2} The solid, dashed and dash-dotted lines represent the one, two and three-sigma credible regions, respectively.
 } 
