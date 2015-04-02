@@ -1,0 +1,293 @@
+%% --------------------------------------------------------
+%\documentclass[preprint2]{aastex}
+%\documentclass[12pt,preprint]{aastex} 
+
+\documentclass[iop,apj,tighten]{emulateapj} 
+%\documentclass{emulateapj}
+\usepackage{apjfonts}
+\usepackage{lineno} 
+\usepackage{natbib}
+\usepackage{epsf}
+\usepackage{url}
+\usepackage{color}
+\usepackage{mathrsfs, amsmath}
+
+\usepackage[plainpages=false, colorlinks=true, anchorcolor=blue, linkcolor=blue, citecolor=blue, bookmarks=false]{hyperref}
+\citestyle{apj}
+
+ 
+%\citestyle{aa}
+
+%% --------------------------------------------------------
+\newcommand{\tc}[2]{\textcolor{#1}{#2}}
+\newcommand{\Msun}{\ifmmode\mbox{M}_{\odot}\else$\mbox{M}_{\odot}$\fi}
+\newcommand{\Rsun}{\ifmmode\mbox{R}_{\odot}\else$\mbox{R}_{\odot}$\fi}
+\newcommand{\Mearth}{\ifmmode\mbox{M}_{\oplus}\else$\mbox{M}_{\oplus}$\fi}
+\newcommand{\Rearth}{\ifmmode\mbox{R}_{\oplus}\else$\mbox{R}_{\oplus}$\fi}
+\newcommand{\msR}{\mathscr{R}}
+\newcommand{\msC}{\mathcal{C}}
+\newcommand{\msD}{\mathcal{D}}
+\newcommand{\msN}{\mathcal{N}}
+\newcommand{\msS}{\mathcal{S}}
+\newcommand{\msJ}{\mathcal{J}}
+\newcommand{\msU}{\mathcal{U}}
+\newcommand{\msG}{\mathcal{G}}
+\newcommand{\msF}{\mathcal{F}}
+\def\bfref{\color{red}}
+%\def\bfref{}
+\def\B{\color{blue}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\newcommand{\bb}{\begin{bmatrix}}
+\newcommand{\eb}{\end{bmatrix}}
+
+%\newcommand{\Mark}{\bf \textcolor{r}}
+%\newcommand{\chandra}{\textit{Chandra}\,}
+%\newcommand{\spitzer}{\textit{Spitzer}\,}
+%%\newcommand{\xmm}{\textit{XMM-Newton}\,}
+%\newcommand{\xmm}{\textit{XMM}\,}
+%\newcommand{\xte}{\textit{RXTE}\,}
+%\newcommand{\rosat}{\textit{ROSAT}\,}
+%\newcommand{\ooft}{4U~0142$+$61\,}
+%\newcommand{\seven}{RXS~J170849.0$-$400910\,}
+%\newcommand{\eight}{1E~1841$-$045\,}
+%\newcommand{\etff}{AX~1845$-$0258}
+%\newcommand{\etfs}{PSR~J1846$-$0258}
+%\newcommand{\ttfn}{1E~2259$+$586}
+%\newcommand{\tfe}{1E~1048.1$-$5937\,}
+%\newcommand{\etten}{XTE~J1810$-$197\,}
+%\newcommand{\ninet}{SGR~1900$+$14}
+%\newcommand{\etos}{SGR~1806$-$20\,}
+%\newcommand{\ntst}{PSR~B1916$+$14\,}
+%\newcommand{\stet}{PSR~J1718$-$3718\,}
+
+\shorttitle{21 years timing of PSR J1713+0747.}
+\shortauthors{Zhu et al.}
+
+%% --------------------------------------------------------
+%% \slugcomment{Submitted to ApJ}
+%% --------------------------------------------------------
+\begin{document}
+%% --------------------------------------------------------
+%\title{21-Year Timing of Millisecond Pulsar J1713+0747 with Arecibo and GBT}
+\title{Testing Theories of Gravitation Using 21-Year Timing of Pulsar Binary J1713+0747}
+
+%% --------------------------------------------------------
+\author{
+W. W. Zhu\altaffilmark{1,14},
+I. H. Stairs\altaffilmark{1},
+P. B. Demorest\altaffilmark{17},
+D. J. Nice\altaffilmark{3},
+J. A. Ellis\altaffilmark{4,5},
+S. M. Ransom\altaffilmark{2},
+Z. Arzoumanian\altaffilmark{6,7},
+K. Crowter\altaffilmark{1},
+T. Dolch\altaffilmark{8},
+R. D. Ferdman\altaffilmark{9}, 
+E. Fonseca\altaffilmark{1}, 
+M. E. Gonzalez\altaffilmark{1,10}, 
+G. Jones\altaffilmark{11}, 
+M. Jones\altaffilmark{12}
+M. T. Lam\altaffilmark{8}, 
+L. Levin\altaffilmark{12,16}, 
+M. A. McLaughlin\altaffilmark{12}, 
+T. Pennucci\altaffilmark{15}, 
+K. Stovall\altaffilmark{13}, 
+J. Swiggum\altaffilmark{12}
+}
+%% --------------------------------------------------------
+%% \email{}
+%% --------------------------------------------------------
+\altaffiltext{1}{\footnotesize Department of Physics and Astronomy,
+6224 Agricultural Road, University of British Columbia, Vancouver, BC, V6T 1Z1, Canada;
+zhuww@phas.ubc.ca, istairs@phas.ubc.ca}
+\altaffiltext{2}{\footnotesize National Radio Astronomy Observatory, Charlottesville, VA 22903, USA}
+\altaffiltext{3}{\footnotesize Department of Physics, Lafayette College, Easton, PA 18042, USA}
+\altaffiltext{4}{\footnotesize Jet Propulsion Laboratory, California Institute of Technology, 4800 Oak Grove Dr. Pasadena CA, 91109, USA}
+\altaffiltext{5}{\footnotesize Einstein Fellow}
+\altaffiltext{6}{\footnotesize Center for Research and Exploration in Space Science and
+Technology and X-Ray Astrophysics Laboratory, NASA Goddard Space Flight
+Center, Code 662, Greenbelt, MD 20771, USA}
+\altaffiltext{7}{\footnotesize Universities Space Research Association, Columbia, MD 21046, USA}
+\altaffiltext{8}{\footnotesize Department of Astronomy, Cornell University, Ithaca, NY
+14853, USA}
+\altaffiltext{9}{\footnotesize Department of Physics, McGill University, Montreal, QC H3A
+2T8, Canada}
+\altaffiltext{10}{Department of Nuclear Medicine, Vancouver Coastal Health
+Authority, Vancouver, BC V5Z 1M9, Canada}
+\altaffiltext{11}{\footnotesize Department of Physics, Columbia University, 550
+W. 120th St. New York, NY 10027, USA}
+\altaffiltext{12}{\footnotesize Department of Physics and Astronomy, West Virginia University, P.O. Box
+6315, Morgantown, WV 26505, USA}
+\altaffiltext{13}{\footnotesize Department of Physics and Astronomy, University of New
+Mexico, Albuquerque, NM, 87131, USA}
+\altaffiltext{14}{\footnotesize Max-Planck-Institut f\"{u}r Radioastronomie, Auf
+dem H\"{u}gel 69, D-53121, Bonn, Germany}
+\altaffiltext{15}{Department of Astronomy, University of Virginia, P.O. Box
+400325 Charlottesville, VA 22904-4325, USA}
+\altaffiltext{16}{Jodrell Bank Centre for Astrophysics, School of Physics and
+Astronomy, The University of Manchester, Manchester M13 9PL, UK}
+\altaffiltext{17}{National Radio Astronomy Observatory, P.~O.~Box 0, Socorro,
+NM, 87801, USA}
+
+%% --------------------------------------------------------
+%\begin{abstract}
+%\end{abstract}
+
+%% --------------------------------------------------------
+\keywords{pulsars: individual (\object{PSR J1713+0747}) --- Radio: stars --- stars: neutron
+--- Binaries:general --- gravitation -- relativity}
+
+%% --------------------------------------------------------
+%% A small citation guide:
+%% \citep{jon90} (Jones et al. 1990) [no comma] 
+%% \cite(t){jon90} Jones et al. (1990) [no comma]
+%%
+%% \citep*{jon90} (Jones, Baker, and Williams 1990) [one arg, no comma]
+%% \citet*{jon90} Jones, Baker, and Williams (1990) [one arg]
+%%
+%% \citealp(jon90) Jones et al. 1990  [no comma]
+%% \citealt{jon90} Jones et al. 1990  [no comma, been using this]
+%%
+%% \citealp*{jon90} Jones, Baker, and Williams 1990 [all and no comma,this]
+%% \citealt*{jon90} Jones, Baker, and Williams 1990 [all and no comma]
+%% --------------------------------------------------------
+
+
+\input{content.tex}
+
+\acknowledgements
+The authors thank N. Wex, P. C. C. Freire, C. Ng, and J. Cordes for
+helpful comments and discussions.
+Pulsar research at UBC is supported by an NSERC Discovery Grant and Discovery
+Accelerator Supplement, and by the Canadian Institute for Advanced Research.
+JAE acknowledges support by NASA through Einstein Fellowship grant PF4-150120. 
+Some computational work was performed on the Nemo cluster at UWM supported 
+by NSF grant No. 0923409. Portions of this research were carried out at the 
+Jet Propulsion Laboratory, California Institute of Technology, under a contract 
+with the National Aeronautics and Space Administration. 
+T. Pennucci is a student at the National Radio Astronomy Observatory.
+The NANOGrav project receives support from the National Science Foundation
+(NSF) PIRE program award number 0968296. This work was supported by NSF grant 0647820.
+The Arecibo Observatory is operated by SRI International under a cooperative
+agreement with the National Science Foundation (AST-1100968), and in alliance
+with Ana G. M\'{e}ndez-Universidad Metropolitana, and the Universities Space
+Research Association.  The National Radio Astronomy Observatory (GBT) is a
+facility of the National Science Foundation operated under cooperative
+agreement by Associated Universities, Inc.
+%The National Radio Astronomy Observatory is a facility of the National Science
+%Foundation operated under cooperative agreement by Associated Universities,
+%Inc.
+%The Arecibo Observatory is operated by SRI International under a cooperative
+%agreement with the National Science Foundation (AST-1100968), and in alliance
+%with Ana G. Méndez-Universidad Metropolitana, and the Universities Space
+%Research Association.
+
+
+{\it Facilities:}
+\facility{Arecibo Telescope}, \facility{Robert C. Byrd Green Bank Telescope}
+
+%\bibliographystyle{astroads}
+\bibliographystyle{apj}
+\bibliography{myrefs,journals1,modrefs,psrrefs,crossrefs}
+
+%\begin{figure}
+%\includegraphics[width=4in]{masses.eps} \\ 
+%\caption {\label{fig:mass} Top left, top right and bottom left: the
+  %pulsar and companion masses as drawn from an MCMC simulation. Bottom right: MCMC distribution of $\dot{P}_{\rm b}$.} 
+%\end{figure} 
+
+%\begin{figure}
+%\includegraphics[width=4in]{DMX.ps} \\ 
+%\caption {\label{fig:dmx} The DM variation of PSR~J1713+0747. The DM plot is
+%separated into two segments with a small ``instrumental'' DM offset. This offset exists 
+%because the Mark~IV and ABPP TOAs (before mid 2004) are extracted using
+%different pulse
+%profile templates from those used for ASP, GASP, GUPPI and PUPPI TOAs (after
+%mid 2004). This template difference leads to a systematic
+%frequency-dependent arrival time shift. This shift is then absorbed by the DM
+%fitting and manifest a systematic DM offset. The dotted line shows the Solar
+%elongation of the pulsar. The subplot shows the structure
+%function (error bars) of the bottom half (i.e. last $\sim 16$~years) of DM
+%variation and its a power law fit (solid line). The best power law index is
+%0.49(5), different from the value of $5/3$ expected from a
+%``pure'' Kolmogorov medium. } 
+%\end{figure} 
+
+
+%\begin{figure}
+%\includegraphics[width=4in]{FD.ps} \\ 
+%\caption {\label{fig:FD} GUPPI and PUPPI post-fit residuals versus frequency when fitted
+%without the FD model, showing the frequency dependence of the TOAs that is 
+%not accounted for by the DM. For
+%clarity, this plot is made using only TOAs with error smaller than 3~$\mu$s.} 
+%\end{figure} 
+
+%\begin{figure}
+%\includegraphics[scale=1.0]{fig3.eps} \\ 
+%%\showthe\columnwidth
+%\caption{\label{fig:res} Top panel: Daily-averaged residuals of J1713+0747 produced from a GLS that includes a 
+%full noise model. The black dashed line and the gray shaded area show the maximum likelihood red noise
+%realization and uncertainty. Bottom-left panel: Two-dimensional marginalized posterior probability plot of red
+%noise spectral index vs. red noise amplitude where the solid, dashed and
+%dashed-dot lines represent the 68, 95, and 99.7 percent credible regions.
+%Bottom-right panel: One dimensional marginalized posterior probability for the
+%red noise spectral index where the solid line denotes the maximum a-posteriori
+%value and the dashed lines denote the 68\% credible interval. Note that the
+%1D maximum marginalized posterior spectral index usually differs slightly from the
+%global maximum likelihood value ($-2.92$).}
+%\end{figure} 
+
+%\begin{figure}[!h]
+%\includegraphics[scale=1.0]{fig4.eps} \\ 
+%%\showthe\columnwidth
+%\caption{\label{fig:detres} Top panel: Low frequency daily-averaged residuals of J1713+0747 with maximum likelihood
+%jitter and red noise realization subtracted out. Bottom panel: High frequency daily-averaged residuals of J1713+0747 with maximum likelihood jitter and red noise realization subtracted out. The insets in both top and bottom panels show the histogram of the weighted residuals (weighted by EFAC and EQUAD corrected TOA uncertainties) in blue, along with a zero-mean unit-variance Gaussian distribution in red.}
+%\end{figure} 
+
+
+
+%\begin{figure}
+%\includegraphics[width=4in]{residual.eps} \\ 
+%\caption {\label{fig:res} Top panel: The lower bands (1400-MHz for
+%Mark~IV, ABPP, ASP, and PUPPI, and 800~MHz for GASP and GUPPI) daily-averaged residuals of
+%J1713+0747. Bottom panel: The higher bands (2300~MHz for Mark4, ABPP, ASP, and PUPPI and
+%1400~MHz for GASP and GUPPI) residuals, showing the presence of some red noise.} 
+%\end{figure} 
+
+%\begin{figure}
+%\includegraphics[width=4in]{overfit.eps} \\ 
+%\caption {\label{fig:overfit} Red points: post-fit residual WRMS as a function of the Gaussian
+%$\sigma$ of the  injected error; blue points: a control experiment:
+%post-fit residual WRMS as a function of injected error when freezing all fitt
+%parameters. The dashed lines are the best linear fit to the points. Legends
+%show the best-fit slopes and intercepts. 
+%The blue points show a slope $\sim 1$,
+%indicating that almost 100\% of the injected errors are present in the
+%residuals, while only a fraction of that amount appears in the red residuals. 
+%This means that fitting the parameters absorbed part of the white noise.
+%} 
+%\end{figure} 
+
+%\begin{figure}
+%%\includegraphics[width=8cm]{GdotContour.ps} \\ 
+%\includegraphics[width=8cm]{finalGdot.ps} \\ 
+%\caption {\label{fig:Gdot} Confidence contour of $\dot{G}$ and $\kappa_D$
+%calculated from PSRs~J1012+5307, J1738+0333, and J1713+0747 using an MCMC simulation.
+%The shaded area marks the 2$\sigma$ $\dot{G}$ limit from LLR. 
+%} 
+%\end{figure} 
+
+
+%\input{obs.tex}
+
+%\input{model.tex}
+%\input{tempomodel.tex}
+%\input{tempo2model.tex}
+
+%\input{rmstable.tex}
+
+\end{document}
+
+
+t
