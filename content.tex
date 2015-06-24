@@ -762,11 +762,13 @@ However, the number of frequency
 channels has increased by a factor of ten with the modern wide-band
 instruments, making it much harder to mitigate profile-frequency evolution using jumps. 
 Instead, we used the {\it FD} model, a polynomial of the logarithm of
-frequency (Demorest et~al.\ in prep.; solid line in Figure
+frequency: $\Delta t = \sum_i FD_i (\log f)^i$ (Demorest et~al.\ in prep.; solid line in Figure
 \ref{fig:FD}) to fit for and remove the profile-frequency
-evolution. This model successfully removes the extra
-frequency-dependent residuals and it requires only four parameters in the
-case of PSR~J1713+0747.
+evolution, where $\Delta t$ is the profile evolution term in unit of
+second, $f$ is the observing frequency in unit of GHz and $FD_i$ are the
+{\it FD} model parameters. We employed the F test to determine how many {\it
+FD} parameters are needed to model profile frequency evolution. PSR J1713+0747
+only requires four {\it FD} parameters.
 
 
 \section{Results}

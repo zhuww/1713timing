@@ -1,0 +1,8 @@
+equad-M4-S
+equad-ABPP-L
+equad-M3A-L
+equad-M3B-L
+equad-ABPP-S
+equad-M4-L
+RN-Amplitude
+RN-spectral-index

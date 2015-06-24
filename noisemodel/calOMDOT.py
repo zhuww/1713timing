@@ -25,7 +25,8 @@ Tsun = 4.925490947e-6
 #pf = model('1713.Oct.test.par')
 #pf = model('1713.Oct.OMDOT.par')
 #pf = model('1713.Oct.T2.par')
-pf = model('J1713+0747.par')
+#pf = model('J1713+0747.par')
+pf = model('new.par')
 
 M2 = float(pf.M2[0])
 if pf.SINI == 'KIN':
@@ -44,7 +45,7 @@ except:
 f = 4*pi**2*a**3/Pb**2/Tsun
 print 'Timing M1,M2,Mtot,f:',M1,M2, M1+M2, f #, (M2*SINI)**3/(M1+M2)**2
 print 'SINI:', SINI
-print 'Timing OMDOT:', pf.OMDOT[0], '(',pf.OMDOT[1],')', 'degress per year'
+print 'Timing OMDOT:', pf.OMDOT#[0], '(',pf.OMDOT[1],')', 'degress per year'
 
 #print M1+M2, E, SINI
 
@@ -67,19 +68,20 @@ print 'Thetamu - Omega:', (thetamu-Omega*pi/180.)*180./pi
 
 print 'change of viewing angle:', OMDOT_SM,'degrees per year'
 
-print 'Observed OMDOT:',  pf.OMDOT[0], 'Expected OMDOT:', OMDOT_PA+OMDOT_SM
+print 'Observed OMDOT:',  pf.OMDOT, 'Expected OMDOT:', OMDOT_PA+OMDOT_SM
 
 #print 3.*(2*pi/(secperday*88))**(5./3)*(1.)*(2./3)/(1. - E**2)* 180./pi * secperday * 365 * 60
 
-Delta_DM = float(pf.OMDOT[0]) - OMDOT_PA - OMDOT_SM
+Delta_DM = float(pf.OMDOT) - OMDOT_PA - OMDOT_SM
 Pb = float(pf.PB[0])
 Delta_PB =  Delta_DM/360/dayperyear * Pb * Pb
 print "To move OMDOT to GR value require PB change:", Delta_PB, "day", Delta_PB * 3600. * 24, "s"
 pf.PB[0] -= Decimal(Delta_PB)
-pf.OMDOT[0] = Decimal(OMDOT_PA + OMDOT_SM)
+#pf.OMDOT[0] = Decimal(OMDOT_PA + OMDOT_SM)
+pf.OMDOT = Decimal(OMDOT_PA + OMDOT_SM)
 #sys.exit(0)
 pf.freezeall()
-pf.write('Oct.T1.omdot.par')
+pf.write('Feb.T1.omdot.par')
 
 """
 print 'Test code using Mercury'

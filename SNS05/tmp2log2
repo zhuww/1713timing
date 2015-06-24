@@ -1,0 +1,97 @@
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under conditions of GPL license.
+
+WARNING [TIM1]: Please place MODE flags in the parameter file 
+Updating TOA errors using T2EFAC, T2EQUAD and T2GLOBALEFAC
+
+
+Including red noise and/or ECORR parameters, calling new dofit
+
+
+Including Red noise with 30 Frequencies, -14.863 Log_10 Amplitude, 5.14013 Spectral Index
+subtractRed is 0 
+subtractDM is 0 
+[tempo2.C:532] Complete fit
+
+
+Results for PSR J1713+0747
+
+
+RMS pre-fit residual = 0.345 (us), RMS post-fit residual = 0.345 (us)
+Fit Chisq = 329.2	Chisqr/nfree = 329.21/301 = 1.09373	pre/post = 0.999784
+Number of fit parameters: 23
+Number of points in fit = 324
+** NOTE: All parameter uncertainties multiplied by sqrt(red. chisq)
+Offset: -3.00716e-07 1.37936e-06 offset_e*sqrt(n) = 2.48285e-05 n = 324
+
+
+PARAMETER       Pre-fit                   Post-fit                  Uncertainty   Difference   Fit
+---------------------------------------------------------------------------------------------------
+RAJ (rad)       4.51091475521456          4.51091475521192          4.1096e-11    -2.6468e-12   Y
+RAJ (hms)       17:13:49.5305321           17:13:49.5305321         5.6511e-07    -3.6396e-08  
+DECJ (rad)      0.136026725889381         0.136026725868435         7.7331e-11    -2.0946e-11   Y
+DECJ (dms)      +07:47:37.52626           +07:47:37.52626           1.5951e-05    -4.3204e-06  
+F0 (s^-1)       218.811843915731          218.811843915731          1.0306e-12    0             Y
+F1 (s^-2)       -4.08362423476769e-16     -4.0836243680782e-16      8.3967e-21    -1.3331e-23   Y
+PEPOCH (MJD)    52000                     52000                     0             0             N
+POSEPOCH (MJD)  52000                     52000                     0             0             N
+DMEPOCH (MJD)   52000                     52000                     0             0             N
+DM (cm^-3 pc)   15.9940011433001          15.9940016791653          0.00063968    5.3587e-07    Y
+DM1 (cm^-3 pc y -1.39097341533151e-08     -2.96992680409273e-08     2.1818e-05    -1.579e-08    Y
+PMRA (mas/yr)   4.91651118630458          4.91651157496191          0.0040233     3.8866e-07    Y
+PMDEC (mas/yr)  -3.92961989298793         -3.9296007853297          0.0082753     1.9108e-05    Y
+PX (mas)        0.843838999595786         0.843846800809917         0.042785      7.8012e-06    Y
+SINI            0.947172231604946         0.947046590946956         0             -0.00012564   N
+PB (d)          67.8251299209004          67.8251299209528          3.8615e-09    5.2381e-11    Y
+T0 (MJD)        53761.0323690753          53761.0323772002          0.00061601    8.125e-06     Y
+A1 (lt-s)       32.3424217577443          32.3424217532798          2.9246e-07    -4.4645e-09   Y
+OM (deg)        176.194567684222          176.194610809672          0.0032697     4.3125e-05    Y
+ECC             7.49408370119249e-05      7.49408328022051e-05      1.219e-09     -4.2097e-12   Y
+PBDOT           -2.32308994059941e-13     -2.31995636641643e-13     6.8647e-13    3.1336e-16    Y
+M2              0.303935237057054         0.304373666732379         0.028317      0.00043843    Y
+START (MJD)     48850.0243113475          48850.0243113475          0             0             N
+FINISH (MJD)    53149.2319446572          53149.2319446572          0             0             N
+TZRMJD          51011.0672578672          51011.0672578672          0             0             N
+TZRFRQ (MHz)    1419.125                  1419.125                  0             0             N
+TZRSITE         ao                       
+KOM             89.2497088480151          89.3117317613629          4.3882        0.062023      Y
+KIN             71.2932020804043          71.2707700527709          1.4995        -0.022432     Y
+TRES            0.513                     0.344746841008441         0             -0.16825      N
+EPHVER          TEMPO2                    TEMPO2                    0             0             N
+---------------------------------------------------------------------------------------------------
+** WARNING: All parameter uncertainties multiplied by sqrt(red. chisq)
+Jump 1 ( -f M4-S	0.000011399168708072	1	0): 1.1398461268734e-05 8.6663954815796e-07 Y
+Jump 2 ( -i ABPP-S	0.000002721108829864	1	0): 2.7203810899489e-06 8.6470732580412e-07 Y
+Jump 3 ( -i M3A-L	-0.000067354453167298	1	0): -6.7352224032196e-05 1.4515818713331e-06 Y
+Jump 4 ( -i M3B-L	-0.0000024514054415526	1	0): -2.449527673555e-06 1.2936990320677e-06 Y
+
+Derived parameters:
+
+P0 (s)      = 0.0045701365250828        2.1525e-17   
+P1          = 8.52911823477878e-21      1.7537e-25   
+tau_c (Myr) = 8495.5
+bs (G)      = 1.9979e+08
+
+Binary model: T2
+Mass function                  = 0.007896216843  +- 0.000000000000 solar masses 
+Minimum, median and maximum companion mass: 0.2753 < 0.3242 < 0.7489 solar masses
+Pulsar Mass (annual orbital parallax): 1.43727 (+/- 0.215975) Msun.
+
+Parallax distance is 1185.05 (+/- 60.0841) pc.
+Pbdot distance is -411.393 (+/- 1217.3) pc.
+MTOT derived from sin i and m2 = 1.7416925802235
+Total proper motion = 6.294 +/- 0.0060474 mas/yr
+Total time span = 4299.208 days = 11.771 years
+
+Tempo2 usage
+Units:                 TDB (tempo1)
+Time ephemeris:        FB90 (tempo1)
+Troposphere corr.?     No (tempo1)
+Dilate freq?           No (tempo1)
+Electron density (1AU) 0
+Solar system ephem     DE405
+Time scale             TT(BIPM)
+Binary model           T2
+In here writing a new parameter file: new.par
+Finishing off: time taken = 3.56 (s)

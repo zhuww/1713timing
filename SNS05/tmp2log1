@@ -1,0 +1,19 @@
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under conditions of GPL license.
+
+WARNING [TIM1]: Please place MODE flags in the parameter file 
+Updating TOA errors using T2EFAC, T2EQUAD and T2GLOBALEFAC
+
+
+Including red noise and/or ECORR parameters, calling new dofit
+
+
+Including Red noise with 30 Frequencies, -14.863 Log_10 Amplitude, 5.14013 Spectral Index
+subtractRed is 0 
+subtractDM is 0 
+[tempo2.C:532] Complete fit
+Looking for /home/zhuww/local/tempo2/T2runtime//plugins//general2_linux-gnu_plug.t2
+Starting general2 plugin
+Finished general2 plugin
+Finishing off: time taken = 3.59 (s)
