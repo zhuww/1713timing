@@ -3,12 +3,13 @@ from pylab import *
 import matplotlib.pyplot  as plt
 
 #m = model("1713.May.noM4O.par")
-m = model("1713.Sep.T1.par")
+#m = model("1713.Sep.T1.par")
 #m = model("1713_21yr_simple.par")
 #m = model("1713.Jun.OMDOT.par")
 #t = TOAfile('1713.May.noM4O.tim')
 #t = TOAfile('1713.Jun.tim')
-t = TOAfile('1713.Sep.T2.tim')
+m = model("Feb.T1.RN.par")
+t = TOAfile('1713.Feb.T2.tim')
 m.tempofit(t)
 #m.average()
 #m.plot('date', 'averes', LegendOn=True)

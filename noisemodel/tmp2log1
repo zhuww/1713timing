@@ -1,0 +1,35 @@
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under conditions of GPL license.
+
+WARNING [MISC1]: Unknown parameter in par file:  DMXEP_0001
+WARNING: duplicated warnings have been suppressed.
+
+WARNING: Using tempo RNAMP parameter: setting TNRedC to 100!
+WARNING [TIM1]: Please place MODE flags in the parameter file 
+Updating TOA errors using T2EFAC, T2EQUAD and T2GLOBALEFAC
+
+
+Including red noise and/or ECORR parameters, calling new dofit
+
+
+Including Red noise with 100 Frequencies, -14.0644 Log_10 Amplitude, 2.92 Spectral Index
+
+Including ECORR value for backend L-wide_ASP: 0.104512 mus
+Including ECORR value for backend L-wide_PUPPI: 0.093992 mus
+Including ECORR value for backend Rcvr1_2_GASP: 0.0366002 mus
+Including ECORR value for backend Rcvr1_2_GUPPI: 0.0539866 mus
+Including ECORR value for backend Rcvr_800_GASP: 0.0227874 mus
+Including ECORR value for backend Rcvr_800_GUPPI: 0.204018 mus
+Including ECORR value for backend S-wide_ASP: 0.126685 mus
+Including ECORR value for backend S-wide_PUPPI: 0.114441 mus
+
+Using 521 epochs for PSR J1713+0747
+
+subtractRed is 0 
+subtractDM is 0 
+[tempo2.C:532] Complete fit
+Looking for /home/zhuww/local/tempo2/T2runtime//plugins//general2_linux-gnu_plug.t2
+Starting general2 plugin
+Finished general2 plugin
+Finishing off: time taken = 25.69 (s)

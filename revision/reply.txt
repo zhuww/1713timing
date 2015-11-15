@@ -1,0 +1,140 @@
+We thank the referee for the very helpful comments, which have been
+incroporated into the new version of the manuscript. Here we list our replies
+to the referee's comments:
+
+>   I have only one major request, related to the way the adopted timing model is
+>   presented. In particular, I'm puzzled in reading the same value for the
+>   relativistic periastron advance in table 2 and table 3 for all the presented
+>   solutions. It is said in the caption that the relevant post-Keplerian
+>   parameter is held fixed at the GR value. However, that parameter does reflect
+>   the total mass of the binary, which changes significantly between the three
+>   fitted models reported in the 3 columns: from about 1.1 Msun from the values
+>   of column 1 to about 1.6 Msun for the mass values reported in columns 2 and 3.
+>   Is that a misprint or am I missing something in the timing procedure? In fact,
+>   I'm also confused by the authors reporting the pulsar mass in the section of
+>   the tables devoted to the "derived" parameters, when in the text (section 4.1)
+>   it is said that both the companion and the pulsar masses are obtained from the
+>   measurement of the Shapiro delay.
+>
+>   I'm sure the authors got the numbers right, but at the moment the procedure
+>   they followed is not obvious to the reader. Therefore I ask the authors to
+>   report more extensively (in the description of the timing model, section 3) on
+>   the steps adopted to reach the values reported in the tables.
+
+
+A paragragh (parag 5) was added to Section 3, decribing how we modeled
+periastron advance rate \dot{\omega}. We also changed the value of
+\dot{\omega} listed in the column 1, and 2 of Table 2 and 3 to the GR values
+inferred from the binary masses reported in that column. 
+
+>   In the following I list some other minor issues:
+>
+>   - Section 1
+>
+>   In the last par there is something missing in the statement beginning with
+>   "Because the violation of SEP..." Moreover, although one can understand the
+>   meaning, "non-GR effects" is not a precise wording. It should be expanded into
+>   something alike "effects which cannot be accounted for in the context of GR"
+
+We reworded the sentence as suggested.
+
+>   - Section 2.1
+>
+>   In the second par, "separation" should be "separated", and the word
+>   "telescope" can be clipped. Of course one can in principle (and nowadays also
+>   in practice) study the ISM effects with a single receiver having a large BW.
+>   Therefore, In the same statement, it should be specified "...a single receiver
+>   operating over a limited bandwidth and hence...".
+ 
+We reworded the sentences as suggested.
+
+>   - Section 3
+>
+>   In the forth par, ..."because the binary orbit moved perpendicular" is not
+>   completely correct. The effect is produced by the component of the binary
+>   motion perpendicular to the los, which in general does not coincide with the
+>   total velocity vector (relative to the SSB) of the binary orbit. Please
+>   improve the wording.
+
+We reworded the sentence as suggested.
+
+>   In the last par there are repetitions in reporting on the comparison with the
+>   previous Splaver et al 2005 results and in reporting on the first
+>   determination of the orbital period change. Please amend that and shorten the
+>   paragraph accordingly
+
+We deleted the repetitions.
+
+>   - Section 3.1
+>
+>   At the beginning of third par, "uncorrelated" should be "correlated"
+
+Corrected.
+
+>   - Section 3.3
+>
+>   As to the discussion following eq 7, one may wonder if the time-dependent
+>   predictions of eq 7 are satisfied for the pulsar under scrutiny: have the
+>   authors checked what happens when splitting the data span into roughly two
+>   portions and comparing the results for the first and second part of the data
+>   span. The same could be done by splitting also in 3 and 4 parts.
+
+When we split up the dataset, the RMS of the segments were very small 
+because the red noise got aborbed by the timing model; the first segment has 
+a RMS of ~89ns, and the second ~33ns.
+This problem of timing model absorbing red noise, plus the varying degress 
+of white noise from different systems, and the gaps in our data, make it hard
+to study the scaling law of red noise by splitting up the dataset. Conversely,
+our red noise model contains all the information about how red noise grows in
+time, and it is not affected by the varying white noises or the data gap.
+If we assume that the scaling law from eq. 7 is the result of a single unified 
+physical process that affected all the CPs and MSPs in their sample, then it 
+would suggest that the spin noise of pulsars has a frequency power spectrum 
+of power-law index ~-5, which is consistent with our red noise model from 
+this pulsar (Figure 1). This is discussed in the second last paragragh 
+of Section 3.3. We think Comparing the red noise sepctral index to the 
+scaling law prediction is likely a better method than splitting up 
+the dataset, because it takes into account the varying degrees of white noise 
+and the data gap.
+
+>   - Section 3.4
+>
+>   I see there is a paper in prep, but I think that for clarity it would be good
+>   to spelling the formula, the parameters of which are the FDi, otherwise
+>   reporting the parameters (as it is done in Table 2 and 3) is not very useful
+>   to the reader.
+  
+We now spell out the formula and also cite the NANOGrav 9 year data release paper
+for the FD model.
+
+>   - Section 4.1
+>
+>   Do the reported uncertainties on the pulsar and companion masses take into
+>   account the uncertainties in the subtracted noise model? Since the description
+>   of the methodology was many pages before (and some reader might well skip
+>   that), I think it is important to repeat here all the hypotheses for a correct
+>    propagation of the results to other papers.
+
+Yes, the reported uncertainties do take into account the substracted noise
+model, becuase the noise model affects the elements in the covariance matrix used
+in our generlized least square fit, and therefore gets propogate into
+the final uncertainties of timing parameters. Few more sentences were added to paragh 1 
+of Secion 4.1 to clarify this.
+
+>   I suppose that the authors will recover compatible values for the pulsar and
+>   companion masses if they repeat their current analysis on the Splaver et al
+>   2005 dataset. On one hand, I suggest they report the values resulting from
+>   such analysis of partial data (reporting also the Splaver et al results for
+>   the sake of easy, direct comparison); one the other hand, they should comment
+>   on why their methodology for subtracting the noise is better than the simplest
+>   approach of Splaver et al, which in the end produced compatible results. I
+>   imagine the new method becomes more and more effective for longer and longer
+>   data-spans, but that is not highlighted anywhere in the paper.
+
+We did the experiment as the refree requested, and found compatible masses using new red noise modeling. 
+A comparison of the timing parameters are summarized in the new Table 5. 
+We add comment on the fact that the new red noise modeling technique yield consistent red
+noise signals (realizations) from the shorter and the longer datasets, whereas the 
+frequency polynomial approach tend to produce significantly different red
+noise signals when the order of the polynomial or the time span of the dataset
+are different.

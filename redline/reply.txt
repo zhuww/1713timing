@@ -1,0 +1,23 @@
+Corrections: 
+1. TYPO: Figure 1. Caption, second-last sentence: "maximum marginalzed
+a-posteriori" -> "marginalized"
+2. Title of Section 4.4 "PEF" -> "PFE"
+
+Q1: I've put it in the reference list: 
+Ellis, J. A., 2014, PhD thesis, Univ. of Wisconsin-Milwaukee
+
+Q2: The reference with initial is [Desvignes G. et. al. 2015, in preparation]
+
+Q3: I've checked the reference list again, especially those without pink or
+blue link, and made some updates. The new ms.bbl file is uploaded.
+
+Q4: fixed, an new ms.bbl compiled using a newer version of apj.bst is uploaded.
+
+Q5: Vol number 7019, page maybe 70191D
+
+Q6: Fienga et al. 2014 arXiv:1409.4932, no journal update on the reference yet.
+
+Q7: Lorimer & Kramer 2005 (handbook in pulsar astronomy) is a book, there is
+no editor information.
+
+Q8: publisher = {Cambridge University Press},

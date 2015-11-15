@@ -1,0 +1,29 @@
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to redistribute it
+under conditions of GPL license.
+
+WARNING [TIM1]: Please place MODE flags in the parameter file 
+Updating TOA errors using T2EFAC, T2EQUAD and T2GLOBALEFAC
+
+
+Including red noise and/or ECORR parameters, calling new dofit
+
+
+Including ECORR value for backend Rcvr_800_GUPPI: 0.196364 mus
+Including ECORR value for backend Rcvr_800_GASP: 0.0156851 mus
+Including ECORR value for backend S-wide_ASP: 0.085591 mus
+Including ECORR value for backend Rcvr1_2_GUPPI: 0.0640434 mus
+Including ECORR value for backend L-wide_ASP: 0.11347 mus
+Including ECORR value for backend S-wide_PUPPI: 0.0977962 mus
+Including ECORR value for backend L-wide_PUPPI: 0.0998684 mus
+Including ECORR value for backend Rcvr1_2_GASP: 0.0783574 mus
+
+Using 525 epochs for PSR J1713+0747
+
+subtractRed is 0 
+subtractDM is 0 
+[tempo2.C:532] Complete fit
+Looking for /home/zhuww/local/tempo2/T2runtime//plugins//general2_linux-gnu_plug.t2
+Starting general2 plugin
+Finished general2 plugin
+Finishing off: time taken = 21.44 (s)

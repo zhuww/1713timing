@@ -1,0 +1,52 @@
+
+\clearpage
+\begin{deluxetable}{lccc}
+
+\tabletypesize{\scriptsize}
+\tablewidth{0pt}
+\tablecaption{\label{tab:par2} Timing model parameters\tablenotemark{a} from {\it tempo2}. }
+\tablehead{ \colhead{Parameter}  &\colhead{EFAC \& EQUAD}  &\colhead{with jitter model}  &\colhead{jitter \& red noise model}   }
+\startdata
+\textit{Measured Parameters}&  &  &  \\
+Right Ascension, $\alpha$ (J2000)&  17:13:49.5320254(5)&  17:13:49.5320247(7)&  17:13:49.5320261(10)\\
+Declination, $\delta$ (J2000)&  7:47:37.506130(13)&  7:47:37.506130(19)&  7:47:37.50615(3)\\
+Spin Frequecy $\nu$~(s$^{-1}$)&  218.81184385472573(6)&  218.81184385472589(10)&  218.8118438547255(5)\\
+Spin down rate $\nu'$ (s$^{-2}$)&  $-4.083883(5)\times10^{-16}$&  $-4.083892(7)\times10^{-16}$&  $-4.08386(5)\times10^{-16}$\\
+Proper motion in $\alpha$, $\mu_{\alpha}=\dot{\alpha}\cos \delta$ (mas~yr$^{-1}$)&  4.9161(12)&  4.9181(18)&  4.915(3)\\
+Proper motion in $\delta$, $\mu_{\delta}=\dot{\delta}$ (mas~yr$^{-1}$)&  -3.915(2)&  -3.910(3)&  -3.914(5)\\
+Parallax, $\pi$ (mas)&  0.872(16)&  0.83(3)&  0.87(3)\\
+Dispersion Measure\tablenotemark{b} (pc~cm$^{-3}$)&  15.97004(13)&  15.97006(12)&  15.97005(12)\\
+Orbital Period, $P_{\rm b}$ (day)&  67.8251365449(12)&  67.8251383194(16)&  67.8251383185(17)\\
+Change rate of $P_{\rm b}$, $\dot{P}_{\rm b}$ ($10^{-12}$s~s$^{-1}$)&  0.19(13)&  0.39(16)&  0.36(17)\\
+Eccentricity, $e$&  0.0000749385(3)&  0.0000749400(6)&  0.0000749402(6)\\
+Time of periastron passage, $T_0$ (MJD)&  53761.03208(11)&  53761.0327(3)&  53761.0328(3)\\
+Angle of periastron\tablenotemark{c}, $\omega$ (deg)&  176.1930(6)&  176.1963(15)&  176.1966(14)\\
+Projected semi-major axis, $x$ (lt-s)&  32.34242258(5)&  32.34242189(13)&  32.34242187(13)\\
+Orbital inclination, $i$ (deg)&  76.1(3)&  71.9(7)&  71.9(7)\\
+Companion Mass, $M_c$ ($M_{\odot}$)&  0.222(4)&  0.286(13)&  0.286(12)\\
+Position angle of ascending node, $\Omega$ (deg)&  74.3(14)&  89.6(20)&  88(2)\\
+Profile frequency dependency parameter, FD1 &  -0.0001634(2)&  -0.0001628(2)&  -0.0001628(2)\\
+Profile frequency dependency parameter, FD2 &  0.0001358(3)&  0.0001355(3)&  0.0001355(3)\\
+Profile frequency dependency parameter, FD3 &  -0.0000658(6)&  -0.0000671(6)&  -0.0000672(6)\\
+Profile frequency dependency parameter, FD4 &  0.0000141(4)&  0.0000154(4)&  0.0000155(4)\\
+\textit{Fixed Parameters}&  &  &  \\
+Solar system ephemeris&  DE421&  DE421&  DE421\\
+Reference epoch for $\alpha$, $\delta$, and $\nu$ (MJD)&  53729&  53729&  53729\\
+Solar wind electron density $n_{\rm 0}$ (cm~$^{-3}$) & 0 & 0 & 0 \\
+Rate of periastron advance, $\dot{\omega}$ (deg/yr)&  0.00019&  0.00024&  0.00024\\
+Red Noise Amplitude ($\mu$s/${m yr}^{-1/2}$)&  --&  --&  0.025\\
+Red Noise Spectral Index&  --&  --&  -2.920\\
+\textit{Derived Parameters}&  &  &  \\
+Intrinsic period derivative, $\dot{P}_{\rm Int}$(s~s$^{-1}$)&  $8.957(13)\times10^{-21}$&  $8.98(2)\times10^{-21}$&  $8.96(2)\times10^{-21}$\\
+Dipole magnetic field, $B$ (G)&  $2.0473(15)\times10^{+8}$&  $2.050(3)\times10^{+8}$&  $2.048(3)\times10^{+8}$\\
+Characteristic age, $\tau_c$ (yr)&  $8.085(12)\times10^{+9}$&  $8.06(2)\times10^{+9}$&  $8.08(2)\times10^{+9}$
+Pulsar mass, $M_{\rm PSR}$ ($M_{\odot}$)&  0.90(3)&  1.31(11)&  1.31(11)\\
+\enddata
+\tablenotetext{a}{We used {\it tempo2}'s {\it T2} binary model, which implicitly account for the change of the projected semi-major axis ($\dot{x}$ and allow us to fit for the position angle of ascending node ($\Omega$). Numbers in parentheses indicate the uncertainties on the last digit(s).  Uncertainties on parameters are estimated by the {\it tempo2} program using information in the covariance matrix.}
+\tablenotetext{b}{   The averaged DM value; See Section 3.2 and Figure 2 for the more discussion.}
+\tablenotetext{c}{   See Figure 2 of \citealt{sns+05} for definition.}
+
+
+\end{deluxetable}
+
+\clearpage 

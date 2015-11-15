@@ -1,0 +1,49 @@
+PSR              J1713+0747  
+RAJ      17:13:49.53053248  1          0.00000052
+DECJ      07:47:37.5262644  1           0.0000156
+PMRA                4.9111  1              0.0033
+PMDEC              -3.9418  1              0.0073
+PX                  0.8676  1              0.0422
+F0    218.8118439157314583  1  0.0000000000000554
+F1     -4.083370232907D-16  1  1.790968536615D-21
+PEPOCH        52000.000000
+START            48850.023  1
+FINISH           53149.233  1
+DM               15.993644  1            0.000630
+DMEPOCH        52000.0000
+SOLARN0               0.00
+EPHEM               DE405
+ECL                 IERS2010
+CLK                 TT(BIPM)    
+UNITS               TDB
+TIMEEPH             FB90
+T2CMETHOD           TEMPO
+CORRECT_TROPOSPHERE N
+PLANET_SHAPIRO      N
+DILATEFREQ          N
+NTOA                   324
+TRES                  0.24
+TZRMJD  52013.30879754561123
+TZRFRQ            1410.000
+TZRSITE                  3
+NITS                     1
+BINARY            DD      
+A1            32.342420818  1         0.000000308
+E             0.0000749408  1        0.0000000012
+T0        51997.5794975386  1        0.0006457120
+PB       67.82512987149198  1    0.00000000048879
+OM        176.197248700537  1      0.003427242276
+SINI              0.951427  1            0.009004
+M2                0.287504  1            0.030396
+XDOT              0.006904  1            0.000251
+PAASCNODE              89.25
+T2EQUAD -i M4-S   0.345
+T2EQUAD -i ABPP-L   0.146
+T2EQUAD -i M3A-L   0.525
+T2EQUAD -i M3B-L   0.452
+T2EQUAD -i ABPP-S   0.314
+T2EQUAD -i M4-L   0.149
+JUMP -f M4-S       0.000011878  1       0.000000854
+JUMP -i ABPP-S       0.000003190  1       0.000000853
+JUMP -i M3A-L      -0.000070680  1       0.000000362
+JUMP -i M3B-L      -0.000004642  1       0.000000256
